@@ -1,14 +1,18 @@
 import React from 'react';
-import './App.css';
+import { inject, observer } from 'mobx-react';
+import { RouterStore } from 'mobx-react-router';
+import Layout from './core/Layout';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        Delta
-      </header>
-    </div>
-  );
+interface Props {
+  routing?: RouterStore,
+}
+
+@inject('routing')
+@observer
+class App extends React.Component<Props> {
+  render() {
+    return <Layout />;
+  }
 }
 
 export default App;
