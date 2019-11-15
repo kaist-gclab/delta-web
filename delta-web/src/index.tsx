@@ -10,6 +10,7 @@ import App from './App';
 import './index.scss';
 import { AppContainer } from './container';
 import AssetStore from './asset/store';
+import EncryptionKeyStore from './encryptionKey/store';
 
 const browserHistory = createBrowserHistory();
 
@@ -17,10 +18,12 @@ const container = AppContainer;
 
 const routing = new RouterStore();
 const asset = container.get(AssetStore);
+const encryptionKey = container.get(EncryptionKeyStore);
 
 const stores = {
   routing,
   asset,
+  encryptionKey,
 };
 
 const history = syncHistoryWithStore(browserHistory, routing);
