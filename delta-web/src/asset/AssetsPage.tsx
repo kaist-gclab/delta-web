@@ -27,7 +27,7 @@ class AssetsPage extends React.Component<Props, State> {
       return <Loading />;
     }
     return <Container>
-      <h2>애셋 목록</h2>
+      <h2>에셋 목록</h2>
       {assets.map(a => <p key={a.id}>{a.content}</p>)}
     </Container>;
   }

@@ -14,7 +14,7 @@ const Layout: React.FC = () => {
         <Navbar.Heading>Delta</Navbar.Heading>
         <Navbar.Divider />
         <NavButton link="/" icon="home" text="대시보드" />
-        <NavButton link="/assets" icon="lightbulb" text="애셋" />
+        <NavButton link="/assets" icon="lightbulb" text="에셋" />
         <NavButton link="/encryptionKeys" icon="key" text="암호화 키" />
         <Navbar.Divider />
         <NavButton link="/myInfo" icon="id-number" text="내 정보" />
