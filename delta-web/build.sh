@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-docker build -t delta-web .
+IMAGE="delta-web"
+
+docker build -t $IMAGE .
