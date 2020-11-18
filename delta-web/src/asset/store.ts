@@ -1,19 +1,33 @@
-import { injectable, inject } from 'inversify';
-import { observable, flow } from 'mobx';
+import { inject, injectable } from 'inversify';
+import { makeAutoObservable } from 'mobx';
 import { Assets } from './types';
 import AssetRepository from './repository';
 
 @injectable()
 class AssetStore {
-    @observable
     assets?: Assets;
 
     @inject(AssetRepository)
     private assetRepository!: AssetRepository
 
-    fetchAssets = flow(function* (this: AssetStore) {
-        this.assets = yield this.assetRepository.fetchAssets();
-    })
+    constructor() {
+        makeAutoObservable(this);
+    }
+
+    *fetchAssets(name: string | null = null, tag: string | null = null) {
+        let assets: Assets = yield this.assetRepository.fetchAssets();
+        if (name) {
+            assets = assets.filter(a => a.assetTags.find(t => t.key === 'Name' && t.value.includes(name)));
+        }
+        if (tag) {
+            assets = assets.filter(a => a.assetTags.find(t => t.key === 'Tag' && t.value.includes(tag)));
+        }
+        this.assets = assets;
+    }
+
+    *addModel(name: string, tag: string, content: string, eventTimestamp: string) {
+        yield this.assetRepository.addModel(name, tag, content, eventTimestamp);
+    }
 }
 
 export default AssetStore;

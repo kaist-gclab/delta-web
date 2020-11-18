@@ -1,6 +1,7 @@
 import Http from '../core/http';
 import { inject, injectable } from 'inversify';
 import { Assets } from './types';
+import moment from 'moment';
 
 @injectable()
 export default class AssetRepository {
@@ -8,7 +9,13 @@ export default class AssetRepository {
     private http!: Http;
 
     async fetchAssets(): Promise<Assets> {
-        const assets = [{ id: 1, content: 'one' }, { id: 2, content: 'two' }];
-        return Promise.resolve(assets);
+        const response = await this.http.get('assets');
+        return response.data;
+    }
+
+    async addModel(name: string, tag: string, content: string, eventTimestamp: string): Promise<void> {
+        await this.http.post('assets/model', {
+            name, tag, content, eventTimestamp,
+        });
     }
 }
