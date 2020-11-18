@@ -1,18 +1,12 @@
 import React from 'react';
-import { inject, observer } from 'mobx-react';
-import { RouterStore } from 'mobx-react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { configure } from './config/context';
 import Layout from './core/Layout';
 
-interface Props {
-  routing?: RouterStore,
-}
+const App: React.FC = () => {
+  return <Router>
+    <Layout />
+  </Router>;
+};
 
-@inject('routing')
-@observer
-class App extends React.Component<Props> {
-  render() {
-    return <Layout />;
-  }
-}
-
-export default App;
+export default configure(App);
