@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import TokenService from './tokenService';
 import { inject, injectable } from 'inversify';
 
-const ApiBase = 'https://api.delta.cqcqcqde.com/';
+const ApiBase = 'https://api.delta-test.cqcqcqde.com/api/1/';
 
 @injectable()
 export default class Http {
