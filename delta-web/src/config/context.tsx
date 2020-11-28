@@ -6,6 +6,7 @@ import EncryptionKeyStore from '../encryptionKey/store';
 import AppContainer from './inversify';
 import AuthStore from '../core/authStore';
 import AssetTypeStore from '../assetType/store';
+import JobStore from '../job/store';
 
 const container = AppContainer;
 const wrappers: ((app: React.FC) => React.FC)[] = [];
@@ -15,6 +16,7 @@ export const AssetContext = add(AssetStore);
 export const EncryptionKeyContext = add(EncryptionKeyStore);
 export const HomeContext = add(HomeStore);
 export const AssetTypeContext = add(AssetTypeStore);
+export const JobContext = add(JobStore);
 
 function get<T>(type: interfaces.ServiceIdentifier<T>) {
     return container.get(type);
