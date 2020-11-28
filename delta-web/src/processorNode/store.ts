@@ -19,6 +19,12 @@ class ProcessorNodeStore {
         this.processorNodes = yield this.processorNodeRepository.fetchAll();
         this.processorNodes = this.processorNodes?.sort((a, b) => a.id - b.id);
     }
+
+    *fetch(id: number) {
+        this.processorNode = undefined;
+        yield this.fetchAll();
+        this.processorNode = this.processorNodes?.find(e => e.id === id) ?? null;
+    }
 }
 
 export default ProcessorNodeStore;
