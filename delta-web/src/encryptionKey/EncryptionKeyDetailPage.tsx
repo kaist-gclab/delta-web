@@ -16,7 +16,9 @@ padding-left: 20px;
 padding-right: 20px;
 `;
 
-const InputId = styled(InputGroup)``;
+const Message = styled.div`
+margin: 20px 0;
+`;
 
 const EncryptionKeyDetailPage: React.FC = () => {
   const params = useParams<Params>();
@@ -50,14 +52,14 @@ const EncryptionKeyDetailPage: React.FC = () => {
   return <div>
     <h1>암호화 키 상세 조회</h1>
     <ControlGroup>
-      <InputId type="text" leftIcon="numbered-list"
+      <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}
         onChange={(e: FormEvent<HTMLInputElement>) => {
           setId(e.currentTarget.value);
         }} />
       <QueryButton onClick={goDetailPage}>조회</QueryButton>
     </ControlGroup>
-    {!params.id ? <p>번호로 조회하십시오.</p> : render()}
+    {!params.id ? <Message>번호로 조회하십시오.</Message> : render()}
   </div >;
 };
 
