@@ -78,7 +78,7 @@ const Layout: React.FC = () => {
       <Title>3차원 기하 모델<br />프로세싱 프레임워크 v2.0</Title>
       <Section>
         <SectionTitle>기본 기능</SectionTitle>
-        <NavButton link="/start" text="시작" />
+        <NavButton link="/" text="시작" />
         <NavButton link="/help" text="도움말" />
         <NavButton link="/settings/user" text="사용자 설정" />
         <NavButton link="/settings/system" text="시스템 설정" />
@@ -132,9 +132,7 @@ const Layout: React.FC = () => {
       </Section>
     </Sidebar>
     <Content>
-      <Redirect from="/" to="/start" />
-
-      <Route path="/start" component={StartPage} />
+      <Route exact path="/" component={StartPage} />
       <Route path="/help" component={HelpPage} />
       <Route path="/settings/user" component={UserSettingsPage} />
       <Route path="/settings/system" component={SystemSettingsPage} />
