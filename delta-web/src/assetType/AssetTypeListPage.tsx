@@ -9,7 +9,7 @@ import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 const AssetTypeListPage: React.FC = () => {
   const store = useContext(AssetTypeContext);
   const history = useHistory();
-  useEffect(() => { /* store.fetchAll(); TODO */ }, [store]);
+  useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.assetTypes;
   if (!data) {
