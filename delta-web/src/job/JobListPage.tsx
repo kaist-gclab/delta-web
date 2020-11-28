@@ -9,7 +9,7 @@ import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 const JobListPage: React.FC = () => {
   const store = useContext(JobContext);
   const history = useHistory();
-  useEffect(() => { /* store.fetchAll(); */ }, [store]);
+  useEffect(() => { /* store.fetchAll(); TODO */ }, [store]);
 
   const data = store.jobs;
   if (!data) {
