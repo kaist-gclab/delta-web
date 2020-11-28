@@ -50,7 +50,7 @@ const AssetListPage: React.FC = () => {
   const fetch = async (name: string | null, tag: string | null) => {
     setElapsed(null);
     timeBegin = +new Date();
-    await assetStore.fetchAssets(name, tag);
+    await assetStore.fetchAll(name, tag);
     setElapsed((+new Date()) - timeBegin);
   };
 

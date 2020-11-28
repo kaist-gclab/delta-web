@@ -15,7 +15,7 @@ class AssetStore {
         makeAutoObservable(this);
     }
 
-    *fetchAssets(name: string | null = null, tag: string | null = null) {
+    *fetchAll(name: string | null = null, tag: string | null = null) {
         let assets: Asset[] = yield this.assetRepository.fetchAll();
         if (name) {
             assets = assets.filter(a => a.assetTags.find(t => t.key === 'Name' && t.value.includes(name)));
