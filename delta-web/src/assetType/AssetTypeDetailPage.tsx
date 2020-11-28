@@ -33,7 +33,7 @@ const AssetTypeDetailPage: React.FC = () => {
   }, [store, params]);
 
   const render = () => {
-    const e = store; // TODO
+    const e = store.assetType;
     if (e === undefined) {
       return <Loading />;
     }
@@ -41,7 +41,7 @@ const AssetTypeDetailPage: React.FC = () => {
       return <Failed />;
     }
     return <ul>
-      {/* <li>번호: {e.id}</li> TODO */}
+      <li>번호: {e.id}</li>
     </ul>
   };
 
