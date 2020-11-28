@@ -158,7 +158,7 @@ const Layout: React.FC = () => {
       <Route path="/job-types/detail/:id?" component={JobTypeDetailPage} />
 
       <Route path="/processor-nodes/list" component={ProcessorNodeListPage} />
-      <Route path="/processor-nodes/detail" component={ProcessorNodeDetailPage} />
+      <Route path="/processor-nodes/detail/:id?" component={ProcessorNodeDetailPage} />
 
       <Route path="/encryption-keys/add" component={AddEncryptionKeyPage} />
       <Route path="/encryption-keys/list" component={EncryptionKeyListPage} />
