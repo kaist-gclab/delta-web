@@ -45,14 +45,57 @@ const Layout: React.FC = () => {
       <Title>3차원 기하 모델<br />프로세싱 프레임워크 v2.0</Title>
       <Section>
         <SectionTitle>기본 기능</SectionTitle>
-        <NavButton link="/" text="대시보드" />
-        <NavButton link="/add" text="모델 추가" />
-        <NavButton link="/list" text="모델 목록" />
+        <NavButton link="" text="시작" />
+        <NavButton link="" text="도움말" />
+        <NavButton link="" text="사용자 설정" />
+        <NavButton link="" text="시스템 설정" />
       </Section>
-      {/* <NavButton link="/encryptionKeys" icon="key" text="암호화 키" /> */}
-      {/* <Navbar.Divider />
-        <NavButton link="/myInfo" icon="id-number" text="내 정보" />
-        <NavButton onClick={() => alert('아직 구현되지 않았습니다.')} icon="log-out" text="로그아웃" /> */}
+      <Section>
+        <SectionTitle>에셋</SectionTitle>
+        <NavButton link="" text="추가" />
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+        <NavButton link="" text="뷰어" />
+      </Section>
+      <Section>
+        <SectionTitle>에셋 유형</SectionTitle>
+        <NavButton link="" text="추가" />
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+      </Section>
+      <Section>
+        <SectionTitle>뷰어</SectionTitle>
+        <NavButton link="" text="목록" />
+      </Section>
+      <Section>
+        <SectionTitle>작업</SectionTitle>
+        <NavButton link="" text="추가" />
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+      </Section>
+      <Section>
+        <SectionTitle>작업 유형</SectionTitle>
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+      </Section>
+      <Section>
+        <SectionTitle>처리기 노드</SectionTitle>
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+      </Section>
+      <Section>
+        <SectionTitle>암호화 키</SectionTitle>
+        <NavButton link="" text="추가" />
+        <NavButton link="" text="목록" />
+        <NavButton link="" text="상세 조회" />
+      </Section>
+      <Section>
+        <SectionTitle>모니터링</SectionTitle>
+        <NavButton link="" text="대시보드" />
+        <NavButton link="" text="오브젝트 저장소 모니터" />
+        <NavButton link="" text="처리기 노드 모니터" />
+        <NavButton link="" text="작업 모니터" />
+      </Section>
     </Sidebar>
     <Content>
       <Route exact path="/" component={DashboardPage} />
