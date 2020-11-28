@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { makeAutoObservable } from 'mobx';
-import { AssetType } from '../asset/types';
 import AssetTypeRepository from './repository';
+import { AssetType, CreateAssetTypeRequest } from './types';
 
 @injectable()
 class AssetTypeStore {
@@ -14,6 +14,10 @@ class AssetTypeStore {
 
     @inject(AssetTypeRepository)
     private assetTypeRepository!: AssetTypeRepository
+
+    *create(request: CreateAssetTypeRequest) {
+        yield this.assetTypeRepository.create(request);
+    }
 
     *fetchAll() {
         this.assetTypes = yield this.assetTypeRepository.fetchAll();
