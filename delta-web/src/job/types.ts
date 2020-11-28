@@ -16,3 +16,9 @@ export interface JobExecution {
     processorNode: ProcessorNode;
 }
 
+export interface JobType {
+    id: number;
+    key: string;
+    name: string;
+}
+
