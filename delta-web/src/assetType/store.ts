@@ -19,6 +19,12 @@ class AssetTypeStore {
         this.assetTypes = yield this.assetTypeRepository.fetchAll();
         this.assetTypes = this.assetTypes?.sort((a, b) => a.id - b.id);
     }
+
+    *fetch(id: number) {
+        this.assetType = undefined;
+        yield this.fetchAll();
+        this.assetType = this.assetTypes?.find(e => e.id === id) ?? null;
+    }
 }
 
 export default AssetTypeStore;
