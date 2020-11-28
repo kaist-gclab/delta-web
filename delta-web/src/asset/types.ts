@@ -1,3 +1,4 @@
+import { AssetType } from '../assetType/types';
 import { EncryptionKey } from '../encryptionKey/types';
 import { JobExecution } from '../job/types';
 
@@ -16,10 +17,4 @@ export interface AssetTag {
     id: number;
     key: string;
     value: string;
-}
-
-export interface AssetType {
-    id: number;
-    key: string;
-    name: string;
 }
