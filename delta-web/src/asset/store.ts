@@ -26,6 +26,12 @@ class AssetStore {
         this.assets = assets;
     }
 
+    *fetch(id: number) {
+        this.asset = undefined;
+        yield this.fetchAll();
+        this.asset = this.assets?.find(e => e.id === id) ?? null;
+    }
+
     *addModel(name: string, tag: string, content: string, eventTimestamp: string) {
         yield this.assetRepository.addModel(name, tag, content, eventTimestamp);
     }
