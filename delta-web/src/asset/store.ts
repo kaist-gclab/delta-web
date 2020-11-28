@@ -1,11 +1,11 @@
 import { inject, injectable } from 'inversify';
 import { makeAutoObservable } from 'mobx';
-import { Assets } from './types';
+import { Asset } from './types';
 import AssetRepository from './repository';
 
 @injectable()
 class AssetStore {
-    assets?: Assets;
+    assets?: Asset[];
 
     @inject(AssetRepository)
     private assetRepository!: AssetRepository
@@ -15,7 +15,7 @@ class AssetStore {
     }
 
     *fetchAssets(name: string | null = null, tag: string | null = null) {
-        let assets: Assets = yield this.assetRepository.fetchAssets();
+        let assets: Asset[] = yield this.assetRepository.fetchAssets();
         if (name) {
             assets = assets.filter(a => a.assetTags.find(t => t.key === 'Name' && t.value.includes(name)));
         }
