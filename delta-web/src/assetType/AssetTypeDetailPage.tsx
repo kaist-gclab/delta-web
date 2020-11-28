@@ -28,12 +28,12 @@ const AssetTypeDetailPage: React.FC = () => {
   const store = useContext(AssetTypeContext);
   useEffect(() => {
     if (params.id) {
-      // store.fetch(Number(params.id));
+      // store.fetch(Number(params.id)); TODO
     }
   }, [store, params]);
 
   const render = () => {
-    const e = store;
+    const e = store; // TODO
     if (e === undefined) {
       return <Loading />;
     }
@@ -41,7 +41,7 @@ const AssetTypeDetailPage: React.FC = () => {
       return <Failed />;
     }
     return <ul>
-      {/* <li>번호: {e.id}</li> */}
+      {/* <li>번호: {e.id}</li> TODO */}
     </ul>
   };
 
