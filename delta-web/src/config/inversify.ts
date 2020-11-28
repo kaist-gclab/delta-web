@@ -4,9 +4,9 @@ import AssetRepository from '../asset/repository';
 import AssetStore from '../asset/store';
 import EncryptionKeyRepository from '../encryptionKey/repository';
 import EncryptionKeyStore from '../encryptionKey/store';
-import DashboardRepository from '../home/repository';
-import DashboardStore from '../home/store';
 import AuthStore from '../core/authStore';
+import HomeRepository from '../home/repository';
+import HomeStore from '../home/store';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -22,8 +22,8 @@ function configure(container: Container) {
     singleton(AssetRepository);
     singleton(EncryptionKeyStore);
     singleton(EncryptionKeyRepository);
-    singleton(DashboardStore);
-    singleton(DashboardRepository);
+    singleton(HomeStore);
+    singleton(HomeRepository);
 }
 
 export default AppContainer;

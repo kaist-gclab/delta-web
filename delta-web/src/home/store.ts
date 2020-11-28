@@ -1,24 +1,15 @@
 import { injectable, inject } from 'inversify';
 import { makeAutoObservable } from 'mobx';
-import DashboardRepository from './repository';
-import { Stats } from './types';
+import HomeRepository from './repository';
 
 @injectable()
-class DashboardStore {
-
-    statsList?: Stats[];
-
+class HomeStore {
     constructor() {
         makeAutoObservable(this);
     }
 
-    @inject(DashboardRepository)
-    private dashboardRepository!: DashboardRepository;
-
-    *fetchStats() {
-        let stats: Stats[] = yield this.dashboardRepository.fetchStats();
-        this.statsList = stats.reverse();
-    }
+    @inject(HomeRepository)
+    private homeRepository!: HomeRepository;
 }
 
-export default DashboardStore;
+export default HomeStore;
