@@ -1,18 +1,20 @@
 import Http from '../core/http';
 import { inject, injectable } from 'inversify';
-import { EncryptionKeys } from './types';
+import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
 @injectable()
 export default class EncryptionKeyRepository {
     @inject(Http)
     private http!: Http;
 
-    async fetchEncryptionKeys(): Promise<EncryptionKeys> {
-        const encryptionKeys = [
-            { id: 1, name: 'one', value: '1', enabled: true },
-            { id: 2, name: 'two', enabled: true },
-            { id: 3, name: 'three', value: '3', enabled: false }
-        ];
-        return Promise.resolve(encryptionKeys);
+    async create(name: string): Promise<CreateEncryptionKeyResponse> {
+        const payload: CreateEncryptionKeyRequest = { name };
+        const response = await this.http.post<CreateEncryptionKeyResponse>('encryption-keys', payload);
+        return response.data;
+    }
+
+    async fetchEncryptionKeys(): Promise<EncryptionKey[]> {
+        const response = await this.http.get<EncryptionKey[]>('encryption-keys');
+        return response.data;
     }
 }
