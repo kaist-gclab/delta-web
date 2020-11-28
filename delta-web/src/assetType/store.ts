@@ -9,6 +9,7 @@ class AssetTypeStore {
         makeAutoObservable(this);
     }
 
+    assetTypes?: AssetType[];
     assetType?: AssetType | null;
 
     @inject(AssetTypeRepository)
