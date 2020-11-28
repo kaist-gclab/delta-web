@@ -22,3 +22,9 @@ export interface JobType {
     name: string;
 }
 
+export interface JobExecutionStatus {
+    id: number;
+    jobExecution: JobExecution;
+    timestamp: string;
+    status: string;
+}
