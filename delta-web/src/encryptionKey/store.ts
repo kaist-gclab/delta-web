@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
 import { observable, flow, makeAutoObservable } from 'mobx';
 import EncryptionKeyRepository from './repository';
-import { CreateEncryptionKeyResponse, EncryptionKey } from './types';
+import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
 @injectable()
 class EncryptionKeyStore {
@@ -15,8 +15,8 @@ class EncryptionKeyStore {
         makeAutoObservable(this);
     }
 
-    *create(name: string) {
-        const result: CreateEncryptionKeyResponse = yield this.encryptionKeyRepository.create(name);
+    *create(request: CreateEncryptionKeyRequest) {
+        const result: CreateEncryptionKeyResponse = yield this.encryptionKeyRepository.create(request);
         return result;
     }
 

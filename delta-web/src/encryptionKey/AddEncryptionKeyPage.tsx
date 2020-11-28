@@ -17,7 +17,7 @@ const AddEncryptionKeyPage: React.FC = () => {
 
   const submit = async () => {
     try {
-      const response: CreateEncryptionKeyResponse = await store.create(name) as any;
+      const response: CreateEncryptionKeyResponse = await store.create({ name }) as any;
       setValue(response.value);
       openOkDialog();
     } catch {

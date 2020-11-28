@@ -7,9 +7,8 @@ export default class EncryptionKeyRepository {
     @inject(Http)
     private http!: Http;
 
-    async create(name: string): Promise<CreateEncryptionKeyResponse> {
-        const payload: CreateEncryptionKeyRequest = { name };
-        const response = await this.http.post<CreateEncryptionKeyResponse>('encryption-keys', payload);
+    async create(request: CreateEncryptionKeyRequest): Promise<CreateEncryptionKeyResponse> {
+        const response = await this.http.post<CreateEncryptionKeyResponse>('encryption-keys', request);
         return response.data;
     }
 
