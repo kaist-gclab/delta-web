@@ -9,6 +9,7 @@ class JobStore {
         makeAutoObservable(this);
     }
 
+    jobs?: Job[];
     job?: Job | null;
 
     @inject(JobRepository)
