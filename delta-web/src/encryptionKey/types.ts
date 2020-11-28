@@ -4,7 +4,6 @@ export interface EncryptionKey {
     enabled: boolean
 }
 
-
 export interface CreateEncryptionKeyRequest {
     name: string;
 }
