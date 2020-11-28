@@ -3,3 +3,8 @@ export interface AssetType {
     key: string;
     name: string;
 }
+
+export interface CreateAssetTypeRequest {
+    key: string;
+    name: string;
+}
