@@ -1,19 +1,28 @@
 import { injectable, inject } from 'inversify';
-import { observable, flow } from 'mobx';
+import { observable, flow, makeAutoObservable } from 'mobx';
 import EncryptionKeyRepository from './repository';
-import { EncryptionKeys } from './types';
+import { CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
 @injectable()
 class EncryptionKeyStore {
-    @observable
-    encryptionKeys?: EncryptionKeys;
+    encryptionKeys?: EncryptionKey[];
 
     @inject(EncryptionKeyRepository)
     private encryptionKeyRepository!: EncryptionKeyRepository
 
-    fetchAssets = flow(function* (this: EncryptionKeyStore) {
+    constructor() {
+        makeAutoObservable(this);
+    }
+
+    *createEncryptionKey(name: string) {
+        const result: CreateEncryptionKeyResponse = yield this.encryptionKeyRepository.create(name);
+        return result;
+    }
+
+    *fetchEncryptionKeys() {
         this.encryptionKeys = yield this.encryptionKeyRepository.fetchEncryptionKeys();
-    })
+        this.encryptionKeys = this.encryptionKeys?.sort((a, b) => a.id - b.id);
+    }
 }
 
 export default EncryptionKeyStore;
