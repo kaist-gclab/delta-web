@@ -1,7 +1,7 @@
 import { interfaces } from 'inversify';
 import React, { createContext } from 'react';
 import AssetStore from '../asset/store';
-import DashboardStore from '../dashboard/store';
+import DashboardStore from '../home/store';
 import EncryptionKeyStore from '../encryptionKey/store';
 import AppContainer from './inversify';
 
