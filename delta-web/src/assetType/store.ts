@@ -14,6 +14,11 @@ class AssetTypeStore {
 
     @inject(AssetTypeRepository)
     private assetTypeRepository!: AssetTypeRepository
+
+    *fetchAll() {
+        this.assetTypes = yield this.assetTypeRepository.fetchAll();
+        this.assetTypes = this.assetTypes?.sort((a, b) => a.id - b.id);
+    }
 }
 
 export default AssetTypeStore;
