@@ -18,3 +18,17 @@ export interface AssetTag {
     key: string;
     value: string;
 }
+
+export interface CreateAssetRequest {
+    assetTypeId: number;
+    encryptionKeyId: number | null;
+    mediaType: string;
+    storeKey: string;
+    assetTags: CreateAssetTagRequest[];
+    parentJobExecutionId: number | null;
+}
+
+export interface CreateAssetTagRequest {
+    key: string;
+    value: string;
+}
