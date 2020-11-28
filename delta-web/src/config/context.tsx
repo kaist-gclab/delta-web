@@ -28,6 +28,10 @@ function addStore<T>(store: T) {
     return context;
 }
 
+function add<T>(type: interfaces.ServiceIdentifier<T>) {
+    return addStore(get(type));
+}
+
 export function configure(app: React.FC): React.FC {
     for (const wrapper of wrappers) {
         app = wrapper(app);
