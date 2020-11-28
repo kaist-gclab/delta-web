@@ -11,6 +11,7 @@ import HomeRepository from '../home/repository';
 import AssetTypeStore from '../assetType/store';
 import AssetTypeRepository from '../assetType/repository';
 import JobStore from '../job/store';
+import JobRepository from '../job/repository';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -31,6 +32,7 @@ function configure(container: Container) {
     singleton(AssetTypeStore);
     singleton(AssetTypeRepository);
     singleton(JobStore);
+    singleton(JobRepository);
 }
 
 export default AppContainer;
