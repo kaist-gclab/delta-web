@@ -51,6 +51,7 @@ padding-bottom: 40px;
 overflow: scroll;
 height: 100vh;
 padding-left: 10px;
+padding-right: 20px;
 `;
 
 export const Title = styled.span`
