@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { makeAutoObservable } from 'mobx';
-import { JobType } from '../job/types';
 import JobTypeRepository from './repository';
+import { JobType } from './types';
 
 @injectable()
 class JobTypeStore {

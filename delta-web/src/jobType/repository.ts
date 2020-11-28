@@ -1,6 +1,6 @@
 import Http from '../core/http';
 import { inject, injectable } from 'inversify';
-import { JobType } from '../job/types';
+import { JobType } from './types';
 
 @injectable()
 export default class JobTypeRepository {
