@@ -35,7 +35,7 @@ import { observer } from 'mobx-react';
 export const Container = styled.div`
 display: grid;
 grid-template-columns: 250px auto;
-grid-gap: 20px;
+grid-gap: 10px;
 `;
 
 export const Sidebar = styled.div`
@@ -50,6 +50,7 @@ export const Content = styled.div`
 padding-bottom: 40px;
 overflow: scroll;
 height: 100vh;
+padding-left: 10px;
 `;
 
 export const Title = styled.span`
