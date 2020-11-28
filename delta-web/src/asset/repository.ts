@@ -1,7 +1,6 @@
 import Http from '../core/http';
 import { inject, injectable } from 'inversify';
 import { Assets } from './types';
-import moment from 'moment';
 
 @injectable()
 export default class AssetRepository {
