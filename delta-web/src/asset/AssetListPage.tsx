@@ -2,9 +2,7 @@ import { Button, Dialog } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { updateNonNullChain } from 'typescript';
 import { AssetContext } from '../config/context';
-import { Container } from '../core/Container';
 import { Loading } from '../core/Loading';
 import { Asset } from './types';
 
@@ -26,7 +24,8 @@ function getTag(a: Asset, key: string) {
 
 let timeBegin = 0;
 
-const AssetsPage: React.FC = () => {
+const AssetListPage: React.FC = () => {
+  return <h1>에셋 목록</h1>;
   const assetStore = useContext(AssetContext);
   const [elapsed, setElapsed] = useState<number | null>(null);
   const [dialogOpen, setDialogOpen] = useState<number | null>(null);
@@ -66,20 +65,19 @@ const AssetsPage: React.FC = () => {
   if (!assets) {
     return <Loading />;
   }
-  console.log(assets);
-  return <Container>
-    <h2>모델 목록</h2>
-    <FormRow>
-      <Label>검색할 내용</Label>
-      <input type="text" value={searchKeyword} onChange={({ target: { value } }) => setSearchKeyword(value)}></input>
-    </FormRow>
-    <FormRow>
-      <button style={{ marginRight: '10px' }} type="button" onClick={() => fetch(searchKeyword, null)}>이름 검색</button>
-      <button type="button" onClick={() => fetch(null, searchKeyword)}>태그 검색</button>
-    </FormRow>
-    {assets.map(a => renderAsset(a))}
-    <p>{elapsed ? '목록 조회에 ' + elapsed + ' ms 소요되었습니다.' : null}</p>
-  </Container>;
+  // return <>
+  //   <h2>모델 목록</h2>
+  //   <FormRow>
+  //     <Label>검색할 내용</Label>
+  //     <input type="text" value={searchKeyword} onChange={({ target: { value } }) => setSearchKeyword(value)}></input>
+  //   </FormRow>
+  //   <FormRow>
+  //     <button style={{ marginRight: '10px' }} type="button" onClick={() => fetch(searchKeyword, null)}>이름 검색</button>
+  //     <button type="button" onClick={() => fetch(null, searchKeyword)}>태그 검색</button>
+  //   </FormRow>
+  //   {assets.map(a => renderAsset(a))}
+  //   <p>{elapsed ? '목록 조회에 ' + elapsed + ' ms 소요되었습니다.' : null}</p>
+  // </>;
 };
 
-export default observer(AssetsPage);
+export default observer(AssetListPage);
