@@ -10,6 +10,7 @@ import HomeStore from '../home/store';
 import HomeRepository from '../home/repository';
 import AssetTypeStore from '../assetType/store';
 import AssetTypeRepository from '../assetType/repository';
+import JobStore from '../job/store';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -29,6 +30,7 @@ function configure(container: Container) {
     singleton(HomeRepository);
     singleton(AssetTypeStore);
     singleton(AssetTypeRepository);
+    singleton(JobStore);
 }
 
 export default AppContainer;
