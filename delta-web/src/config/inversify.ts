@@ -15,6 +15,7 @@ import JobRepository from '../job/repository';
 import JobTypeStore from '../jobType/store';
 import JobTypeRepository from '../jobType/repository';
 import MonitoringStore from '../monitoring/store';
+import MonitoringRepository from '../monitoring/repository';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -39,6 +40,7 @@ function configure(container: Container) {
     singleton(JobTypeStore);
     singleton(JobTypeRepository);
     singleton(MonitoringStore);
+    singleton(MonitoringRepository);
 }
 
 export default AppContainer;
