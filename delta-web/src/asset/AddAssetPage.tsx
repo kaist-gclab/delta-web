@@ -3,8 +3,6 @@ import moment from 'moment';
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { AssetContext } from '../config/context';
-import { Container } from '../core/Container';
-import { Loading } from '../core/Loading';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -15,6 +13,7 @@ margin-bottom: 10px;
 `;
 
 const AddAssetPage: React.FC = () => {
+  return <h1>에셋 추가</h1>;
   const assetStore = useContext(AssetContext);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [modelName, setModelName] = useState('');
@@ -51,7 +50,7 @@ const AddAssetPage: React.FC = () => {
     reader.readAsDataURL(selectedFile);
   };
 
-  return <Container>
+  return <>
     <h2>모델 추가</h2>
     <FormRow>
       <Label>모델 이름</Label>
@@ -67,7 +66,7 @@ const AddAssetPage: React.FC = () => {
     <FormRow>
       <button disabled={uploading} type="button" onClick={() => handleSubmit()}>모델 추가 완료</button>
     </FormRow>
-  </Container>;
+  </>;
 };
 
 export default observer(AddAssetPage);
