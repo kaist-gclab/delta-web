@@ -20,9 +20,8 @@ export interface AssetTag {
     value: string;
 }
 
-export interface CreateModelAssetRequest {
+export interface AssetType {
+    id: number;
+    key: string;
     name: string;
-    tag: string;
-    content: string;
-    eventTimestamp: string;
 }
