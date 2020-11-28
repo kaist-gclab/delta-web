@@ -152,7 +152,7 @@ const Layout: React.FC = () => {
 
       <Route path="/jobs/add" component={AddJobPage} />
       <Route path="/jobs/list" component={JobListPage} />
-      <Route path="/jobs/detail" component={JobDetailPage} />
+      <Route path="/jobs/detail/:id?" component={JobDetailPage} />
 
       <Route path="/job-types/list" component={JobTypeListPage} />
       <Route path="/job-types/detail" component={JobTypeDetailPage} />
