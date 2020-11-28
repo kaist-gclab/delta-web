@@ -9,7 +9,7 @@ import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 const ProcessorNodeListPage: React.FC = () => {
   const store = useContext(ProcessorNodeContext);
   const history = useHistory();
-  useEffect(() => { /* store.fetchAll(); TODO */ }, [store]);
+  useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.processorNodes;
   if (!data) {
