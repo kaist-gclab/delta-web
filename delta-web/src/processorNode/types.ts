@@ -14,3 +14,10 @@ export interface ProcessorNodeCapability {
     assetType: AssetType | null;
     mediaType: string;
 }
+
+export interface ProcessorNodeStatus {
+    id: number;
+    processorNode: ProcessorNode;
+    timestamp: string;
+    status: string;
+}
