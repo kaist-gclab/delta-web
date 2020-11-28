@@ -19,6 +19,20 @@ margin-top: 2px;
 margin-bottom: 2px;
 `;
 
+const NavLinkMenu = styled(NavLink)`
+  color: #106ba3;
+  text-decoration: none;
+`;
+
+const ButtonMenu = styled.span`
+  color: #106ba3;
+  text-decoration: none;
+  cursor: pointer;
+  :hover {
+    text-decoration:underline;
+  }
+`;
+
 const NavButton: React.FC<Props> = (props) => {
   const { link, text, onClick } = props;
   const location = useLocation();
@@ -27,9 +41,9 @@ const NavButton: React.FC<Props> = (props) => {
   const button = <Button onClick={onClick} style={{ fontWeight: active ? 'bold' : undefined }}>{text}</Button>;
 
   if (!link) {
-    return button;
+    return <ButtonMenu>{button}</ButtonMenu>;
   }
-  return <NavLink to={link}>{button}</NavLink>;
+  return <NavLinkMenu to={link}>{button}</NavLinkMenu>;
 };
 
 export default NavButton;
