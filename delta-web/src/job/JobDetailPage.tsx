@@ -28,7 +28,7 @@ const JobDetailPage: React.FC = () => {
   const store = useContext(JobContext);
   useEffect(() => {
     if (params.id) {
-      // store.fetch(Number(params.id)); TODO
+      store.fetch(Number(params.id));
     }
   }, [store, params]);
 
