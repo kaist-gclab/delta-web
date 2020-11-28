@@ -4,9 +4,9 @@ import AssetRepository from '../asset/repository';
 import AssetStore from '../asset/store';
 import EncryptionKeyRepository from '../encryptionKey/repository';
 import EncryptionKeyStore from '../encryptionKey/store';
-import TokenService from '../core/tokenService';
 import DashboardRepository from '../home/repository';
 import DashboardStore from '../home/store';
+import AuthStore from '../core/authStore';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -16,7 +16,7 @@ function configure(container: Container) {
         container.bind(type).toSelf().inSingletonScope();
     }
     singleton(Http);
-    singleton(TokenService);
+    singleton(AuthStore);
 
     singleton(AssetStore);
     singleton(AssetRepository);
