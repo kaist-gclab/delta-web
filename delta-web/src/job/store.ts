@@ -14,6 +14,11 @@ class JobStore {
 
     @inject(JobRepository)
     private jobRepository!: JobRepository
+
+    *fetchAll() {
+        this.jobs = yield this.jobRepository.fetchAll();
+        this.jobs = this.jobs?.sort((a, b) => a.id - b.id);
+    }
 }
 
 export default JobStore;
