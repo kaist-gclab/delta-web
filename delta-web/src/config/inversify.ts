@@ -9,6 +9,7 @@ import EncryptionKeyRepository from '../encryptionKey/repository';
 import HomeStore from '../home/store';
 import HomeRepository from '../home/repository';
 import AssetTypeStore from '../assetType/store';
+import AssetTypeRepository from '../assetType/repository';
 
 export const AppContainer = new Container();
 configure(AppContainer);
@@ -27,6 +28,7 @@ function configure(container: Container) {
     singleton(HomeStore);
     singleton(HomeRepository);
     singleton(AssetTypeStore);
+    singleton(AssetTypeRepository);
 }
 
 export default AppContainer;
