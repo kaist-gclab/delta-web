@@ -8,7 +8,7 @@ export interface Job {
     inputAsset: Asset | null;
     jobArguments: string;
     createdAt: string;
-    assignedProcessorNode: ProcessorNode;
+    assignedProcessorNode: ProcessorNode | null;
 }
 
 export interface JobExecution {
