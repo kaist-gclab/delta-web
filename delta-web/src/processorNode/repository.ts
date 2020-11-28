@@ -8,6 +8,7 @@ export default class ProcessorNodeRepository {
     private http!: Http;
 
     async fetchAll(): Promise<ProcessorNode[]> {
-        return [];
+        const response = await this.http.get<ProcessorNode[]>('processor-nodes');
+        return response.data;
     }
 }
