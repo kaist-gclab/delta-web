@@ -160,7 +160,7 @@ const Layout: React.FC = () => {
 
       <Route path="/encryption-keys/add" component={AddEncryptionKeyPage} />
       <Route path="/encryption-keys/list" component={EncryptionKeyListPage} />
-      <Route path="/encryption-keys/detail" component={EncryptionKeyDetailPage} />
+      <Route path="/encryption-keys/detail/:id?" component={EncryptionKeyDetailPage} />
 
       <Route path="/monitoring/dashboard" component={DashboardMonitorPage} />
       <Route path="/monitoring/object-storage" component={ObjectStorageMonitorPage} />
