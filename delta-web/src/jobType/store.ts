@@ -9,6 +9,7 @@ class JobTypeStore {
         makeAutoObservable(this);
     }
 
+    jobTypes?: JobType[];
     jobType?: JobType | null;
 
     @inject(JobTypeRepository)
