@@ -6,6 +6,7 @@ import AssetRepository from './repository';
 @injectable()
 class AssetStore {
     assets?: Asset[];
+    asset?: Asset | null;
 
     @inject(AssetRepository)
     private assetRepository!: AssetRepository
