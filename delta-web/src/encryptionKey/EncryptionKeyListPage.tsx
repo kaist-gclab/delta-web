@@ -1,37 +1,28 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
+import React, { useContext, useEffect } from 'react';
+import { observer } from 'mobx-react';
 import { Loading } from '../core/Loading';
-import EncryptionKeyStore from './store';
-
-interface Props {
-  encryptionKey?: EncryptionKeyStore
-}
-
-interface State {
-}
-
-class EncryptionKeysPage extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { text: '' };
-  }
-  componentDidMount() {
-    this.props.encryptionKey!.fetchAssets();
-  }
-  render() {
-    const encryptionKeys = this.props.encryptionKey!.encryptionKeys;
-    if (!encryptionKeys) {
-      return <Loading />;
-    }
-    return <>
-      <h2>암호화 키</h2>
-      <div>{encryptionKeys.length}개</div>
-    </>;
-  }
-}
+import { EncryptionKeyContext } from '../config/context';
+import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 
 const EncryptionKeyListPage: React.FC = () => {
-  return <h1>암호화 키 목록</h1>;
+  const enc = useContext(EncryptionKeyContext);
+  useEffect(() => { enc.fetchEncryptionKeys(); }, [enc]);
+
+  const data = enc.encryptionKeys;
+  if (!data) {
+    return <Loading />;
+  }
+
+  return <div>
+    <h1>암호화 키 목록</h1>
+    <div>
+      <Table numRows={data.length} selectionModes={[]}
+        rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
+        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
+        <Column name="활성 상태" cellRenderer={(i) => <Cell>{data[i].enabled ? '예' : '아니오'}</Cell>} />
+      </Table>
+    </div>
+  </div>;
 };
 
 export default observer(EncryptionKeyListPage);
