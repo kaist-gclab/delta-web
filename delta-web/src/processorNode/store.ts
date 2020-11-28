@@ -13,7 +13,12 @@ class ProcessorNodeStore {
     processorNode?: ProcessorNode | null;
 
     @inject(ProcessorNodeRepository)
-    private monitoringRepository!: ProcessorNodeRepository
+    private processorNodeRepository!: ProcessorNodeRepository
+
+    *fetchAll() {
+        this.processorNodes = yield this.processorNodeRepository.fetchAll();
+        this.processorNodes = this.processorNodes?.sort((a, b) => a.id - b.id);
+    }
 }
 
 export default ProcessorNodeStore;
