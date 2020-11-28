@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import { makeAutoObservable } from 'mobx';
 import JobRepository from './repository';
-import { Job } from './types';
+import { CreateJobRequest, Job } from './types';
 
 @injectable()
 class JobStore {
@@ -14,6 +14,10 @@ class JobStore {
 
     @inject(JobRepository)
     private jobRepository!: JobRepository
+
+    *create(request: CreateJobRequest) {
+        yield this.jobRepository.create(request);
+    }
 
     *fetchAll() {
         this.jobs = yield this.jobRepository.fetchAll();
