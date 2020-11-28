@@ -38,6 +38,7 @@ grid-gap: 20px;
 export const Sidebar = styled.div`
 padding-left: 20px;
 padding-top: 10px;
+padding-bottom: 40px;
 overflow: scroll;
 height: 100vh;
 `;
