@@ -8,6 +8,7 @@ export default class JobTypeRepository {
     private http!: Http;
 
     async fetchAll(): Promise<JobType[]> {
-        return [];
+        const response = await this.http.get<JobType[]>('job-types');
+        return response.data;
     }
 }
