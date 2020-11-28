@@ -13,7 +13,7 @@ export default class EncryptionKeyRepository {
         return response.data;
     }
 
-    async fetchEncryptionKeys(): Promise<EncryptionKey[]> {
+    async fetchAll(): Promise<EncryptionKey[]> {
         const response = await this.http.get<EncryptionKey[]>('encryption-keys');
         return response.data;
     }

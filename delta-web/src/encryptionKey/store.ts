@@ -14,13 +14,13 @@ class EncryptionKeyStore {
         makeAutoObservable(this);
     }
 
-    *createEncryptionKey(name: string) {
+    *create(name: string) {
         const result: CreateEncryptionKeyResponse = yield this.encryptionKeyRepository.create(name);
         return result;
     }
 
-    *fetchEncryptionKeys() {
-        this.encryptionKeys = yield this.encryptionKeyRepository.fetchEncryptionKeys();
+    *fetchAll() {
+        this.encryptionKeys = yield this.encryptionKeyRepository.fetchAll();
         this.encryptionKeys = this.encryptionKeys?.sort((a, b) => a.id - b.id);
     }
 }
