@@ -9,6 +9,7 @@ class ProcessorNodeStore {
         makeAutoObservable(this);
     }
 
+    processorNodes?: ProcessorNode[];
     processorNode?: ProcessorNode | null;
 
     @inject(ProcessorNodeRepository)
