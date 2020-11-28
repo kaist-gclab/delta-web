@@ -1,6 +1,5 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Container } from '../core/Container';
 import { Loading } from '../core/Loading';
 import EncryptionKeyStore from './store';
 
@@ -11,8 +10,6 @@ interface Props {
 interface State {
 }
 
-@inject('encryptionKey')
-@observer
 class EncryptionKeysPage extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -26,11 +23,15 @@ class EncryptionKeysPage extends React.Component<Props, State> {
     if (!encryptionKeys) {
       return <Loading />;
     }
-    return <Container>
+    return <>
       <h2>암호화 키</h2>
       <div>{encryptionKeys.length}개</div>
-    </Container>;
+    </>;
   }
 }
 
-export default EncryptionKeysPage;
+const EncryptionKeyListPage: React.FC = () => {
+  return <h1>암호화 키 목록</h1>;
+};
+
+export default observer(EncryptionKeyListPage);
