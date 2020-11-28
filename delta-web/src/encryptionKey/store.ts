@@ -6,6 +6,7 @@ import { CreateEncryptionKeyResponse, EncryptionKey } from './types';
 @injectable()
 class EncryptionKeyStore {
     encryptionKeys?: EncryptionKey[];
+    encryptionKey?: EncryptionKey | null;
 
     @inject(EncryptionKeyRepository)
     private encryptionKeyRepository!: EncryptionKeyRepository
@@ -22,6 +23,12 @@ class EncryptionKeyStore {
     *fetchAll() {
         this.encryptionKeys = yield this.encryptionKeyRepository.fetchAll();
         this.encryptionKeys = this.encryptionKeys?.sort((a, b) => a.id - b.id);
+    }
+
+    *fetch(id: number) {
+        this.encryptionKey = undefined;
+        yield this.fetchAll();
+        this.encryptionKey = this.encryptionKeys?.find(e => e.id === id) ?? null;
     }
 }
 
