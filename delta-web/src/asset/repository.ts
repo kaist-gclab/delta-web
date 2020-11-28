@@ -1,13 +1,13 @@
 import Http from '../core/http';
 import { inject, injectable } from 'inversify';
-import { Assets } from './types';
+import { Asset } from './types';
 
 @injectable()
 export default class AssetRepository {
     @inject(Http)
     private http!: Http;
 
-    async fetchAssets(): Promise<Assets> {
+    async fetchAssets(): Promise<Asset[]> {
         const response = await this.http.get('assets');
         return response.data;
     }
