@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Redirect, Route } from 'react-router';
+import { Route } from 'react-router';
 import NavButton from './NavButton';
 import AssetListPage from '../asset/AssetListPage';
 import EncryptionKeyListPage from '../encryptionKey/EncryptionKeyListPage';
