@@ -28,6 +28,7 @@ height: 100vh;
 
 export const Title = styled.span`
 font-size: 20px;
+font-weight: bold;
 `;
 
 export const Section = styled.div`
@@ -37,6 +38,7 @@ margin-top: 20px;
 export const SectionTitle = styled.div`
 font-size: 17px;
 margin-bottom: 5px;
+font-weight: bold;
 `;
 
 const Layout: React.FC = () => {
