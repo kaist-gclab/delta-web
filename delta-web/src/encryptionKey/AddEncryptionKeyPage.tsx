@@ -5,7 +5,7 @@ import { EncryptionKeyContext } from '../config/context';
 import { CreateEncryptionKeyResponse } from './types';
 
 const AddEncryptionKeyPage: React.FC = () => {
-  const enc = useContext(EncryptionKeyContext);
+  const store = useContext(EncryptionKeyContext);
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
@@ -17,7 +17,7 @@ const AddEncryptionKeyPage: React.FC = () => {
 
   const submit = async () => {
     try {
-      const response: CreateEncryptionKeyResponse = await enc.create(name) as any;
+      const response: CreateEncryptionKeyResponse = await store.create(name) as any;
       setValue(response.value);
       openOkDialog();
     } catch {

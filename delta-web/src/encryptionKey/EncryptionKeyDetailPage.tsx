@@ -25,15 +25,15 @@ const EncryptionKeyDetailPage: React.FC = () => {
   const history = useHistory();
   const [id, setId] = useState('');
 
-  const enc = useContext(EncryptionKeyContext);
+  const store = useContext(EncryptionKeyContext);
   useEffect(() => {
     if (params.id) {
-      enc.fetch(Number(params.id));
+      store.fetch(Number(params.id));
     }
-  }, [enc, params]);
+  }, [store, params]);
 
   const render = () => {
-    const e = enc.encryptionKey;
+    const e = store.encryptionKey;
     if (e === undefined) {
       return <Loading />;
     }
@@ -60,7 +60,7 @@ const EncryptionKeyDetailPage: React.FC = () => {
       <QueryButton onClick={goDetailPage}>조회</QueryButton>
     </ControlGroup>
     {!params.id ? <Message>번호로 조회하십시오.</Message> : render()}
-  </div >;
+  </div>;
 };
 
 export default observer(EncryptionKeyDetailPage);

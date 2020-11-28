@@ -7,11 +7,11 @@ import { renderCellButton } from '../core/CellButton';
 import { useHistory } from 'react-router';
 
 const EncryptionKeyListPage: React.FC = () => {
-  const enc = useContext(EncryptionKeyContext);
+  const store = useContext(EncryptionKeyContext);
   const history = useHistory();
-  useEffect(() => { enc.fetchAll(); }, [enc]);
+  useEffect(() => { store.fetchAll(); }, [store]);
 
-  const data = enc.encryptionKeys;
+  const data = store.encryptionKeys;
   if (!data) {
     return <Loading />;
   }
