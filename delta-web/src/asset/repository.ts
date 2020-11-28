@@ -7,7 +7,7 @@ export default class AssetRepository {
     @inject(Http)
     private http!: Http;
 
-    async fetchAssets(): Promise<Asset[]> {
+    async fetchAll(): Promise<Asset[]> {
         const response = await this.http.get('assets');
         return response.data;
     }
