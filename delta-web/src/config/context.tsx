@@ -4,13 +4,15 @@ import AssetStore from '../asset/store';
 import DashboardStore from '../home/store';
 import EncryptionKeyStore from '../encryptionKey/store';
 import AppContainer from './inversify';
+import AuthStore from '../core/authStore';
 
 const container = AppContainer;
 const wrappers: ((app: React.FC) => React.FC)[] = [];
 
-export const AssetContext = addStore(get(AssetStore));
-export const EncryptionKeyContext = addStore(get(EncryptionKeyStore));
-export const DashboardContext = addStore(get(DashboardStore));
+export const AuthContext = add(AuthStore);
+export const AssetContext = add(AssetStore);
+export const EncryptionKeyContext = add(EncryptionKeyStore);
+export const DashboardContext = add(DashboardStore);
 
 
 function get<T>(type: interfaces.ServiceIdentifier<T>) {

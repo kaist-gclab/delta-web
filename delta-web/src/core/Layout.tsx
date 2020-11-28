@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router';
 import NavButton from './NavButton';
 import AssetListPage from '../asset/AssetListPage';
@@ -28,6 +28,9 @@ import DashboardMonitorPage from '../monitoring/DashboardMonitorPage';
 import ObjectStorageMonitorPage from '../monitoring/ObjectStorageMonitorPage';
 import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
 import JobMonitorPage from '../monitoring/JobMonitorPage';
+import { AuthContext } from '../config/context';
+import LoginPage from '../home/LoginPage';
+import { observer } from 'mobx-react';
 
 export const Container = styled.div`
 display: grid;
@@ -65,6 +68,11 @@ font-weight: bold;
 `;
 
 const Layout: React.FC = () => {
+  const auth = useContext(AuthContext);
+  if (!auth.token) {
+    return <LoginPage />;
+  }
+
   return <Container>
     <Sidebar>
       <Title>3차원 기하 모델<br />프로세싱 프레임워크 v2.0</Title>
@@ -74,6 +82,7 @@ const Layout: React.FC = () => {
         <NavButton link="/help" text="도움말" />
         <NavButton link="/settings/user" text="사용자 설정" />
         <NavButton link="/settings/system" text="시스템 설정" />
+        <NavButton onClick={() => { auth.logout(); }} text="로그아웃" />
       </Section>
       <Section>
         <SectionTitle>에셋</SectionTitle>
@@ -163,4 +172,4 @@ const Layout: React.FC = () => {
   </Container>;
 };
 
-export default Layout;
+export default observer(Layout);
