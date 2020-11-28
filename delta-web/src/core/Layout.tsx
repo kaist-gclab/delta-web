@@ -146,7 +146,7 @@ const Layout: React.FC = () => {
 
       <Route path="/asset-types/add" component={AddAssetTypePage} />
       <Route path="/asset-types/list" component={AssetTypeListPage} />
-      <Route path="/asset-types/detail" component={AssetTypeDetailPage} />
+      <Route path="/asset-types/detail/:id?" component={AssetTypeDetailPage} />
 
       <Route path="/viewers/list" component={ViewerListPage} />
 
