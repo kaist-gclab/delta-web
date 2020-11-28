@@ -1,8 +1,6 @@
 import { EncryptionKey } from '../encryptionKey/types';
 import { JobExecution } from '../job/types';
 
-export type Assets = Asset[];
-
 export interface Asset {
     id: number;
     assetType: AssetType;
