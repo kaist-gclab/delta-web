@@ -28,7 +28,7 @@ const AssetTypeDetailPage: React.FC = () => {
   const store = useContext(AssetTypeContext);
   useEffect(() => {
     if (params.id) {
-      // store.fetch(Number(params.id)); TODO
+      store.fetch(Number(params.id));
     }
   }, [store, params]);
 
