@@ -1,3 +1,3 @@
-export const ApiBase = 'http://localhost:5000/api/1/';
-export const AuthBase = 'http://localhost:5000/auth/1/';
-export const InitialToken = '';
+export const ApiBase: string = process.env.REACT_APP_API_BASE!;
+export const AuthBase: string = process.env.REACT_APP_AUTH_BASE!;
+export const InitialToken: string = process.env.REACT_APP_INITIAL_TOKEN!;
