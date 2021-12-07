@@ -7,6 +7,7 @@ specifiers:
   '@types/react-dom': ^17.0.11
   '@vitejs/plugin-react': ^1.1.0
   axios: ^0.24.0
+  dayjs: ^1.10.7
   inversify: ^6.0.1
   mobx: ^6.3.8
   mobx-react: ^7.2.1
@@ -26,6 +27,7 @@ dependencies:
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.1.0
   axios: 0.24.0
+  dayjs: 1.10.7
   inversify: 6.0.1
   mobx: 6.3.8
   mobx-react: 7.2.1_02876c366ce89e988b8bf5dff3cf0e00
@@ -541,6 +543,10 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
+    dev: false
+
+  /dayjs/1.10.7:
+    resolution: {integrity: sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==}
     dev: false
 
   /debug/4.3.3:
