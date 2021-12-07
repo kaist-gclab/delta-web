@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { RouterStore } from 'mobx-react-router';
 import styled from '@emotion/styled';
 
 interface Props {
   link?: string,
   text: string,
-  routing?: RouterStore,
   onClick?: ((event: React.MouseEvent<HTMLElement, MouseEvent>) => void) & ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
 }
 
