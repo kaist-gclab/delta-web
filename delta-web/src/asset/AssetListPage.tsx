@@ -1,8 +1,8 @@
 import { Button, Dialog } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { AssetContext } from '../config/context';
+import styled from '@emotion/styled';
 import { Loading } from '../core/Loading';
 import { Asset } from './types';
 

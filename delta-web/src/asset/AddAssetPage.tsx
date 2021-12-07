@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import moment from 'moment';
 import React, { useContext, useState } from 'react';
-import styled from 'styled-components';
 import { AssetContext } from '../config/context';
+import styled from '@emotion/styled';
 
 const Label = styled.label`
 margin-right: 5px;

@@ -2,7 +2,7 @@ import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { FormEvent, useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { AssetContext } from '../config/context';
 import { Failed } from '../core/Failed';
 import { Loading } from '../core/Loading';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { RouterStore } from 'mobx-react-router';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 interface Props {
   link?: string,

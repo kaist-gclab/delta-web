@@ -4,7 +4,7 @@ import NavButton from './NavButton';
 import AssetListPage from '../asset/AssetListPage';
 import EncryptionKeyListPage from '../encryptionKey/EncryptionKeyListPage';
 import AddAssetPage from '../asset/AddAssetPage';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import StartPage from '../home/StartPage';
 import HelpPage from '../home/HelpPage';
 import UserSettingsPage from '../home/UserSettingsPage';

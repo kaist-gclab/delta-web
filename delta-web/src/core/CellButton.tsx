@@ -1,6 +1,6 @@
 import { Button } from '@blueprintjs/core';
 import { Cell } from '@blueprintjs/table';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const CellButton = styled.span`
 cursor: pointer;

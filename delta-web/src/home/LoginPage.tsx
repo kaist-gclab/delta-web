@@ -1,7 +1,7 @@
 import { Button, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { FormEvent, useContext, useState } from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { AuthContext } from '../config/context';
 
 const Container = styled.div`
