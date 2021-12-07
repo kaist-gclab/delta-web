@@ -134,40 +134,40 @@ const Layout: React.FC = () => {
       </Section>
     </Sidebar>
     <Content>
-      <Route exact path="/" component={StartPage} />
-      <Route path="/help" component={HelpPage} />
-      <Route path="/settings/user" component={UserSettingsPage} />
-      <Route path="/settings/system" component={SystemSettingsPage} />
+      <Route path="/" element={<StartPage />} />
+      <Route path="/help" element={<HelpPage />} />
+      <Route path="/settings/user" element={<UserSettingsPage />} />
+      <Route path="/settings/system" element={<SystemSettingsPage />} />
 
-      <Route path="/assets/add" component={AddAssetPage} />
-      <Route path="/assets/list" component={AssetListPage} />
-      <Route path="/assets/detail/:id?" component={AssetDetailPage} />
-      <Route path="/assets/viewer" component={AssetViewerPage} />
+      <Route path="/assets/add" element={<AddAssetPage />} />
+      <Route path="/assets/list" element={<AssetListPage />} />
+      <Route path="/assets/detail/:id?" element={<AssetDetailPage />} />
+      <Route path="/assets/viewer" element={<AssetViewerPage />} />
 
-      <Route path="/asset-types/add" component={AddAssetTypePage} />
-      <Route path="/asset-types/list" component={AssetTypeListPage} />
-      <Route path="/asset-types/detail/:id?" component={AssetTypeDetailPage} />
+      <Route path="/asset-types/add" element={<AddAssetTypePage />} />
+      <Route path="/asset-types/list" element={<AssetTypeListPage />} />
+      <Route path="/asset-types/detail/:id?" element={<AssetTypeDetailPage />} />
 
-      <Route path="/viewers/list" component={ViewerListPage} />
+      <Route path="/viewers/list" element={<ViewerListPage />} />
 
-      <Route path="/jobs/add" component={AddJobPage} />
-      <Route path="/jobs/list" component={JobListPage} />
-      <Route path="/jobs/detail/:id?" component={JobDetailPage} />
+      <Route path="/jobs/add" element={<AddJobPage />} />
+      <Route path="/jobs/list" element={<JobListPage />} />
+      <Route path="/jobs/detail/:id?" element={<JobDetailPage />} />
 
-      <Route path="/job-types/list" component={JobTypeListPage} />
-      <Route path="/job-types/detail/:id?" component={JobTypeDetailPage} />
+      <Route path="/job-types/list" element={<JobTypeListPage />} />
+      <Route path="/job-types/detail/:id?" element={<JobTypeDetailPage />} />
 
-      <Route path="/processor-nodes/list" component={ProcessorNodeListPage} />
-      <Route path="/processor-nodes/detail/:id?" component={ProcessorNodeDetailPage} />
+      <Route path="/processor-nodes/list" element={<ProcessorNodeListPage />} />
+      <Route path="/processor-nodes/detail/:id?" element={<ProcessorNodeDetailPage />} />
 
-      <Route path="/encryption-keys/add" component={AddEncryptionKeyPage} />
-      <Route path="/encryption-keys/list" component={EncryptionKeyListPage} />
-      <Route path="/encryption-keys/detail/:id?" component={EncryptionKeyDetailPage} />
+      <Route path="/encryption-keys/add" element={<AddEncryptionKeyPage />} />
+      <Route path="/encryption-keys/list" element={<EncryptionKeyListPage />} />
+      <Route path="/encryption-keys/detail/:id?" element={<EncryptionKeyDetailPage />} />
 
-      <Route path="/monitoring/dashboard" component={DashboardMonitorPage} />
-      <Route path="/monitoring/object-storage" component={ObjectStorageMonitorPage} />
-      <Route path="/monitoring/processor-node" component={ProcessorNodeMonitorPage} />
-      <Route path="/monitoring/jobs" component={JobMonitorPage} />
+      <Route path="/monitoring/dashboard" element={<DashboardMonitorPage />} />
+      <Route path="/monitoring/object-storage" element={<ObjectStorageMonitorPage />} />
+      <Route path="/monitoring/processor-node" element={<ProcessorNodeMonitorPage />} />
+      <Route path="/monitoring/jobs" element={<JobMonitorPage />} />
     </Content>
   </Container>;
 };
