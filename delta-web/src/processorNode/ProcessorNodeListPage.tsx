@@ -17,7 +17,7 @@ const ProcessorNodeListPage: React.FC = () => {
   }
 
   const goDetailPage = (id: number) => {
-    history.push(`/processor-nodes/detail/${id}`);
+    navigate(`/processor-nodes/detail/${id}`);
   };
 
   return <div>

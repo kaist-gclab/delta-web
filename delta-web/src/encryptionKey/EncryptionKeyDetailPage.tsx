@@ -47,7 +47,7 @@ const EncryptionKeyDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/encryption-keys/detail/${id}`);
+  const goDetailPage = () => navigate(`/encryption-keys/detail/${id}`);
 
   return <div>
     <h1>암호화 키 상세 조회</h1>

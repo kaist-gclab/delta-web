@@ -47,7 +47,7 @@ const JobTypeDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/job-types/detail/${id}`);
+  const goDetailPage = () => navigate(`/job-types/detail/${id}`);
 
   return <div>
     <h1>작업 유형 상세 조회</h1>

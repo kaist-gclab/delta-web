@@ -45,7 +45,7 @@ const JobDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/jobs/detail/${id}`);
+  const goDetailPage = () => navigate(`/jobs/detail/${id}`);
 
   return <div>
     <h1>작업 상세 조회</h1>

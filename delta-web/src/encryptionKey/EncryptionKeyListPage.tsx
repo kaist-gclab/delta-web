@@ -4,11 +4,11 @@ import { Loading } from '../core/Loading';
 import { EncryptionKeyContext } from '../config/context';
 import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 import { renderCellButton } from '../core/CellButton';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const EncryptionKeyListPage: React.FC = () => {
   const store = useContext(EncryptionKeyContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.encryptionKeys;
@@ -17,7 +17,7 @@ const EncryptionKeyListPage: React.FC = () => {
   }
 
   const goDetailPage = (id: number) => {
-    history.push(`/encryption-keys/detail/${id}`);
+    navigate(`/encryption-keys/detail/${id}`);
   };
 
   return <div>

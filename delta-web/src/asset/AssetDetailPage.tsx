@@ -45,7 +45,7 @@ const AssetDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/assets/detail/${id}`);
+  const goDetailPage = () => navigate(`/assets/detail/${id}`);
 
   return <div>
     <h1>에셋 상세 조회</h1>

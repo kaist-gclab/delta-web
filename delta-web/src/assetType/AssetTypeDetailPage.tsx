@@ -47,7 +47,7 @@ const AssetTypeDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/asset-types/detail/${id}`);
+  const goDetailPage = () => navigate(`/asset-types/detail/${id}`);
 
   return <div>
     <h1>에셋 유형 상세 조회</h1>

@@ -45,7 +45,7 @@ const ProcessorNodeDetailPage: React.FC = () => {
     </ul>
   };
 
-  const goDetailPage = () => history.push(`/processor-nodes/detail/${id}`);
+  const goDetailPage = () => navigate(`/processor-nodes/detail/${id}`);
 
   return <div>
     <h1>처리기 노드 상세 조회</h1>

@@ -17,7 +17,7 @@ const AssetTypeListPage: React.FC = () => {
   }
 
   const goDetailPage = (id: number) => {
-    history.push(`/asset-types/detail/${id}`);
+    navigate(`/asset-types/detail/${id}`);
   };
 
   return <div>

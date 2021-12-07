@@ -17,7 +17,7 @@ const JobTypeListPage: React.FC = () => {
   }
 
   const goDetailPage = (id: number) => {
-    history.push(`/job-types/detail/${id}`);
+    navigate(`/job-types/detail/${id}`);
   };
 
   return <div>
