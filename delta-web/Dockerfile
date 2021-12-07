@@ -16,5 +16,4 @@ RUN pnpm run build
 
 FROM caddy:2
 COPY Caddyfile /etc/caddy/Caddyfile
-COPY auth /etc/caddy/auth
 COPY --from=builder /app/dist /app
