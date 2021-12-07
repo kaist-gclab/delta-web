@@ -17,7 +17,7 @@ margin: 20px 0;
 `;
 
 const EncryptionKeyDetailPage: React.FC = () => {
-  const params = useParams<Params>();
+  const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
 
