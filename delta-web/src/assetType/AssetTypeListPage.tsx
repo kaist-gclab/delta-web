@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { AssetTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
@@ -8,7 +8,7 @@ import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 
 const AssetTypeListPage: React.FC = () => {
   const store = useContext(AssetTypeContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.assetTypes;

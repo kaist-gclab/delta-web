@@ -2,6 +2,7 @@ import { Button, Dialog } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { AssetContext } from '../config/context';
+import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
 import { Loading } from '../core/Loading';
 import { Asset } from './types';
@@ -45,6 +46,7 @@ const AssetListPage: React.FC = () => {
         </Dialog>
       </> : null}
     </p>;
+  const navigate = useNavigate();
   }
 
   const fetch = async (name: string | null, tag: string | null) => {

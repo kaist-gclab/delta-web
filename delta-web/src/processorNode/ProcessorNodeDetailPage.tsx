@@ -1,7 +1,7 @@
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react';
 import React, { FormEvent, useContext, useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import { ProcessorNodeContext } from '../config/context';
 import { Failed } from '../core/Failed';
@@ -22,7 +22,7 @@ margin: 20px 0;
 
 const ProcessorNodeDetailPage: React.FC = () => {
   const params = useParams<Params>();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [id, setId] = useState('');
 
   const store = useContext(ProcessorNodeContext);

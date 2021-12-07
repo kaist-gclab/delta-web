@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
@@ -8,7 +8,7 @@ import { Column, Table, Cell, RowHeaderCell } from '@blueprintjs/table';
 
 const JobListPage: React.FC = () => {
   const store = useContext(JobContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.jobs;
