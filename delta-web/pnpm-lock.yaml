@@ -6,6 +6,7 @@ specifiers:
   '@types/react': ^17.0.37
   '@types/react-dom': ^17.0.11
   '@vitejs/plugin-react': ^1.1.0
+  axios: ^0.24.0
   inversify: ^6.0.1
   mobx: ^6.3.8
   mobx-react: ^7.2.1
@@ -24,6 +25,7 @@ dependencies:
   '@types/react': 17.0.37
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.1.0
+  axios: 0.24.0
   inversify: 6.0.1
   mobx: 6.3.8
   mobx-react: 7.2.1_02876c366ce89e988b8bf5dff3cf0e00
@@ -450,6 +452,14 @@ packages:
       picomatch: 2.3.0
     dev: false
 
+  /axios/0.24.0:
+    resolution: {integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==}
+    dependencies:
+      follow-redirects: 1.14.5
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /binary-extensions/2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
@@ -756,6 +766,16 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       to-regex-range: 5.0.1
+    dev: false
+
+  /follow-redirects/1.14.5:
+    resolution: {integrity: sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /fsevents/2.3.2:
