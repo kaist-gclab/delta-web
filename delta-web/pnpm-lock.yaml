@@ -7,6 +7,8 @@ specifiers:
   '@types/react-dom': ^17.0.11
   '@vitejs/plugin-react': ^1.1.0
   inversify: ^6.0.1
+  mobx: ^6.3.8
+  mobx-react: ^7.2.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-router: ^6.0.2
@@ -23,6 +25,8 @@ dependencies:
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.1.0
   inversify: 6.0.1
+  mobx: 6.3.8
+  mobx-react: 7.2.1_02876c366ce89e988b8bf5dff3cf0e00
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-router: 6.0.2_react@17.0.2
@@ -913,6 +917,47 @@ packages:
 
   /minimist/1.2.5:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
+    dev: false
+
+  /mobx-react-lite/3.2.2_02876c366ce89e988b8bf5dff3cf0e00:
+    resolution: {integrity: sha512-FxJJMqmHcnQYOVVs2DdjNHioGlFsXF5/9VHztS9NAfIT3DYrxNZzVi119Zr/OmlWKkWNkAsssSNzPkqautfL4A==}
+    peerDependencies:
+      mobx: ^6.1.0
+      react: ^16.8.0 || ^17
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.3.8
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /mobx-react/7.2.1_02876c366ce89e988b8bf5dff3cf0e00:
+    resolution: {integrity: sha512-LZS99KFLn75VWDXPdRJhILzVQ7qLcRjQbzkK+wVs0Qg4kWw5hOI2USp7tmu+9zP9KYsVBmKyx2k/8cTTBfsymw==}
+    peerDependencies:
+      mobx: ^6.1.0
+      react: ^16.8.0 || ^17
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      mobx: 6.3.8
+      mobx-react-lite: 3.2.2_02876c366ce89e988b8bf5dff3cf0e00
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
+  /mobx/6.3.8:
+    resolution: {integrity: sha512-RfG2y766P1o9u9xrQht/HBXEoUPIr4B3Gjri3reLW/TuHm3I/3TfBBS0OaeMbw19RIF0AymqjDNlJgakN4ZK7g==}
     dev: false
 
   /ms/2.1.2:
