@@ -7,10 +7,6 @@ import { EncryptionKeyContext } from '../config/context';
 import { Failed } from '../core/Failed';
 import { Loading } from '../core/Loading';
 
-interface Params {
-  id?: string;
-}
-
 const QueryButton = styled(Button)`
 padding-left: 20px;
 padding-right: 20px;
