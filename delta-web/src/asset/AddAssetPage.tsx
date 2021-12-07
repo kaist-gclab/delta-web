@@ -1,5 +1,4 @@
 import { observer } from 'mobx-react';
-import moment from 'moment';
 import React, { useContext, useState } from 'react';
 import { AssetContext } from '../config/context';
 import styled from '@emotion/styled';
