@@ -25,7 +25,8 @@ const ProcessorNodeListPage: React.FC = () => {
     <div>
       <Table numRows={data.length} selectionModes={[]}
         rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
-        <Column name="TODO" cellRenderer={(i) => <Cell>TODO</Cell>} />
+        <Column name="키" cellRenderer={(i) => <Cell>{data[i].key}</Cell>} />
+        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
         <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id))} />
       </Table>
     </div>
