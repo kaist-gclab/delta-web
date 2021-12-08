@@ -38,7 +38,7 @@ const AssetDetailPage: React.FC = () => {
     }
     return <ul>
       <li>번호: {e.id}</li>
-    </ul>
+    </ul>;
   };
 
   const goDetailPage = () => navigate(`/assets/detail/${id}`);
