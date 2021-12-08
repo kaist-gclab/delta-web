@@ -25,7 +25,10 @@ const JobListPage: React.FC = () => {
     <div>
       <Table numRows={data.length} selectionModes={[]}
         rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
-        <Column name="TODO" cellRenderer={(i) => <Cell>TODO</Cell>} />
+        <Column name="작업 유형 키" cellRenderer={(i) => <Cell>{data[i].jobType.key}</Cell>} />
+        <Column name="작업 유형 이름" cellRenderer={(i) => <Cell>{data[i].jobType.name}</Cell>} />
+        <Column name="작업 생성 시점" cellRenderer={(i) => <Cell>{data[i].createdAt}</Cell>} />
+        <Column name="인수" cellRenderer={(i) => <Cell>{data[i].jobArguments}</Cell>} />
         <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id))} />
       </Table>
     </div>
