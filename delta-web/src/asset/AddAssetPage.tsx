@@ -2,6 +2,7 @@ import { observer } from 'mobx-react';
 import React, { useContext, useState } from 'react';
 import { AssetContext } from '../config/context';
 import styled from '@emotion/styled';
+import dayjs from 'dayjs';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -30,7 +31,7 @@ const AddAssetPage: React.FC = () => {
       return;
     }
     const reader = new FileReader();
-    const eventTimestamp = moment().toISOString();
+    const eventTimestamp = dayjs().toISOString();
     setUploading(true);
     reader.onload = async () => {
       if (reader.result === null) {
