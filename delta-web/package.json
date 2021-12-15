@@ -9,8 +9,8 @@
   "dependencies": {
     "@blueprintjs/core": "^3.52.0",
     "@blueprintjs/icons": "^3.31.0",
-    "@emotion/react": "^11.7.0",
     "@blueprintjs/table": "^3.9.13",
+    "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
