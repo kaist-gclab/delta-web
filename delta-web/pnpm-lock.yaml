@@ -6,47 +6,47 @@ specifiers:
   '@blueprintjs/table': ^3.9.13
   '@emotion/react': ^11.7.1
   '@emotion/styled': ^11.6.0
-  '@types/react': ^17.0.37
+  '@types/react': ^17.0.38
   '@types/react-dom': ^17.0.11
   '@vitejs/plugin-react': ^1.1.3
   axios: ^0.24.0
   dayjs: ^1.10.7
   inversify: ^6.0.1
-  mobx: ^6.3.8
+  mobx: ^6.3.10
   mobx-react: ^7.2.1
   normalize.css: ^8.0.1
   react: ^17.0.2
   react-dom: ^17.0.2
-  react-router: ^6.1.1
-  react-router-dom: ^6.1.1
+  react-router: ^6.2.1
+  react-router-dom: ^6.2.1
   reflect-metadata: ^0.1.13
-  sass: ^1.45.0
+  sass: ^1.45.1
   typescript: ^4.5.4
-  vite: ^2.7.2
+  vite: ^2.7.6
 
 dependencies:
   '@blueprintjs/core': 3.52.0_react-dom@17.0.2+react@17.0.2
   '@blueprintjs/icons': 3.31.0
   '@blueprintjs/table': 3.9.13_react-dom@17.0.2+react@17.0.2
-  '@emotion/react': 11.7.1_cfedea9b3ed0faf0dded75c187406c5e
-  '@emotion/styled': 11.6.0_f08cba2053577b4854d3e19df4a0b904
-  '@types/react': 17.0.37
+  '@emotion/react': 11.7.1_b08e3c15324cbe90a6ff8fcd416c932c
+  '@emotion/styled': 11.6.0_0044a6ec6dcf5de7705bffaaff7afd26
+  '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
   '@vitejs/plugin-react': 1.1.3
   axios: 0.24.0
   dayjs: 1.10.7
   inversify: 6.0.1
-  mobx: 6.3.8
-  mobx-react: 7.2.1_02876c366ce89e988b8bf5dff3cf0e00
+  mobx: 6.3.10
+  mobx-react: 7.2.1_65e9936076dc1bc58dcf4e626b32cb4a
   normalize.css: 8.0.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
-  react-router: 6.1.1_react@17.0.2
-  react-router-dom: 6.1.1_react-dom@17.0.2+react@17.0.2
+  react-router: 6.2.1_react@17.0.2
+  react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
   reflect-metadata: 0.1.13
-  sass: 1.45.0
+  sass: 1.45.1
   typescript: 4.5.4
-  vite: 2.7.2_sass@1.45.0
+  vite: 2.7.6_sass@1.45.1
 
 packages:
 
@@ -437,7 +437,7 @@ packages:
     resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: false
 
-  /@emotion/react/11.7.1_cfedea9b3ed0faf0dded75c187406c5e:
+  /@emotion/react/11.7.1_b08e3c15324cbe90a6ff8fcd416c932c:
     resolution: {integrity: sha512-DV2Xe3yhkF1yT4uAUoJcYL1AmrnO5SVsdfvu+fBuS7IbByDeTVx9+wFmvx9Idzv7/78+9Mgx2Hcmr7Fex3tIyw==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -455,7 +455,7 @@ packages:
       '@emotion/sheet': 1.1.0
       '@emotion/utils': 1.0.0
       '@emotion/weak-memoize': 0.2.5
-      '@types/react': 17.0.37
+      '@types/react': 17.0.38
       hoist-non-react-statics: 3.3.2
       react: 17.0.2
     dev: false
@@ -474,7 +474,7 @@ packages:
     resolution: {integrity: sha512-u0AX4aSo25sMAygCuQTzS+HsImZFuS8llY8O7b9MDRzbJM0kVJlAz6KNDqcG7pOuQZJmj/8X/rAW+66kMnMW+g==}
     dev: false
 
-  /@emotion/styled/11.6.0_f08cba2053577b4854d3e19df4a0b904:
+  /@emotion/styled/11.6.0_0044a6ec6dcf5de7705bffaaff7afd26:
     resolution: {integrity: sha512-mxVtVyIOTmCAkFbwIp+nCjTXJNgcz4VWkOYQro87jE2QBTydnkiYusMrRGFtzuruiGK4dDaNORk4gH049iiQuw==}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -490,10 +490,10 @@ packages:
       '@babel/runtime': 7.16.3
       '@emotion/babel-plugin': 11.3.0
       '@emotion/is-prop-valid': 1.1.1
-      '@emotion/react': 11.7.1_cfedea9b3ed0faf0dded75c187406c5e
+      '@emotion/react': 11.7.1_b08e3c15324cbe90a6ff8fcd416c932c
       '@emotion/serialize': 1.0.2
       '@emotion/utils': 1.0.0
-      '@types/react': 17.0.37
+      '@types/react': 17.0.38
       react: 17.0.2
     dev: false
 
@@ -544,11 +544,11 @@ packages:
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
-      '@types/react': 17.0.37
+      '@types/react': 17.0.38
     dev: false
 
-  /@types/react/17.0.37:
-    resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
+  /@types/react/17.0.38:
+    resolution: {integrity: sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -1024,8 +1024,8 @@ packages:
       function-bind: 1.1.1
     dev: false
 
-  /history/5.1.0:
-    resolution: {integrity: sha512-zPuQgPacm2vH2xdORvGGz1wQMuHSIB56yNAy5FnLuwOwgSYyPKptJtcMm6Ev+hRGeS+GzhbmRacHzvlESbFwDg==}
+  /history/5.2.0:
+    resolution: {integrity: sha512-uPSF6lAJb3nSePJ43hN3eKj1dTWpN9gMod0ZssbFTIsen+WehTmEadgL+kg78xLJFdRfrrC//SavDzmRVdE+Ig==}
     dependencies:
       '@babel/runtime': 7.16.3
     dev: false
@@ -1146,7 +1146,7 @@ packages:
     resolution: {integrity: sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==}
     dev: false
 
-  /mobx-react-lite/3.2.2_02876c366ce89e988b8bf5dff3cf0e00:
+  /mobx-react-lite/3.2.2_65e9936076dc1bc58dcf4e626b32cb4a:
     resolution: {integrity: sha512-FxJJMqmHcnQYOVVs2DdjNHioGlFsXF5/9VHztS9NAfIT3DYrxNZzVi119Zr/OmlWKkWNkAsssSNzPkqautfL4A==}
     peerDependencies:
       mobx: ^6.1.0
@@ -1159,12 +1159,12 @@ packages:
       react-native:
         optional: true
     dependencies:
-      mobx: 6.3.8
+      mobx: 6.3.10
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /mobx-react/7.2.1_02876c366ce89e988b8bf5dff3cf0e00:
+  /mobx-react/7.2.1_65e9936076dc1bc58dcf4e626b32cb4a:
     resolution: {integrity: sha512-LZS99KFLn75VWDXPdRJhILzVQ7qLcRjQbzkK+wVs0Qg4kWw5hOI2USp7tmu+9zP9KYsVBmKyx2k/8cTTBfsymw==}
     peerDependencies:
       mobx: ^6.1.0
@@ -1177,14 +1177,14 @@ packages:
       react-native:
         optional: true
     dependencies:
-      mobx: 6.3.8
-      mobx-react-lite: 3.2.2_02876c366ce89e988b8bf5dff3cf0e00
+      mobx: 6.3.10
+      mobx-react-lite: 3.2.2_65e9936076dc1bc58dcf4e626b32cb4a
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
 
-  /mobx/6.3.8:
-    resolution: {integrity: sha512-RfG2y766P1o9u9xrQht/HBXEoUPIr4B3Gjri3reLW/TuHm3I/3TfBBS0OaeMbw19RIF0AymqjDNlJgakN4ZK7g==}
+  /mobx/6.3.10:
+    resolution: {integrity: sha512-lfuIN5TGXBNy/5s3ggr1L+IbD+LvfZVlj5q1ZuqyV9AfMtunYQvE8G0WfewS9tgIR3I1q8HJEEbcAOsxEgLwRw==}
     dev: false
 
   /ms/2.1.2:
@@ -1268,8 +1268,8 @@ packages:
     deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
     dev: false
 
-  /postcss/8.4.4:
-    resolution: {integrity: sha512-joU6fBsN6EIer28Lj6GDFoC/5yOZzLCfn0zHAn/MYXI7aPt4m4hK5KC5ovEZXy+lnCjmYIbQWngvju2ddyEr8Q==}
+  /postcss/8.4.5:
+    resolution: {integrity: sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.1.30
@@ -1324,24 +1324,24 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-router-dom/6.1.1_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-O3UH89DI4o+swd2q6lF4dSmpuNCxwkUXcj0zAFcVc1H+YoPE6T7uwoFMX0ws1pUvCY8lYDucFpOqCCdal6VFzg==}
+  /react-router-dom/6.2.1_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-I6Zax+/TH/cZMDpj3/4Fl2eaNdcvoxxHoH1tYOREsQ22OKDYofGebrNm6CTPUcvLvZm63NL/vzCYdjf9CUhqmA==}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
     dependencies:
-      history: 5.1.0
+      history: 5.2.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-router: 6.1.1_react@17.0.2
+      react-router: 6.2.1_react@17.0.2
     dev: false
 
-  /react-router/6.1.1_react@17.0.2:
-    resolution: {integrity: sha512-55o96RiDZmC0uD17DPqVmzzfdNd2Dc+EjkYvMAmHl43du/GItaTdFr5WwjTryNWPXZ+OOVQxQhwAX25UwxpHtw==}
+  /react-router/6.2.1_react@17.0.2:
+    resolution: {integrity: sha512-2fG0udBtxou9lXtK97eJeET2ki5//UWfQSl1rlJ7quwe6jrktK9FCCc8dQb5QY6jAv3jua8bBQRhhDOM/kVRsg==}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      history: 5.1.0
+      history: 5.2.0
       react: 17.0.2
     dev: false
 
@@ -1418,8 +1418,8 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: false
 
-  /sass/1.45.0:
-    resolution: {integrity: sha512-ONy5bjppoohtNkFJRqdz1gscXamMzN3wQy1YH9qO2FiNpgjLhpz/IPRGg0PpCjyz/pWfCOaNEaiEGCcjOFAjqw==}
+  /sass/1.45.1:
+    resolution: {integrity: sha512-pwPRiq29UR0o4X3fiQyCtrESldXvUQAAE0QmcJTpsI4kuHHcLzZ54M1oNBVIXybQv8QF2zfkpFcTxp8ta97dUA==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
@@ -1491,8 +1491,8 @@ packages:
     hasBin: true
     dev: false
 
-  /vite/2.7.2_sass@1.45.0:
-    resolution: {integrity: sha512-wMffVVdKZRZP/HwW3yttKL8X+IJePz7bUcnGm0vqljffpVwHpjWC3duZtJQHAGvy+wrTjmwU7vkULpZ1dVXY6w==}
+  /vite/2.7.6_sass@1.45.1:
+    resolution: {integrity: sha512-PBNoc87rDYLtkpFU9dbVeGdbcyKzz6c34oScqivE3FEa3BhVa4ASupCzcz0eDIiSECovfLcQnLUJt9vhiEU08g==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -1508,10 +1508,10 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.13.15
-      postcss: 8.4.4
+      postcss: 8.4.5
       resolve: 1.20.0
       rollup: 2.60.2
-      sass: 1.45.0
+      sass: 1.45.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
