@@ -43,7 +43,7 @@ const StartPage: React.FC = () => {
         <StartIcon iconSize={IconSize} icon="cloud-upload" />
         <StartLabel>에셋 추가</StartLabel>
       </StartButton>
-      <StartButton to="">
+      <StartButton to="/assets/list">
         <StartIcon iconSize={IconSize} icon="cloud" />
         <StartLabel>에셋 목록</StartLabel>
       </StartButton>
