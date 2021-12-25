@@ -33,7 +33,7 @@ const StartPage: React.FC = () => {
   return <>
     <h1>시작</h1>
     <h2>도움말</h2>
-    <StartButton to="">
+    <StartButton to="help">
       <StartIcon iconSize={IconSize} icon="book" />
       <StartLabel>도움말</StartLabel>
     </StartButton>
