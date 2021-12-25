@@ -47,7 +47,7 @@ const StartPage: React.FC = () => {
         <StartIcon iconSize={IconSize} icon="cloud" />
         <StartLabel>에셋 목록</StartLabel>
       </StartButton>
-      <StartButton to="">
+      <StartButton to="/jobs/add">
         <StartIcon iconSize={IconSize} icon="th-derived" />
         <StartLabel>작업 추가</StartLabel>
       </StartButton>
