@@ -2,7 +2,7 @@ import { AssetType } from '../assetType/types';
 import { JobType } from '../jobType/types';
 
 export interface ProcessorNode {
-    id: number;
+    id: string;
     key: string;
     name: string | null;
 }
