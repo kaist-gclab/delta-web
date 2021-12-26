@@ -7,17 +7,12 @@ import { Loading } from '../core/Loading';
 
 const ObjectStorageMonitorPage: React.FC = () => {
   const store = useContext(JobContext);
-  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.jobs;
   if (!data) {
     return <Loading />;
   }
-
-  const goDetailPage = (id: string) => {
-    navigate(`/jobs/detail/${id}`);
-  };
 
   return <div>
     <h1>오브젝트 저장소 모니터</h1>
