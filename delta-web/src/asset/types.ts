@@ -14,7 +14,7 @@ export interface Asset {
 }
 
 export interface AssetTag {
-    id: number;
+    id: string;
     key: string;
     value: string;
 }
