@@ -12,7 +12,7 @@ export default class AuthStore {
         makeAutoObservable(this);
     }
 
-    async login(username: string, password: string) {
+    async login(username: string, password: string): Promise<boolean> {
         const payload: LoginRequest = { username, password };
 
         try {
