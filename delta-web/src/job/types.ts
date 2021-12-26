@@ -28,5 +28,5 @@ export interface CreateJobRequest {
     jobTypeId: string;
     inputAssetId: string | null;
     jobArguments: string;
-    assignedProcessorNodeId: number | null;
+    assignedProcessorNodeId: string | null;
 }
