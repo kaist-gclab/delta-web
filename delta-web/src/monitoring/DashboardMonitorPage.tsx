@@ -7,6 +7,10 @@ import { JobContext } from '../config/context';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
 import { Loading } from '../core/Loading';
 
+const MonitorColumn = styled(GridColumn)`
+padding: 0 20px;
+`;
+
 const DashboardMonitorPage: React.FC = () => {
   const store = useContext(JobContext);
   const navigate = useNavigate();
