@@ -16,7 +16,7 @@ export interface ProcessorNodeCapability {
 }
 
 export interface ProcessorNodeStatus {
-    id: number;
+    id: string;
     processorNode: ProcessorNode;
     timestamp: string;
     status: string;
