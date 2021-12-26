@@ -24,7 +24,7 @@ class JobStore {
         this.jobs = this.jobs?.sort((a, b) => a.id - b.id);
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.job = undefined;
         yield this.fetchAll();
         this.job = this.jobs?.find(e => e.id === id) ?? null;
