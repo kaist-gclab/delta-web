@@ -1,5 +1,5 @@
 export interface AssetType {
-    id: number;
+    id: string;
     key: string;
     name: string;
 }
