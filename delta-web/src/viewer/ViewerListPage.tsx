@@ -38,11 +38,11 @@ const ViewerListPage: React.FC = () => {
   return <div>
     <h1>뷰어 목록</h1>
     <div>
-      <Table numRows={data.length} selectionModes={[]} columnWidths={[150, 400]}
+      <Table2 numRows={data.length} selectionModes={[]} columnWidths={[150, 400]}
         rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
         <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
         <Column name="미디어 타입" cellRenderer={(i) => <Cell>{data[i].mediaType}</Cell>} />
-      </Table>
+      </Table2>
     </div>
   </div>;
 };
