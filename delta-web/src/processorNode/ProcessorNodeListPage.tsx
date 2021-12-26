@@ -23,12 +23,12 @@ const ProcessorNodeListPage: React.FC = () => {
   return <div>
     <h1>처리기 노드 목록</h1>
     <div>
-      <Table numRows={data.length} selectionModes={[]}
+      <Table2 numRows={data.length} selectionModes={[]}
         rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
         <Column name="키" cellRenderer={(i) => <Cell>{data[i].key}</Cell>} />
         <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
         <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id))} />
-      </Table>
+      </Table2>
     </div>
   </div>;
 };
