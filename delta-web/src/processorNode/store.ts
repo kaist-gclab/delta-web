@@ -22,10 +22,12 @@ class ProcessorNodeStore {
         });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.processorNode = undefined;
-        yield this.fetchAll();
-        this.processorNode = this.processorNodes?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => {
+            this.processorNode = this.processorNodes?.find(e => e.id === id) ?? null;
+        });
     }
 }
 
