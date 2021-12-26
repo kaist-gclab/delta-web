@@ -1,4 +1,5 @@
 import { Button, Dialog } from '@blueprintjs/core';
+import { Cell, Column, RowHeaderCell, Table, Table2 } from '@blueprintjs/table';
 import { observer } from 'mobx-react';
 import React, { useContext, useEffect, useState } from 'react';
 import { AssetContext } from '../config/context';
