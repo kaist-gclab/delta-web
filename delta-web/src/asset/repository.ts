@@ -8,7 +8,7 @@ export default class AssetRepository {
     private http!: Http;
 
     async fetchAll(): Promise<Asset[]> {
-        const response = await this.http.get('assets');
+        const response = await this.http.get<Asset[]>('assets');
         return response.data;
     }
 
