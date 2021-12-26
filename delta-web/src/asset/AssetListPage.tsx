@@ -1,10 +1,10 @@
-import { Button, Dialog } from '@blueprintjs/core';
 import { Cell, Column, RowHeaderCell, Table2 } from '@blueprintjs/table';
 import { observer } from 'mobx-react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
-import { AssetContext, JobContext } from '../config/context';
+import { JobContext } from '../config/context';
+import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import { Asset } from './types';
 import dayjs from 'dayjs';
