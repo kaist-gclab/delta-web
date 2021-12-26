@@ -8,7 +8,7 @@ import { Row as GridRow, Column as GridColumn } from '../core/Grid';
 import { Loading } from '../core/Loading';
 
 const DashboardMonitorPage: React.FC = () => {
-  return <h1>모니터링 대시보드</h1>;
+  const store = useContext(JobContext);
   const navigate = useNavigate();
 };
 
