@@ -24,7 +24,7 @@ class AssetTypeStore {
         this.assetTypes = this.assetTypes?.sort((a, b) => a.id - b.id);
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.assetType = undefined;
         yield this.fetchAll();
         this.assetType = this.assetTypes?.find(e => e.id === id) ?? null;
