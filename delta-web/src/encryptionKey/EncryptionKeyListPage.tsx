@@ -16,7 +16,7 @@ const EncryptionKeyListPage: React.FC = () => {
     return <Loading />;
   }
 
-  const goDetailPage = (id: number) => {
+  const goDetailPage = (id: string) => {
     navigate(`/encryption-keys/detail/${id}`);
   };
 

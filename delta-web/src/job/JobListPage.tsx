@@ -16,7 +16,7 @@ const JobListPage: React.FC = () => {
     return <Loading />;
   }
 
-  const goDetailPage = (id: number) => {
+  const goDetailPage = (id: string) => {
     navigate(`/jobs/detail/${id}`);
   };
 

@@ -16,7 +16,7 @@ const ProcessorNodeListPage: React.FC = () => {
     return <Loading />;
   }
 
-  const goDetailPage = (id: number) => {
+  const goDetailPage = (id: string) => {
     navigate(`/processor-nodes/detail/${id}`);
   };
 
