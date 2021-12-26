@@ -22,7 +22,7 @@ class EncryptionKeyStore {
 
     *fetchAll() {
         this.encryptionKeys = yield this.encryptionKeyRepository.fetchAll();
-        this.encryptionKeys = this.encryptionKeys?.sort((a, b) => a.id - b.id);
+        this.encryptionKeys = this.encryptionKeys?.sort((a, b) => Number(a.id) - Number(b.id));
     }
 
     *fetch(id: string) {
