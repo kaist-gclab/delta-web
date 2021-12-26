@@ -25,7 +25,7 @@ class EncryptionKeyStore {
         this.encryptionKeys = this.encryptionKeys?.sort((a, b) => a.id - b.id);
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.encryptionKey = undefined;
         yield this.fetchAll();
         this.encryptionKey = this.encryptionKeys?.find(e => e.id === id) ?? null;
