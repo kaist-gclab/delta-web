@@ -18,7 +18,7 @@ export interface JobExecution {
 }
 
 export interface JobExecutionStatus {
-    id: number;
+    id: string;
     jobExecution: JobExecution;
     timestamp: string;
     status: string;
