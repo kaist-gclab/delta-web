@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import ProcessorNodeRepository from './repository';
 import { ProcessorNode } from './types';
 
@@ -15,9 +15,11 @@ class ProcessorNodeStore {
     @inject(ProcessorNodeRepository)
     private processorNodeRepository!: ProcessorNodeRepository
 
-    *fetchAll() {
-        this.processorNodes = yield this.processorNodeRepository.fetchAll();
-        this.processorNodes = this.processorNodes?.sort((a, b) => Number(a.id) - Number(b.id));
+    async fetchAll() {
+        const processorNodes = await this.processorNodeRepository.fetchAll();
+        runInAction(() => {
+            this.processorNodes = processorNodes?.sort((a, b) => Number(a.id) - Number(b.id));
+        });
     }
 
     *fetch(id: string) {
