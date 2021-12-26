@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import { Asset } from './types';
 import AssetRepository from './repository';
 
@@ -15,15 +15,15 @@ class AssetStore {
         makeAutoObservable(this);
     }
 
-    *fetchAll(name: string | null = null, tag: string | null = null) {
-        let assets: Asset[] = yield this.assetRepository.fetchAll();
+    async fetchAll(name: string | null = null, tag: string | null = null) {
+        let assets: Asset[] = await this.assetRepository.fetchAll();
         if (name) {
             assets = assets.filter(a => a.assetTags.find(t => t.key === 'Name' && t.value.includes(name)));
         }
         if (tag) {
             assets = assets.filter(a => a.assetTags.find(t => t.key === 'Tag' && t.value.includes(tag)));
         }
-        this.assets = assets;
+        runInAction(() => { this.assets = assets; });
     }
 
     *fetch(id: string) {
