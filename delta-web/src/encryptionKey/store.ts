@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { observable, flow, makeAutoObservable, runInAction } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import EncryptionKeyRepository from './repository';
 import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
