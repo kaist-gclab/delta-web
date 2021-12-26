@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { observable, flow, makeAutoObservable } from 'mobx';
+import { observable, flow, makeAutoObservable, runInAction } from 'mobx';
 import EncryptionKeyRepository from './repository';
 import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
@@ -20,9 +20,9 @@ class EncryptionKeyStore {
         return result;
     }
 
-    *fetchAll() {
-        this.encryptionKeys = yield this.encryptionKeyRepository.fetchAll();
-        this.encryptionKeys = this.encryptionKeys?.sort((a, b) => Number(a.id) - Number(b.id));
+    async fetchAll() {
+        const encryptionKeys = await this.encryptionKeyRepository.fetchAll();
+        runInAction(() => { this.encryptionKeys = encryptionKeys?.sort((a, b) => Number(a.id) - Number(b.id)); });
     }
 
     *fetch(id: string) {
