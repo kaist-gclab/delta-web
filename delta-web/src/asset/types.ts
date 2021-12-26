@@ -25,7 +25,7 @@ export interface CreateAssetRequest {
     mediaType: string;
     storeKey: string;
     assetTags: CreateAssetTagRequest[];
-    parentJobExecutionId: number | null;
+    parentJobExecutionId: string | null;
 }
 
 export interface CreateAssetTagRequest {
