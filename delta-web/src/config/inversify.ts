@@ -1,4 +1,4 @@
-import { Container, interfaces } from "inversify";
+import { Container, interfaces } from 'inversify';
 import Http from '../core/http';
 import AuthStore from '../core/authStore';
 
