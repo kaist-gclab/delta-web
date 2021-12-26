@@ -20,7 +20,7 @@ class JobTypeStore {
         this.jobTypes = this.jobTypes?.sort((a, b) => a.id - b.id);
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.jobType = undefined;
         yield this.fetchAll();
         this.jobType = this.jobTypes?.find(e => e.id === id) ?? null;
