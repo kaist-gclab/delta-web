@@ -24,7 +24,7 @@ const EncryptionKeyDetailPage: React.FC = () => {
   const store = useContext(EncryptionKeyContext);
   useEffect(() => {
     if (params.id) {
-      store.fetch(Number(params.id));
+      store.fetch(params.id);
     }
   }, [store, params]);
 
