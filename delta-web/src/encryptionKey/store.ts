@@ -25,10 +25,10 @@ class EncryptionKeyStore {
         runInAction(() => { this.encryptionKeys = encryptionKeys?.sort((a, b) => Number(a.id) - Number(b.id)); });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.encryptionKey = undefined;
-        yield this.fetchAll();
-        this.encryptionKey = this.encryptionKeys?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => { this.encryptionKey = this.encryptionKeys?.find(e => e.id === id) ?? null; });
     }
 }
 
