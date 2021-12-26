@@ -15,8 +15,8 @@ class EncryptionKeyStore {
         makeAutoObservable(this);
     }
 
-    *create(request: CreateEncryptionKeyRequest) {
-        const result: CreateEncryptionKeyResponse = yield this.encryptionKeyRepository.create(request);
+    async create(request: CreateEncryptionKeyRequest) {
+        const result: CreateEncryptionKeyResponse = await this.encryptionKeyRepository.create(request);
         return result;
     }
 
