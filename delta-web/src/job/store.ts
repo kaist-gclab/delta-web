@@ -24,10 +24,10 @@ class JobStore {
         runInAction(() => { this.jobs = jobs?.sort((a, b) => Number(a.id) - Number(b.id)); });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.job = undefined;
-        yield this.fetchAll();
-        this.job = this.jobs?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => { this.job = this.jobs?.find(e => e.id === id) ?? null; });
     }
 }
 
