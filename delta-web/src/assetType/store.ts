@@ -21,7 +21,7 @@ class AssetTypeStore {
 
     *fetchAll() {
         this.assetTypes = yield this.assetTypeRepository.fetchAll();
-        this.assetTypes = this.assetTypes?.sort((a, b) => a.id - b.id);
+        this.assetTypes = this.assetTypes?.sort((a, b) => Number(a.id) - Number(b.id));
     }
 
     *fetch(id: string) {
