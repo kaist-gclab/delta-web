@@ -26,10 +26,10 @@ class AssetStore {
         runInAction(() => { this.assets = assets; });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.asset = undefined;
-        yield this.fetchAll();
-        this.asset = this.assets?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => { this.asset = this.assets?.find(e => e.id === id) ?? null; });
     }
 
     async addModel(name: string, tag: string, content: string, eventTimestamp: string) {
