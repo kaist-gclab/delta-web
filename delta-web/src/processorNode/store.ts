@@ -17,7 +17,7 @@ class ProcessorNodeStore {
 
     *fetchAll() {
         this.processorNodes = yield this.processorNodeRepository.fetchAll();
-        this.processorNodes = this.processorNodes?.sort((a, b) => a.id - b.id);
+        this.processorNodes = this.processorNodes?.sort((a, b) => Number(a.id) - Number(b.id));
     }
 
     *fetch(id: string) {
