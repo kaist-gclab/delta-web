@@ -3,7 +3,7 @@ import { EncryptionKey } from '../encryptionKey/types';
 import { JobExecution } from '../job/types';
 
 export interface Asset {
-    id: number;
+    id: string;
     assetType: AssetType;
     encryptionKey: EncryptionKey | null;
     mediaType: string;
