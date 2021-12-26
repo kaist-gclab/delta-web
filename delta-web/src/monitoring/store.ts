@@ -9,7 +9,7 @@ class MonitoringStore {
     }
 
     @inject(MonitoringRepository)
-    private monitoringRepository!: MonitoringRepository
+    private monitoringRepository!: MonitoringRepository;
 }
 
 export default MonitoringStore;
