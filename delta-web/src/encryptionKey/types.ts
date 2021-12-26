@@ -1,7 +1,7 @@
 export interface EncryptionKey {
-    id: number
-    name: string
-    enabled: boolean
+    id: string;
+    name: string;
+    enabled: boolean;
 }
 
 export interface CreateEncryptionKeyRequest {
