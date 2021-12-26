@@ -20,8 +20,8 @@ export interface AssetTag {
 }
 
 export interface CreateAssetRequest {
-    assetTypeId: number;
     encryptionKeyId: number | null;
+    assetTypeId: string;
     mediaType: string;
     storeKey: string;
     assetTags: CreateAssetTagRequest[];
