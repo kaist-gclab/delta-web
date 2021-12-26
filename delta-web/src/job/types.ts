@@ -12,7 +12,7 @@ export interface Job {
 }
 
 export interface JobExecution {
-    id: number;
+    id: string;
     job: Job;
     processorNode: ProcessorNode;
 }
