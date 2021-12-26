@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
-import { AssetContext } from '../config/context';
 import React, { FormEvent, useContext, useState } from 'react';
 import styled from '@emotion/styled';
+import { AssetContext, AssetTypeContext } from '../config/context';
 import dayjs from 'dayjs';
 
 const Label = styled.label`
@@ -14,11 +14,11 @@ margin-bottom: 10px;
 
 const AddAssetPage: React.FC = () => {
   return <h1>에셋 추가</h1>;
-  const assetStore = useContext(AssetContext);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [modelName, setModelName] = useState('');
   const [modelTag, setModelTag] = useState('');
   const [uploading, setUploading] = useState(false);
+  const store = useContext(AssetTypeContext);
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length >= 1) {
