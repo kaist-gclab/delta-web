@@ -6,7 +6,7 @@ import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
 const ProcessorNodeMonitorPage: React.FC = () => {
-  return <h1>처리기 노드 모니터</h1>;
+  const store = useContext(JobContext);
   const navigate = useNavigate();
 };
 
