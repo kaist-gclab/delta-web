@@ -25,8 +25,8 @@ export interface JobExecutionStatus {
 }
 
 export interface CreateJobRequest {
-    jobTypeId: number;
     inputAssetId: number | null;
+    jobTypeId: string;
     jobArguments: string;
     assignedProcessorNodeId: number | null;
 }
