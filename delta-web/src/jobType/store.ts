@@ -22,10 +22,12 @@ class JobTypeStore {
         });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.jobType = undefined;
-        yield this.fetchAll();
-        this.jobType = this.jobTypes?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => {
+            this.jobType = this.jobTypes?.find(e => e.id === id) ?? null;
+        });
     }
 }
 
