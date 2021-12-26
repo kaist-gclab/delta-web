@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import JobRepository from './repository';
 import { CreateJobRequest, Job } from './types';
 
@@ -19,9 +19,9 @@ class JobStore {
         await this.jobRepository.create(request);
     }
 
-    *fetchAll() {
-        this.jobs = yield this.jobRepository.fetchAll();
-        this.jobs = this.jobs?.sort((a, b) => Number(a.id) - Number(b.id));
+    async fetchAll() {
+        const jobs = await this.jobRepository.fetchAll();
+        runInAction(() => { this.jobs = jobs?.sort((a, b) => Number(a.id) - Number(b.id)); });
     }
 
     *fetch(id: string) {
