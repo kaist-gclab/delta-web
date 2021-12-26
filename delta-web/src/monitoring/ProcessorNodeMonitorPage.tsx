@@ -1,7 +1,9 @@
 import { Table2, RowHeaderCell, Column, Cell } from '@blueprintjs/table';
 import { observer } from 'mobx-react';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { JobContext } from '../config/context';
+import { Loading } from '../core/Loading';
 
 const ProcessorNodeMonitorPage: React.FC = () => {
   return <h1>처리기 노드 모니터</h1>;
