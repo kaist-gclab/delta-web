@@ -15,8 +15,8 @@ class JobStore {
     @inject(JobRepository)
     private jobRepository!: JobRepository
 
-    *create(request: CreateJobRequest) {
-        yield this.jobRepository.create(request);
+    async create(request: CreateJobRequest) {
+        await this.jobRepository.create(request);
     }
 
     *fetchAll() {
