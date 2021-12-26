@@ -26,10 +26,10 @@ class AssetTypeStore {
         });
     }
 
-    *fetch(id: string) {
+    async fetch(id: string) {
         this.assetType = undefined;
-        yield this.fetchAll();
-        this.assetType = this.assetTypes?.find(e => e.id === id) ?? null;
+        await this.fetchAll();
+        runInAction(() => { this.assetType = this.assetTypes?.find(e => e.id === id) ?? null; });
     }
 }
 
