@@ -17,7 +17,7 @@ class JobTypeStore {
 
     *fetchAll() {
         this.jobTypes = yield this.jobTypeRepository.fetchAll();
-        this.jobTypes = this.jobTypes?.sort((a, b) => a.id - b.id);
+        this.jobTypes = this.jobTypes?.sort((a, b) => Number(a.id) - Number(b.id));
     }
 
     *fetch(id: string) {
