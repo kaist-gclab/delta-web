@@ -26,7 +26,7 @@ class AssetStore {
         this.assets = assets;
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.asset = undefined;
         yield this.fetchAll();
         this.asset = this.assets?.find(e => e.id === id) ?? null;
