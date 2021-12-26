@@ -24,7 +24,7 @@ const ProcessorNodeDetailPage: React.FC = () => {
   const store = useContext(ProcessorNodeContext);
   useEffect(() => {
     if (params.id) {
-      store.fetch(Number(params.id));
+      store.fetch(params.id);
     }
   }, [store, params]);
 
