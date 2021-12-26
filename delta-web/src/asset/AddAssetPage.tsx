@@ -10,10 +10,22 @@ const AddAssetPage: React.FC = () => {
   const [modelTag, setModelTag] = useState('');
   const [uploading, setUploading] = useState(false);
   const store = useContext(AssetTypeContext);
+  const [errorDialogOpen, setErrorDialogOpen] = useState(false);
+  const [okDialogOpen, setOkDialogOpen] = useState(false);
+  const openOkDialog = () => setOkDialogOpen(true);
+  const openErrorDialog = () => setErrorDialogOpen(true);
+  const closeOkDialog = () => setOkDialogOpen(false);
+  const closeErrorDialog = () => setErrorDialogOpen(false);
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length >= 1) {
       setSelectedFile(e.target.files[0]);
+  const submit = async () => {
+    try {
+      await store.create({ key, name }) as any;
+      openOkDialog();
+    } catch {
+      openOkDialog();
     }
   };
 
@@ -40,6 +52,36 @@ const AddAssetPage: React.FC = () => {
     };
     reader.readAsDataURL(selectedFile);
   };
+    <Dialog
+      icon="tick"
+      isOpen={okDialogOpen}
+      onClose={closeOkDialog}
+      title="추가 성공"
+      canOutsideClickClose={false}>
+      <div className={Classes.DIALOG_BODY}>
+        <p>성공적으로 추가되었습니다.</p>
+      </div>
+      <div className={Classes.DIALOG_FOOTER}>
+        <div className={Classes.DIALOG_FOOTER_ACTIONS}>
+          <Button onClick={closeOkDialog}>닫기</Button>
+        </div>
+      </div>
+    </Dialog>
+    <Dialog
+      icon="issue"
+      isOpen={errorDialogOpen}
+      onClose={closeErrorDialog}
+      title="추가 실패"
+      canOutsideClickClose={false}>
+      <div className={Classes.DIALOG_BODY}>
+        <p>추가하는 데 실패했습니다.</p>
+      </div>
+      <div className={Classes.DIALOG_FOOTER}>
+        <div className={Classes.DIALOG_FOOTER_ACTIONS}>
+          <Button onClick={closeErrorDialog}>닫기</Button>
+        </div>
+      </div>
+    </Dialog>
 
   return <>
     <h2>모델 추가</h2>
