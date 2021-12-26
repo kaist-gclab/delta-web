@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, runInAction } from 'mobx';
 import AssetTypeRepository from './repository';
 import { AssetType, CreateAssetTypeRequest } from './types';
 
@@ -19,9 +19,11 @@ class AssetTypeStore {
         await this.assetTypeRepository.create(request);
     }
 
-    *fetchAll() {
-        this.assetTypes = yield this.assetTypeRepository.fetchAll();
-        this.assetTypes = this.assetTypes?.sort((a, b) => Number(a.id) - Number(b.id));
+    async fetchAll() {
+        const assetTypes = await this.assetTypeRepository.fetchAll();
+        runInAction(() => {
+            this.assetTypes = assetTypes?.sort((a, b) => Number(a.id) - Number(b.id));
+        });
     }
 
     *fetch(id: string) {
