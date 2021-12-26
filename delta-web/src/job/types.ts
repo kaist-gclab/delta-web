@@ -3,7 +3,7 @@ import { JobType } from '../jobType/types';
 import { ProcessorNode } from '../processorNode/types';
 
 export interface Job {
-    id: number;
+    id: string;
     jobType: JobType;
     inputAsset: Asset | null;
     jobArguments: string;
