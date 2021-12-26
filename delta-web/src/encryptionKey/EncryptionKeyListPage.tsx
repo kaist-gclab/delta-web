@@ -23,12 +23,12 @@ const EncryptionKeyListPage: React.FC = () => {
   return <div>
     <h1>암호화 키 목록</h1>
     <div>
-      <Table numRows={data.length} selectionModes={[]}
+      <Table2 numRows={data.length} selectionModes={[]}
         rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
         <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
         <Column name="활성 상태" cellRenderer={(i) => <Cell>{data[i].enabled ? '예' : '아니오'}</Cell>} />
         <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id))} />
-      </Table>
+      </Table2>
     </div>
   </div>;
 };
