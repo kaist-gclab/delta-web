@@ -15,8 +15,8 @@ class AssetTypeStore {
     @inject(AssetTypeRepository)
     private assetTypeRepository!: AssetTypeRepository
 
-    *create(request: CreateAssetTypeRequest) {
-        yield this.assetTypeRepository.create(request);
+    async create(request: CreateAssetTypeRequest) {
+        await this.assetTypeRepository.create(request);
     }
 
     *fetchAll() {
