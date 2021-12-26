@@ -20,7 +20,7 @@ class ProcessorNodeStore {
         this.processorNodes = this.processorNodes?.sort((a, b) => a.id - b.id);
     }
 
-    *fetch(id: number) {
+    *fetch(id: string) {
         this.processorNode = undefined;
         yield this.fetchAll();
         this.processorNode = this.processorNodes?.find(e => e.id === id) ?? null;
