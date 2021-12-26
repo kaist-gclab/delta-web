@@ -49,6 +49,22 @@ const AssetListPage: React.FC = () => {
       </> : null}
     </p>;
   const navigate = useNavigate();
+  const data: Asset[] = [
+    {
+      id: '1',
+      assetType: {
+        id: '3',
+        key: 'MODEL',
+        name: 'Model',
+      },
+      encryptionKey: null,
+      mediaType: 'model/x.stl-ascii',
+      storeKey: 'a986f147-03cc-4355-986a-6deaaf6dd23d',
+      assetTags: [],
+      parentJobExecution: null,
+      createdAt: dayjs().valueOf().toString(),
+    }
+  ];
   }
 
   const fetch = async (name: string | null, tag: string | null) => {
