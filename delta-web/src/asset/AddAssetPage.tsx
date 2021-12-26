@@ -1,8 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { FormEvent, useContext, useState } from 'react';
 import styled from '@emotion/styled';
-import { AssetContext, AssetTypeContext } from '../config/context';
-import dayjs from 'dayjs';
 
 const Label = styled.label`
 margin-right: 5px;
