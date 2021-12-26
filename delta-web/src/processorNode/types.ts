@@ -8,7 +8,7 @@ export interface ProcessorNode {
 }
 
 export interface ProcessorNodeCapability {
-    id: number;
+    id: string;
     processorNode: ProcessorNode;
     jobType: JobType;
     assetType: AssetType | null;
