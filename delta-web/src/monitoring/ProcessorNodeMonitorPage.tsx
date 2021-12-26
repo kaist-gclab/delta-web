@@ -8,6 +8,12 @@ import { Loading } from '../core/Loading';
 const ProcessorNodeMonitorPage: React.FC = () => {
   const store = useContext(JobContext);
   const navigate = useNavigate();
+  useEffect(() => { store.fetchAll(); }, [store]);
+
+  const data = store.jobs;
+  if (!data) {
+    return <Loading />;
+  }
 };
 
 export default observer(ProcessorNodeMonitorPage);
