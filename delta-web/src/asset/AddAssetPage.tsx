@@ -1,14 +1,5 @@
 import { observer } from 'mobx-react';
 import React, { FormEvent, useContext, useState } from 'react';
-import styled from '@emotion/styled';
-
-const Label = styled.label`
-margin-right: 5px;
-`;
-
-const FormRow = styled.div`
-margin-bottom: 10px;
-`;
 
 const AddAssetPage: React.FC = () => {
   return <h1>에셋 추가</h1>;
