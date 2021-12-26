@@ -6,7 +6,7 @@ export default class MonitoringRepository {
     @inject(Http)
     private http!: Http;
 
-    async getStats(): Promise<unknown[]> {
+    async getStats(): Promise<any[]> {
         const response = await this.http.get('monitoring');
         return response.data;
     }
