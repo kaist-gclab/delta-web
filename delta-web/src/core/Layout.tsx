@@ -77,7 +77,7 @@ const Layout: React.FC = () => {
 
   return <Container>
     <Sidebar>
-      <Title>3차원 기하 모델<br />프로세싱 프레임워크 v3.0</Title>
+      <Title>3차원 기하 모델<br />프로세싱 프레임워크 v4.0</Title>
       <Section>
         <SectionTitle>기본 기능</SectionTitle>
         <NavButton link="/" text="시작" />
