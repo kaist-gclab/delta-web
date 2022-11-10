@@ -1,4 +1,4 @@
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { JobTypeContext } from '../config/context';

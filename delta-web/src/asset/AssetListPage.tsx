@@ -1,5 +1,5 @@
 import { Cell, Column, RowHeaderCell, Table2 } from '@blueprintjs/table';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';

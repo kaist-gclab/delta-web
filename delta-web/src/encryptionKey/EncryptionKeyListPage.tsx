@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 import { Loading } from '../core/Loading';
 import { EncryptionKeyContext } from '../config/context';
 import { Column, Table2, Cell, RowHeaderCell } from '@blueprintjs/table';

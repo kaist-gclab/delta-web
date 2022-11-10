@@ -30,7 +30,7 @@ import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
 import JobMonitorPage from '../monitoring/JobMonitorPage';
 import { AuthContext } from '../config/context';
 import LoginPage from '../home/LoginPage';
-import { observer } from 'mobx-react';
+import { observer } from 'mobx-react-lite';
 
 export const Container = styled.div`
 display: grid;
