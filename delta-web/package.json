@@ -27,7 +27,7 @@
     "react-router-dom": "^6.4.3",
     "reflect-metadata": "^0.1.13",
     "typescript": "^4.5.5",
-    "vite": "^2.7.13"
     "sass": "^1.56.1",
+    "vite": "^3.2.3"
   }
 }
