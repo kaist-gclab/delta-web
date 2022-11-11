@@ -1,4 +1,4 @@
-import { AssetType } from '../assetType/types';
+import { AssetType } from '../api';
 import { EncryptionKey } from '../encryptionKey/types';
 import { JobExecution } from '../job/types';
 

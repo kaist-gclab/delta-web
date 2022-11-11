@@ -1,10 +1,8 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useContext, useState } from 'react';
-import { AssetTypeContext } from '../config/context';
 
 const AddAssetTypePage: React.FC = () => {
-  const store = useContext(AssetTypeContext);
   const [key, setKey] = useState('');
   const [name, setName] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
@@ -16,7 +14,7 @@ const AddAssetTypePage: React.FC = () => {
 
   const submit = async () => {
     try {
-      await store.create({ key, name }) as any;
+      // FIXME await store.create({ key, name }) as any;
       openOkDialog();
     } catch {
       openErrorDialog();

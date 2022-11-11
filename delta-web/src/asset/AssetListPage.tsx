@@ -53,9 +53,11 @@ const AssetListPage: React.FC = () => {
     {
       id: '1',
       assetType: {
-        id: '3',
+        id: BigInt(3),
         key: 'MODEL',
         name: 'Model',
+        assets: [],
+        processorNodeCapabilities: [],
       },
       encryptionKey: null,
       mediaType: 'model/x.stl-ascii',

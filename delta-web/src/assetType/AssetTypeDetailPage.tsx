@@ -3,9 +3,7 @@ import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
-import { AssetTypeContext } from '../config/context';
 import { Failed } from '../core/Failed';
-import { Loading } from '../core/Loading';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -21,26 +19,8 @@ const AssetTypeDetailPage: React.FC = () => {
   const navigate = useNavigate();
   const [id, setId] = useState('');
 
-  const store = useContext(AssetTypeContext);
-  useEffect(() => {
-    if (params.id) {
-      store.fetch(params.id);
-    }
-  }, [store, params]);
-
   const render = () => {
-    const e = store.assetType;
-    if (e === undefined) {
-      return <Loading />;
-    }
-    if (e === null) {
-      return <Failed />;
-    }
-    return <ul>
-      <li>번호: {e.id}</li>
-      <li>키: {e.key}</li>
-      <li>이름: {e.name}</li>
-    </ul>
+    return <Failed />;
   };
 
   const goDetailPage = () => navigate(`/asset-types/detail/${id}`);

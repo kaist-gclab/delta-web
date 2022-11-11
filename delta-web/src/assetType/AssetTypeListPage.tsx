@@ -27,7 +27,7 @@ const AssetTypeListPage: React.FC = () => {
         rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
         <Column name="키" cellRenderer={(i) => <Cell>{data[i].key}</Cell>} />
         <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
-        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id))} />
+        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))} />
       </Table2>
     </div>
   </div>;
