@@ -6,7 +6,6 @@ import EncryptionKeyStore from '../encryptionKey/store';
 import EncryptionKeyRepository from '../encryptionKey/repository';
 import HomeStore from '../home/store';
 import HomeRepository from '../home/repository';
-import AssetTypeRepository from '../assetType/repository';
 import JobStore from '../job/store';
 import JobRepository from '../job/repository';
 import JobTypeStore from '../jobType/store';
@@ -30,7 +29,6 @@ function configure(container: Container) {
     singleton(EncryptionKeyRepository);
     singleton(HomeStore);
     singleton(HomeRepository);
-    singleton(AssetTypeRepository);
     singleton(JobStore);
     singleton(JobRepository);
     singleton(JobTypeStore);
