@@ -14,7 +14,7 @@ import ProcessorNodeStore from '../processorNode/store';
 const container = AppContainer;
 const wrappers: ((app: React.FC) => React.FC)[] = [];
 
-export const AuthContext = add(AuthStore);
+export const AuthContext = addStore(AuthStore);
 export const AssetContext = add(AssetStore);
 export const EncryptionKeyContext = add(EncryptionKeyStore);
 export const HomeContext = add(HomeStore);
