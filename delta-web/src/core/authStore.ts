@@ -15,7 +15,7 @@ class AuthStore {
 
         try {
             const response: AxiosResponse<LoginResponse> =
-                await Axios.post<LoginResponse>(AuthBase + 'login', payload);
+                await Axios.post<LoginResponse>(AuthBase + 'auth/1/login', payload);
             runInAction(() => { this.token = response.data.token; });
             return true;
         } catch {
