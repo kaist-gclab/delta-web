@@ -1,6 +1,4 @@
 import { Container, interfaces } from 'inversify';
-import Http from '../core/http';
-import AuthStore from '../core/authStore';
 
 import AssetStore from '../asset/store';
 import AssetRepository from '../asset/repository';
@@ -26,8 +24,6 @@ function configure(container: Container) {
     function singleton<T>(type: interfaces.ServiceIdentifier<T>) {
         container.bind(type).toSelf().inSingletonScope();
     }
-    singleton(Http);
-    singleton(AuthStore);
 
     singleton(AssetStore);
     singleton(AssetRepository);

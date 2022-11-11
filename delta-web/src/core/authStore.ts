@@ -1,11 +1,9 @@
 import Axios, { AxiosResponse } from 'axios';
-import { injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { AuthBase, InitialToken } from '../config/http';
 import { LoginRequest, LoginResponse } from './types';
 
-@injectable()
-export default class AuthStore {
+class AuthStore {
     token: string = InitialToken;
 
     constructor() {
@@ -29,3 +27,5 @@ export default class AuthStore {
         this.token = '';
     }
 }
+
+export default new AuthStore();

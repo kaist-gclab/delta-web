@@ -1,13 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { inject, injectable } from 'inversify';
 import { ApiBase } from '../config/http';
 import AuthStore from './authStore';
 
-@injectable()
-export default class Http {
-
-    @inject(AuthStore)
-    private authStore!: AuthStore;
+class Http {
+    private authStore = AuthStore;
 
     private axios: AxiosInstance;
 
@@ -47,3 +43,5 @@ export default class Http {
         return this.axios.patch(url, data, config);
     }
 }
+
+export default new Http();
