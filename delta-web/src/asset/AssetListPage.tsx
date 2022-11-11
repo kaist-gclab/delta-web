@@ -1,4 +1,4 @@
-import { Cell, Column, RowHeaderCell, Table2 } from '@blueprintjs/table';
+import { Cell, Column, RowHeaderCell2, Table2 } from '@blueprintjs/table';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';

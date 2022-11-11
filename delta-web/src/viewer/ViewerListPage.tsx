@@ -1,4 +1,4 @@
-import { Table2, RowHeaderCell, Column, Cell } from '@blueprintjs/table';
+import { Table2, RowHeaderCell2, Column, Cell } from '@blueprintjs/table';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -39,7 +39,7 @@ const ViewerListPage: React.FC = () => {
     <h1>뷰어 목록</h1>
     <div>
       <Table2 numRows={data.length} selectionModes={[]} columnWidths={[150, 400]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell name={data[i].id.toString()} />}>
+        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
         <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
         <Column name="미디어 타입" cellRenderer={(i) => <Cell>{data[i].mediaType}</Cell>} />
       </Table2>
