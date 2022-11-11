@@ -1,11 +1,10 @@
 import Http from '../core/http';
-import { inject, injectable } from 'inversify';
+import { injectable } from 'inversify';
 import { CreateJobRequest, Job } from './types';
 
 @injectable()
 export default class JobRepository {
-    @inject(Http)
-    private http!: Http;
+    private http = Http;
 
     async create(request: CreateJobRequest): Promise<Job> {
         const response = await this.http.post<Job>('jobs', request);

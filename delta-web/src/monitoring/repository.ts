@@ -3,8 +3,7 @@ import { inject, injectable } from 'inversify';
 
 @injectable()
 export default class MonitoringRepository {
-    @inject(Http)
-    private http!: Http;
+    private http = Http;
 
     async getStats(): Promise<any[]> {
         const response = await this.http.get('monitoring');
