@@ -1,17 +1,17 @@
 import { observer } from 'mobx-react-lite';
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router';
-import { AssetTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import { Column, Table2, Cell, RowHeaderCell2 } from '@blueprintjs/table';
+import { AssetTypes } from '../api';
 
 const AssetTypeListPage: React.FC = () => {
-  const store = useContext(AssetTypeContext);
   const navigate = useNavigate();
-  useEffect(() => { store.fetchAll(); }, [store]);
-
-  const data = store.assetTypes;
+  const { data, error } = AssetTypes.useSWRGetAssetTypes();
+  if (error) {
+    return <div>error</div>;
+  }
   if (!data) {
     return <Loading />;
   }
