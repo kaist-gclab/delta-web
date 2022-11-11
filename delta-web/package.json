@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "api": "node update-api.js"
   },
   "dependencies": {
     "@blueprintjs/core": "^4.12.0",
