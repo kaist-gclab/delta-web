@@ -1,19 +1,16 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { Asset } from './types';
-import AssetRepository from './repository';
+import { Asset, Assets } from '../api';
 
 class AssetStore {
     assets?: Asset[];
     asset?: Asset | null;
-
-    private assetRepository = AssetRepository;
 
     constructor() {
         makeAutoObservable(this);
     }
 
     async fetchAll(name: string | null = null, tag: string | null = null) {
-        let assets: Asset[] = await this.assetRepository.fetchAll();
+        let assets: Asset[] = await Assets.getAssets();
         if (name) {
             assets = assets.filter(a => a.assetTags.find(t => t.key === 'Name' && t.value.includes(name)));
         }
@@ -26,11 +23,10 @@ class AssetStore {
     async fetch(id: string) {
         this.asset = undefined;
         await this.fetchAll();
-        runInAction(() => { this.asset = this.assets?.find(e => e.id === id) ?? null; });
+        runInAction(() => { this.asset = this.assets?.find(e => e.id.toString() === id) ?? null; });
     }
 
     async addModel(name: string, tag: string, content: string, eventTimestamp: string) {
-        await this.assetRepository.addModel(name, tag, content, eventTimestamp);
     }
 }
 
