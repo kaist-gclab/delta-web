@@ -1,15 +1,12 @@
-import { injectable, inject } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import EncryptionKeyRepository from './repository';
 import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
-@injectable()
 class EncryptionKeyStore {
     encryptionKeys?: EncryptionKey[];
     encryptionKey?: EncryptionKey | null;
 
-    @inject(EncryptionKeyRepository)
-    private encryptionKeyRepository!: EncryptionKeyRepository
+    private encryptionKeyRepository = EncryptionKeyRepository;
 
     constructor() {
         makeAutoObservable(this);

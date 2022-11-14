@@ -1,9 +1,7 @@
 import Http from '../core/http';
-import { inject, injectable } from 'inversify';
 import { CreateEncryptionKeyRequest, CreateEncryptionKeyResponse, EncryptionKey } from './types';
 
-@injectable()
-export default class EncryptionKeyRepository {
+class EncryptionKeyRepository {
     private http = Http;
 
     async create(request: CreateEncryptionKeyRequest): Promise<CreateEncryptionKeyResponse> {
@@ -16,3 +14,5 @@ export default class EncryptionKeyRepository {
         return response.data;
     }
 }
+
+export default new EncryptionKeyRepository();
