@@ -51,7 +51,7 @@ const AssetListPage: React.FC = () => {
   const navigate = useNavigate();
   const data: Asset[] = [
     {
-      id: '1',
+      id: BigInt(1),
       assetType: {
         id: BigInt(3),
         key: 'MODEL',
@@ -59,12 +59,30 @@ const AssetListPage: React.FC = () => {
         assets: [],
         processorNodeCapabilities: [],
       },
-      encryptionKey: null,
+      encryptionKey: {
+        id: BigInt(1),
+        name: '',
+        value: '',
+        enabled: true,
+        assets: [],
+      },
       mediaType: 'model/x.stl-ascii',
       storeKey: 'a986f147-03cc-4355-986a-6deaaf6dd23d',
       assetTags: [],
-      parentJobExecution: null,
-      createdAt: dayjs().valueOf().toString(),
+      parentJobExecution: {
+        id: BigInt(1),
+        jobId: BigInt(1),
+        processorNodeId: BigInt(1),
+        job: {} as any as Job,
+        processorNode: {} as any as ProcessorNode,
+        resultAssets: [],
+        jobExecutionStatuses: [],
+      },
+      createdAt: dayjs(),
+      assetTypeId: BigInt(3),
+      encryptionKeyId: BigInt(1),
+      parentJobExecutionId: BigInt(1),
+      inputJobs: [],
     }
   ];
   }
