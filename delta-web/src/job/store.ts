@@ -1,6 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import JobRepository from './repository';
-import { CreateJobRequest, Job } from './types';
+import { CreateJobRequest, Job, Jobs } from '../api';
 
 class JobStore {
     constructor() {
@@ -10,21 +9,19 @@ class JobStore {
     jobs?: Job[];
     job?: Job | null;
 
-    private jobRepository = JobRepository;
-
     async create(request: CreateJobRequest) {
-        await this.jobRepository.create(request);
+        await Jobs.createJob(request);
     }
 
     async fetchAll() {
-        const jobs = await this.jobRepository.fetchAll();
+        const jobs = await Jobs.getJobs();
         runInAction(() => { this.jobs = jobs?.sort((a, b) => Number(a.id) - Number(b.id)); });
     }
 
     async fetch(id: string) {
         this.job = undefined;
         await this.fetchAll();
-        runInAction(() => { this.job = this.jobs?.find(e => e.id === id) ?? null; });
+        runInAction(() => { this.job = this.jobs?.find(e => e.id.toString() === id) ?? null; });
     }
 }
 
