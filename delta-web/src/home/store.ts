@@ -6,7 +6,7 @@ class HomeStore {
         makeAutoObservable(this);
     }
 
-    private homeRepository = new HomeRepository();
+    private homeRepository = HomeRepository;
 }
 
-export default HomeStore;
+export default new HomeStore();

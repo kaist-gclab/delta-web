@@ -1,30 +1,23 @@
-import { interfaces } from 'inversify';
 import React, { createContext } from 'react';
 import AssetStore from '../asset/store';
 import HomeStore from '../home/store';
 import EncryptionKeyStore from '../encryptionKey/store';
-import AppContainer from './inversify';
 import AuthStore from '../core/authStore';
 import JobStore from '../job/store';
 import JobTypeStore from '../jobType/store';
 import MonitoringStore from '../monitoring/store';
 import ProcessorNodeStore from '../processorNode/store';
 
-const container = AppContainer;
 const wrappers: ((app: React.FC) => React.FC)[] = [];
 
 export const AuthContext = addStore(AuthStore);
-export const AssetContext = add(AssetStore);
-export const EncryptionKeyContext = add(EncryptionKeyStore);
-export const HomeContext = add(HomeStore);
-export const JobContext = add(JobStore);
-export const JobTypeContext = add(JobTypeStore);
-export const MonitoringContext = add(MonitoringStore);
-export const ProcessorNodeContext = add(ProcessorNodeStore);
-
-function get<T>(type: interfaces.ServiceIdentifier<T>) {
-    return container.get(type);
-}
+export const AssetContext = addStore(AssetStore);
+export const EncryptionKeyContext = addStore(EncryptionKeyStore);
+export const HomeContext = addStore(HomeStore);
+export const JobContext = addStore(JobStore);
+export const JobTypeContext = addStore(JobTypeStore);
+export const MonitoringContext = addStore(MonitoringStore);
+export const ProcessorNodeContext = addStore(ProcessorNodeStore);
 
 function addStore<T>(store: T) {
     const context = createContext<T>(store);
@@ -35,10 +28,6 @@ function addStore<T>(store: T) {
     };
     wrappers.push(wrapper);
     return context;
-}
-
-function add<T>(type: interfaces.ServiceIdentifier<T>) {
-    return addStore(get(type));
 }
 
 export function configure(app: React.FC): React.FC {

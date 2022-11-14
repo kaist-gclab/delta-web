@@ -28,4 +28,4 @@ class ProcessorNodeStore {
     }
 }
 
-export default ProcessorNodeStore;
+export default new ProcessorNodeStore();

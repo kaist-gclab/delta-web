@@ -34,4 +34,4 @@ class AssetStore {
     }
 }
 
-export default AssetStore;
+export default new AssetStore();

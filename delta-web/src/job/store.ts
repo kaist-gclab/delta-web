@@ -28,4 +28,4 @@ class JobStore {
     }
 }
 
-export default JobStore;
+export default new JobStore();

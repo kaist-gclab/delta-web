@@ -31,4 +31,4 @@ class JobTypeStore {
     }
 }
 
-export default JobTypeStore;
+export default new JobTypeStore();

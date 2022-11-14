@@ -29,4 +29,4 @@ class EncryptionKeyStore {
     }
 }
 
-export default EncryptionKeyStore;
+export default new EncryptionKeyStore();

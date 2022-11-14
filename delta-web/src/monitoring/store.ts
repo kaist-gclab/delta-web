@@ -16,4 +16,4 @@ class MonitoringStore {
     }
 }
 
-export default MonitoringStore;
+export default new MonitoringStore();
