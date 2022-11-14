@@ -1,9 +1,7 @@
-import { inject, injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import ProcessorNodeRepository from './repository';
 import { ProcessorNode } from './types';
 
-@injectable()
 class ProcessorNodeStore {
     constructor() {
         makeAutoObservable(this);
@@ -12,8 +10,7 @@ class ProcessorNodeStore {
     processorNodes?: ProcessorNode[];
     processorNode?: ProcessorNode | null;
 
-    @inject(ProcessorNodeRepository)
-    private processorNodeRepository!: ProcessorNodeRepository
+    private processorNodeRepository = ProcessorNodeRepository;
 
     async fetchAll() {
         const processorNodes = await this.processorNodeRepository.fetchAll();
