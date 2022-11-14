@@ -1,9 +1,7 @@
-import { inject, injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import JobTypeRepository from './repository';
 import { JobType } from './types';
 
-@injectable()
 class JobTypeStore {
     constructor() {
         makeAutoObservable(this);
@@ -12,8 +10,7 @@ class JobTypeStore {
     jobTypes?: JobType[];
     jobType?: JobType | null;
 
-    @inject(JobTypeRepository)
-    private jobTypeRepository!: JobTypeRepository
+    private jobTypeRepository = JobTypeRepository;
 
     async fetchAll() {
         const jobTypes = await this.jobTypeRepository.fetchAll();
