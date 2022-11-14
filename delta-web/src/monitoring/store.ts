@@ -1,17 +1,15 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import MonitoringRepository from './repository';
+import { Monitoring } from '../api';
 
 class MonitoringStore {
     constructor() {
         makeAutoObservable(this);
     }
 
-    private monitoringRepository = MonitoringRepository;
-
     events?: any[];
 
     async fetchAll() {
-        const events = await this.monitoringRepository.getStats();
+        const events = await Monitoring.getStats();
         runInAction(() => { this.events = events; });
     }
 }
