@@ -1,9 +1,7 @@
-import { inject, injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import JobRepository from './repository';
 import { CreateJobRequest, Job } from './types';
 
-@injectable()
 class JobStore {
     constructor() {
         makeAutoObservable(this);
@@ -12,8 +10,7 @@ class JobStore {
     jobs?: Job[];
     job?: Job | null;
 
-    @inject(JobRepository)
-    private jobRepository!: JobRepository
+    private jobRepository = JobRepository;
 
     async create(request: CreateJobRequest) {
         await this.jobRepository.create(request);

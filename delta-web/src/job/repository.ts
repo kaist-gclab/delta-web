@@ -1,9 +1,7 @@
 import Http from '../core/http';
-import { injectable } from 'inversify';
 import { CreateJobRequest, Job } from './types';
 
-@injectable()
-export default class JobRepository {
+class JobRepository {
     private http = Http;
 
     async create(request: CreateJobRequest): Promise<Job> {
@@ -16,3 +14,5 @@ export default class JobRepository {
         return response.data;
     }
 }
+
+export default new JobRepository();
