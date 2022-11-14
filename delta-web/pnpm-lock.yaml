@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@blueprintjs/core': ^4.12.0
   '@blueprintjs/icons': ^4.10.1
-  '@blueprintjs/table': ^4.7.9
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
   '@types/react': ^18.0.25
@@ -27,7 +26,6 @@ specifiers:
 dependencies:
   '@blueprintjs/core': 4.12.0_2zx2umvpluuhvlq44va5bta2da
   '@blueprintjs/icons': 4.10.1
-  '@blueprintjs/table': 4.7.9_2zx2umvpluuhvlq44va5bta2da
   '@emotion/react': 11.10.5_fan5qbzahqtxlm5dzefqlqx5ia
   '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
   '@types/react': 18.0.25
@@ -372,49 +370,6 @@ packages:
       tslib: 2.3.1
     dev: false
 
-  /@blueprintjs/popover2/1.10.1_2zx2umvpluuhvlq44va5bta2da:
-    resolution: {integrity: sha512-WWKCvwvPoDUeAXUfsWg5aqbSFI09H+EGbsKZ8CVyRLHC3K0j6k4ljI6ic9iTiDUXLD/0TKGFCd1mOy9GOGaONg==}
-    peerDependencies:
-      '@types/react': ^16.14.32 || 17 || 18
-      react: ^16.8 || 17 || 18
-      react-dom: ^16.8 || 17 || 18
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@blueprintjs/core': 4.12.0_2zx2umvpluuhvlq44va5bta2da
-      '@juggle/resize-observer': 3.4.0
-      '@popperjs/core': 2.11.6
-      '@types/react': 18.0.25
-      classnames: 2.3.2
-      dom4: 2.1.6
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-popper: 2.3.0_r6q5zrenym2zg7je7hgi674bti
-      tslib: 2.3.1
-    dev: false
-
-  /@blueprintjs/table/4.7.9_2zx2umvpluuhvlq44va5bta2da:
-    resolution: {integrity: sha512-wDZo53hMpS52hfZ8EEapekg0T6d/NdDMBPxy7YCpsQYuRjLOvF4XF8ZThutPIaGD+248LcccYpyH6kDAT3WqFg==}
-    peerDependencies:
-      '@types/react': ^16.14.32 || 17 || 18
-      react: ^16.8 || 17 || 18
-      react-dom: ^16.8 || 17 || 18
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@blueprintjs/core': 4.12.0_2zx2umvpluuhvlq44va5bta2da
-      '@blueprintjs/popover2': 1.10.1_2zx2umvpluuhvlq44va5bta2da
-      '@types/react': 18.0.25
-      classnames: 2.3.2
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-innertext: 1.1.5_fan5qbzahqtxlm5dzefqlqx5ia
-      tslib: 2.3.1
-    dev: false
-
   /@emotion/babel-plugin/11.10.5:
     resolution: {integrity: sha512-xE7/hyLHJac7D2Ve9dKroBBZqBT7WuPQmWcq7HSGb84sUuP4mlOWoB8dvVfD9yk5DHkU1m6RW7xSoDtnQHNQeA==}
     peerDependencies:
@@ -610,10 +565,6 @@ packages:
 
   /@juggle/resize-observer/3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
-    dev: false
-
-  /@popperjs/core/2.11.6:
-    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
     dev: false
 
   /@remix-run/router/1.0.3:
@@ -1548,20 +1499,6 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-fast-compare/3.2.0:
-    resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
-    dev: false
-
-  /react-innertext/1.1.5_fan5qbzahqtxlm5dzefqlqx5ia:
-    resolution: {integrity: sha512-PWAqdqhxhHIv80dT9znP2KvS+hfkbRovFp4zFYHFFlOoQLRiawIic81gKb3U1wEyJZgMwgs3JoLtwryASRWP3Q==}
-    peerDependencies:
-      '@types/react': '>=0.0.0 <=99'
-      react: '>=0.0.0 <=99'
-    dependencies:
-      '@types/react': 18.0.25
-      react: 18.2.0
-    dev: false
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
@@ -1578,20 +1515,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       typed-styles: 0.0.7
-      warning: 4.0.3
-    dev: false
-
-  /react-popper/2.3.0_r6q5zrenym2zg7je7hgi674bti:
-    resolution: {integrity: sha512-e1hj8lL3uM+sgSR4Lxzn5h1GxBlpa4CQz0XLF8kx4MDrDRWY0Ena4c97PUeSX9i5W3UAfDP0z0FXCTQkoXUl3Q==}
-    peerDependencies:
-      '@popperjs/core': ^2.0.0
-      react: ^16.8.0 || ^17 || ^18
-      react-dom: ^16.8.0 || ^17 || ^18
-    dependencies:
-      '@popperjs/core': 2.11.6
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-fast-compare: 3.2.0
       warning: 4.0.3
     dev: false
 
