@@ -1,6 +1,5 @@
 import React, { createContext } from 'react';
 import AssetStore from '../asset/store';
-import HomeStore from '../home/store';
 import EncryptionKeyStore from '../encryptionKey/store';
 import AuthStore from '../core/authStore';
 import JobStore from '../job/store';
@@ -13,7 +12,6 @@ const wrappers: ((app: React.FC) => React.FC)[] = [];
 export const AuthContext = addStore(AuthStore);
 export const AssetContext = addStore(AssetStore);
 export const EncryptionKeyContext = addStore(EncryptionKeyStore);
-export const HomeContext = addStore(HomeStore);
 export const JobContext = addStore(JobStore);
 export const JobTypeContext = addStore(JobTypeStore);
 export const MonitoringContext = addStore(MonitoringStore);
