@@ -1,7 +1,7 @@
 import Http from '../core/http';
-import { inject, injectable } from 'inversify';
 
-@injectable()
-export default class HomeRepository {
+class HomeRepository {
     private http = Http;
 }
+
+export default new HomeRepository();
