@@ -1,9 +1,7 @@
 import Http from '../core/http';
-import { injectable } from 'inversify';
 import { Asset } from './types';
 
-@injectable()
-export default class AssetRepository {
+class AssetRepository {
     private http = Http;
 
     async fetchAll(): Promise<Asset[]> {
@@ -17,3 +15,5 @@ export default class AssetRepository {
         });
     }
 }
+
+export default new AssetRepository();

@@ -1,15 +1,12 @@
-import { inject, injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { Asset } from './types';
 import AssetRepository from './repository';
 
-@injectable()
 class AssetStore {
     assets?: Asset[];
     asset?: Asset | null;
 
-    @inject(AssetRepository)
-    private assetRepository!: AssetRepository
+    private assetRepository = AssetRepository;
 
     constructor() {
         makeAutoObservable(this);
