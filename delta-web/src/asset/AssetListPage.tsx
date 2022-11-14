@@ -1,4 +1,3 @@
-import { Cell, Column, RowHeaderCell2, Table2 } from '@blueprintjs/table';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -8,6 +7,7 @@ import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import dayjs from 'dayjs';
 import { Asset } from '../api';
+import { HTMLTable } from '@blueprintjs/core';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -97,6 +97,35 @@ const AssetListPage: React.FC = () => {
   useEffect(() => {
     fetch(null, null);
   }, [assetStore]);
+  return <div>
+    <h1>에셋 목록</h1>
+    <div>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>에셋 #</th>
+            <th>에셋 유형 키</th>
+            <th>에셋 유형 이름</th>
+            <th>미디어 형식</th>
+            <th>암호화 키 이름</th>
+            <th>오브젝트 저장소 키</th>
+            <th>동작</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((a, i) => <tr key={i.toString()}>
+            <td>{a.id.toString()}</td>
+            <td>{a.assetType.key}</td>
+            <td>{a.assetType.name}</td>
+            <td>{a.mediaType}</td>
+            <td>{a.encryptionKey.name ?? '없음'}</td>
+            <td>{a.storeKey}</td>
+            <td>{renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
+    </div>
+  </div>;
 
   const [searchKeyword, setSearchKeyword] = useState('');
   const assets = assetStore.assets;
