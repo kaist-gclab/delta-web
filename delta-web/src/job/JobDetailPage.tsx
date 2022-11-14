@@ -37,7 +37,7 @@ const JobDetailPage: React.FC = () => {
       return <Failed />;
     }
     return <ul>
-      <li>번호: {e.id}</li>
+      <li>번호: {e.id.toString()}</li>
     </ul>
   };
 

@@ -37,7 +37,7 @@ const EncryptionKeyDetailPage: React.FC = () => {
       return <Failed />;
     }
     return <ul>
-      <li>번호: {e.id}</li>
+      <li>번호: {e.id.toString()}</li>
       <li>이름: {e.name}</li>
       <li>활성 상태: {e.enabled ? '예' : '아니오'}</li>
     </ul>

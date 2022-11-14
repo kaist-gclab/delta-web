@@ -1,4 +1,4 @@
-import { Asset } from '../asset/types';
+import { Asset } from '../api';
 import { JobType } from '../jobType/types';
 import { ProcessorNode } from '../processorNode/types';
 

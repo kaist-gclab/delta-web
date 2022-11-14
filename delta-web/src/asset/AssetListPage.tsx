@@ -6,8 +6,8 @@ import styled from '@emotion/styled';
 import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
-import { Asset } from './types';
 import dayjs from 'dayjs';
+import { Asset } from '../api';
 
 const Label = styled.label`
 margin-right: 5px;
