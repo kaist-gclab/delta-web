@@ -1,6 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import JobTypeRepository from './repository';
-import { JobType } from './types';
+import { JobType, JobTypes } from '../api';
 
 class JobTypeStore {
     constructor() {
@@ -10,10 +9,8 @@ class JobTypeStore {
     jobTypes?: JobType[];
     jobType?: JobType | null;
 
-    private jobTypeRepository = JobTypeRepository;
-
     async fetchAll() {
-        const jobTypes = await this.jobTypeRepository.fetchAll();
+        const jobTypes = await JobTypes.getJobTypes();
         runInAction(() => {
             this.jobTypes = jobTypes?.sort((a, b) => Number(a.id) - Number(b.id));
         });
@@ -23,7 +20,7 @@ class JobTypeStore {
         this.jobType = undefined;
         await this.fetchAll();
         runInAction(() => {
-            this.jobType = this.jobTypes?.find(e => e.id === id) ?? null;
+            this.jobType = this.jobTypes?.find(e => e.id.toString() === id) ?? null;
         });
     }
 }
