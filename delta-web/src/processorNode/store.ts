@@ -1,6 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import ProcessorNodeRepository from './repository';
-import { ProcessorNode } from './types';
+import { ProcessorNode, ProcessorNodes } from '../api';
 
 class ProcessorNodeStore {
     constructor() {
@@ -10,10 +9,8 @@ class ProcessorNodeStore {
     processorNodes?: ProcessorNode[];
     processorNode?: ProcessorNode | null;
 
-    private processorNodeRepository = ProcessorNodeRepository;
-
     async fetchAll() {
-        const processorNodes = await this.processorNodeRepository.fetchAll();
+        const processorNodes = await ProcessorNodes.getNodes();
         runInAction(() => {
             this.processorNodes = processorNodes?.sort((a, b) => Number(a.id) - Number(b.id));
         });
@@ -23,7 +20,7 @@ class ProcessorNodeStore {
         this.processorNode = undefined;
         await this.fetchAll();
         runInAction(() => {
-            this.processorNode = this.processorNodes?.find(e => e.id === id) ?? null;
+            this.processorNode = this.processorNodes?.find(e => e.id.toString() === id) ?? null;
         });
     }
 }
