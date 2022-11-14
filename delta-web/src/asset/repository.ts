@@ -12,7 +12,7 @@ export default class AssetRepository {
     }
 
     async addModel(name: string, tag: string, content: string, eventTimestamp: string): Promise<void> {
-        await this.http.post('assets/model', {
+        await this.http.post('api/1/assets/model', {
             name, tag, content, eventTimestamp,
         });
     }
