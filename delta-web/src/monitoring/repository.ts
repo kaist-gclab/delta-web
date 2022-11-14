@@ -1,8 +1,6 @@
 import Http from '../core/http';
-import { inject, injectable } from 'inversify';
 
-@injectable()
-export default class MonitoringRepository {
+class MonitoringRepository {
     private http = Http;
 
     async getStats(): Promise<any[]> {
@@ -10,3 +8,5 @@ export default class MonitoringRepository {
         return response.data;
     }
 }
+
+export default new MonitoringRepository();

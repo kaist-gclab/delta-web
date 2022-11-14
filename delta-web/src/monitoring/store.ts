@@ -1,15 +1,12 @@
-import { inject, injectable } from 'inversify';
 import { makeAutoObservable, runInAction } from 'mobx';
 import MonitoringRepository from './repository';
 
-@injectable()
 class MonitoringStore {
     constructor() {
         makeAutoObservable(this);
     }
 
-    @inject(MonitoringRepository)
-    private monitoringRepository!: MonitoringRepository;
+    private monitoringRepository = MonitoringRepository;
 
     events?: any[];
 
