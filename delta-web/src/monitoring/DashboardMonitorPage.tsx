@@ -1,13 +1,14 @@
 import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
+import Container from '../core/Container';
 
 const MonitorColumn = styled(GridColumn)`
 padding: 0 20px;
 `;
 
 function DashboardMonitorPage() {
-  return <div>
+  return <Container>
     <h1>모니터링 대시보드</h1>
     <GridColumn>
       <GridRow>
@@ -27,7 +28,7 @@ function DashboardMonitorPage() {
         </MonitorColumn>
       </GridRow>
     </GridColumn>
-  </div>;
+  </Container>;
 }
 
 export default observer(DashboardMonitorPage);
