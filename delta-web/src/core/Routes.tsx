@@ -36,8 +36,12 @@ const Routes = () => {
       <Route path="/" element={<Navigate replace to="/start" />} />
       <Route path="/start" element={<StartPage />} />
       <Route path="/help" element={<HelpPage />} />
+
+      {/* settings */}
+      <Route path="/settings" element={<Navigate replace to="/settings/user" />} />
       <Route path="/settings/user" element={<UserSettingsPage />} />
       <Route path="/settings/system" element={<SystemSettingsPage />} />
+      <Route path="/settings/viewers/list" element={<ViewerListPage />} />
 
       <Route path="/assets/add" element={<AddAssetPage />} />
       <Route path="/assets/list" element={<AssetListPage />} />
