@@ -2,6 +2,7 @@ import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
+import Container from '../core/Container';
 import { Loading } from '../core/Loading';
 
 function ViewerListPage() {
@@ -30,7 +31,7 @@ function ViewerListPage() {
     return <Loading />;
   }
 
-  return <div>
+  return <Container>
     <h1>뷰어 목록</h1>
     <div>
       <HTMLTable>
@@ -48,7 +49,7 @@ function ViewerListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(ViewerListPage);
