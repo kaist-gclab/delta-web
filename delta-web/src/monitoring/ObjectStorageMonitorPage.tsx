@@ -1,3 +1,4 @@
+import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
@@ -15,11 +16,20 @@ function ObjectStorageMonitorPage() {
   return <div>
     <h1>오브젝트 저장소 모니터</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="타임스탬프" cellRenderer={(i) => <Cell>{data[i].jobType.key}</Cell>} />
-        <Column name="내용" cellRenderer={(i) => <Cell>{data[i].jobType.name}</Cell>} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>타임스탬프</th>
+            <th>내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e) => <tr key={e.id.toString()}>
+            <td>{e.createdAt.toISOString()}</td>
+            <td>{e.jobArguments}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
     </div>
   </div>;
 }
