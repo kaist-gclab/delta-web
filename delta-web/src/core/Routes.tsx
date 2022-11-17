@@ -43,14 +43,16 @@ const Routes = () => {
       <Route path="/settings/system" element={<SystemSettingsPage />} />
       <Route path="/settings/viewers/list" element={<ViewerListPage />} />
 
-      <Route path="/assets/add" element={<AddAssetPage />} />
-      <Route path="/assets/list" element={<AssetListPage />} />
-      <Route path="/assets/detail/:id?" element={<AssetDetailPage />} />
-      <Route path="/assets/viewer" element={<AssetViewerPage />} />
+      {/* asset */}
+      <Route path="/asset" element={<Navigate replace to="/asset/assets/add" />} />
+      <Route path="/asset/assets/add" element={<AddAssetPage />} />
+      <Route path="/asset/assets/list" element={<AssetListPage />} />
+      <Route path="/asset/assets/detail/:id" element={<AssetDetailPage />} />
+      <Route path="/asset/assets/viewer" element={<AssetViewerPage />} />
 
-      <Route path="/asset-types/add" element={<AddAssetTypePage />} />
-      <Route path="/asset-types/list" element={<AssetTypeListPage />} />
-      <Route path="/asset-types/detail/:id?" element={<AssetTypeDetailPage />} />
+      <Route path="/asset/asset-types/add" element={<AddAssetTypePage />} />
+      <Route path="/asset/asset-types/list" element={<AssetTypeListPage />} />
+      <Route path="/asset/asset-types/detail/:id" element={<AssetTypeDetailPage />} />
 
       <Route path="/viewers/list" element={<ViewerListPage />} />
 
