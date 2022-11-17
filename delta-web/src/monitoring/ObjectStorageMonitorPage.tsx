@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
-const ObjectStorageMonitorPage: React.FC = () => {
+function ObjectStorageMonitorPage() {
   const store = useContext(JobContext);
   useEffect(() => { store.fetchAll(); }, [store]);
 
@@ -22,6 +22,6 @@ const ObjectStorageMonitorPage: React.FC = () => {
       </Table2>
     </div>
   </div>;
-};
+}
 
 export default observer(ObjectStorageMonitorPage);
