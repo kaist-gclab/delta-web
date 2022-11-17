@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { lazy, useContext } from 'react';
 import { Route, Routes } from 'react-router';
 import NavButton from './NavButton';
 import AssetListPage from '../asset/AssetListPage';
