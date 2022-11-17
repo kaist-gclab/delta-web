@@ -122,7 +122,7 @@ function Layout() {
             <Navbar.Heading style={{ userSelect: 'none' }}>설정</Navbar.Heading>
             <NavButton link="/settings/user" text="사용자 설정" />
             <NavButton link="/settings/system" text="시스템 설정" />
-            <NavButton link="/viewers/list" text="뷰어 목록" />
+            <NavButton link="/settings/viewers/list" text="뷰어 목록" />
           </Navbar.Group>
         </SubNavbar>}
     </div>
