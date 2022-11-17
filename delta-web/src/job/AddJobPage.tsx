@@ -2,8 +2,8 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useState } from 'react';
 
-const AddJobPage: React.FC = () => {
   return <h1>작업 추가</h1>;
-};
+function AddJobPage() {
+}
 
 export default observer(AddJobPage);
