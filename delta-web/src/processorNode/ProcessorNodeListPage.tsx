@@ -5,7 +5,7 @@ import { ProcessorNodeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 
-const ProcessorNodeListPage: React.FC = () => {
+function ProcessorNodeListPage() {
   const store = useContext(ProcessorNodeContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -30,6 +30,6 @@ const ProcessorNodeListPage: React.FC = () => {
       </Table2>
     </div>
   </div>;
-};
+}
 
 export default observer(ProcessorNodeListPage);
