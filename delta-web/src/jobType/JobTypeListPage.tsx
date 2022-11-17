@@ -5,7 +5,7 @@ import { JobTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 
-const JobTypeListPage: React.FC = () => {
+function JobTypeListPage() {
   const store = useContext(JobTypeContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -30,6 +30,6 @@ const JobTypeListPage: React.FC = () => {
       </Table2>
     </div>
   </div>;
-};
+}
 
 export default observer(JobTypeListPage);
