@@ -2,13 +2,13 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useState } from 'react';
 
-const AddAssetPage: React.FC = () => {
   return <h1>에셋 추가</h1>;
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [modelName, setModelName] = useState('');
   const [modelTag, setModelTag] = useState('');
   const [uploading, setUploading] = useState(false);
   const store = useContext(AssetTypeContext);
+function AddAssetPage() {
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
   const [okDialogOpen, setOkDialogOpen] = useState(false);
   const openOkDialog = () => setOkDialogOpen(true);
@@ -99,6 +99,6 @@ const AddAssetPage: React.FC = () => {
       <button disabled={uploading} type="button" onClick={() => handleSubmit()}>모델 추가 완료</button>
     </FormRow>
   </>;
-};
+}
 
 export default observer(AddAssetPage);
