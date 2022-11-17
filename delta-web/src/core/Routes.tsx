@@ -54,7 +54,6 @@ const Routes = () => {
       <Route path="/asset/asset-types/list" element={<AssetTypeListPage />} />
       <Route path="/asset/asset-types/detail/:id" element={<AssetTypeDetailPage />} />
 
-      <Route path="/viewers/list" element={<ViewerListPage />} />
 
       <Route path="/jobs/add" element={<AddJobPage />} />
       <Route path="/jobs/list" element={<JobListPage />} />
