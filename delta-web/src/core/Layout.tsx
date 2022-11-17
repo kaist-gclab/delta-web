@@ -62,12 +62,12 @@ function Layout() {
     <NavbarRoot fixedToTop>
       <NavbarRootContent>
         <Navbar.Group align={Alignment.LEFT}>
-          <NavButton link="/" icon="home" text="시작" />
           <NavButton icon="cloud" text="애셋" />
           <NavButton icon="form" text="작업" />
           <NavButton icon="cog" text="처리기 노드" />
           <NavButton icon="key" text="암호화 키" />
           <NavButton icon="dashboard" text="모니터링" />
+          <NavButton link="/start" icon="home" text="시작" />
         </Navbar.Group>
         <Navbar.Group align={Alignment.RIGHT}>
           <NavButton link="/help" icon="help" text="도움말" />
