@@ -5,7 +5,7 @@ import { EncryptionKeyContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 
-const EncryptionKeyListPage: React.FC = () => {
+function EncryptionKeyListPage() {
   const store = useContext(EncryptionKeyContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -30,6 +30,6 @@ const EncryptionKeyListPage: React.FC = () => {
       </Table2>
     </div>
   </div>;
-};
+}
 
 export default observer(EncryptionKeyListPage);
