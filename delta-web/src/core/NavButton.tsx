@@ -1,47 +1,45 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import styled from '@emotion/styled';
+import { Button, IconName } from '@blueprintjs/core';
 
-interface Props {
-  link?: string,
-  text: string,
-  onClick?: ((event: React.MouseEvent<HTMLElement, MouseEvent>) => void) & ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+export interface NavButtonProps {
+  link?: string;
+  icon?: IconName;
+  text?: string;
+  disabled?: boolean;
+  fill?: boolean;
+  onClick?: ((event: React.MouseEvent<HTMLElement, MouseEvent>) => void) &
+  ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void);
 }
 
-const Button = styled.div`
-font-size: 16px;
-padding-left: 15px;
-padding-top: 2px;
-padding-bottom: 2px;
-margin-top: 2px;
-margin-bottom: 2px;
-`;
-
-const NavLinkMenu = styled(NavLink)`
-  color: #106ba3;
-  text-decoration: none;
-`;
-
-const ButtonMenu = styled.span`
-  color: #106ba3;
-  text-decoration: none;
-  cursor: pointer;
-  :hover {
-    text-decoration:underline;
+function computeActive(link: string | undefined, pathname: string) {
+  if (link === undefined) {
+    return false;
   }
-`;
+  if (link === '/') {
+    return link === pathname;
+  }
+  return pathname.startsWith(link);
+}
 
-function NavButton(props: Props) {
-  const { link, text, onClick } = props;
+function NavButton(props: NavButtonProps) {
+  const { link, icon, text, onClick, disabled, fill } = props;
   const location = useLocation();
 
-  const active = location.pathname === link;
-  const button = <Button onClick={onClick} style={{ fontWeight: active ? 'bold' : undefined }}>{text}</Button>;
-
+  const button = <Button
+    minimal
+    onClick={onClick}
+    icon={icon}
+    text={text}
+    fill={fill}
+    alignText="left"
+    active={computeActive(link, location.pathname)}
+    disabled={disabled}
+  />;
   if (!link) {
-    return <ButtonMenu>{button}</ButtonMenu>;
+    return button;
   }
-  return <NavLinkMenu to={link}>{button}</NavLinkMenu>;
+  return <NavLink to={link}>{button}</NavLink>;
 }
 
 export default NavButton;
