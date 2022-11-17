@@ -62,16 +62,16 @@ function Layout() {
     <NavbarRoot fixedToTop>
       <NavbarRootContent>
         <Navbar.Group align={Alignment.LEFT}>
-          <NavButton icon="cloud" text="애셋" />
-          <NavButton icon="form" text="작업" />
-          <NavButton icon="cog" text="처리기 노드" />
-          <NavButton icon="key" text="암호화 키" />
-          <NavButton icon="dashboard" text="모니터링" />
           <NavButton link="/start" icon="home" text="시작" />
+          <NavButton link="/asset" icon="cloud" text="애셋" />
+          <NavButton link="/job" icon="form" text="작업" />
+          <NavButton link="/node" icon="cog" text="처리기 노드" />
+          <NavButton link="/key" icon="key" text="암호화 키" />
+          <NavButton link="/monitoring" icon="dashboard" text="모니터링" />
         </Navbar.Group>
         <Navbar.Group align={Alignment.RIGHT}>
           <NavButton link="/help" icon="help" text="도움말" />
-          <NavButton icon="wrench" text="설정" />
+          <NavButton link="/settings" icon="wrench" text="설정" />
           <NavButton onClick={() => { auth.logout(); }} icon="log-out" text="로그아웃" />
         </Navbar.Group>
       </NavbarRootContent>
