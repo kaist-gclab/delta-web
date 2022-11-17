@@ -33,14 +33,14 @@ function Layout() {
         <NavButton onClick={() => { auth.logout(); }} text="로그아웃" />
       </div>
       <div>
-        <SectionTitle>에셋</SectionTitle>
-        <NavButton link="/assets/add" text="에셋 추가" />
-        <NavButton link="/assets/list" text="에셋 목록" />
-        <NavButton link="/assets/detail" text="에셋 상세 조회" />
-        <NavButton link="/assets/viewer" text="에셋 뷰어" />
-        <NavButton link="/asset-types/add" text="에셋 유형 추가" />
-        <NavButton link="/asset-types/list" text="에셋 유형 목록" />
-        <NavButton link="/asset-types/detail" text="에셋 유형 상세 조회" />
+        <SectionTitle>애셋</SectionTitle>
+        <NavButton link="/assets/add" text="애셋 추가" />
+        <NavButton link="/assets/list" text="애셋 목록" />
+        <NavButton link="/assets/detail" text="애셋 상세 조회" />
+        <NavButton link="/assets/viewer" text="애셋 뷰어" />
+        <NavButton link="/asset-types/add" text="애셋 유형 추가" />
+        <NavButton link="/asset-types/list" text="애셋 유형 목록" />
+        <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
       </div>
       <div>
         <SectionTitle>뷰어</SectionTitle>
