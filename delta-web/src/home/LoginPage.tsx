@@ -1,6 +1,6 @@
 import { Button, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import React, { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { AuthContext } from '../config/context';
 

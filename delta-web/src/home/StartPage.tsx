@@ -1,6 +1,5 @@
 import { Icon } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
