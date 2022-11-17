@@ -29,6 +29,29 @@ z-index: 38;
 function Layout() {
   const location = useLocation();
   const auth = useContext(AuthContext);
+  const subNavbarCode = useMemo(() => {
+    const pathname = location.pathname;
+    if (pathname.startsWith('/asset')) {
+      return 'asset';
+    }
+    if (pathname.startsWith('/job')) {
+      return 'job';
+    }
+    if (pathname.startsWith('/node')) {
+      return 'node';
+    }
+    if (pathname.startsWith('/key')) {
+      return 'key';
+    }
+    if (pathname.startsWith('/monitoring')) {
+      return 'monitoring';
+    }
+    if (pathname.startsWith('/settings')) {
+      return 'settings';
+    }
+    return;
+  }, [location]);
+
   if (!auth.token) {
     return <Suspense fallback={<Loading />}>
       <LoginPage />
