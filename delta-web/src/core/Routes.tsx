@@ -74,7 +74,8 @@ const Routes = () => {
       <Route path="/key/encryption-keys/list" element={<EncryptionKeyListPage />} />
       <Route path="/key/encryption-keys/detail/:id" element={<EncryptionKeyDetailPage />} />
 
-
+      {/* monitoring */}
+      <Route path="/monitoring" element={<Navigate replace to="/monitoring/dashboard" />} />
       <Route path="/monitoring/dashboard" element={<DashboardMonitorPage />} />
       <Route path="/monitoring/object-storage" element={<ObjectStorageMonitorPage />} />
       <Route path="/monitoring/processor-node" element={<ProcessorNodeMonitorPage />} />
