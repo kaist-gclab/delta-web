@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
+import Container from '../core/Container';
 import { Loading } from '../core/Loading';
 
 function JobMonitorPage() {
@@ -19,7 +20,7 @@ function JobMonitorPage() {
     navigate(`/jobs/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>작업 모니터</h1>
     <div>
       <HTMLTable>
@@ -39,7 +40,7 @@ function JobMonitorPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(JobMonitorPage);
