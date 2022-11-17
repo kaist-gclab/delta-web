@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { JobTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
+import Container from '../core/Container';
 import { Loading } from '../core/Loading';
 
 function JobTypeListPage() {
@@ -20,7 +21,7 @@ function JobTypeListPage() {
     navigate(`/job-types/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>작업 유형 목록</h1>
     <div>
       <HTMLTable>
@@ -40,7 +41,7 @@ function JobTypeListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(JobTypeListPage);
