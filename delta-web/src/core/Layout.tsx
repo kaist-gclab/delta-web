@@ -34,6 +34,18 @@ function Layout() {
   }
 
   return <div>
+    <NavbarRoot fixedToTop>
+      <NavbarRootContent>
+        <Navbar.Group>
+          <NavButton icon="home" text="시작" />
+          <NavButton icon="cloud" text="애셋" />
+          <NavButton icon="form" text="작업" />
+          <NavButton icon="cog" text="처리기 노드" />
+          <NavButton icon="key" text="암호화 키" />
+          <NavButton icon="dashboard" text="모니터링" />
+        </Navbar.Group>
+      </NavbarRootContent>
+    </NavbarRoot>
     <div>
       <div>
         <SectionTitle>시작</SectionTitle>
