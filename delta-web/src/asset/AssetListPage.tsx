@@ -6,7 +6,7 @@ import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import dayjs from 'dayjs';
-import { Asset } from '../api';
+import { Asset, Job, ProcessorNode } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 
 const Label = styled.label`
