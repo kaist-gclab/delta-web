@@ -1,6 +1,5 @@
 import { lazy, useContext } from 'react';
 import { Route, Routes } from 'react-router';
-import NavButton from './NavButton';
 import AssetListPage from '../asset/AssetListPage';
 import EncryptionKeyListPage from '../encryptionKey/EncryptionKeyListPage';
 import AddAssetPage from '../asset/AddAssetPage';
@@ -28,6 +27,7 @@ import DashboardMonitorPage from '../monitoring/DashboardMonitorPage';
 import ObjectStorageMonitorPage from '../monitoring/ObjectStorageMonitorPage';
 import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
 import JobMonitorPage from '../monitoring/JobMonitorPage';
+import NavButton from './NavButton';
 import { AuthContext } from '../config/context';
 import LoginPage from '../home/LoginPage';
 import { observer } from 'mobx-react-lite';
