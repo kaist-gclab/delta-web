@@ -69,7 +69,7 @@ margin-bottom: 5px;
 font-weight: bold;
 `;
 
-const Layout: React.FC = () => {
+function Layout() {
   const auth = useContext(AuthContext);
   if (!auth.token) {
     return <LoginPage />;
@@ -172,6 +172,6 @@ const Layout: React.FC = () => {
       </Routes>
     </Content>
   </Container>;
-};
+}
 
 export default observer(Layout);
