@@ -11,6 +11,7 @@ body {
     'Noto Sans KR', 'Malgun Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: $pt-navbar-height;
 }
 
 code {
