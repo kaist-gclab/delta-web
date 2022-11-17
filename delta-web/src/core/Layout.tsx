@@ -26,12 +26,14 @@ import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
 import JobMonitorPage from '../monitoring/JobMonitorPage';
 import NavButton from './NavButton';
 import { AuthContext } from '../config/context';
-import LoginPage from '../home/LoginPage';
 import { observer } from 'mobx-react-lite';
 
 const AssetListPage = lazy(() => import('../asset/AssetListPage'));
 const EncryptionKeyListPage = lazy(() => import('../encryptionKey/EncryptionKeyListPage'));
 const AddAssetPage = lazy(() => import('../asset/AddAssetPage'));
+const LoginPage = lazy(() => import('../home/LoginPage'));
+
+
 export const Container = styled.div`
 display: grid;
 grid-template-columns: 250px auto;
