@@ -77,13 +77,6 @@ function Layout() {
       </NavbarRootContent>
     </NavbarRoot>
     <div>
-      <div>
-        <SectionTitle>모니터링</SectionTitle>
-        <NavButton link="/monitoring/dashboard" text="대시보드" />
-        <NavButton link="/monitoring/object-storage" text="오브젝트 저장소 모니터" />
-        <NavButton link="/monitoring/processor-node" text="처리기 노드 모니터" />
-        <NavButton link="/monitoring/jobs" text="작업 모니터" />
-      </div>
       {subNavbarCode === 'asset' &&
         <SubNavbar className="delta-navbar-sub" fixedToTop>
           <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
@@ -123,6 +116,14 @@ function Layout() {
             <NavButton link="/key/encryption-keys/detail" text="상세 조회" />
           </Navbar.Group>
         </SubNavbar>}
+      {subNavbarCode === 'monitoring' &&
+        <SubNavbar className="delta-navbar-sub" fixedToTop>
+          <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
+            <Navbar.Heading style={{ userSelect: 'none' }}>모니터링</Navbar.Heading>
+            <NavButton link="/monitoring/dashboard" text="대시보드" />
+            <NavButton link="/monitoring/object-storage" text="오브젝트 저장소 모니터" />
+            <NavButton link="/monitoring/processor-node" text="처리기 노드 모니터" />
+            <NavButton link="/monitoring/jobs" text="작업 모니터" />
           </Navbar.Group>
         </SubNavbar>}
       {subNavbarCode === 'settings' &&
