@@ -4,6 +4,7 @@ import { Loading } from '../core/Loading';
 import { EncryptionKeyContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
+import { HTMLTable } from '@blueprintjs/core';
 
 function EncryptionKeyListPage() {
   const store = useContext(EncryptionKeyContext);
@@ -22,14 +23,24 @@ function EncryptionKeyListPage() {
   return <div>
     <h1>암호화 키 목록</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
-        <Column name="활성 상태" cellRenderer={(i) => <Cell>{data[i].enabled ? '예' : '아니오'}</Cell>} />
-        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>활성 상태</th>
+            <th>동작</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e) => <tr key={e.id.toString()}>
+            <td>{e.name}</td>
+            <td>{e.enabled ? '예' : '아니오'}</td>
+            <td>{renderCellButton('상세 조회', () => goDetailPage(e.id.toString()))}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
     </div>
-  </div>;
+  </div >;
 }
 
 export default observer(EncryptionKeyListPage);
