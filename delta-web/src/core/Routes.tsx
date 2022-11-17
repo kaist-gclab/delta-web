@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { lazy, Suspense } from 'react';
 import { Loading } from './Loading';
-import { Route, Routes as RouterRoutes } from 'react-router';
+import { Navigate, Route, Routes as RouterRoutes } from 'react-router';
 
 const AssetListPage = lazy(() => import('../asset/AssetListPage'));
 const EncryptionKeyListPage = lazy(() => import('../encryptionKey/EncryptionKeyListPage'));
