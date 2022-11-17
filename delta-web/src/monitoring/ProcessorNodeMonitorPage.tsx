@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
-const ProcessorNodeMonitorPage: React.FC = () => {
+function ProcessorNodeMonitorPage() {
   const store = useContext(JobContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -13,6 +13,7 @@ const ProcessorNodeMonitorPage: React.FC = () => {
   if (!data) {
     return <Loading />;
   }
-};
+
+}
 
 export default observer(ProcessorNodeMonitorPage);
