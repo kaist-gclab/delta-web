@@ -33,7 +33,8 @@ const JobMonitorPage = lazy(() => import('../monitoring/JobMonitorPage'));
 const Routes = () => {
   return <Suspense fallback={<Loading />}>
     <RouterRoutes>
-      <Route path="/" element={<StartPage />} />
+      <Route path="/" element={<Navigate replace to="/start" />} />
+      <Route path="/start" element={<StartPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/settings/user" element={<UserSettingsPage />} />
       <Route path="/settings/system" element={<SystemSettingsPage />} />
@@ -67,6 +68,8 @@ const Routes = () => {
       <Route path="/monitoring/object-storage" element={<ObjectStorageMonitorPage />} />
       <Route path="/monitoring/processor-node" element={<ProcessorNodeMonitorPage />} />
       <Route path="/monitoring/jobs" element={<JobMonitorPage />} />
+
+      <Route path="*" element={<Navigate replace to="/" />} />
     </RouterRoutes>
   </Suspense>;
 };
