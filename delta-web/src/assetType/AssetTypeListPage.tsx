@@ -6,7 +6,7 @@ import { Loading } from '../core/Loading';
 import { AssetTypes } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 
-const AssetTypeListPage: React.FC = () => {
+function AssetTypeListPage() {
   const navigate = useNavigate();
   const { data, error } = AssetTypes.useSWRGetAssetTypes();
   if (error) {
@@ -43,6 +43,6 @@ const AssetTypeListPage: React.FC = () => {
       </HTMLTable>
     </div>
   </div>;
-};
+}
 
 export default observer(AssetTypeListPage);
