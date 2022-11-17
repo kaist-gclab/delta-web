@@ -1,12 +1,11 @@
+import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
 function ProcessorNodeMonitorPage() {
   const store = useContext(JobContext);
-  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.jobs;
@@ -14,6 +13,25 @@ function ProcessorNodeMonitorPage() {
     return <Loading />;
   }
 
+  return <div>
+    <h1>처리기 노드 모니터</h1>
+    <div>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>타임스탬프</th>
+            <th>인자</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e) => <tr key={e.id.toString()}>
+            <td>{e.createdAt.toISOString()}</td>
+            <td>{e.jobArguments}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
+    </div>
+  </div>;
 }
 
 export default observer(ProcessorNodeMonitorPage);
