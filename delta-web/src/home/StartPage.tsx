@@ -2,6 +2,7 @@ import { Icon } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+import Container from '../core/Container';
 
 const StartButton = styled(NavLink)`
 text-align: center;
@@ -29,7 +30,7 @@ margin-top: 10px;
 const IconSize = 40;
 
 function StartPage() {
-  return <>
+  return <Container>
     <h1>시작</h1>
     <h2>도움말</h2>
     <StartButton to="help">
@@ -60,7 +61,7 @@ function StartPage() {
         <StartLabel>대시보드</StartLabel>
       </StartButton>
     </div>
-  </>
+  </Container>
 }
 
 export default observer(StartPage);
