@@ -4,7 +4,7 @@ import React, { FormEvent, useContext, useState } from 'react';
 import { EncryptionKeyContext } from '../config/context';
 import { CreateEncryptionKeyResponse } from './types';
 
-const AddEncryptionKeyPage: React.FC = () => {
+function AddEncryptionKeyPage() {
   const store = useContext(EncryptionKeyContext);
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
@@ -70,6 +70,6 @@ const AddEncryptionKeyPage: React.FC = () => {
       </div>
     </Dialog>
   </div>;
-};
+}
 
 export default observer(AddEncryptionKeyPage);
