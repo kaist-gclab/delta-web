@@ -8,11 +8,6 @@ import Routes from './Routes';
 
 const LoginPage = lazy(() => import('../home/LoginPage'));
 
-export const Title = styled.span`
-font-size: 20px;
-font-weight: bold;
-`;
-
 export const Section = styled.div`
 margin-top: 20px;
 `;
@@ -33,7 +28,6 @@ function Layout() {
 
   return <div>
     <div>
-      <Title>3차원 기하 모델<br />프로세싱 프레임워크 v4.0</Title>
       <Section>
         <SectionTitle>기본 기능</SectionTitle>
         <NavButton link="/" text="시작" />
