@@ -40,11 +40,11 @@ function StartPage() {
     <div>
       <StartButton to="/assets/add">
         <StartIcon iconSize={IconSize} icon="cloud-upload" />
-        <StartLabel>에셋 추가</StartLabel>
+        <StartLabel>애셋 추가</StartLabel>
       </StartButton>
       <StartButton to="/assets/list">
         <StartIcon iconSize={IconSize} icon="cloud" />
-        <StartLabel>에셋 목록</StartLabel>
+        <StartLabel>애셋 목록</StartLabel>
       </StartButton>
       <StartButton to="/jobs/add">
         <StartIcon iconSize={IconSize} icon="th-derived" />
