@@ -1,7 +1,6 @@
 import { lazy, useContext } from 'react';
 import { Route, Routes } from 'react-router';
 import styled from '@emotion/styled';
-import AddEncryptionKeyPage from '../encryptionKey/AddEncryptionKeyPage';
 import DashboardMonitorPage from '../monitoring/DashboardMonitorPage';
 import ObjectStorageMonitorPage from '../monitoring/ObjectStorageMonitorPage';
 import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
@@ -31,6 +30,7 @@ const JobTypeDetailPage = lazy(() => import('../jobType/JobTypeDetailPage'));
 const ProcessorNodeListPage = lazy(() => import('../processorNode/ProcessorNodeListPage'));
 const ProcessorNodeDetailPage = lazy(() => import('../processorNode/ProcessorNodeDetailPage'));
 const EncryptionKeyDetailPage = lazy(() => import('../encryptionKey/EncryptionKeyDetailPage'));
+const AddEncryptionKeyPage = lazy(() => import('../encryptionKey/AddEncryptionKeyPage'));
 const LoginPage = lazy(() => import('../home/LoginPage'));
 
 
