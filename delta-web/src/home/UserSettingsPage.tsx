@@ -2,8 +2,8 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useContext, useState } from 'react';
 
-const UserSettingsPages: React.FC = () => {
   return <h1>사용자 설정</h1>;
-};
+function UserSettingsPages() {
+}
 
 export default observer(UserSettingsPages);
