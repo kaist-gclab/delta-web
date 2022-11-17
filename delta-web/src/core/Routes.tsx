@@ -63,9 +63,11 @@ const Routes = () => {
       <Route path="/job/job-types/list" element={<JobTypeListPage />} />
       <Route path="/job/job-types/detail/:id" element={<JobTypeDetailPage />} />
 
+      {/* node */}
+      <Route path="/node" element={<Navigate replace to="/node/processor-nodes/list" />} />
+      <Route path="/node/processor-nodes/list" element={<ProcessorNodeListPage />} />
+      <Route path="/node/processor-nodes/detail/:id" element={<ProcessorNodeDetailPage />} />
 
-      <Route path="/processor-nodes/list" element={<ProcessorNodeListPage />} />
-      <Route path="/processor-nodes/detail/:id?" element={<ProcessorNodeDetailPage />} />
 
       <Route path="/encryption-keys/add" element={<AddEncryptionKeyPage />} />
       <Route path="/encryption-keys/list" element={<EncryptionKeyListPage />} />
