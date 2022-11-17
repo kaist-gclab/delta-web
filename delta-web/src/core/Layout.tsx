@@ -2,7 +2,6 @@ import { lazy, useContext } from 'react';
 import { Route, Routes } from 'react-router';
 import styled from '@emotion/styled';
 import ProcessorNodeMonitorPage from '../monitoring/ProcessorNodeMonitorPage';
-import JobMonitorPage from '../monitoring/JobMonitorPage';
 import NavButton from './NavButton';
 import { AuthContext } from '../config/context';
 import { observer } from 'mobx-react-lite';
@@ -31,6 +30,7 @@ const EncryptionKeyDetailPage = lazy(() => import('../encryptionKey/EncryptionKe
 const AddEncryptionKeyPage = lazy(() => import('../encryptionKey/AddEncryptionKeyPage'));
 const DashboardMonitorPage = lazy(() => import('../monitoring/DashboardMonitorPage'));
 const ObjectStorageMonitorPage = lazy(() => import('../monitoring/ObjectStorageMonitorPage'));
+const JobMonitorPage = lazy(() => import('../monitoring/JobMonitorPage'));
 const LoginPage = lazy(() => import('../home/LoginPage'));
 
 
