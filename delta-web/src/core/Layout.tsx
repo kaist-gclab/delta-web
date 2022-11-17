@@ -78,14 +78,6 @@ function Layout() {
     </NavbarRoot>
     <div>
       <div>
-        <SectionTitle>작업</SectionTitle>
-        <NavButton link="/jobs/add" text="작업 추가" />
-        <NavButton link="/jobs/list" text="작업 목록" />
-        <NavButton link="/jobs/detail" text="작업 상세 조회" />
-        <NavButton link="/job-types/list" text="작업 유형 목록" />
-        <NavButton link="/job-types/detail" text="작업 유형 상세 조회" />
-      </div>
-      <div>
         <SectionTitle>처리기 노드</SectionTitle>
         <NavButton link="/processor-nodes/list" text="목록" />
         <NavButton link="/processor-nodes/detail" text="상세 조회" />
@@ -114,6 +106,17 @@ function Layout() {
             <NavButton link="/asset-types/add" text="애셋 유형 추가" />
             <NavButton link="/asset-types/list" text="애셋 유형 목록" />
             <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
+      {subNavbarCode === 'job' &&
+        <SubNavbar className="delta-navbar-sub" fixedToTop>
+          <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
+            <Navbar.Heading style={{ userSelect: 'none' }}>작업</Navbar.Heading>
+            <NavButton link="/job/jobs/add" text="작업 추가" />
+            <NavButton link="/job/jobs/list" text="작업 목록" />
+            <NavButton link="/job/jobs/detail" text="작업 상세 조회" />
+            <NavButton link="/job/job-types/list" text="작업 유형 목록" />
+            <NavButton link="/job/job-types/detail" text="작업 유형 상세 조회" />
+          </Navbar.Group>
+        </SubNavbar>}
           </Navbar.Group>
         </SubNavbar>}
       {subNavbarCode === 'settings' &&
