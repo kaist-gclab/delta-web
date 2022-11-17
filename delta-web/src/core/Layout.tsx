@@ -78,12 +78,6 @@ function Layout() {
     </NavbarRoot>
     <div>
       <div>
-        <SectionTitle>암호화 키</SectionTitle>
-        <NavButton link="/encryption-keys/add" text="추가" />
-        <NavButton link="/encryption-keys/list" text="목록" />
-        <NavButton link="/encryption-keys/detail" text="상세 조회" />
-      </div>
-      <div>
         <SectionTitle>모니터링</SectionTitle>
         <NavButton link="/monitoring/dashboard" text="대시보드" />
         <NavButton link="/monitoring/object-storage" text="오브젝트 저장소 모니터" />
@@ -118,6 +112,15 @@ function Layout() {
             <Navbar.Heading style={{ userSelect: 'none' }}>처리기 노드</Navbar.Heading>
             <NavButton link="/node/processor-nodes/list" text="목록" />
             <NavButton link="/node/processor-nodes/detail" text="상세 조회" />
+          </Navbar.Group>
+        </SubNavbar>}
+      {subNavbarCode === 'key' &&
+        <SubNavbar className="delta-navbar-sub" fixedToTop>
+          <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
+            <Navbar.Heading style={{ userSelect: 'none' }}>암호화 키</Navbar.Heading>
+            <NavButton link="/key/encryption-keys/add" text="추가" />
+            <NavButton link="/key/encryption-keys/list" text="목록" />
+            <NavButton link="/key/encryption-keys/detail" text="상세 조회" />
           </Navbar.Group>
         </SubNavbar>}
           </Navbar.Group>
