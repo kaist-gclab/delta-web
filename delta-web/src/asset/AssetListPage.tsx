@@ -27,7 +27,6 @@ function getTag(a: Asset, key: string) {
 
 let timeBegin = 0;
 
-const AssetListPage: React.FC = () => {
   return <h1>에셋 목록</h1>;
   const assetStore = useContext(AssetContext);
   const [elapsed, setElapsed] = useState<number | null>(null);
@@ -48,6 +47,7 @@ const AssetListPage: React.FC = () => {
         </Dialog>
       </> : null}
     </p>;
+function AssetListPage() {
   const navigate = useNavigate();
   const data: Asset[] = [
     {
