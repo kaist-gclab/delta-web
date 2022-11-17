@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
-const ViewerListPage: React.FC = () => {
+function ViewerListPage() {
   const store = useContext(JobContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -44,6 +44,6 @@ const ViewerListPage: React.FC = () => {
       </Table2>
     </div>
   </div>;
-};
+}
 
 export default observer(ViewerListPage);
