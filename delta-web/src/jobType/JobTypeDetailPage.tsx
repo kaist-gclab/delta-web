@@ -16,7 +16,7 @@ const Message = styled.div`
 margin: 20px 0;
 `;
 
-const JobTypeDetailPage: React.FC = () => {
+function JobTypeDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
@@ -57,6 +57,6 @@ const JobTypeDetailPage: React.FC = () => {
     </ControlGroup>
     {!params.id ? <Message>번호로 조회하십시오.</Message> : render()}
   </div>;
-};
+}
 
 export default observer(JobTypeDetailPage);
