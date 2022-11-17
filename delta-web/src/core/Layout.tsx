@@ -25,7 +25,7 @@ function Layout() {
   return <div>
     <div>
       <div>
-        <SectionTitle>기본 기능</SectionTitle>
+        <SectionTitle>시작</SectionTitle>
         <NavButton link="/" text="시작" />
         <NavButton link="/help" text="도움말" />
         <NavButton link="/settings/user" text="사용자 설정" />
@@ -34,16 +34,13 @@ function Layout() {
       </div>
       <div>
         <SectionTitle>에셋</SectionTitle>
-        <NavButton link="/assets/add" text="추가" />
-        <NavButton link="/assets/list" text="목록" />
-        <NavButton link="/assets/detail" text="상세 조회" />
-        <NavButton link="/assets/viewer" text="뷰어" />
-      </div>
-      <div>
-        <SectionTitle>에셋 유형</SectionTitle>
-        <NavButton link="/asset-types/add" text="추가" />
-        <NavButton link="/asset-types/list" text="목록" />
-        <NavButton link="/asset-types/detail" text="상세 조회" />
+        <NavButton link="/assets/add" text="에셋 추가" />
+        <NavButton link="/assets/list" text="에셋 목록" />
+        <NavButton link="/assets/detail" text="에셋 상세 조회" />
+        <NavButton link="/assets/viewer" text="에셋 뷰어" />
+        <NavButton link="/asset-types/add" text="에셋 유형 추가" />
+        <NavButton link="/asset-types/list" text="에셋 유형 목록" />
+        <NavButton link="/asset-types/detail" text="에셋 유형 상세 조회" />
       </div>
       <div>
         <SectionTitle>뷰어</SectionTitle>
@@ -51,14 +48,11 @@ function Layout() {
       </div>
       <div>
         <SectionTitle>작업</SectionTitle>
-        <NavButton link="/jobs/add" text="추가" />
-        <NavButton link="/jobs/list" text="목록" />
-        <NavButton link="/jobs/detail" text="상세 조회" />
-      </div>
-      <div>
-        <SectionTitle>작업 유형</SectionTitle>
-        <NavButton link="/job-types/list" text="목록" />
-        <NavButton link="/job-types/detail" text="상세 조회" />
+        <NavButton link="/jobs/add" text="작업 추가" />
+        <NavButton link="/jobs/list" text="작업 목록" />
+        <NavButton link="/jobs/detail" text="작업 상세 조회" />
+        <NavButton link="/job-types/list" text="작업 유형 목록" />
+        <NavButton link="/job-types/detail" text="작업 유형 상세 조회" />
       </div>
       <div>
         <SectionTitle>처리기 노드</SectionTitle>
