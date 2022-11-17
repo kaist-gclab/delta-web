@@ -4,6 +4,7 @@ import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import { AssetTypes } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
+import Container from '../core/Container';
 
 function AssetTypeListPage() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function AssetTypeListPage() {
     navigate(`/asset-types/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>애셋 유형 목록</h1>
     <div>
       <HTMLTable>
@@ -41,7 +42,7 @@ function AssetTypeListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(AssetTypeListPage);
