@@ -10,9 +10,9 @@ const MonitorColumn = styled(GridColumn)`
 padding: 0 20px;
 `;
 
-const DashboardMonitorPage: React.FC = () => {
+function DashboardMonitorPage() {
   const store = useContext(JobContext);
   const navigate = useNavigate();
-};
+}
 
 export default observer(DashboardMonitorPage);
