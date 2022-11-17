@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { ProcessorNodeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
+import Container from '../core/Container';
 import { Loading } from '../core/Loading';
 
 function ProcessorNodeListPage() {
@@ -20,7 +21,7 @@ function ProcessorNodeListPage() {
     navigate(`/processor-nodes/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>처리기 노드 목록</h1>
     <div>
       <HTMLTable>
@@ -40,7 +41,7 @@ function ProcessorNodeListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(ProcessorNodeListPage);
