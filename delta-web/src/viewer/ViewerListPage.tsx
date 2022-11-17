@@ -1,12 +1,11 @@
+import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
 function ViewerListPage() {
   const store = useContext(JobContext);
-  const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = [{
@@ -26,22 +25,28 @@ function ViewerListPage() {
     name: 'TextViewer',
     mediaType: 'text/plain'
   }];
+
   if (!data) {
     return <Loading />;
   }
 
-  const goDetailPage = (id: string) => {
-    navigate(`/jobs/detail/${id}`);
-  };
-
   return <div>
     <h1>뷰어 목록</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]} columnWidths={[150, 400]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
-        <Column name="미디어 타입" cellRenderer={(i) => <Cell>{data[i].mediaType}</Cell>} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>미디어 타입</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e) => <tr key={e.id.toString()}>
+            <td>{e.name}</td>
+            <td>{e.mediaType}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
     </div>
   </div>;
 }
