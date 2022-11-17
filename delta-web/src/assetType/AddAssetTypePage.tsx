@@ -2,7 +2,7 @@ import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import React, { FormEvent, useState } from 'react';
 
-const AddAssetTypePage: React.FC = () => {
+function AddAssetTypePage() {
   const [key, setKey] = useState('');
   const [name, setName] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
@@ -71,6 +71,6 @@ const AddAssetTypePage: React.FC = () => {
       </div>
     </Dialog>
   </div>;
-};
+}
 
 export default observer(AddAssetTypePage);
