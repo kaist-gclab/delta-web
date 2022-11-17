@@ -21,6 +21,7 @@ min-width: 800px;
 `;
 
 const SubNavbar = styled(Navbar)`
+background: #efefef;
 overflow-x: auto;
 overflow-y: hidden;
 z-index: 38;
