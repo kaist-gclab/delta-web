@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { Loading } from '../core/Loading';
 
-const JobMonitorPage: React.FC = () => {
+function JobMonitorPage() {
   const store = useContext(JobContext);
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
@@ -40,6 +40,6 @@ const JobMonitorPage: React.FC = () => {
       </HTMLTable>
     </div>
   </div>;
-};
+}
 
 export default observer(JobMonitorPage);
