@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
+import Container from '../core/Container';
 
 const Description = styled.li`
 margin-bottom: 16px;
@@ -8,7 +9,7 @@ word-break: keep-all;
 `;
 
 function HelpPage() {
-  return <>
+  return <Container>
     <h1>도움말</h1>
     <h2>기능 설명</h2>
     <ul>
@@ -39,7 +40,7 @@ function HelpPage() {
       <Description>처리기 노드 모니터 페이지: 처리기 노드 관련 수치를 중심으로 시스템을 모니터링할 수 있습니다.</Description>
       <Description>작업 모니터 페이지: 작업 관련 수치를 중심으로 시스템을 모니터링 할 수 있습니다.</Description>
     </ul>
-  </>;
+  </Container>;
 }
 
 export default observer(HelpPage);
