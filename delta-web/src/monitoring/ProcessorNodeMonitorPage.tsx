@@ -2,6 +2,7 @@ import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
+import Container from '../core/Container';
 import { Loading } from '../core/Loading';
 
 function ProcessorNodeMonitorPage() {
@@ -13,7 +14,7 @@ function ProcessorNodeMonitorPage() {
     return <Loading />;
   }
 
-  return <div>
+  return <Container>
     <h1>처리기 노드 모니터</h1>
     <div>
       <HTMLTable>
@@ -31,7 +32,7 @@ function ProcessorNodeMonitorPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 }
 
 export default observer(ProcessorNodeMonitorPage);
