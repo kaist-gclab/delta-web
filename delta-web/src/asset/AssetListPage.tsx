@@ -8,6 +8,7 @@ import { Loading } from '../core/Loading';
 import dayjs from 'dayjs';
 import { Asset, Job, ProcessorNode } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
+import Container from '../core/Container';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -93,7 +94,7 @@ function AssetListPage() {
     navigate(`/jobs/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>애셋 목록</h1>
     <div>
       <HTMLTable>
@@ -121,7 +122,7 @@ function AssetListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div>;
+  </Container>;
 
   // const assetStore = useContext(AssetContext);
   // const [elapsed, setElapsed] = useState<number | null>(null);
