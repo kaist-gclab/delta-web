@@ -138,7 +138,7 @@ function Layout() {
           </Navbar.Group>
         </SubNavbar>}
     </div>
-    <div>
+    <div className={subNavbarCode ? 'delta-navbar-sub' : undefined}>
       <Routes />
     </div>
   </div>;
