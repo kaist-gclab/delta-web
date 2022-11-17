@@ -81,13 +81,15 @@ function Layout() {
         <SubNavbar className="delta-navbar-sub" fixedToTop>
           <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
             <Navbar.Heading style={{ userSelect: 'none' }}>애셋</Navbar.Heading>
-            <NavButton link="/assets/add" text="애셋 추가" />
-            <NavButton link="/assets/list" text="애셋 목록" />
-            <NavButton link="/assets/detail" text="애셋 상세 조회" />
-            <NavButton link="/assets/viewer" text="애셋 뷰어" />
-            <NavButton link="/asset-types/add" text="애셋 유형 추가" />
-            <NavButton link="/asset-types/list" text="애셋 유형 목록" />
-            <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
+            <NavButton link="/asset/assets/add" text="애셋 추가" />
+            <NavButton link="/asset/assets/list" text="애셋 목록" />
+            <NavButton link="/asset/assets/detail" text="애셋 상세 조회" />
+            <NavButton link="/asset/assets/viewer" text="애셋 뷰어" />
+            <NavButton link="/asset/asset-types/add" text="애셋 유형 추가" />
+            <NavButton link="/asset/asset-types/list" text="애셋 유형 목록" />
+            <NavButton link="/asset/asset-types/detail" text="애셋 유형 상세 조회" />
+          </Navbar.Group>
+        </SubNavbar>}
       {subNavbarCode === 'job' &&
         <SubNavbar className="delta-navbar-sub" fixedToTop>
           <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
