@@ -54,13 +54,15 @@ const Routes = () => {
       <Route path="/asset/asset-types/list" element={<AssetTypeListPage />} />
       <Route path="/asset/asset-types/detail/:id" element={<AssetTypeDetailPage />} />
 
+      {/* job */}
+      <Route path="/job" element={<Navigate replace to="/job/jobs/add" />} />
+      <Route path="/job/jobs/add" element={<AddJobPage />} />
+      <Route path="/job/jobs/list" element={<JobListPage />} />
+      <Route path="/job/jobs/detail/:id" element={<JobDetailPage />} />
 
-      <Route path="/jobs/add" element={<AddJobPage />} />
-      <Route path="/jobs/list" element={<JobListPage />} />
-      <Route path="/jobs/detail/:id?" element={<JobDetailPage />} />
+      <Route path="/job/job-types/list" element={<JobTypeListPage />} />
+      <Route path="/job/job-types/detail/:id" element={<JobTypeDetailPage />} />
 
-      <Route path="/job-types/list" element={<JobTypeListPage />} />
-      <Route path="/job-types/detail/:id?" element={<JobTypeDetailPage />} />
 
       <Route path="/processor-nodes/list" element={<ProcessorNodeListPage />} />
       <Route path="/processor-nodes/detail/:id?" element={<ProcessorNodeDetailPage />} />
