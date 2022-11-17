@@ -5,8 +5,19 @@ import { AuthContext } from '../config/context';
 import { observer } from 'mobx-react-lite';
 import { Loading } from './Loading';
 import Routes from './Routes';
+import { Navbar } from '@blueprintjs/core';
 
 const LoginPage = lazy(() => import('../home/LoginPage'));
+
+const NavbarRoot = styled(Navbar)`
+overflow-x: auto;
+overflow-y: hidden;
+z-index: 39;
+`;
+
+const NavbarRootContent = styled.div`
+min-width: 1280px;
+`;
 
 export const SectionTitle = styled.div`
 font-size: 17px;
