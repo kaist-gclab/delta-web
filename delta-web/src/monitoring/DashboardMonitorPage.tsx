@@ -1,18 +1,33 @@
 import { observer } from 'mobx-react-lite';
-import { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
-import { JobContext } from '../config/context';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
-import { Loading } from '../core/Loading';
 
 const MonitorColumn = styled(GridColumn)`
 padding: 0 20px;
 `;
 
 function DashboardMonitorPage() {
-  const store = useContext(JobContext);
-  const navigate = useNavigate();
+  return <div>
+    <h1>모니터링 대시보드</h1>
+    <GridColumn>
+      <GridRow>
+        <MonitorColumn>
+          <h2>통합</h2>
+        </MonitorColumn>
+        <MonitorColumn>
+          <h2>오브젝트 저장소</h2>
+        </MonitorColumn>
+      </GridRow>
+      <GridRow>
+        <MonitorColumn>
+          <h2>처리기 노드</h2>
+        </MonitorColumn>
+        <MonitorColumn>
+          <h2>작업</h2>
+        </MonitorColumn>
+      </GridRow>
+    </GridColumn>
+  </div>;
 }
 
 export default observer(DashboardMonitorPage);
