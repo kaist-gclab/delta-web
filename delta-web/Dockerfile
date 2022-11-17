@@ -12,8 +12,6 @@ RUN pnpm fetch --prod
 COPY . ./
 RUN pnpm install --offline --prod
 
-RUN node patch.js
-
 RUN pnpm run build
 
 FROM caddy:2
