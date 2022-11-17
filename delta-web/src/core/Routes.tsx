@@ -68,10 +68,12 @@ const Routes = () => {
       <Route path="/node/processor-nodes/list" element={<ProcessorNodeListPage />} />
       <Route path="/node/processor-nodes/detail/:id" element={<ProcessorNodeDetailPage />} />
 
+      {/* key */}
+      <Route path="/key" element={<Navigate replace to="/key/encryption-keys/add" />} />
+      <Route path="/key/encryption-keys/add" element={<AddEncryptionKeyPage />} />
+      <Route path="/key/encryption-keys/list" element={<EncryptionKeyListPage />} />
+      <Route path="/key/encryption-keys/detail/:id" element={<EncryptionKeyDetailPage />} />
 
-      <Route path="/encryption-keys/add" element={<AddEncryptionKeyPage />} />
-      <Route path="/encryption-keys/list" element={<EncryptionKeyListPage />} />
-      <Route path="/encryption-keys/detail/:id?" element={<EncryptionKeyDetailPage />} />
 
       <Route path="/monitoring/dashboard" element={<DashboardMonitorPage />} />
       <Route path="/monitoring/object-storage" element={<ObjectStorageMonitorPage />} />
