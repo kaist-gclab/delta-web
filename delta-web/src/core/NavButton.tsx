@@ -31,7 +31,7 @@ const ButtonMenu = styled.span`
   }
 `;
 
-const NavButton: React.FC<Props> = (props) => {
+function NavButton(props: Props) {
   const { link, text, onClick } = props;
   const location = useLocation();
 
@@ -42,6 +42,6 @@ const NavButton: React.FC<Props> = (props) => {
     return <ButtonMenu>{button}</ButtonMenu>;
   }
   return <NavLinkMenu to={link}>{button}</NavLinkMenu>;
-};
+}
 
 export default NavButton;
