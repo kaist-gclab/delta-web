@@ -1,6 +1,5 @@
 import { lazy, useContext } from 'react';
 import { Route, Routes } from 'react-router';
-import EncryptionKeyListPage from '../encryptionKey/EncryptionKeyListPage';
 import AddAssetPage from '../asset/AddAssetPage';
 import styled from '@emotion/styled';
 import StartPage from '../home/StartPage';
@@ -32,6 +31,7 @@ import LoginPage from '../home/LoginPage';
 import { observer } from 'mobx-react-lite';
 
 const AssetListPage = lazy(() => import('../asset/AssetListPage'));
+const EncryptionKeyListPage = lazy(() => import('../encryptionKey/EncryptionKeyListPage'));
 export const Container = styled.div`
 display: grid;
 grid-template-columns: 250px auto;
