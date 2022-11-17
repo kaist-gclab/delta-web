@@ -1,4 +1,3 @@
-import { Cell } from '@blueprintjs/table';
 import styled from '@emotion/styled';
 
 const CellButton = styled.span`
