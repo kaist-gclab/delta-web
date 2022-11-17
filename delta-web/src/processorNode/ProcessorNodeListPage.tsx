@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 import { ProcessorNodeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
-import { Column, Table2, Cell, RowHeaderCell2 } from '@blueprintjs/table';
 
 const ProcessorNodeListPage: React.FC = () => {
   const store = useContext(ProcessorNodeContext);

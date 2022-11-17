@@ -3,7 +3,6 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
-import { Column, Table2, Cell, RowHeaderCell2 } from '@blueprintjs/table';
 import { AssetTypes } from '../api';
 
 const AssetTypeListPage: React.FC = () => {

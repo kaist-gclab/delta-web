@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 import { JobTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
-import { Column, Table2, Cell, RowHeaderCell2 } from '@blueprintjs/table';
 
 const JobTypeListPage: React.FC = () => {
   const store = useContext(JobTypeContext);
