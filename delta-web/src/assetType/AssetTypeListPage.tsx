@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
 import { Loading } from '../core/Loading';
 import { AssetTypes } from '../api';
+import { HTMLTable } from '@blueprintjs/core';
 
 const AssetTypeListPage: React.FC = () => {
   const navigate = useNavigate();
@@ -22,12 +23,24 @@ const AssetTypeListPage: React.FC = () => {
   return <div>
     <h1>에셋 유형 목록</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="키" cellRenderer={(i) => <Cell>{data[i].key}</Cell>} />
-        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
-        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>키</th>
+            <th>이름</th>
+            <th>동작</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((assetType) => {
+            return <tr key={assetType.id.toString()}>
+              <td>{assetType.key}</td>
+              <td>{assetType.name}</td>
+              <td>{renderCellButton('상세 조회', () => goDetailPage(assetType.id.toString()))}</td>
+            </tr>;
+          })}
+        </tbody>
+      </HTMLTable>
     </div>
   </div>;
 };
