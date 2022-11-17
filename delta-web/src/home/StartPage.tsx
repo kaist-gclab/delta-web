@@ -29,7 +29,7 @@ margin-top: 10px;
 
 const IconSize = 40;
 
-const StartPage: React.FC = () => {
+function StartPage() {
   return <>
     <h1>시작</h1>
     <h2>도움말</h2>
@@ -62,6 +62,6 @@ const StartPage: React.FC = () => {
       </StartButton>
     </div>
   </>
-};
+}
 
 export default observer(StartPage);
