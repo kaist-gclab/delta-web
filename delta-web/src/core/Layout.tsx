@@ -20,13 +20,14 @@ const NavbarRootContent = styled.div`
 min-width: 800px;
 `;
 
-export const SectionTitle = styled.div`
-font-size: 17px;
-margin-bottom: 5px;
-font-weight: bold;
+const SubNavbar = styled(Navbar)`
+overflow-x: auto;
+overflow-y: hidden;
+z-index: 38;
 `;
 
 function Layout() {
+  const location = useLocation();
   const auth = useContext(AuthContext);
   if (!auth.token) {
     return <Suspense fallback={<Loading />}>
