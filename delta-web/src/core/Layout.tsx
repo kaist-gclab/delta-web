@@ -8,28 +8,6 @@ import Routes from './Routes';
 
 const LoginPage = lazy(() => import('../home/LoginPage'));
 
-export const Container = styled.div`
-display: grid;
-grid-template-columns: 250px auto;
-grid-gap: 10px;
-`;
-
-export const Sidebar = styled.div`
-padding-left: 20px;
-padding-top: 10px;
-padding-bottom: 40px;
-overflow: scroll;
-height: 100vh;
-`;
-
-export const Content = styled.div`
-padding-bottom: 40px;
-overflow: scroll;
-height: 100vh;
-padding-left: 10px;
-padding-right: 20px;
-`;
-
 export const Title = styled.span`
 font-size: 20px;
 font-weight: bold;
@@ -53,8 +31,8 @@ function Layout() {
     </Suspense>;
   }
 
-  return <Container>
-    <Sidebar>
+  return <div>
+    <div>
       <Title>3차원 기하 모델<br />프로세싱 프레임워크 v4.0</Title>
       <Section>
         <SectionTitle>기본 기능</SectionTitle>
@@ -110,11 +88,11 @@ function Layout() {
         <NavButton link="/monitoring/processor-node" text="처리기 노드 모니터" />
         <NavButton link="/monitoring/jobs" text="작업 모니터" />
       </Section>
-    </Sidebar>
-    <Content>
+    </div>
+    <div>
       <Routes />
-    </Content>
-  </Container>;
+    </div>
+  </div>;
 }
 
 export default observer(Layout);
