@@ -29,8 +29,7 @@ const Message = styled.div`
 font-size: 16px;
 `;
 
-const LoginPage: React.FC = () => {
-
+function LoginPage() {
   const authStore = useContext(AuthContext);
   const [username, setUsername] = useState('DefaultAdminUser');
   const [password, setPassword] = useState('');
@@ -57,6 +56,6 @@ const LoginPage: React.FC = () => {
       }
     }}>로그인</LoginButton>
   </Container>;
-};
+}
 
 export default observer(LoginPage);
