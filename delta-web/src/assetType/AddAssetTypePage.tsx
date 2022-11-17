@@ -1,6 +1,7 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
+import Container from '../core/Container';
 
 function AddAssetTypePage() {
   const [key, setKey] = useState('');
@@ -21,7 +22,7 @@ function AddAssetTypePage() {
     }
   };
 
-  return <div>
+  return <Container>
     <h1>애셋 유형 추가</h1>
     <FormGroup
       label="키"
@@ -70,7 +71,7 @@ function AddAssetTypePage() {
         </div>
       </div>
     </Dialog>
-  </div>;
+  </Container>;
 }
 
 export default observer(AddAssetTypePage);
