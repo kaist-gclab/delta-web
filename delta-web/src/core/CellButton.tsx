@@ -9,7 +9,5 @@ color: #106ba3;
 `;
 
 export function renderCellButton(text: string, onClick: () => void) {
-    return <Cell interactive={true}>
-        <CellButton onClick={onClick}>{text}</CellButton>
-    </Cell>;
+    return <CellButton onClick={onClick}>{text}</CellButton>;
 }
