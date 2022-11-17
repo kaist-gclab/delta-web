@@ -33,25 +33,25 @@ function StartPage() {
   return <Container>
     <h1>시작</h1>
     <h2>도움말</h2>
-    <StartButton to="help">
+    <StartButton to="/help">
       <StartIcon iconSize={IconSize} icon="book" />
       <StartLabel>도움말</StartLabel>
     </StartButton>
     <h2>자주 사용하는 기능</h2>
     <div>
-      <StartButton to="/assets/add">
+      <StartButton to="/asset/assets/add">
         <StartIcon iconSize={IconSize} icon="cloud-upload" />
         <StartLabel>애셋 추가</StartLabel>
       </StartButton>
-      <StartButton to="/assets/list">
+      <StartButton to="/asset/assets/list">
         <StartIcon iconSize={IconSize} icon="cloud" />
         <StartLabel>애셋 목록</StartLabel>
       </StartButton>
-      <StartButton to="/jobs/add">
+      <StartButton to="/job/jobs/add">
         <StartIcon iconSize={IconSize} icon="th-derived" />
         <StartLabel>작업 추가</StartLabel>
       </StartButton>
-      <StartButton to="/jobs/list">
+      <StartButton to="/job/jobs/list">
         <StartIcon iconSize={IconSize} icon="th" />
         <StartLabel>작업 목록</StartLabel>
       </StartButton>
