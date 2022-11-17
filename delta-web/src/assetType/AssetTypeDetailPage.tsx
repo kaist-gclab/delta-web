@@ -26,7 +26,7 @@ function AssetTypeDetailPage() {
   const goDetailPage = () => navigate(`/asset-types/detail/${id}`);
 
   return <div>
-    <h1>에셋 유형 상세 조회</h1>
+    <h1>애셋 유형 상세 조회</h1>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}

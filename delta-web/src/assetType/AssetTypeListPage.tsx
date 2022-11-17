@@ -20,7 +20,7 @@ function AssetTypeListPage() {
   };
 
   return <div>
-    <h1>에셋 유형 목록</h1>
+    <h1>애셋 유형 목록</h1>
     <div>
       <HTMLTable>
         <thead>

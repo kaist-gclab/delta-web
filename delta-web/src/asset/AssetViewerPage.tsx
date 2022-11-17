@@ -44,7 +44,7 @@ function AssetViewerPage() {
   const goDetailPage = () => navigate(`/assets/detail/${id}`);
 
   return <div>
-    <h1>에셋 뷰어</h1>
+    <h1>애셋 뷰어</h1>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}

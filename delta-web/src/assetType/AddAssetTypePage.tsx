@@ -22,11 +22,11 @@ function AddAssetTypePage() {
   };
 
   return <div>
-    <h1>에셋 유형 추가</h1>
+    <h1>애셋 유형 추가</h1>
     <FormGroup
       label="키"
       labelInfo="(필수)"
-      helperText="에셋 유형 키"
+      helperText="애셋 유형 키"
       labelFor="input-key">
       <InputGroup id="input-key" placeholder="키" value={key}
         onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
@@ -34,7 +34,7 @@ function AddAssetTypePage() {
     <FormGroup
       label="이름"
       labelInfo="(필수)"
-      helperText="에셋 유형 이름"
+      helperText="애셋 유형 이름"
       labelFor="input-name">
       <InputGroup id="input-name" placeholder="이름" value={name}
         onChange={(e: FormEvent<HTMLInputElement>) => { setName(e.currentTarget.value); }} />

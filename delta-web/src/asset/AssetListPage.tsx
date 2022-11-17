@@ -94,14 +94,14 @@ function AssetListPage() {
   };
 
   return <div>
-    <h1>에셋 목록</h1>
+    <h1>애셋 목록</h1>
     <div>
       <HTMLTable>
         <thead>
           <tr>
-            <th>에셋 #</th>
-            <th>에셋 유형 키</th>
-            <th>에셋 유형 이름</th>
+            <th>애셋 #</th>
+            <th>애셋 유형 키</th>
+            <th>애셋 유형 이름</th>
             <th>미디어 형식</th>
             <th>암호화 키 이름</th>
             <th>오브젝트 저장소 키</th>
