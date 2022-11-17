@@ -14,6 +14,7 @@ specifiers:
   mobx: ^6.7.0
   mobx-react-lite: ^3.4.0
   normalize.css: ^8.0.1
+  pretendard: ^1.3.6
   react: ^18.2.0
   react-dom: ^18.2.0
   react-router: ^6.4.3
@@ -38,6 +39,7 @@ dependencies:
   mobx: 6.7.0
   mobx-react-lite: 3.4.0_jofyzmwkboewm6mjrhi25mngky
   normalize.css: 8.0.1
+  pretendard: 1.3.6
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.4.3_react@18.2.0
@@ -1481,6 +1483,10 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: false
+
+  /pretendard/1.3.6:
+    resolution: {integrity: sha512-JdImekU/moL3Qr+QqvFmZobYkwYQPA/8PoZ0ptOKNju+laE1xG9SxuxfpYLowfUeOcY+glQB6uINJsD5WAHFDw==}
     dev: false
 
   /prop-types/15.8.1:
