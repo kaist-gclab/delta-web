@@ -85,18 +85,14 @@ const AssetListPage: React.FC = () => {
       inputJobs: [],
     }
   ];
+  if (!data) {
+    return <Loading />;
   }
 
-  const fetch = async (name: string | null, tag: string | null) => {
-    setElapsed(null);
-    timeBegin = +new Date();
-    await assetStore.fetchAll(name, tag);
-    setElapsed((+new Date()) - timeBegin);
+  const goDetailPage = (id: string) => {
+    navigate(`/jobs/detail/${id}`);
   };
 
-  useEffect(() => {
-    fetch(null, null);
-  }, [assetStore]);
   return <div>
     <h1>에셋 목록</h1>
     <div>
@@ -127,13 +123,45 @@ const AssetListPage: React.FC = () => {
     </div>
   </div>;
 
-  const [searchKeyword, setSearchKeyword] = useState('');
-  const assets = assetStore.assets;
+  // const assetStore = useContext(AssetContext);
+  // const [elapsed, setElapsed] = useState<number | null>(null);
+  // const [dialogOpen, setDialogOpen] = useState<number | null>(null);
+
+  // function renderAsset(a: Asset) {
+  //   const url = getTag(a, 'Image');
+  //   return <p key={a.id}>
+  //     모델 번호: {a.id},
+  //     모델 이름: {getTag(a, 'Name')},
+  //     모델에 지정된 태그: {getTag(a, 'Tag')}
+  //     {url !== '없음' ? <>
+  //       <Button style={{ marginLeft: '10px' }} small={true} onClick={() => setDialogOpen(a.id)}>렌더링 결과 이미지 보기</Button>
+  //       <Dialog style={{ padding: 0 }} isOpen={dialogOpen === a.id} onClose={() => setDialogOpen(null)}>
+  //         <img src={url} style={{ margin: '0' }} />
+  //         <Button style={{ marginLeft: 'auto', marginRight: 'auto', width: '50%', marginTop: '10px', marginBottom: '10px' }}
+  //           onClick={() => setDialogOpen(null)}>닫기</Button>
+  //       </Dialog>
+  //     </> : null}
+  //   </p>;
+  // }
+
+  // const fetch = async (name: string | null, tag: string | null) => {
+  //   setElapsed(null);
+  //   timeBegin = +new Date();
+  //   await assetStore.fetchAll(name, tag);
+  //   setElapsed((+new Date()) - timeBegin);
+  // };
+
+  // useEffect(() => {
+  //   fetch(null, null);
+  // }, [assetStore]);
+
+  // const [searchKeyword, setSearchKeyword] = useState('');
+  // const assets = assetStore.assets;
 
 
-  if (!assets) {
-    return <Loading />;
-  }
+  // if (!assets) {
+  //   return <Loading />;
+  // }
   // return <>
   //   <h2>모델 목록</h2>
   //   <FormRow>
@@ -147,6 +175,6 @@ const AssetListPage: React.FC = () => {
   //   {assets.map(a => renderAsset(a))}
   //   <p>{elapsed ? '목록 조회에 ' + elapsed + ' ms 소요되었습니다.' : null}</p>
   // </>;
-};
+}
 
 export default observer(AssetListPage);
