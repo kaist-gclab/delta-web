@@ -1,6 +1,6 @@
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
   return <h1>에셋 추가</h1>;
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
