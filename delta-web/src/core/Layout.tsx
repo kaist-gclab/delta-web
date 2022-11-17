@@ -78,16 +78,6 @@ function Layout() {
     </NavbarRoot>
     <div>
       <div>
-        <SectionTitle>애셋</SectionTitle>
-        <NavButton link="/assets/add" text="애셋 추가" />
-        <NavButton link="/assets/list" text="애셋 목록" />
-        <NavButton link="/assets/detail" text="애셋 상세 조회" />
-        <NavButton link="/assets/viewer" text="애셋 뷰어" />
-        <NavButton link="/asset-types/add" text="애셋 유형 추가" />
-        <NavButton link="/asset-types/list" text="애셋 유형 목록" />
-        <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
-      </div>
-      <div>
         <SectionTitle>작업</SectionTitle>
         <NavButton link="/jobs/add" text="작업 추가" />
         <NavButton link="/jobs/list" text="작업 목록" />
@@ -113,6 +103,19 @@ function Layout() {
         <NavButton link="/monitoring/processor-node" text="처리기 노드 모니터" />
         <NavButton link="/monitoring/jobs" text="작업 모니터" />
       </div>
+      {subNavbarCode === 'asset' &&
+        <SubNavbar className="delta-navbar-sub" fixedToTop>
+          <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
+            <Navbar.Heading style={{ userSelect: 'none' }}>애셋</Navbar.Heading>
+            <NavButton link="/assets/add" text="애셋 추가" />
+            <NavButton link="/assets/list" text="애셋 목록" />
+            <NavButton link="/assets/detail" text="애셋 상세 조회" />
+            <NavButton link="/assets/viewer" text="애셋 뷰어" />
+            <NavButton link="/asset-types/add" text="애셋 유형 추가" />
+            <NavButton link="/asset-types/list" text="애셋 유형 목록" />
+            <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
+          </Navbar.Group>
+        </SubNavbar>}
       {subNavbarCode === 'settings' &&
         <SubNavbar className="delta-navbar-sub" fixedToTop>
           <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
