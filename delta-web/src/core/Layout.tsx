@@ -30,6 +30,7 @@ function Layout() {
         <NavButton link="/help" text="도움말" />
         <NavButton link="/settings/user" text="사용자 설정" />
         <NavButton link="/settings/system" text="시스템 설정" />
+        <NavButton link="/viewers/list" text="뷰어 목록" />
         <NavButton onClick={() => { auth.logout(); }} text="로그아웃" />
       </div>
       <div>
@@ -41,10 +42,6 @@ function Layout() {
         <NavButton link="/asset-types/add" text="애셋 유형 추가" />
         <NavButton link="/asset-types/list" text="애셋 유형 목록" />
         <NavButton link="/asset-types/detail" text="애셋 유형 상세 조회" />
-      </div>
-      <div>
-        <SectionTitle>뷰어</SectionTitle>
-        <NavButton link="/viewers/list" text="목록" />
       </div>
       <div>
         <SectionTitle>작업</SectionTitle>
