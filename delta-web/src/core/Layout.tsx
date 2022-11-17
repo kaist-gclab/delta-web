@@ -62,7 +62,7 @@ function Layout() {
     <NavbarRoot fixedToTop>
       <NavbarRootContent>
         <Navbar.Group align={Alignment.LEFT}>
-          <NavButton icon="home" text="시작" />
+          <NavButton link="/" icon="home" text="시작" />
           <NavButton icon="cloud" text="애셋" />
           <NavButton icon="form" text="작업" />
           <NavButton icon="cog" text="처리기 노드" />
@@ -70,22 +70,13 @@ function Layout() {
           <NavButton icon="dashboard" text="모니터링" />
         </Navbar.Group>
         <Navbar.Group align={Alignment.RIGHT}>
-          <NavButton icon="help" text="도움말" />
+          <NavButton link="/help" icon="help" text="도움말" />
           <NavButton icon="wrench" text="설정" />
-          <NavButton icon="log-out" text="로그아웃" />
+          <NavButton onClick={() => { auth.logout(); }} icon="log-out" text="로그아웃" />
         </Navbar.Group>
       </NavbarRootContent>
     </NavbarRoot>
     <div>
-      <div>
-        <SectionTitle>시작</SectionTitle>
-        <NavButton link="/" text="시작" />
-        <NavButton link="/help" text="도움말" />
-        <NavButton link="/settings/user" text="사용자 설정" />
-        <NavButton link="/settings/system" text="시스템 설정" />
-        <NavButton link="/viewers/list" text="뷰어 목록" />
-        <NavButton onClick={() => { auth.logout(); }} text="로그아웃" />
-      </div>
       <div>
         <SectionTitle>애셋</SectionTitle>
         <NavButton link="/assets/add" text="애셋 추가" />
@@ -122,6 +113,15 @@ function Layout() {
         <NavButton link="/monitoring/processor-node" text="처리기 노드 모니터" />
         <NavButton link="/monitoring/jobs" text="작업 모니터" />
       </div>
+      {subNavbarCode === 'settings' &&
+        <SubNavbar className="delta-navbar-sub" fixedToTop>
+          <Navbar.Group align={Alignment.LEFT} style={{ minWidth: '800px' }}>
+            <Navbar.Heading style={{ userSelect: 'none' }}>설정</Navbar.Heading>
+            <NavButton link="/settings/user" text="사용자 설정" />
+            <NavButton link="/settings/system" text="시스템 설정" />
+            <NavButton link="/viewers/list" text="뷰어 목록" />
+          </Navbar.Group>
+        </SubNavbar>}
     </div>
     <div>
       <Routes />
