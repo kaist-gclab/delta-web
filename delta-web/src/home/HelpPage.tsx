@@ -8,7 +8,7 @@ line-height: 1.5;
 word-break: keep-all;
 `;
 
-const HelpPage: React.FC = () => {
+function HelpPage() {
   return <>
     <h1>도움말</h1>
     <h2>기능 설명</h2>
@@ -41,6 +41,6 @@ const HelpPage: React.FC = () => {
       <Description>작업 모니터 페이지: 작업 관련 수치를 중심으로 시스템을 모니터링 할 수 있습니다.</Description>
     </ul>
   </>;
-};
+}
 
 export default observer(HelpPage);
