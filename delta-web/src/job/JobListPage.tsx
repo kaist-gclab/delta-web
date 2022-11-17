@@ -1,3 +1,4 @@
+import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -22,14 +23,28 @@ const JobListPage: React.FC = () => {
   return <div>
     <h1>작업 목록</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="작업 유형 키" cellRenderer={(i) => <Cell>{data[i].jobType.key}</Cell>} />
-        <Column name="작업 유형 이름" cellRenderer={(i) => <Cell>{data[i].jobType.name}</Cell>} />
-        <Column name="작업 생성 시점" cellRenderer={(i) => <Cell>{data[i].createdAt.toISOString()}</Cell>} />
-        <Column name="인수" cellRenderer={(i) => <Cell>{data[i].jobArguments}</Cell>} />
-        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>작업 유형 키</th>
+            <th>작업 유형 이름</th>
+            <th>작업 생성 시점</th>
+            <th>인수</th>
+            <th>동작</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((job) => {
+            return <tr key={job.id.toString()}>
+              <td>{job.jobType.key}</td>
+              <td>{job.jobType.name}</td>
+              <td>{job.createdAt.toISOString()}</td>
+              <td>{job.jobArguments}</td>
+              <td>{renderCellButton('상세 조회', () => goDetailPage(job.id.toString()))}</td>
+            </tr>;
+          })}
+        </tbody>
+      </HTMLTable>
     </div>
   </div>;
 };
