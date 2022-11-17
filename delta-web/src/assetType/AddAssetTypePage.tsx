@@ -1,6 +1,6 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 function AddAssetTypePage() {
   const [key, setKey] = useState('');
