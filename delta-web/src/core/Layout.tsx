@@ -16,7 +16,7 @@ z-index: 39;
 `;
 
 const NavbarRootContent = styled.div`
-min-width: 1280px;
+min-width: 800px;
 `;
 
 export const SectionTitle = styled.div`
@@ -36,13 +36,18 @@ function Layout() {
   return <div>
     <NavbarRoot fixedToTop>
       <NavbarRootContent>
-        <Navbar.Group>
+        <Navbar.Group align={Alignment.LEFT}>
           <NavButton icon="home" text="시작" />
           <NavButton icon="cloud" text="애셋" />
           <NavButton icon="form" text="작업" />
           <NavButton icon="cog" text="처리기 노드" />
           <NavButton icon="key" text="암호화 키" />
           <NavButton icon="dashboard" text="모니터링" />
+        </Navbar.Group>
+        <Navbar.Group align={Alignment.RIGHT}>
+          <NavButton icon="help" text="도움말" />
+          <NavButton icon="wrench" text="설정" />
+          <NavButton icon="log-out" text="로그아웃" />
         </Navbar.Group>
       </NavbarRootContent>
     </NavbarRoot>
