@@ -1,3 +1,4 @@
+import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -22,12 +23,22 @@ function JobTypeListPage() {
   return <div>
     <h1>작업 유형 목록</h1>
     <div>
-      <Table2 numRows={data.length} selectionModes={[]}
-        rowHeaderCellRenderer={(i) => <RowHeaderCell2 name={data[i].id.toString()} />}>
-        <Column name="키" cellRenderer={(i) => <Cell>{data[i].key}</Cell>} />
-        <Column name="이름" cellRenderer={(i) => <Cell>{data[i].name}</Cell>} />
-        <Column name="동작" cellRenderer={(i) => renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))} />
-      </Table2>
+      <HTMLTable>
+        <thead>
+          <tr>
+            <th>키</th>
+            <th>이름</th>
+            <th>동작</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((e) => <tr key={e.id.toString()}>
+            <td>{e.key}</td>
+            <td>{e.name}</td>
+            <td>{renderCellButton('상세 조회', () => goDetailPage(e.id.toString()))}</td>
+          </tr>)}
+        </tbody>
+      </HTMLTable>
     </div>
   </div>;
 }
