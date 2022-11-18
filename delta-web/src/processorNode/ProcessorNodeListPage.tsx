@@ -6,6 +6,7 @@ import { ProcessorNodeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function ProcessorNodeListPage() {
   const store = useContext(ProcessorNodeContext);
@@ -22,7 +23,7 @@ function ProcessorNodeListPage() {
   };
 
   return <Container>
-    <h1>처리기 노드 목록</h1>
+    <PageHeader>처리기 노드 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
