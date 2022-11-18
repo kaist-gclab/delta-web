@@ -5,7 +5,7 @@ import { LoginRequest, LoginResponse } from './types';
 import TokenStore from './tokenStore';
 
 class AuthStore {
-    token: string = InitialToken;
+    private tokenStore = TokenStore;
 
     constructor() {
         makeAutoObservable(this);
@@ -17,15 +17,23 @@ class AuthStore {
         try {
             const response: AxiosResponse<LoginResponse> =
                 await Axios.post<LoginResponse>(AuthBase + 'auth/1/login', payload);
-            runInAction(() => { this.token = response.data.token; });
+            this.applyLoginResponse(response.data);
             return true;
         } catch {
             return false;
         }
     }
 
+    private applyLoginResponse(loginResponse: LoginResponse | null) {
+        if (loginResponse === null) {
+            this.tokenStore.clear();
+            return;
+        }
+        this.tokenStore.setToken(loginResponse.token);
+    }
+
     logout() {
-        this.token = '';
+        this.tokenStore.clear();
     }
 }
 
