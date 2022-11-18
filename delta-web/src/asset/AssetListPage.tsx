@@ -115,7 +115,7 @@ function AssetListPage() {
             <td>{a.assetType.key}</td>
             <td>{a.assetType.name}</td>
             <td>{a.mediaType}</td>
-            <td>{a.encryptionKey.name ?? '없음'}</td>
+            <td>{a.encryptionKey?.name ?? '없음'}</td>
             <td>{a.storeKey}</td>
             <td>{renderCellButton('상세 조회', () => goDetailPage(data[i].id.toString()))}</td>
           </tr>)}
