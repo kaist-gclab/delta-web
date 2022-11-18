@@ -2,6 +2,7 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function SystemSettingsPage() {
   const [key, setKey] = useState('');
@@ -21,7 +22,7 @@ function SystemSettingsPage() {
   };
 
   return <Container>
-    <h1>시스템 설정</h1>
+    <PageHeader>시스템 설정</PageHeader>
     <FormGroup
       label="처리기 최대 응답 시간"
       labelInfo="(필수)"
