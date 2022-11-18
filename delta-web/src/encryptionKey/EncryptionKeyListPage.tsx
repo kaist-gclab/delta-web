@@ -5,6 +5,7 @@ import { EncryptionKeyContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
+import Container from '../core/Container';
 
 function EncryptionKeyListPage() {
   const store = useContext(EncryptionKeyContext);
@@ -20,7 +21,7 @@ function EncryptionKeyListPage() {
     navigate(`/encryption-keys/detail/${id}`);
   };
 
-  return <div>
+  return <Container>
     <h1>암호화 키 목록</h1>
     <div>
       <HTMLTable>
@@ -40,7 +41,7 @@ function EncryptionKeyListPage() {
         </tbody>
       </HTMLTable>
     </div>
-  </div >;
+  </Container>;
 }
 
 export default observer(EncryptionKeyListPage);
