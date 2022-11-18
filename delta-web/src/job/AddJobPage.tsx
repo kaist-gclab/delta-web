@@ -2,6 +2,7 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function AddJobPage() {
   const [key, setKey] = useState('');
@@ -22,7 +23,7 @@ function AddJobPage() {
   };
 
   return <Container>
-    <h1>작업 추가</h1>
+    <PageHeader>작업 추가</PageHeader>
     <FormGroup
       label="작업 유형 번호"
       labelInfo="(필수)"
