@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function JobMonitorPage() {
   const store = useContext(JobContext);
@@ -21,7 +22,7 @@ function JobMonitorPage() {
   };
 
   return <Container>
-    <h1>작업 모니터</h1>
+    <PageHeader>작업 모니터</PageHeader>
     <div>
       <HTMLTable>
         <thead>
