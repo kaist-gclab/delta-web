@@ -9,6 +9,7 @@ import dayjs from 'dayjs';
 import { Asset, Job, ProcessorNode } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -74,7 +75,7 @@ function AssetListPage() {
   }
 
   return <Container>
-    <h1>애셋 목록</h1>
+    <PageHeader>애셋 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
