@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { FormEvent, useContext, useState } from 'react';
 import { EncryptionKeyContext } from '../config/context';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 import { CreateEncryptionKeyResponse } from './types';
 
 function AddEncryptionKeyPage() {
@@ -27,7 +28,7 @@ function AddEncryptionKeyPage() {
   };
 
   return <Container>
-    <h1>암호화 키 추가</h1>
+    <PageHeader>암호화 키 추가</PageHeader>
     <FormGroup
       label="이름"
       labelInfo="(필수)"
