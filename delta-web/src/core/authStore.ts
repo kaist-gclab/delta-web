@@ -33,6 +33,10 @@ class AuthStore {
         this.tokenStore.setToken(loginResponse.token);
     }
 
+    get token() {
+        return this.tokenStore.token;
+    }
+
     logout() {
         this.tokenStore.clear();
     }
