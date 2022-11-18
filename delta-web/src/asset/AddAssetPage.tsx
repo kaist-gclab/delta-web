@@ -3,13 +3,9 @@ import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 
-  return <h1>에셋 추가</h1>;
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [modelName, setModelName] = useState('');
-  const [modelTag, setModelTag] = useState('');
-  const [uploading, setUploading] = useState(false);
-  const store = useContext(AssetTypeContext);
 function AddAssetPage() {
+  const [key, setKey] = useState('');
+  const [name, setName] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
   const [okDialogOpen, setOkDialogOpen] = useState(false);
   const openOkDialog = () => setOkDialogOpen(true);
@@ -17,41 +13,63 @@ function AddAssetPage() {
   const closeOkDialog = () => setOkDialogOpen(false);
   const closeErrorDialog = () => setErrorDialogOpen(false);
 
-  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length >= 1) {
-      setSelectedFile(e.target.files[0]);
   const submit = async () => {
     try {
-      await store.create({ key, name }) as any;
+      // FIXME await store.create({ key, name }) as any;
       openOkDialog();
     } catch {
       openOkDialog();
     }
   };
 
-  const handleSubmit = () => {
-    if (!selectedFile) {
-      return;
-    }
-    const reader = new FileReader();
-    const eventTimestamp = dayjs().toISOString();
-    setUploading(true);
-    reader.onload = async () => {
-      if (reader.result === null) {
-        setUploading(false);
-        return;
-      }
-      try {
-        await assetStore.addModel(modelName, modelTag, reader.result as string, eventTimestamp) as any as Promise<void>;
-        alert('추가되었습니다.');
-      } catch {
-        alert('모델 추가에 실패했습니다.');
-      } finally {
-        setUploading(false);
-      }
-    };
-    reader.readAsDataURL(selectedFile);
-  };
+  return <Container>
+    <h1>애셋 추가</h1>
+    <FormGroup
+      label="애셋 유형 번호"
+      labelInfo="(필수)"
+      helperText="애셋 유형 번호"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="번호"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <FormGroup
+      label="애셋 암호화 키 번호"
+      helperText="애셋 암호화 키 번호"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="번호"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <FormGroup
+      label="애셋 미디어 타입"
+      labelInfo="(필수)"
+      helperText="애셋 미디어 타입"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="미디어 타입"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <FormGroup
+      label="애셋 오브젝트 저장소 키"
+      labelInfo="(필수)"
+      helperText="애셋 오브젝트 저장소 키"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="오브젝트 저장소 키"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <FormGroup
+      label="애셋 태그 키"
+      helperText="애셋 태그 키"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="문자열"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <FormGroup
+      label="애셋 태그 값"
+      helperText="애셋 태그 값"
+      labelFor="input-key">
+      <InputGroup id="input-key" placeholder="문자열"
+        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+    </FormGroup>
+    <Button large={true} intent="primary" onClick={submit}>추가</Button>
     <Dialog
       icon="tick"
       isOpen={okDialogOpen}
@@ -82,24 +100,7 @@ function AddAssetPage() {
         </div>
       </div>
     </Dialog>
-
-  return <>
-    <h2>모델 추가</h2>
-    <FormRow>
-      <Label>모델 이름</Label>
-      <input type="text" value={modelName} onChange={({ target: { value } }) => setModelName(value)}></input>
-    </FormRow>
-    <FormRow>
-      <Label>모델 태그</Label>
-      <input type="text" value={modelTag} onChange={({ target: { value } }) => setModelTag(value)}></input>
-    </FormRow>
-    <FormRow>
-      <input type="file" name="file" onChange={e => handleFileInput(e)} />
-    </FormRow>
-    <FormRow>
-      <button disabled={uploading} type="button" onClick={() => handleSubmit()}>모델 추가 완료</button>
-    </FormRow>
-  </>;
+  </Container>;
 }
 
 export default observer(AddAssetPage);
