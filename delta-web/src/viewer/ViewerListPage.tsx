@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function ViewerListPage() {
   const store = useContext(JobContext);
@@ -32,7 +33,7 @@ function ViewerListPage() {
   }
 
   return <Container>
-    <h1>뷰어 목록</h1>
+    <PageHeader>뷰어 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
