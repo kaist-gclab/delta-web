@@ -7,6 +7,7 @@ import { AssetContext } from '../config/context';
 import { Failed } from '../core/Failed';
 import { Loading } from '../core/Loading';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -45,7 +46,7 @@ function AssetViewerPage() {
   const goDetailPage = () => navigate(`/assets/detail/${id}`);
 
   return <Container>
-    <h1>애셋 뷰어</h1>
+    <PageHeader>애셋 뷰어</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}
