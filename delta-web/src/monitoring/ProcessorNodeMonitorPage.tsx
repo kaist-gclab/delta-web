@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function ProcessorNodeMonitorPage() {
   const store = useContext(JobContext);
@@ -15,7 +16,7 @@ function ProcessorNodeMonitorPage() {
   }
 
   return <Container>
-    <h1>처리기 노드 모니터</h1>
+    <PageHeader>처리기 노드 모니터</PageHeader>
     <div>
       <HTMLTable>
         <thead>
