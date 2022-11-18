@@ -2,6 +2,7 @@ import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useContext, useState } from 'react';
 import { EncryptionKeyContext } from '../config/context';
+import Container from '../core/Container';
 import { CreateEncryptionKeyResponse } from './types';
 
 function AddEncryptionKeyPage() {
@@ -25,7 +26,7 @@ function AddEncryptionKeyPage() {
     }
   };
 
-  return <div>
+  return <Container>
     <h1>암호화 키 추가</h1>
     <FormGroup
       label="이름"
@@ -69,7 +70,7 @@ function AddEncryptionKeyPage() {
         </div>
       </div>
     </Dialog>
-  </div>;
+  </Container>;
 }
 
 export default observer(AddEncryptionKeyPage);
