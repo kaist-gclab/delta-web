@@ -2,6 +2,7 @@ import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function UserSettingsPage() {
   const [key, setKey] = useState('');
@@ -21,7 +22,7 @@ function UserSettingsPage() {
   };
 
   return <Container>
-    <h1>사용자 설정</h1>
+    <PageHeader>사용자 설정</PageHeader>
     <FormGroup
       label="새 암호"
       labelInfo="(필수)"
