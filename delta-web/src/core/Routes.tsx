@@ -70,6 +70,7 @@ const Routes = () => {
       {/* node */}
       <Route path="/node" element={<Navigate replace to="/node/processor-nodes/list" />} />
       <Route path="/node/processor-nodes/list" element={<ProcessorNodeListPage />} />
+      <Route path="/node/processor-nodes/detail" element={<ProcessorNodeDetailPage />} />
       <Route path="/node/processor-nodes/detail/:id" element={<ProcessorNodeDetailPage />} />
 
       {/* key */}
