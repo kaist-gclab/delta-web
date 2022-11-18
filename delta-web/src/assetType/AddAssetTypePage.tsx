@@ -2,6 +2,7 @@ import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/cor
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function AddAssetTypePage() {
   const [key, setKey] = useState('');
@@ -23,7 +24,7 @@ function AddAssetTypePage() {
   };
 
   return <Container>
-    <h1>애셋 유형 추가</h1>
+    <PageHeader>애셋 유형 추가</PageHeader>
     <FormGroup
       label="키"
       labelInfo="(필수)"
