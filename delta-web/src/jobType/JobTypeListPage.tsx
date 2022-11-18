@@ -6,6 +6,7 @@ import { JobTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function JobTypeListPage() {
   const store = useContext(JobTypeContext);
@@ -22,7 +23,7 @@ function JobTypeListPage() {
   };
 
   return <Container>
-    <h1>작업 유형 목록</h1>
+    <PageHeader>작업 유형 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
