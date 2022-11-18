@@ -14,7 +14,7 @@ export interface _api_AssetType {
 export interface EncryptionKey {
     id: bigint;
     name: string;
-    value: string;
+    value: string | null;
     enabled: boolean;
     assets: Asset[];
 }
@@ -22,7 +22,7 @@ export interface EncryptionKey {
 export interface _api_EncryptionKey {
     id: string;
     name: string;
-    value: string;
+    value: string | null;
     enabled: boolean;
     assets: _api_Asset[];
 }
@@ -31,8 +31,8 @@ export interface _api_JobExecutionStatus {
     id: string;
     jobExecutionId: string;
     timestamp: string;
-    status: string;
-    jobExecution: _api_JobExecution;
+    status: string | null;
+    jobExecution: _api_JobExecution | null;
 }
 
 export interface _api_JobExecution {
@@ -49,8 +49,8 @@ export interface JobExecutionStatus {
     id: bigint;
     jobExecutionId: bigint;
     timestamp: _Dayjs;
-    status: string;
-    jobExecution: JobExecution;
+    status: string | null;
+    jobExecution: JobExecution | null;
 }
 
 export interface JobExecution {
@@ -88,8 +88,8 @@ export interface _api_Asset {
     parentJobExecutionId: string | null;
     createdAt: string;
     assetType: _api_AssetType;
-    encryptionKey: _api_EncryptionKey;
-    parentJobExecution: _api_JobExecution;
+    encryptionKey: _api_EncryptionKey | null;
+    parentJobExecution: _api_JobExecution | null;
     inputJobs: _api_Job[];
     assetTags: _api_AssetTag[];
 }
@@ -111,8 +111,8 @@ export interface Asset {
     parentJobExecutionId: bigint | null;
     createdAt: _Dayjs;
     assetType: AssetType;
-    encryptionKey: EncryptionKey;
-    parentJobExecution: JobExecution;
+    encryptionKey: EncryptionKey | null;
+    parentJobExecution: JobExecution | null;
     inputJobs: Job[];
     assetTags: AssetTag[];
 }
@@ -125,9 +125,9 @@ export interface _api_Job {
     createdAt: string;
     assignedProcessorNodeId: string | null;
     jobType: _api_JobType;
-    inputAsset: _api_Asset;
+    inputAsset: _api_Asset | null;
     jobExecutions: _api_JobExecution[];
-    assignedProcessorNode: _api_ProcessorNode;
+    assignedProcessorNode: _api_ProcessorNode | null;
 }
 
 export interface _api_JobType {
@@ -146,9 +146,9 @@ export interface Job {
     createdAt: _Dayjs;
     assignedProcessorNodeId: bigint | null;
     jobType: JobType;
-    inputAsset: Asset;
+    inputAsset: Asset | null;
     jobExecutions: JobExecution[];
-    assignedProcessorNode: ProcessorNode;
+    assignedProcessorNode: ProcessorNode | null;
 }
 
 export interface JobType {
@@ -190,7 +190,7 @@ export interface _api_ProcessorNode {
     id: string;
     processorVersionId: string;
     key: string;
-    name: string;
+    name: string | null;
     processorNodeCapabilities: _api_ProcessorNodeCapability[];
     jobExecutions: _api_JobExecution[];
     processorNodeStatuses: _api_ProcessorNodeStatus[];
@@ -212,7 +212,7 @@ export interface ProcessorNode {
     id: bigint;
     processorVersionId: bigint;
     key: string;
-    name: string;
+    name: string | null;
     processorNodeCapabilities: ProcessorNodeCapability[];
     jobExecutions: JobExecution[];
     processorNodeStatuses: ProcessorNodeStatus[];
@@ -251,10 +251,16 @@ export interface _api_UploadTicket {
     storeKey: string;
 }
 
-export interface Object {
+export interface MonitoringServiceEvent {
+    eventTimestamp: _Dayjs;
+    statsTimestamp: _Dayjs;
+    content: string;
 }
 
-export interface _api_Object {
+export interface _api_MonitoringServiceEvent {
+    eventTimestamp: string;
+    statsTimestamp: string;
+    content: string;
 }
 
 export interface JobScheduleResponse {
