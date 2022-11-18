@@ -36,7 +36,7 @@ function JobMonitorPage() {
               <td>{job.createdAt.toISOString()}</td>
               <td>{job.jobArguments}</td>
             </tr>;
-          })};
+          })}
         </tbody>
       </HTMLTable>
     </div>
