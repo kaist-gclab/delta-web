@@ -60,6 +60,7 @@ const Routes = () => {
       <Route path="/job" element={<Navigate replace to="/job/jobs/add" />} />
       <Route path="/job/jobs/add" element={<AddJobPage />} />
       <Route path="/job/jobs/list" element={<JobListPage />} />
+      <Route path="/job/jobs/detail" element={<JobDetailPage />} />
       <Route path="/job/jobs/detail/:id" element={<JobDetailPage />} />
 
       <Route path="/job/job-types/list" element={<JobTypeListPage />} />
