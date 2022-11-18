@@ -6,7 +6,7 @@ import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 import { _createHttp, _createObject, restoreCircularReferences } from './_util';
 import _useSWR, { SWRConfiguration as _SWRConfiguration } from 'swr';
 import { _createSWRMiddleware } from './_util';
-import { ProcessorNode, _api_ProcessorNode, RegisterProcessorNodeRequest, _api_RegisterProcessorNodeRequest, Object } from './_types';
+import { ProcessorNode, _api_ProcessorNode, RegisterProcessorNodeRequest, _api_RegisterProcessorNodeRequest } from './_types';
 import { _convert__api_ProcessorNode_TO_ProcessorNode_Array, _convert__api_ProcessorNode_TO_ProcessorNode, _convert_RegisterProcessorNodeRequest_TO__api_RegisterProcessorNodeRequest } from './_converters';
 import { _ProcessorNodes_GET_GetNodes_url, _ProcessorNodes_POST_RegisterProcessorNode_url } from './_url-builders';
 export async function getNodes(): Promise<ProcessorNode[]> {

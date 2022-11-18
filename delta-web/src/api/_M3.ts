@@ -6,7 +6,7 @@ import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 import { _createHttp, _createObject, restoreCircularReferences } from './_util';
 import _useSWR, { SWRConfiguration as _SWRConfiguration } from 'swr';
 import { _createSWRMiddleware } from './_util';
-import { Object, ApiHomeResponse, _api_ApiHomeResponse } from './_types';
+import { ApiHomeResponse, _api_ApiHomeResponse } from './_types';
 import { _convert_string_TO_string, _convert__api_ApiHomeResponse_TO_ApiHomeResponse } from './_converters';
 import { _Home_GET_Home_url, _Home_GET_ApiHome_url } from './_url-builders';
 export async function home(): Promise<string> {

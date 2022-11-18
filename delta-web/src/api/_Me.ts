@@ -6,7 +6,7 @@ import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 import { _createHttp, _createObject, restoreCircularReferences } from './_util';
 import _useSWR, { SWRConfiguration as _SWRConfiguration } from 'swr';
 import { _createSWRMiddleware } from './_util';
-import { UploadTicket, _api_UploadTicket, Object } from './_types';
+import { UploadTicket, _api_UploadTicket } from './_types';
 import { _convert__api_UploadTicket_TO_UploadTicket } from './_converters';
 import { _ObjectStorage_GET_GetUploadUrl_url } from './_url-builders';
 export async function getUploadUrl(): Promise<UploadTicket> {
