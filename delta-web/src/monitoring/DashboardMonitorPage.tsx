@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const MonitorColumn = styled(GridColumn)`
 padding: 0 20px;
@@ -9,7 +10,7 @@ padding: 0 20px;
 
 function DashboardMonitorPage() {
   return <Container>
-    <h1>모니터링 대시보드</h1>
+    <PageHeader>모니터링 대시보드</PageHeader>
     <GridColumn>
       <GridRow>
         <MonitorColumn>
