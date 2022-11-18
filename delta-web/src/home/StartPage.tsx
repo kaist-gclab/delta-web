@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const StartButton = styled(NavLink)`
 text-align: center;
@@ -31,7 +32,7 @@ const IconSize = 40;
 
 function StartPage() {
   return <Container>
-    <h1>시작</h1>
+    <PageHeader>시작</PageHeader>
     <h2>도움말</h2>
     <StartButton to="/help">
       <StartIcon iconSize={IconSize} icon="book" />
