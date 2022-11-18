@@ -6,6 +6,7 @@ import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function EncryptionKeyListPage() {
   const store = useContext(EncryptionKeyContext);
@@ -22,7 +23,7 @@ function EncryptionKeyListPage() {
   };
 
   return <Container>
-    <h1>암호화 키 목록</h1>
+    <PageHeader>암호화 키 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
