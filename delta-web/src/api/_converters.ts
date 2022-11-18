@@ -4,7 +4,7 @@
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import { _hasOwnPropertyRef, _hasOwnPropertyValues } from './_util';
-import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, Object, _api_Object, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, CreateEncryptionKeyResponse, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
+import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, MonitoringServiceEvent, _api_MonitoringServiceEvent, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, CreateEncryptionKeyResponse, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
 export function _convert_string_TO_string(from: string): string {
     return from;
 }
@@ -35,6 +35,13 @@ export function _convert_string_TO__Dayjs(from: string): _Dayjs {
 
 export function _convert__Dayjs_TO_string(from: _Dayjs): string {
     return from.toISOString();
+}
+
+export function _convert_string_TO_string_Nullable(from: string | null): string | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert_string_TO_string(from);
 }
 
 export function _convert_bigint_TO_string_Nullable(from: bigint | null): string | null {
@@ -78,11 +85,18 @@ export function _convert_EncryptionKey_TO__api_EncryptionKey(from: EncryptionKey
     const to: _api_EncryptionKey = {
         id: _convert_bigint_TO_string(from.id),
         name: _convert_string_TO_string(from.name),
-        value: _convert_string_TO_string(from.value),
+        value: _convert_string_TO_string_Nullable(from.value),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         assets: _convert_Asset_TO__api_Asset_Array(from.assets),
     };
     return { ...from, ...to };
+}
+
+export function _convert_EncryptionKey_TO__api_EncryptionKey_Nullable(from: EncryptionKey | null): _api_EncryptionKey | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert_EncryptionKey_TO__api_EncryptionKey(from);
 }
 
 export function _convert_JobExecutionStatus_TO__api_JobExecutionStatus(from: JobExecutionStatus): _api_JobExecutionStatus {
@@ -93,8 +107,8 @@ export function _convert_JobExecutionStatus_TO__api_JobExecutionStatus(from: Job
         id: _convert_bigint_TO_string(from.id),
         jobExecutionId: _convert_bigint_TO_string(from.jobExecutionId),
         timestamp: _convert__Dayjs_TO_string(from.timestamp),
-        status: _convert_string_TO_string(from.status),
-        jobExecution: _convert_JobExecution_TO__api_JobExecution(from.jobExecution),
+        status: _convert_string_TO_string_Nullable(from.status),
+        jobExecution: _convert_JobExecution_TO__api_JobExecution_Nullable(from.jobExecution),
     };
     return { ...from, ...to };
 }
@@ -126,6 +140,13 @@ export function _convert_JobExecution_TO__api_JobExecution(from: JobExecution): 
         jobExecutionStatuses: _convert_JobExecutionStatus_TO__api_JobExecutionStatus_Array(from.jobExecutionStatuses),
     };
     return { ...from, ...to };
+}
+
+export function _convert_JobExecution_TO__api_JobExecution_Nullable(from: JobExecution | null): _api_JobExecution | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert_JobExecution_TO__api_JobExecution(from);
 }
 
 export function _convert_AssetTag_TO__api_AssetTag(from: AssetTag): _api_AssetTag {
@@ -168,12 +189,19 @@ export function _convert_Asset_TO__api_Asset(from: Asset): _api_Asset {
         parentJobExecutionId: _convert_bigint_TO_string_Nullable(from.parentJobExecutionId),
         createdAt: _convert__Dayjs_TO_string(from.createdAt),
         assetType: _convert_AssetType_TO__api_AssetType(from.assetType),
-        encryptionKey: _convert_EncryptionKey_TO__api_EncryptionKey(from.encryptionKey),
-        parentJobExecution: _convert_JobExecution_TO__api_JobExecution(from.parentJobExecution),
+        encryptionKey: _convert_EncryptionKey_TO__api_EncryptionKey_Nullable(from.encryptionKey),
+        parentJobExecution: _convert_JobExecution_TO__api_JobExecution_Nullable(from.parentJobExecution),
         inputJobs: _convert_Job_TO__api_Job_Array(from.inputJobs),
         assetTags: _convert_AssetTag_TO__api_AssetTag_Array(from.assetTags),
     };
     return { ...from, ...to };
+}
+
+export function _convert_Asset_TO__api_Asset_Nullable(from: Asset | null): _api_Asset | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert_Asset_TO__api_Asset(from);
 }
 
 export function _convert_JobExecution_TO__api_JobExecution_Array(from: JobExecution[]): _api_JobExecution[] {
@@ -189,6 +217,13 @@ export function _convert_JobExecution_TO__api_JobExecution_Array(from: JobExecut
     return to;
 }
 
+export function _convert_ProcessorNode_TO__api_ProcessorNode_Nullable(from: ProcessorNode | null): _api_ProcessorNode | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert_ProcessorNode_TO__api_ProcessorNode(from);
+}
+
 export function _convert_Job_TO__api_Job(from: Job): _api_Job {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
@@ -201,9 +236,9 @@ export function _convert_Job_TO__api_Job(from: Job): _api_Job {
         createdAt: _convert__Dayjs_TO_string(from.createdAt),
         assignedProcessorNodeId: _convert_bigint_TO_string_Nullable(from.assignedProcessorNodeId),
         jobType: _convert_JobType_TO__api_JobType(from.jobType),
-        inputAsset: _convert_Asset_TO__api_Asset(from.inputAsset),
+        inputAsset: _convert_Asset_TO__api_Asset_Nullable(from.inputAsset),
         jobExecutions: _convert_JobExecution_TO__api_JobExecution_Array(from.jobExecutions),
-        assignedProcessorNode: _convert_ProcessorNode_TO__api_ProcessorNode(from.assignedProcessorNode),
+        assignedProcessorNode: _convert_ProcessorNode_TO__api_ProcessorNode_Nullable(from.assignedProcessorNode),
     };
     return { ...from, ...to };
 }
@@ -307,7 +342,7 @@ export function _convert_ProcessorNode_TO__api_ProcessorNode(from: ProcessorNode
         id: _convert_bigint_TO_string(from.id),
         processorVersionId: _convert_bigint_TO_string(from.processorVersionId),
         key: _convert_string_TO_string(from.key),
-        name: _convert_string_TO_string(from.name),
+        name: _convert_string_TO_string_Nullable(from.name),
         processorNodeCapabilities: _convert_ProcessorNodeCapability_TO__api_ProcessorNodeCapability_Array(from.processorNodeCapabilities),
         jobExecutions: _convert_JobExecution_TO__api_JobExecution_Array(from.jobExecutions),
         processorNodeStatuses: _convert_ProcessorNodeStatus_TO__api_ProcessorNodeStatus_Array(from.processorNodeStatuses),
@@ -370,11 +405,18 @@ export function _convert__api_EncryptionKey_TO_EncryptionKey(from: _api_Encrypti
     const to: EncryptionKey = {
         id: _convert_string_TO_bigint(from.id),
         name: _convert_string_TO_string(from.name),
-        value: _convert_string_TO_string(from.value),
+        value: _convert_string_TO_string_Nullable(from.value),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         assets: _convert__api_Asset_TO_Asset_Array(from.assets),
     };
     return { ...from, ...to };
+}
+
+export function _convert__api_EncryptionKey_TO_EncryptionKey_Nullable(from: _api_EncryptionKey | null): EncryptionKey | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert__api_EncryptionKey_TO_EncryptionKey(from);
 }
 
 export function _convert__api_JobExecutionStatus_TO_JobExecutionStatus(from: _api_JobExecutionStatus): JobExecutionStatus {
@@ -385,8 +427,8 @@ export function _convert__api_JobExecutionStatus_TO_JobExecutionStatus(from: _ap
         id: _convert_string_TO_bigint(from.id),
         jobExecutionId: _convert_string_TO_bigint(from.jobExecutionId),
         timestamp: _convert_string_TO__Dayjs(from.timestamp),
-        status: _convert_string_TO_string(from.status),
-        jobExecution: _convert__api_JobExecution_TO_JobExecution(from.jobExecution),
+        status: _convert_string_TO_string_Nullable(from.status),
+        jobExecution: _convert__api_JobExecution_TO_JobExecution_Nullable(from.jobExecution),
     };
     return { ...from, ...to };
 }
@@ -418,6 +460,13 @@ export function _convert__api_JobExecution_TO_JobExecution(from: _api_JobExecuti
         jobExecutionStatuses: _convert__api_JobExecutionStatus_TO_JobExecutionStatus_Array(from.jobExecutionStatuses),
     };
     return { ...from, ...to };
+}
+
+export function _convert__api_JobExecution_TO_JobExecution_Nullable(from: _api_JobExecution | null): JobExecution | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert__api_JobExecution_TO_JobExecution(from);
 }
 
 export function _convert__api_AssetTag_TO_AssetTag(from: _api_AssetTag): AssetTag {
@@ -460,12 +509,19 @@ export function _convert__api_Asset_TO_Asset(from: _api_Asset): Asset {
         parentJobExecutionId: _convert_string_TO_bigint_Nullable(from.parentJobExecutionId),
         createdAt: _convert_string_TO__Dayjs(from.createdAt),
         assetType: _convert__api_AssetType_TO_AssetType(from.assetType),
-        encryptionKey: _convert__api_EncryptionKey_TO_EncryptionKey(from.encryptionKey),
-        parentJobExecution: _convert__api_JobExecution_TO_JobExecution(from.parentJobExecution),
+        encryptionKey: _convert__api_EncryptionKey_TO_EncryptionKey_Nullable(from.encryptionKey),
+        parentJobExecution: _convert__api_JobExecution_TO_JobExecution_Nullable(from.parentJobExecution),
         inputJobs: _convert__api_Job_TO_Job_Array(from.inputJobs),
         assetTags: _convert__api_AssetTag_TO_AssetTag_Array(from.assetTags),
     };
     return { ...from, ...to };
+}
+
+export function _convert__api_Asset_TO_Asset_Nullable(from: _api_Asset | null): Asset | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert__api_Asset_TO_Asset(from);
 }
 
 export function _convert__api_JobExecution_TO_JobExecution_Array(from: _api_JobExecution[]): JobExecution[] {
@@ -481,6 +537,13 @@ export function _convert__api_JobExecution_TO_JobExecution_Array(from: _api_JobE
     return to;
 }
 
+export function _convert__api_ProcessorNode_TO_ProcessorNode_Nullable(from: _api_ProcessorNode | null): ProcessorNode | null {
+    if (from === null) {
+        return null;
+    }
+    return _convert__api_ProcessorNode_TO_ProcessorNode(from);
+}
+
 export function _convert__api_Job_TO_Job(from: _api_Job): Job {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
@@ -493,9 +556,9 @@ export function _convert__api_Job_TO_Job(from: _api_Job): Job {
         createdAt: _convert_string_TO__Dayjs(from.createdAt),
         assignedProcessorNodeId: _convert_string_TO_bigint_Nullable(from.assignedProcessorNodeId),
         jobType: _convert__api_JobType_TO_JobType(from.jobType),
-        inputAsset: _convert__api_Asset_TO_Asset(from.inputAsset),
+        inputAsset: _convert__api_Asset_TO_Asset_Nullable(from.inputAsset),
         jobExecutions: _convert__api_JobExecution_TO_JobExecution_Array(from.jobExecutions),
-        assignedProcessorNode: _convert__api_ProcessorNode_TO_ProcessorNode(from.assignedProcessorNode),
+        assignedProcessorNode: _convert__api_ProcessorNode_TO_ProcessorNode_Nullable(from.assignedProcessorNode),
     };
     return { ...from, ...to };
 }
@@ -599,7 +662,7 @@ export function _convert__api_ProcessorNode_TO_ProcessorNode(from: _api_Processo
         id: _convert_string_TO_bigint(from.id),
         processorVersionId: _convert_string_TO_bigint(from.processorVersionId),
         key: _convert_string_TO_string(from.key),
-        name: _convert_string_TO_string(from.name),
+        name: _convert_string_TO_string_Nullable(from.name),
         processorNodeCapabilities: _convert__api_ProcessorNodeCapability_TO_ProcessorNodeCapability_Array(from.processorNodeCapabilities),
         jobExecutions: _convert__api_JobExecution_TO_JobExecution_Array(from.jobExecutions),
         processorNodeStatuses: _convert__api_ProcessorNodeStatus_TO_ProcessorNodeStatus_Array(from.processorNodeStatuses),
@@ -715,49 +778,53 @@ export function _convert__api_UploadTicket_TO_UploadTicket(from: _api_UploadTick
     return { ...from, ...to };
 }
 
-export function _convert_Object_TO__api_Object(from: Object): _api_Object {
+export function _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(from: MonitoringServiceEvent): _api_MonitoringServiceEvent {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_Object = {
-
+    const to: _api_MonitoringServiceEvent = {
+        eventTimestamp: _convert__Dayjs_TO_string(from.eventTimestamp),
+        statsTimestamp: _convert__Dayjs_TO_string(from.statsTimestamp),
+        content: _convert_string_TO_string(from.content),
     };
     return { ...from, ...to };
 }
 
-export function _convert_Object_TO__api_Object_Array(from: Object[]): _api_Object[] {
+export function _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent_Array(from: MonitoringServiceEvent[]): _api_MonitoringServiceEvent[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
         from = (from as any).$values;
-        const to: _api_Object[] = from.map(element => _convert_Object_TO__api_Object(element));
+        const to: _api_MonitoringServiceEvent[] = from.map(element => _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(element));
         return { ...from, $values: to } as any;
     }
-    const to: _api_Object[] = from.map(element => _convert_Object_TO__api_Object(element));
+    const to: _api_MonitoringServiceEvent[] = from.map(element => _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(element));
     return to;
 }
 
-export function _convert__api_Object_TO_Object(from: _api_Object): Object {
+export function _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(from: _api_MonitoringServiceEvent): MonitoringServiceEvent {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: Object = {
-
+    const to: MonitoringServiceEvent = {
+        eventTimestamp: _convert_string_TO__Dayjs(from.eventTimestamp),
+        statsTimestamp: _convert_string_TO__Dayjs(from.statsTimestamp),
+        content: _convert_string_TO_string(from.content),
     };
     return { ...from, ...to };
 }
 
-export function _convert__api_Object_TO_Object_Array(from: _api_Object[]): Object[] {
+export function _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent_Array(from: _api_MonitoringServiceEvent[]): MonitoringServiceEvent[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
         from = (from as any).$values;
-        const to: Object[] = from.map(element => _convert__api_Object_TO_Object(element));
+        const to: MonitoringServiceEvent[] = from.map(element => _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(element));
         return { ...from, $values: to } as any;
     }
-    const to: Object[] = from.map(element => _convert__api_Object_TO_Object(element));
+    const to: MonitoringServiceEvent[] = from.map(element => _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(element));
     return to;
 }
 
