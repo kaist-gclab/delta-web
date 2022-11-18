@@ -1,6 +1,9 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { setCreateHttp } from '../api';
 import { ApiBase } from '../config/http';
 import AuthStore from './authStore';
+
+setCreateHttp(() => new Http());
 
 class Http {
     private authStore = AuthStore;
