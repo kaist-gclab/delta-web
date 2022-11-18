@@ -5,6 +5,7 @@ import { Loading } from '../core/Loading';
 import { AssetTypes } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 function AssetTypeListPage() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ function AssetTypeListPage() {
   };
 
   return <Container>
-    <h1>애셋 유형 목록</h1>
+    <PageHeader>애셋 유형 목록</PageHeader>
     <div>
       <HTMLTable>
         <thead>
