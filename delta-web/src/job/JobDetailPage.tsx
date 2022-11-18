@@ -7,6 +7,7 @@ import { JobContext } from '../config/context';
 import { Failed } from '../core/Failed';
 import { Loading } from '../core/Loading';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -45,7 +46,7 @@ function JobDetailPage() {
   const goDetailPage = () => navigate(`/jobs/detail/${id}`);
 
   return <Container>
-    <h1>작업 상세 조회</h1>
+    <PageHeader>작업 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}
