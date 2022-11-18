@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
 import Container from '../core/Container';
 import { Loading } from '../core/Loading';
+import PageHeader from '../core/PageHeader';
 
 function ObjectStorageMonitorPage() {
   const store = useContext(JobContext);
@@ -15,7 +16,7 @@ function ObjectStorageMonitorPage() {
   }
 
   return <Container>
-    <h1>오브젝트 저장소 모니터</h1>
+    <PageHeader>오브젝트 저장소 모니터</PageHeader>
     <div>
       <HTMLTable>
         <thead>
