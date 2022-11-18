@@ -9,7 +9,6 @@ class AuthStore {
 
     constructor() {
         makeAutoObservable(this);
-        this.tokenStore.setToken(InitialToken);
     }
 
     async login(username: string, password: string): Promise<boolean> {
