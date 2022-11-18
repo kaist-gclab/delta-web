@@ -77,6 +77,7 @@ const Routes = () => {
       <Route path="/key" element={<Navigate replace to="/key/encryption-keys/add" />} />
       <Route path="/key/encryption-keys/add" element={<AddEncryptionKeyPage />} />
       <Route path="/key/encryption-keys/list" element={<EncryptionKeyListPage />} />
+      <Route path="/key/encryption-keys/detail" element={<EncryptionKeyDetailPage />} />
       <Route path="/key/encryption-keys/detail/:id" element={<EncryptionKeyDetailPage />} />
 
       {/* monitoring */}
