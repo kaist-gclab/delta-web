@@ -2,6 +2,7 @@ import Axios, { AxiosResponse } from 'axios';
 import { makeAutoObservable, runInAction } from 'mobx';
 import { AuthBase, InitialToken } from '../config/http';
 import { LoginRequest, LoginResponse } from './types';
+import TokenStore from './tokenStore';
 
 class AuthStore {
     token: string = InitialToken;
