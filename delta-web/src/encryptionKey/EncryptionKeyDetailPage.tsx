@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { EncryptionKeyContext } from '../config/context';
 import { Failed } from '../core/Failed';
 import { Loading } from '../core/Loading';
+import Container from '../core/Container';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -45,7 +46,7 @@ function EncryptionKeyDetailPage() {
 
   const goDetailPage = () => navigate(`/encryption-keys/detail/${id}`);
 
-  return <div>
+  return <Container>
     <h1>암호화 키 상세 조회</h1>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
@@ -56,7 +57,7 @@ function EncryptionKeyDetailPage() {
       <QueryButton onClick={goDetailPage}>조회</QueryButton>
     </ControlGroup>
     {!params.id ? <Message>번호로 조회하십시오.</Message> : render()}
-  </div>;
+  </Container>;
 }
 
 export default observer(EncryptionKeyDetailPage);
