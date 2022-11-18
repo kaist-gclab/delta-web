@@ -53,6 +53,7 @@ const Routes = () => {
 
       <Route path="/asset/asset-types/add" element={<AddAssetTypePage />} />
       <Route path="/asset/asset-types/list" element={<AssetTypeListPage />} />
+      <Route path="/asset/asset-types/detail" element={<AssetTypeDetailPage />} />
       <Route path="/asset/asset-types/detail/:id" element={<AssetTypeDetailPage />} />
 
       {/* job */}
