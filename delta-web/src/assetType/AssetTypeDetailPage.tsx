@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import { Failed } from '../core/Failed';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -27,7 +28,7 @@ function AssetTypeDetailPage() {
   const goDetailPage = () => navigate(`/asset-types/detail/${id}`);
 
   return <Container>
-    <h1>애셋 유형 상세 조회</h1>
+    <PageHeader>애셋 유형 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
         placeholder="번호" value={id}
