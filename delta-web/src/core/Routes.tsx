@@ -64,6 +64,7 @@ const Routes = () => {
       <Route path="/job/jobs/detail/:id" element={<JobDetailPage />} />
 
       <Route path="/job/job-types/list" element={<JobTypeListPage />} />
+      <Route path="/job/job-types/detail" element={<JobTypeDetailPage />} />
       <Route path="/job/job-types/detail/:id" element={<JobTypeDetailPage />} />
 
       {/* node */}
