@@ -1,6 +1,6 @@
 import Axios, { AxiosResponse } from 'axios';
 import { makeAutoObservable } from 'mobx';
-import { AuthBase, InitialToken } from '../config/http';
+import { AuthBase } from '../config/http';
 import { LoginRequest, LoginResponse } from './types';
 import TokenStore from './tokenStore';
 
