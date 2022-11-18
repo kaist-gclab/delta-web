@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
 import Container from '../core/Container';
+import PageHeader from '../core/PageHeader';
 
 const Description = styled.li`
 margin-bottom: 16px;
@@ -10,7 +11,7 @@ word-break: keep-all;
 
 function HelpPage() {
   return <Container>
-    <h1>도움말</h1>
+    <PageHeader>도움말</PageHeader>
     <h2>기능 설명</h2>
     <ul>
       <Description>로그인 페이지: 시스템은 관리자 사용자와 일반 사용자를 구분하여 관리합니다. 관리자 사용자의 로그인 정보는 최초 설치 시점에 설정으로 직접 지정되며, 일반 사용자의 로그인 정보는 관리자 사용자에 의하여 생성되고 데이터베이스를 이용하여 관리됩니다.</Description>
