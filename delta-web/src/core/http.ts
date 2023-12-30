@@ -13,7 +13,7 @@ class Http {
     constructor() {
         this.axios = axios.create({ baseURL: ApiBase });
         this.axios.interceptors.request.use((request) => {
-            request.headers = { 'Authorization': `Bearer ${this.authStore.token}` };
+            request.headers.Authorization = `Bearer ${this.authStore.token}`;
             return request;
         });
     }
