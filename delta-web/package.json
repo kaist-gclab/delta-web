@@ -8,7 +8,6 @@
     "api": "node update-api.js"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
@@ -20,6 +19,7 @@
     "mobx-react-lite": "^3.4.0",
     "@blueprintjs/core": "^5.7.2",
     "@blueprintjs/icons": "^5.5.0",
+    "@emotion/react": "^11.11.3",
     "normalize.css": "^8.0.1",
     "pretendard": "^1.3.6",
     "react": "^18.2.0",
