@@ -37,7 +37,7 @@ function EncryptionKeyDetailPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/encryption-keys/detail/${id}`);
+  const goDetailPage = () => navigate(`/key/encryption-keys/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>암호화 키 상세 조회</PageHeader>
