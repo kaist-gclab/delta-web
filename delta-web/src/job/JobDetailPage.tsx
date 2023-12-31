@@ -29,11 +29,8 @@ function JobDetailPage() {
   }
 
   const render = () => {
-    const e = store.job;
-    if (e === undefined) {
-      return <Loading />;
-    }
-    if (e === null) {
+    const e = data.find((e) => e.id.toString() === params.id);
+    if (!e) {
       return <ErrorMessage message="작업 상세 조회 중 오류가 발생했습니다." />;
     }
     return <ul>
