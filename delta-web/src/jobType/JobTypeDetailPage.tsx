@@ -1,9 +1,7 @@
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
-import { JobTypeContext } from '../config/context';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
