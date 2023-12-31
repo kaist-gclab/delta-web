@@ -1,5 +1,4 @@
 import { HTMLTable } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
