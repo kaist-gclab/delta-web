@@ -17,7 +17,7 @@ function ProcessorNodeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/processor-nodes/detail/${id}`);
+    navigate(`/node/processor-nodes/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
