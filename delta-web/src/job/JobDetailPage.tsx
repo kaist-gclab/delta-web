@@ -38,7 +38,7 @@ function JobDetailPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/jobs/detail/${id}`);
+  const goDetailPage = () => navigate(`/job/jobs/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>작업 상세 조회</PageHeader>
