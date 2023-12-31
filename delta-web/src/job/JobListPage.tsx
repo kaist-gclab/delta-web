@@ -22,7 +22,7 @@ function JobListPage() {
     navigate(`/jobs/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>작업 목록</PageHeader>
     <div>
       <HTMLTable>
