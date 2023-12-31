@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { AssetTypes } from '../api';
 
 function AddAssetTypePage() {
   const [key, setKey] = useState('');
@@ -16,7 +17,7 @@ function AddAssetTypePage() {
 
   const submit = async () => {
     try {
-      // FIXME await store.create({ key, name }) as any;
+      await AssetTypes.create({ key, name });
       openOkDialog();
     } catch {
       openErrorDialog();
