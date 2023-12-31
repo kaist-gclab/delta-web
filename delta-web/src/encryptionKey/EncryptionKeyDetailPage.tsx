@@ -21,6 +21,13 @@ function EncryptionKeyDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const { data, error } = EncryptionKeys.useSWRGetEncryptionKeys();
+  if (error) {
+    return <ErrorMessage message="암호화 키 상세 조회 중 오류가 발생했습니다." />;
+  }
+  if (!data) {
+    return <Loading />;
+  }
 
   const render = () => {
     const e = store.encryptionKey;
