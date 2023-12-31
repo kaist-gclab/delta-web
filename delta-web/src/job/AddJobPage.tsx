@@ -1,5 +1,4 @@
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
@@ -88,4 +87,4 @@ function AddJobPage() {
   </Container>;
 }
 
-export default observer(AddJobPage);
+export default AddJobPage;
