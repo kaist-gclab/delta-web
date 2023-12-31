@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { Assets } from '../api';
 
 function AddAssetPage() {
   const [key, setKey] = useState('');
