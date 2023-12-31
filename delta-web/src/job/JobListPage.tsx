@@ -20,6 +20,13 @@ function JobListPage() {
     navigate(`/jobs/detail/${id}`);
   };
 
+  if (data.length === 0) {
+    return <Container reducedTopPadding>
+      <PageHeader>작업 목록</PageHeader>
+      <div>작업이 없습니다.</div>
+    </Container>;
+  }
+
   return <Container reducedTopPadding>
     <PageHeader>작업 목록</PageHeader>
     <div>
