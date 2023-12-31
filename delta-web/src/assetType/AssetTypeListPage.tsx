@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
