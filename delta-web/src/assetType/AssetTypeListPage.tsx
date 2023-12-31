@@ -21,7 +21,7 @@ function AssetTypeListPage() {
     navigate(`/asset/asset-types/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 유형 목록</PageHeader>
     <div>
       <HTMLTable>
