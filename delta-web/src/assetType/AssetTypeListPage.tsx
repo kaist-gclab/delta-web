@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import { AssetTypes } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
