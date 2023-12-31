@@ -97,7 +97,9 @@ function AssetListPage() {
             <td>{a.mediaType}</td>
             <td>{a.encryptionKey?.name ?? '없음'}</td>
             <td>{a.storeKey}</td>
-            <td>{renderCellButton('상세 조회', () => { })}</td>
+            <td>{renderCellButton('상세 조회', () => {
+              navigate(`/asset/assets/detail/${a.id.toString()}`);
+            })}</td>
           </tr>)}
         </tbody>
       </HTMLTable>
