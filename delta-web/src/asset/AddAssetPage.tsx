@@ -7,6 +7,7 @@ import { Assets } from '../api';
 
 function AddAssetPage() {
   const [assetTypeId, setAssetTypeId] = useState('');
+  const [mediaType, setMediaType] = useState('');
   const [tagKey, setTagKey] = useState('');
   const [tagValue, setTagValue] = useState('');
 
