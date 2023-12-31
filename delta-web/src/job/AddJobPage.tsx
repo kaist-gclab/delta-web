@@ -22,7 +22,7 @@ function AddJobPage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>작업 추가</PageHeader>
     <FormGroup
       label="작업 유형 번호"
