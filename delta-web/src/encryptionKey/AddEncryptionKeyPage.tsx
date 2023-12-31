@@ -27,7 +27,7 @@ function AddEncryptionKeyPage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>암호화 키 추가</PageHeader>
     <FormGroup
       label="이름"
