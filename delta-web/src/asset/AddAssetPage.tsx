@@ -6,8 +6,8 @@ import PageHeader from '../core/PageHeader';
 import { Assets } from '../api';
 
 function AddAssetPage() {
-  const [key, setKey] = useState('');
   const [name, setName] = useState('');
+  const [tagKey, setTagKey] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
   const [okDialogOpen, setOkDialogOpen] = useState(false);
   const openOkDialog = () => setOkDialogOpen(true);
