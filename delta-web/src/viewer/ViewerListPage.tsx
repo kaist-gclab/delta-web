@@ -48,4 +48,4 @@ function ViewerListPage() {
   </Container>;
 }
 
-export default observer(ViewerListPage);
+export default ViewerListPage;
