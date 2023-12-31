@@ -3,7 +3,6 @@ import AssetStore from '../asset/store';
 import AuthStore from '../core/authStore';
 import JobStore from '../job/store';
 import MonitoringStore from '../monitoring/store';
-import ProcessorNodeStore from '../processorNode/store';
 
 const wrappers: ((app: React.FC) => React.FC)[] = [];
 
