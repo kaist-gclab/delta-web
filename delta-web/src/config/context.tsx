@@ -2,7 +2,6 @@ import React, { createContext } from 'react';
 import AssetStore from '../asset/store';
 import AuthStore from '../core/authStore';
 import JobStore from '../job/store';
-import JobTypeStore from '../jobType/store';
 import MonitoringStore from '../monitoring/store';
 import ProcessorNodeStore from '../processorNode/store';
 
