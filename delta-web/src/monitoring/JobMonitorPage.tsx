@@ -21,7 +21,7 @@ function JobMonitorPage() {
     navigate(`/jobs/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>작업 모니터</PageHeader>
     <div>
       <HTMLTable>
