@@ -15,7 +15,7 @@ function ProcessorNodeMonitorPage() {
     return <Loading />;
   }
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>처리기 노드 모니터</PageHeader>
     <div>
       <HTMLTable>
