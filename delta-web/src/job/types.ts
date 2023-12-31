@@ -21,10 +21,3 @@ export interface JobExecutionStatus {
     timestamp: string;
     status: string;
 }
-
-export interface CreateJobRequest {
-    jobTypeId: string;
-    inputAssetId: string | null;
-    jobArguments: string;
-    assignedProcessorNodeId: string | null;
-}
