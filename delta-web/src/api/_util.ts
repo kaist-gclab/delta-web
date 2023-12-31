@@ -24,8 +24,7 @@ export function setCreateObject(createObject: (obj: any) => any) {
     _createObject = createObject;
 }
 
-export const restoreCircularReferences = _restoreCircularReferences;
-function _restoreCircularReferences(obj: any, createObject: (obj: any) => any) {
+export function restoreCircularReferences(obj: any, createObject: (obj: any) => any) {
     const root = createObject({ obj });
     const cache = new Map<string, any>();
     const deferred: (() => void)[] = [];
@@ -66,6 +65,7 @@ export function _hasOwnPropertyValues(o: any): boolean {
     return o.hasOwnProperty('$values');
 }
 
+export const _restoreCircularReferences = restoreCircularReferences;
 import _useSWR, { SWRConfiguration as _SWRConfiguration, Middleware as _Middleware, SWRHook as _SWRHook } from 'swr';
 
 export function _createSWRMiddleware(_convert: (from: any) => any): _Middleware {
