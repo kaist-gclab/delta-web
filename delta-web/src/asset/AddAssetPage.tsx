@@ -117,4 +117,4 @@ function AddAssetPage() {
   </Container>;
 }
 
-export default observer(AddAssetPage);
+export default AddAssetPage;
