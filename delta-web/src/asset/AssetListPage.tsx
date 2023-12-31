@@ -69,7 +69,7 @@ function AssetListPage() {
     return <Loading />;
   }
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 목록</PageHeader>
     <div>
       <HTMLTable>
