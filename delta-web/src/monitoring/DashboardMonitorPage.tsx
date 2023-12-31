@@ -9,7 +9,7 @@ padding: 0 20px;
 `;
 
 function DashboardMonitorPage() {
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>모니터링 대시보드</PageHeader>
     <GridColumn>
       <GridRow>
