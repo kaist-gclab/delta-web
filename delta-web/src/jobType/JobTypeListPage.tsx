@@ -22,7 +22,7 @@ function JobTypeListPage() {
     navigate(`/job-types/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>작업 유형 목록</PageHeader>
     <div>
       <HTMLTable>
