@@ -9,9 +9,7 @@ import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 
 function ProcessorNodeListPage() {
-  const store = useContext(ProcessorNodeContext);
   const navigate = useNavigate();
-  useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.processorNodes;
   if (!data) {
