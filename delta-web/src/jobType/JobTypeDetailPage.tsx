@@ -47,7 +47,7 @@ function JobTypeDetailPage() {
 
   const goDetailPage = () => navigate(`/job-types/detail/${id}`);
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>작업 유형 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
