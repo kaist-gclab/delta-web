@@ -1,7 +1,5 @@
 import { HTMLTable } from '@blueprintjs/core';
-import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { Loading } from '../core/NonIdealStates';
