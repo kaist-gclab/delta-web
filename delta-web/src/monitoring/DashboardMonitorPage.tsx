@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
 import Container from '../core/Container';
@@ -32,4 +31,4 @@ function DashboardMonitorPage() {
   </Container>;
 }
 
-export default observer(DashboardMonitorPage);
+export default DashboardMonitorPage;
