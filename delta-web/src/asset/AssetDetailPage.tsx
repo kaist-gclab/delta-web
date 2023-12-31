@@ -55,4 +55,4 @@ function AssetDetailPage() {
   </Container>;
 }
 
-export default observer(AssetDetailPage);
+export default AssetDetailPage;
