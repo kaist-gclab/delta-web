@@ -6,7 +6,6 @@ import MonitoringStore from '../monitoring/store';
 const wrappers: ((app: React.FC) => React.FC)[] = [];
 
 export const AuthContext = addStore(AuthStore);
-export const JobContext = addStore(JobStore);
 export const MonitoringContext = addStore(MonitoringStore);
 
 function addStore<T>(store: T) {
