@@ -2,9 +2,9 @@ import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
-import { Failed } from '../core/Failed';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { ErrorMessage } from '../core/NonIdealStates';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -21,7 +21,7 @@ function AssetTypeDetailPage() {
   const [id, setId] = useState('');
 
   const render = () => {
-    return <Failed />;
+    return <ErrorMessage message="애셋 유형 상세 조회 중 오류가 발생했습니다." />
   };
 
   const goDetailPage = () => navigate(`/asset/asset-types/detail/${id}`);
