@@ -47,7 +47,7 @@ function EncryptionKeyDetailPage() {
 
   const goDetailPage = () => navigate(`/encryption-keys/detail/${id}`);
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>암호화 키 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
