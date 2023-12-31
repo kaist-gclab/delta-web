@@ -32,37 +32,6 @@ function AssetListPage() {
   const navigate = useNavigate();
   useEffect(() => { store.fetchAll(); }, [store]);
 
-  const data: Asset[] = [
-    {
-      id: BigInt(1),
-      assetType: {
-        id: BigInt(3),
-        key: 'MODEL',
-        name: 'Model',
-        assets: [],
-        processorNodeCapabilities: [],
-      },
-      encryptionKey: {
-        id: BigInt(1),
-        name: '',
-        value: '',
-        enabled: true,
-        assets: [],
-      },
-      mediaType: 'model/x.stl-ascii',
-      storeKey: 'a986f147-03cc-4355-986a-6deaaf6dd23d',
-      assetTags: [],
-      parentJobExecution: {
-        id: 1n,
-        job: {} as any as Job,
-        processorNode: {} as any as ProcessorNode,
-        resultAssets: [],
-        jobExecutionStatuses: [],
-      },
-      createdAt: dayjs(),
-      inputJobs: [],
-    }
-  ];
   if (!data) {
     return <Loading />;
   }
