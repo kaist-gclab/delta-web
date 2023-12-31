@@ -45,7 +45,7 @@ function StartPage() {
         <StartLabel>애셋 추가</StartLabel>
       </StartButton>
       <StartButton to="/asset/assets/list">
-        <StartIcon iconSize={IconSize} icon="cloud" />
+        <StartIcon size={IconSize} icon="cloud" />
         <StartLabel>애셋 목록</StartLabel>
       </StartButton>
       <StartButton to="/job/jobs/add">
