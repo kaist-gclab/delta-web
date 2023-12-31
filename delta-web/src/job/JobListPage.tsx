@@ -51,4 +51,4 @@ function JobListPage() {
   </Container>;
 }
 
-export default observer(JobListPage);
+export default JobListPage;
