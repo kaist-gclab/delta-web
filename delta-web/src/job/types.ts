@@ -14,10 +14,3 @@ export interface JobExecution {
     job: Job;
     processorNode: ProcessorNode;
 }
-
-export interface JobExecutionStatus {
-    id: string;
-    jobExecution: JobExecution;
-    timestamp: string;
-    status: string;
-}
