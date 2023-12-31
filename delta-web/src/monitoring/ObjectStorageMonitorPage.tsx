@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { useContext, useEffect } from 'react';
 import { JobContext } from '../config/context';
 import Container from '../core/Container';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 
 function ObjectStorageMonitorPage() {
