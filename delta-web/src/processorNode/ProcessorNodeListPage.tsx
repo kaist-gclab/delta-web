@@ -22,7 +22,7 @@ function ProcessorNodeListPage() {
     navigate(`/processor-nodes/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>처리기 노드 목록</PageHeader>
     <div>
       <HTMLTable>
