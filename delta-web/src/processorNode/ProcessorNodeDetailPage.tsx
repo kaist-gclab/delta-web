@@ -30,11 +30,8 @@ function ProcessorNodeDetailPage() {
   }
 
   const render = () => {
-    const e = store.processorNode;
-    if (e === undefined) {
-      return <Loading />;
-    }
-    if (e === null) {
+    const e = data.find((e) => e.id.toString() === params.id);
+    if (!e) {
       return <ErrorMessage message="처리기 노드 상세 조회 중 오류가 발생했습니다." />;
     }
     return <ul>
