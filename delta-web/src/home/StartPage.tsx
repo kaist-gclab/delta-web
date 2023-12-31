@@ -35,7 +35,7 @@ function StartPage() {
     <PageHeader>시작</PageHeader>
     <h2>도움말</h2>
     <StartButton to="/help">
-      <StartIcon iconSize={IconSize} icon="book" />
+      <StartIcon size={IconSize} icon="book" />
       <StartLabel>도움말</StartLabel>
     </StartButton>
     <h2>자주 사용하는 기능</h2>
