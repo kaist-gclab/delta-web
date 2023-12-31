@@ -32,7 +32,7 @@ function ViewerListPage() {
     return <Loading />;
   }
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>뷰어 목록</PageHeader>
     <div>
       <HTMLTable>
