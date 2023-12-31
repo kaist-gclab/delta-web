@@ -55,18 +55,13 @@ function AssetListPage() {
       storeKey: 'a986f147-03cc-4355-986a-6deaaf6dd23d',
       assetTags: [],
       parentJobExecution: {
-        id: BigInt(1),
-        jobId: BigInt(1),
-        processorNodeId: BigInt(1),
+        id: 1n,
         job: {} as any as Job,
         processorNode: {} as any as ProcessorNode,
         resultAssets: [],
         jobExecutionStatuses: [],
       },
       createdAt: dayjs(),
-      assetTypeId: BigInt(3),
-      encryptionKeyId: BigInt(1),
-      parentJobExecutionId: BigInt(1),
       inputJobs: [],
     }
   ];
