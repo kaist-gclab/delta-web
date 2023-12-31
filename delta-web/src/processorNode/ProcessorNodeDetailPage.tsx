@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import { ProcessorNodeContext } from '../config/context';
 import { Failed } from '../core/Failed';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
 
