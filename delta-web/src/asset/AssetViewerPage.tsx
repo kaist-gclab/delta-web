@@ -55,4 +55,4 @@ function AssetViewerPage() {
   </Container>;
 }
 
-export default observer(AssetViewerPage);
+export default AssetViewerPage;
