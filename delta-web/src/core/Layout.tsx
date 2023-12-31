@@ -2,7 +2,7 @@ import { lazy, Suspense, useContext, useMemo } from 'react';
 import styled from '@emotion/styled';
 import NavButton from './NavButton';
 import { observer } from 'mobx-react-lite';
-import { Loading } from './Loading';
+import { Loading } from './NonIdealStates';
 import { Alignment, Navbar } from '@blueprintjs/core';
 import { useLocation } from 'react-router';
 import { AuthContext } from '../config/context';
