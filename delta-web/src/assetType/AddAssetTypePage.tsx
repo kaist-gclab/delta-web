@@ -23,7 +23,7 @@ function AddAssetTypePage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 유형 추가</PageHeader>
     <FormGroup
       label="키"
