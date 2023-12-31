@@ -277,6 +277,18 @@ export interface _api_AddJobExecutionStatusRequest {
     status: string;
 }
 
+export interface JobTypeView {
+    id: bigint;
+    key: string;
+    name: string;
+}
+
+export interface _api_JobTypeView {
+    id: string;
+    key: string;
+    name: string;
+}
+
 export interface EncryptionKeyView {
     id: bigint;
     name: string;
