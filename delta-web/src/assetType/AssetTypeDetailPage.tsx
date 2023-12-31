@@ -27,7 +27,7 @@ function AssetTypeDetailPage() {
 
   const goDetailPage = () => navigate(`/asset/asset-types/detail/${id}`);
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 유형 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
