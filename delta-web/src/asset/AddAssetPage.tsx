@@ -43,8 +43,8 @@ function AddAssetPage() {
       labelInfo="(필수)"
       helperText="애셋 유형 번호"
       labelFor="input-key">
-      <InputGroup id="input-key" placeholder="번호"
-        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+      <InputGroup id="input-key" placeholder="번호" value={assetTypeId}
+        onChange={(e: FormEvent<HTMLInputElement>) => { setAssetTypeId(e.currentTarget.value); }} />
     </FormGroup>
     <FormGroup
       label="애셋 암호화 키 번호"
