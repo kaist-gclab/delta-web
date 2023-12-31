@@ -1,5 +1,4 @@
 import { HTMLTable } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import Container from '../core/Container';
 import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
