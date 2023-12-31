@@ -42,7 +42,7 @@ function ProcessorNodeDetailPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/processor-nodes/detail/${id}`);
+  const goDetailPage = () => navigate(`/node/processor-nodes/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>처리기 노드 상세 조회</PageHeader>
