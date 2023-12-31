@@ -50,8 +50,8 @@ function AddAssetPage() {
       label="애셋 암호화 키 번호"
       helperText="애셋 암호화 키 번호"
       labelFor="input-key">
-      <InputGroup id="input-key" placeholder="번호"
-        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+      <InputGroup id="input-key" placeholder="번호" value={encryptionKeyId}
+        onChange={(e: FormEvent<HTMLInputElement>) => { setEncryptionKeyId(e.currentTarget.value); }} />
     </FormGroup>
     <FormGroup
       label="애셋 미디어 타입"
