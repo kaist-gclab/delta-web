@@ -46,4 +46,4 @@ function ProcessorNodeListPage() {
   </Container>;
 }
 
-export default observer(ProcessorNodeListPage);
+export default ProcessorNodeListPage;
