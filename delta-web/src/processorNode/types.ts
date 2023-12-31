@@ -1,5 +1,4 @@
-import { AssetType } from '../api';
-import { JobType } from '../jobType/types';
+import { AssetType, JobType } from '../api';
 
 export interface ProcessorNode {
     id: string;
