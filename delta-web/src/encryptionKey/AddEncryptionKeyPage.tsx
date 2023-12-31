@@ -19,7 +19,7 @@ function AddEncryptionKeyPage() {
 
   const submit = async () => {
     try {
-      const response: CreateEncryptionKeyResponse = await store.create({ name }) as any;
+      const response = await EncryptionKeys.create({ name });
       setValue(response.value);
       openOkDialog();
     } catch {
