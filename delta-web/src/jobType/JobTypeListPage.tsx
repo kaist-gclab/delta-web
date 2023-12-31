@@ -5,13 +5,16 @@ import { useNavigate } from 'react-router';
 import { JobTypeContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
-import { Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
+import { JobTypes } from '../api';
 
 function JobTypeListPage() {
   const navigate = useNavigate();
-
-  const data = store.jobTypes;
+  const { error, data } = JobTypes.useSWRGetJobTypes();
+  if (error) {
+    return <ErrorMessage message="작업 유형 목록 조회 중 오류가 발생했습니다." />;
+  }
   if (!data) {
     return <Loading />;
   }
