@@ -22,7 +22,7 @@ function EncryptionKeyListPage() {
     navigate(`/encryption-keys/detail/${id}`);
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>암호화 키 목록</PageHeader>
     <div>
       <HTMLTable>
