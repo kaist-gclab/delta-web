@@ -1,15 +1,18 @@
-import { useContext, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Loading } from '../core/NonIdealStates';
-import { EncryptionKeyContext } from '../config/context';
+import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { EncryptionKeys } from '../api';
 
 function EncryptionKeyListPage() {
   const navigate = useNavigate();
+  const { data, error } = EncryptionKeys.useSWRGetEncryptionKeys();
+  if (error) {
+    return <ErrorMessage message="암호화 키 목록을 불러오는 중 오류가 발생했습니다." />
+  }
   if (!data) {
     return <Loading />;
   }
