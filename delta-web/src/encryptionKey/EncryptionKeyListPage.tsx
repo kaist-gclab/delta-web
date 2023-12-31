@@ -9,11 +9,7 @@ import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
 
 function EncryptionKeyListPage() {
-  const store = useContext(EncryptionKeyContext);
   const navigate = useNavigate();
-  useEffect(() => { store.fetchAll(); }, [store]);
-
-  const data = store.encryptionKeys;
   if (!data) {
     return <Loading />;
   }
