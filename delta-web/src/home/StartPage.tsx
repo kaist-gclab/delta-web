@@ -31,7 +31,7 @@ margin-top: 10px;
 const IconSize = 40;
 
 function StartPage() {
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>시작</PageHeader>
     <h2>도움말</h2>
     <StartButton to="/help">
