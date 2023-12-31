@@ -1,6 +1,4 @@
-# https://dev.to/avatsaev/create-efficient-angular-docker-images-with-multi-stage-builds-1f3n
-
-FROM node:18-slim as builder
+FROM node:20-slim as builder
 RUN npm install -g pnpm
 
 RUN mkdir /app
