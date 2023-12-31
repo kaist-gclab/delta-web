@@ -2,7 +2,6 @@ import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { FormEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
-import { JobContext } from '../config/context';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
@@ -20,13 +19,6 @@ function JobDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
-
-  const store = useContext(JobContext);
-  useEffect(() => {
-    if (params.id) {
-      store.fetch(params.id);
-    }
-  }, [store, params]);
 
   const render = () => {
     const e = store.job;
