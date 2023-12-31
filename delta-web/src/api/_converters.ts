@@ -4,7 +4,7 @@
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import { _hasOwnPropertyRef, _hasOwnPropertyValues } from './_util';
-import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, MonitoringServiceEvent, _api_MonitoringServiceEvent, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, CreateEncryptionKeyResponse, EncryptionKeyView, _api_EncryptionKeyView, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
+import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, MonitoringServiceEvent, _api_MonitoringServiceEvent, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, CreateEncryptionKeyResponse, EncryptionKeyView, _api_EncryptionKeyView, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, AssetTypeView, _api_AssetTypeView, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
 export function _convert_string_TO_string(from: string): string {
     return from;
 }
@@ -1172,29 +1172,53 @@ export function _convert__api_GetAssetResponse_TO_GetAssetResponse(from: _api_Ge
     return { ...from, ...to };
 }
 
-export function _convert_AssetType_TO__api_AssetType_Array(from: AssetType[]): _api_AssetType[] {
+export function _convert_AssetTypeView_TO__api_AssetTypeView(from: AssetTypeView): _api_AssetTypeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_AssetTypeView = {
+        id: _convert_bigint_TO_string(from.id),
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_AssetTypeView_TO__api_AssetTypeView_Array(from: AssetTypeView[]): _api_AssetTypeView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: AssetType[] = (from as any).$values;
-        const to: _api_AssetType[] = values.map(element => _convert_AssetType_TO__api_AssetType(element));
+        const values: AssetTypeView[] = (from as any).$values;
+        const to: _api_AssetTypeView[] = values.map(element => _convert_AssetTypeView_TO__api_AssetTypeView(element));
         return { ...from, $values: to } as any;
     }
-    const to: _api_AssetType[] = from.map(element => _convert_AssetType_TO__api_AssetType(element));
+    const to: _api_AssetTypeView[] = from.map(element => _convert_AssetTypeView_TO__api_AssetTypeView(element));
     return to;
 }
 
-export function _convert__api_AssetType_TO_AssetType_Array(from: _api_AssetType[]): AssetType[] {
+export function _convert__api_AssetTypeView_TO_AssetTypeView(from: _api_AssetTypeView): AssetTypeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: AssetTypeView = {
+        id: _convert_string_TO_bigint(from.id),
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_AssetTypeView_TO_AssetTypeView_Array(from: _api_AssetTypeView[]): AssetTypeView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: _api_AssetType[] = (from as any).$values;
-        const to: AssetType[] = values.map(element => _convert__api_AssetType_TO_AssetType(element));
+        const values: _api_AssetTypeView[] = (from as any).$values;
+        const to: AssetTypeView[] = values.map(element => _convert__api_AssetTypeView_TO_AssetTypeView(element));
         return { ...from, $values: to } as any;
     }
-    const to: AssetType[] = from.map(element => _convert__api_AssetType_TO_AssetType(element));
+    const to: AssetTypeView[] = from.map(element => _convert__api_AssetTypeView_TO_AssetTypeView(element));
     return to;
 }
 
