@@ -58,8 +58,8 @@ function AddAssetPage() {
       labelInfo="(필수)"
       helperText="애셋 미디어 타입"
       labelFor="input-key">
-      <InputGroup id="input-key" placeholder="미디어 타입"
-        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+      <InputGroup id="input-key" placeholder="미디어 타입" value={mediaType}
+        onChange={(e: FormEvent<HTMLInputElement>) => { setMediaType(e.currentTarget.value); }} />
     </FormGroup>
     <FormGroup
       label="애셋 오브젝트 저장소 키"
