@@ -21,7 +21,7 @@ function UserSettingsPage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>사용자 설정</PageHeader>
     <FormGroup
       label="새 암호"
