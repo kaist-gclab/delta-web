@@ -22,6 +22,12 @@ function AssetViewerPage() {
   const navigate = useNavigate();
   const [id, setId] = useState('');
   const { error, data } = Assets.useSWRGetAssets();
+  if (error) {
+    return <ErrorMessage message="애셋을 불러오는 중 오류가 발생했습니다." />;
+  }
+  if (!data) {
+    return <Loading />;
+  }
 
   const render = () => {
     const e = store.asset;
