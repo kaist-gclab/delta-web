@@ -67,4 +67,4 @@ function AssetListPage() {
   </Container>;
 }
 
-export default observer(AssetListPage);
+export default AssetListPage;
