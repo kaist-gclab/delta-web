@@ -22,13 +22,6 @@ function EncryptionKeyDetailPage() {
   const navigate = useNavigate();
   const [id, setId] = useState('');
 
-  const store = useContext(EncryptionKeyContext);
-  useEffect(() => {
-    if (params.id) {
-      store.fetch(params.id);
-    }
-  }, [store, params]);
-
   const render = () => {
     const e = store.encryptionKey;
     if (e === undefined) {
