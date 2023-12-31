@@ -1,5 +1,4 @@
 import React, { createContext } from 'react';
-import AssetStore from '../asset/store';
 import AuthStore from '../core/authStore';
 import JobStore from '../job/store';
 import MonitoringStore from '../monitoring/store';
