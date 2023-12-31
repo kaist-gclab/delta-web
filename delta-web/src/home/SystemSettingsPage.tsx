@@ -65,4 +65,4 @@ function SystemSettingsPage() {
   </Container>;
 }
 
-export default observer(SystemSettingsPage);
+export default SystemSettingsPage;
