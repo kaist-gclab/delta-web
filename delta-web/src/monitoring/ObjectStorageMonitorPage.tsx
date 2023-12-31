@@ -1,5 +1,4 @@
 import { HTMLTable } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import Container from '../core/Container';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
@@ -37,4 +36,4 @@ function ObjectStorageMonitorPage() {
   </Container>;
 }
 
-export default observer(ObjectStorageMonitorPage);
+export default ObjectStorageMonitorPage;
