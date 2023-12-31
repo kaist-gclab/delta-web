@@ -9,6 +9,7 @@ function AddAssetPage() {
   const [assetTypeId, setAssetTypeId] = useState('');
   const [mediaType, setMediaType] = useState('');
   const [objectStoreKey, setObjectStoreKey] = useState('');
+  const [encryptionKeyId, setEncryptionKeyId] = useState('');
   const [tagKey, setTagKey] = useState('');
   const [tagValue, setTagValue] = useState('');
 
