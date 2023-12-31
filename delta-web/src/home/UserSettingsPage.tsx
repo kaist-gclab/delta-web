@@ -65,4 +65,4 @@ function UserSettingsPage() {
   </Container>;
 }
 
-export default observer(UserSettingsPage);
+export default UserSettingsPage;
