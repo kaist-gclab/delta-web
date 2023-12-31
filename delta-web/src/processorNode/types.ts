@@ -5,11 +5,3 @@ export interface ProcessorNode {
     key: string;
     name: string | null;
 }
-
-export interface ProcessorNodeCapability {
-    id: string;
-    processorNode: ProcessorNode;
-    jobType: JobType;
-    assetType: AssetType | null;
-    mediaType: string;
-}
