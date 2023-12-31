@@ -44,4 +44,4 @@ function HelpPage() {
   </Container>;
 }
 
-export default observer(HelpPage);
+export default HelpPage;
