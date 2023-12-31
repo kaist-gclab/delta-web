@@ -8,9 +8,3 @@ export interface Job {
     createdAt: string;
     assignedProcessorNode: ProcessorNode | null;
 }
-
-export interface JobExecution {
-    id: string;
-    job: Job;
-    processorNode: ProcessorNode;
-}
