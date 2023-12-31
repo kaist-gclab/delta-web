@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { Assets } from '../api';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -20,6 +21,7 @@ function AssetDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const { error, data } = Assets.useSWRGetAssets();
 
   const render = () => {
     const e = store.asset;
