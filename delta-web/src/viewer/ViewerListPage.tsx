@@ -1,15 +1,10 @@
 import { HTMLTable } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import { useContext, useEffect } from 'react';
-import { JobContext } from '../config/context';
 import Container from '../core/Container';
 import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 
 function ViewerListPage() {
-  const store = useContext(JobContext);
-  useEffect(() => { store.fetchAll(); }, [store]);
-
   const data = [{
     id: '1',
     name: 'ImageViewer',
