@@ -17,7 +17,7 @@ function JobListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/jobs/detail/${id}`);
+    navigate(`/job/jobs/detail/${id}`);
   };
 
   if (data.length === 0) {
