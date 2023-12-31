@@ -19,7 +19,7 @@ function EncryptionKeyListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/encryption-keys/detail/${id}`);
+    navigate(`/key/encryption-keys/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
