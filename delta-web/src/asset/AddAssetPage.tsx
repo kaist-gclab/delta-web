@@ -23,7 +23,7 @@ function AddAssetPage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 추가</PageHeader>
     <FormGroup
       label="애셋 유형 번호"
