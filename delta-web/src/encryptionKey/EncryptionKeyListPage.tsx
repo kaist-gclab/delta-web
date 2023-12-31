@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import { EncryptionKeyContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
