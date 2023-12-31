@@ -1,6 +1,5 @@
 import React, { createContext } from 'react';
 import AuthStore from '../core/authStore';
-import JobStore from '../job/store';
 import MonitoringStore from '../monitoring/store';
 
 const wrappers: ((app: React.FC) => React.FC)[] = [];
