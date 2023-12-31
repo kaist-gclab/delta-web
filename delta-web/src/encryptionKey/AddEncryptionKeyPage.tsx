@@ -1,10 +1,8 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
-import { FormEvent, useContext, useState } from 'react';
-import { EncryptionKeyContext } from '../config/context';
+import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
-import { CreateEncryptionKeyResponse } from './types';
+import { EncryptionKeys } from '../api';
 
 function AddEncryptionKeyPage() {
   const [name, setName] = useState('');
@@ -73,4 +71,4 @@ function AddEncryptionKeyPage() {
   </Container>;
 }
 
-export default observer(AddEncryptionKeyPage);
+export default AddEncryptionKeyPage;
