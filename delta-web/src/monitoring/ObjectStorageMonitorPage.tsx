@@ -15,7 +15,7 @@ function ObjectStorageMonitorPage() {
     return <Loading />;
   }
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>오브젝트 저장소 모니터</PageHeader>
     <div>
       <HTMLTable>
