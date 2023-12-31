@@ -4,7 +4,7 @@
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import { _hasOwnPropertyRef, _hasOwnPropertyValues } from './_util';
-import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, MonitoringServiceEvent, _api_MonitoringServiceEvent, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, JobTypeView, _api_JobTypeView, CreateEncryptionKeyResponse, EncryptionKeyView, _api_EncryptionKeyView, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, AssetTypeView, _api_AssetTypeView, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
+import { ProcessorNode, ProcessorNodeCapability, _api_ProcessorNode, _api_ProcessorNodeCapability, JobType, Job, _api_JobType, _api_Job, Asset, AssetType, _api_Asset, _api_AssetType, EncryptionKey, _api_EncryptionKey, JobExecution, JobExecutionStatus, _api_JobExecution, _api_JobExecutionStatus, AssetTag, _api_AssetTag, ProcessorNodeStatus, _api_ProcessorNodeStatus, RegisterProcessorNodeRequest, CreateProcessorNodeCapabilityRequest, _api_CreateProcessorNodeCapabilityRequest, _api_RegisterProcessorNodeRequest, UploadTicket, _api_UploadTicket, ObjectStorageEvent, _api_ObjectStorageEvent, ProcessorNodeEvent, _api_ProcessorNodeEvent, JobEvent, _api_JobEvent, JobScheduleResponse, _api_JobScheduleResponse, JobScheduleRequest, _api_JobScheduleRequest, CreateJobRequest, _api_CreateJobRequest, AddJobExecutionStatusRequest, _api_AddJobExecutionStatusRequest, JobTypeView, _api_JobTypeView, CreateEncryptionKeyResponse, EncryptionKeyView, _api_EncryptionKeyView, _api_CreateEncryptionKeyResponse, CreateEncryptionKeyRequest, _api_CreateEncryptionKeyRequest, ApiHomeResponse, _api_ApiHomeResponse, LoginResponse, _api_LoginResponse, LoginRequest, _api_LoginRequest, CreateAssetRequest, CreateAssetTagRequest, _api_CreateAssetTagRequest, _api_CreateAssetRequest, GetAssetResponse, _api_GetAssetResponse, AssetTypeView, _api_AssetTypeView, CreateAssetTypeRequest, _api_CreateAssetTypeRequest } from './_types';
 export function _convert_string_TO_string(from: string): string {
     return from;
 }
@@ -754,53 +754,149 @@ export function _convert__api_UploadTicket_TO_UploadTicket(from: _api_UploadTick
     return { ...from, ...to };
 }
 
-export function _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(from: MonitoringServiceEvent): _api_MonitoringServiceEvent {
+export function _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(from: ObjectStorageEvent): _api_ObjectStorageEvent {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_MonitoringServiceEvent = {
-        eventTimestamp: _convert__Dayjs_TO_string(from.eventTimestamp),
-        statsTimestamp: _convert__Dayjs_TO_string(from.statsTimestamp),
+    const to: _api_ObjectStorageEvent = {
+        time: _convert_string_TO_string(from.time),
         content: _convert_string_TO_string(from.content),
     };
     return { ...from, ...to };
 }
 
-export function _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent_Array(from: MonitoringServiceEvent[]): _api_MonitoringServiceEvent[] {
+export function _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent_Array(from: ObjectStorageEvent[]): _api_ObjectStorageEvent[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: MonitoringServiceEvent[] = (from as any).$values;
-        const to: _api_MonitoringServiceEvent[] = values.map(element => _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(element));
+        const values: ObjectStorageEvent[] = (from as any).$values;
+        const to: _api_ObjectStorageEvent[] = values.map(element => _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(element));
         return { ...from, $values: to } as any;
     }
-    const to: _api_MonitoringServiceEvent[] = from.map(element => _convert_MonitoringServiceEvent_TO__api_MonitoringServiceEvent(element));
+    const to: _api_ObjectStorageEvent[] = from.map(element => _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(element));
     return to;
 }
 
-export function _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(from: _api_MonitoringServiceEvent): MonitoringServiceEvent {
+export function _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(from: _api_ObjectStorageEvent): ObjectStorageEvent {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: MonitoringServiceEvent = {
-        eventTimestamp: _convert_string_TO__Dayjs(from.eventTimestamp),
-        statsTimestamp: _convert_string_TO__Dayjs(from.statsTimestamp),
+    const to: ObjectStorageEvent = {
+        time: _convert_string_TO_string(from.time),
         content: _convert_string_TO_string(from.content),
     };
     return { ...from, ...to };
 }
 
-export function _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent_Array(from: _api_MonitoringServiceEvent[]): MonitoringServiceEvent[] {
+export function _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent_Array(from: _api_ObjectStorageEvent[]): ObjectStorageEvent[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: _api_MonitoringServiceEvent[] = (from as any).$values;
-        const to: MonitoringServiceEvent[] = values.map(element => _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(element));
+        const values: _api_ObjectStorageEvent[] = (from as any).$values;
+        const to: ObjectStorageEvent[] = values.map(element => _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(element));
         return { ...from, $values: to } as any;
     }
-    const to: MonitoringServiceEvent[] = from.map(element => _convert__api_MonitoringServiceEvent_TO_MonitoringServiceEvent(element));
+    const to: ObjectStorageEvent[] = from.map(element => _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(element));
+    return to;
+}
+
+export function _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(from: ProcessorNodeEvent): _api_ProcessorNodeEvent {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_ProcessorNodeEvent = {
+        time: _convert_string_TO_string(from.time),
+        content: _convert_string_TO_string(from.content),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent_Array(from: ProcessorNodeEvent[]): _api_ProcessorNodeEvent[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: ProcessorNodeEvent[] = (from as any).$values;
+        const to: _api_ProcessorNodeEvent[] = values.map(element => _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_ProcessorNodeEvent[] = from.map(element => _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(element));
+    return to;
+}
+
+export function _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(from: _api_ProcessorNodeEvent): ProcessorNodeEvent {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: ProcessorNodeEvent = {
+        time: _convert_string_TO_string(from.time),
+        content: _convert_string_TO_string(from.content),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent_Array(from: _api_ProcessorNodeEvent[]): ProcessorNodeEvent[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_ProcessorNodeEvent[] = (from as any).$values;
+        const to: ProcessorNodeEvent[] = values.map(element => _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: ProcessorNodeEvent[] = from.map(element => _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(element));
+    return to;
+}
+
+export function _convert_JobEvent_TO__api_JobEvent(from: JobEvent): _api_JobEvent {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_JobEvent = {
+        id: _convert_bigint_TO_string(from.id),
+        timestamp: _convert__Dayjs_TO_string(from.timestamp),
+        jobArguments: _convert_string_TO_string(from.jobArguments),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_JobEvent_TO__api_JobEvent_Array(from: JobEvent[]): _api_JobEvent[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: JobEvent[] = (from as any).$values;
+        const to: _api_JobEvent[] = values.map(element => _convert_JobEvent_TO__api_JobEvent(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_JobEvent[] = from.map(element => _convert_JobEvent_TO__api_JobEvent(element));
+    return to;
+}
+
+export function _convert__api_JobEvent_TO_JobEvent(from: _api_JobEvent): JobEvent {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: JobEvent = {
+        id: _convert_string_TO_bigint(from.id),
+        timestamp: _convert_string_TO__Dayjs(from.timestamp),
+        jobArguments: _convert_string_TO_string(from.jobArguments),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_JobEvent_TO_JobEvent_Array(from: _api_JobEvent[]): JobEvent[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_JobEvent[] = (from as any).$values;
+        const to: JobEvent[] = values.map(element => _convert__api_JobEvent_TO_JobEvent(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: JobEvent[] = from.map(element => _convert__api_JobEvent_TO_JobEvent(element));
     return to;
 }
 

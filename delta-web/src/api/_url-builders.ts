@@ -16,8 +16,16 @@ export function _ObjectStorage_GET_GetUploadUrl_url(): string {
     return `api/1/object-storage/upload-url`;
 }
 
-export function _Monitoring_GET_GetStats_url(): string {
-    return `api/1/monitoring`;
+export function _Monitoring_GET_GetObjectStorageEvents_url(): string {
+    return `api/1/monitoring/object-storage`;
+}
+
+export function _Monitoring_GET_GetProcessorNodeEvents_url(): string {
+    return `api/1/monitoring/processor-node`;
+}
+
+export function _Monitoring_GET_GetJobEvents_url(): string {
+    return `api/1/monitoring/job`;
 }
 
 export function _Jobs_GET_GetJobs_url(): string {

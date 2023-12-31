@@ -227,16 +227,36 @@ export interface _api_UploadTicket {
     storeKey: string;
 }
 
-export interface MonitoringServiceEvent {
-    eventTimestamp: _Dayjs;
-    statsTimestamp: _Dayjs;
+export interface ObjectStorageEvent {
+    time: string;
     content: string;
 }
 
-export interface _api_MonitoringServiceEvent {
-    eventTimestamp: string;
-    statsTimestamp: string;
+export interface _api_ObjectStorageEvent {
+    time: string;
     content: string;
+}
+
+export interface ProcessorNodeEvent {
+    time: string;
+    content: string;
+}
+
+export interface _api_ProcessorNodeEvent {
+    time: string;
+    content: string;
+}
+
+export interface JobEvent {
+    id: bigint;
+    timestamp: _Dayjs;
+    jobArguments: string;
+}
+
+export interface _api_JobEvent {
+    id: string;
+    timestamp: string;
+    jobArguments: string;
 }
 
 export interface JobScheduleResponse {
