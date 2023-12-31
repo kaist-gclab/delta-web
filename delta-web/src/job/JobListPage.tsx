@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 
 function JobListPage() {
