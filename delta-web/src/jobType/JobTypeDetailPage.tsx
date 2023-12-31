@@ -4,8 +4,7 @@ import { FormEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import { JobTypeContext } from '../config/context';
-import { Failed } from '../core/Failed';
-import { Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
 
@@ -36,7 +35,7 @@ function JobTypeDetailPage() {
       return <Loading />;
     }
     if (e === null) {
-      return <Failed />;
+      return <ErrorMessage message="작업 유형 상세 조회 중 오류가 발생했습니다." />;
     }
     return <ul>
       <li>번호: {e.id.toString()}</li>
