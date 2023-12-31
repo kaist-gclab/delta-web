@@ -1,12 +1,9 @@
 import { observer } from 'mobx-react-lite';
-import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
-import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
-import { Loading } from '../core/NonIdealStates';
-import dayjs from 'dayjs';
-import { Asset, Job, ProcessorNode } from '../api';
+import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { Asset, Assets } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
