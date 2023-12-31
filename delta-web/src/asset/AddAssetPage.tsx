@@ -22,7 +22,14 @@ function AddAssetPage() {
 
   const submit = async () => {
     try {
-      // FIXME await store.create({ key, name }) as any;
+      await Assets.createAsset({
+        assetTypeId: BigInt(assetTypeId),
+        mediaType,
+        storeKey: objectStoreKey,
+        createAssetTagRequest: [],
+        parentJobExecutionId: null,
+        encryptionKeyId: null,
+      });
       openOkDialog();
     } catch {
       openOkDialog();
