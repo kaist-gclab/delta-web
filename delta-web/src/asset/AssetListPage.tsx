@@ -28,10 +28,8 @@ function getTag(a: Asset, key: string) {
 }
 
 function AssetListPage() {
-  const store = useContext(JobContext);
   const navigate = useNavigate();
-  useEffect(() => { store.fetchAll(); }, [store]);
-
+  const { data, error } = Assets.useSWRGetAssets();
   if (!data) {
     return <Loading />;
   }
