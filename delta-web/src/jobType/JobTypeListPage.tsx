@@ -9,9 +9,7 @@ import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 
 function JobTypeListPage() {
-  const store = useContext(JobTypeContext);
   const navigate = useNavigate();
-  useEffect(() => { store.fetchAll(); }, [store]);
 
   const data = store.jobTypes;
   if (!data) {
