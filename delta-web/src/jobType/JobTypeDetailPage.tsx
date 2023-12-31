@@ -22,13 +22,6 @@ function JobTypeDetailPage() {
   const navigate = useNavigate();
   const [id, setId] = useState('');
 
-  const store = useContext(JobTypeContext);
-  useEffect(() => {
-    if (params.id) {
-      store.fetch(params.id);
-    }
-  }, [store, params]);
-
   const render = () => {
     const e = store.jobType;
     if (e === undefined) {
