@@ -30,6 +30,9 @@ function getTag(a: Asset, key: string) {
 function AssetListPage() {
   const navigate = useNavigate();
   const { data, error } = Assets.useSWRGetAssets();
+  if (error) {
+    return <ErrorMessage message="애셋 목록을 불러오는 중 오류가 발생했습니다." />
+  }
   if (!data) {
     return <Loading />;
   }
