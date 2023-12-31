@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import styled from '@emotion/styled';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
