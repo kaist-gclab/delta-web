@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { Jobs } from '../api';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -19,6 +20,7 @@ function JobDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const { error, data } = Jobs.useSWRGetJobs();
 
   const render = () => {
     const e = store.job;
