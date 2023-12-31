@@ -19,7 +19,7 @@ function JobTypeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/job-types/detail/${id}`);
+    navigate(`/job/job-types/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
