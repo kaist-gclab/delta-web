@@ -27,8 +27,6 @@ function getTag(a: Asset, key: string) {
   return '없음';
 }
 
-let timeBegin = 0;
-
 function AssetListPage() {
   const store = useContext(JobContext);
   const navigate = useNavigate();
