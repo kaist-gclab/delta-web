@@ -6,11 +6,11 @@ import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
+import { Jobs } from '../api';
 
 function JobListPage() {
   const navigate = useNavigate();
-
-  const data = store.jobs;
+  const { error, data } = Jobs.useSWRGetJobs();
   if (!data) {
     return <Loading />;
   }
