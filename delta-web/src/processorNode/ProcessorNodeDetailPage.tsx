@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { ProcessorNodes } from '../api';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -20,6 +21,7 @@ function ProcessorNodeDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const { error, data } = ProcessorNodes.useSWRGetNodes();
 
   const render = () => {
     const e = store.processorNode;
