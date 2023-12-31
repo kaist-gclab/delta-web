@@ -7,11 +7,11 @@ import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
+import { ProcessorNodes } from '../api';
 
 function ProcessorNodeListPage() {
   const navigate = useNavigate();
-
-  const data = store.processorNodes;
+  const { error, data } = ProcessorNodes.useSWRGetNodes();
   if (!data) {
     return <Loading />;
   }
