@@ -21,7 +21,7 @@ function SystemSettingsPage() {
     }
   };
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>시스템 설정</PageHeader>
     <FormGroup
       label="처리기 최대 응답 시간"
