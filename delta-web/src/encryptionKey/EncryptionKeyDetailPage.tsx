@@ -57,4 +57,4 @@ function EncryptionKeyDetailPage() {
   </Container>;
 }
 
-export default observer(EncryptionKeyDetailPage);
+export default EncryptionKeyDetailPage;
