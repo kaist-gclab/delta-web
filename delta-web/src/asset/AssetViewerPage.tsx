@@ -45,7 +45,7 @@ function AssetViewerPage() {
 
   const goDetailPage = () => navigate(`/assets/detail/${id}`);
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>애셋 뷰어</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
