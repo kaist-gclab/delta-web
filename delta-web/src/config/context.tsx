@@ -11,7 +11,6 @@ const wrappers: ((app: React.FC) => React.FC)[] = [];
 export const AuthContext = addStore(AuthStore);
 export const AssetContext = addStore(AssetStore);
 export const JobContext = addStore(JobStore);
-export const JobTypeContext = addStore(JobTypeStore);
 export const MonitoringContext = addStore(MonitoringStore);
 export const ProcessorNodeContext = addStore(ProcessorNodeStore);
 
