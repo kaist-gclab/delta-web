@@ -55,4 +55,4 @@ function ProcessorNodeDetailPage() {
   </Container>;
 }
 
-export default observer(ProcessorNodeDetailPage);
+export default ProcessorNodeDetailPage;
