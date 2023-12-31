@@ -1,5 +1,4 @@
 import { HTMLTable } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
