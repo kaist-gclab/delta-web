@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
 import { renderCellButton } from '../core/CellButton';
