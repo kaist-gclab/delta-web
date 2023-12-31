@@ -44,4 +44,4 @@ function JobTypeListPage() {
   </Container>;
 }
 
-export default observer(JobTypeListPage);
+export default JobTypeListPage;
