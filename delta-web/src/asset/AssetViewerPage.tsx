@@ -1,6 +1,5 @@
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
