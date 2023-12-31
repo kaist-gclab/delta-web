@@ -7,8 +7,3 @@ export interface EncryptionKey {
 export interface CreateEncryptionKeyRequest {
     name: string;
 }
-
-export interface CreateEncryptionKeyResponse {
-    encryptionKey: EncryptionKey;
-    value: string;
-}
