@@ -7,7 +7,6 @@ import PageHeader from '../core/PageHeader';
 import { CreateEncryptionKeyResponse } from './types';
 
 function AddEncryptionKeyPage() {
-  const store = useContext(EncryptionKeyContext);
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
   const [errorDialogOpen, setErrorDialogOpen] = useState(false);
