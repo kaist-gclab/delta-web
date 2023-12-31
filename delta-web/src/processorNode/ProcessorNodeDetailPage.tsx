@@ -22,6 +22,12 @@ function ProcessorNodeDetailPage() {
   const navigate = useNavigate();
   const [id, setId] = useState('');
   const { error, data } = ProcessorNodes.useSWRGetNodes();
+  if (error) {
+    return <ErrorMessage message="처리기 노드 상세 조회 중 오류가 발생했습니다." />;
+  }
+  if (!data) {
+    return <Loading />;
+  }
 
   const render = () => {
     const e = store.processorNode;
