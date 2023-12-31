@@ -49,7 +49,7 @@ function StartPage() {
         <StartLabel>애셋 목록</StartLabel>
       </StartButton>
       <StartButton to="/job/jobs/add">
-        <StartIcon iconSize={IconSize} icon="th-derived" />
+        <StartIcon size={IconSize} icon="th-derived" />
         <StartLabel>작업 추가</StartLabel>
       </StartButton>
       <StartButton to="/job/jobs/list">
