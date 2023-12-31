@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react-lite';
 import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
-import { Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import { AssetTypes } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
@@ -11,7 +11,7 @@ function AssetTypeListPage() {
   const navigate = useNavigate();
   const { data, error } = AssetTypes.useSWRGetAssetTypes();
   if (error) {
-    return <div>error</div>;
+    return <ErrorMessage message="애셋 유형 목록을 불러오는 중 오류가 발생했습니다." />
   }
   if (!data) {
     return <Loading />;
