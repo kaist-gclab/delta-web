@@ -10,7 +10,7 @@ word-break: keep-all;
 `;
 
 function HelpPage() {
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>도움말</PageHeader>
     <h2>기능 설명</h2>
     <ul>
