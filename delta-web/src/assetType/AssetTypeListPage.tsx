@@ -18,7 +18,7 @@ function AssetTypeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/asset-types/detail/${id}`);
+    navigate(`/asset/asset-types/detail/${id}`);
   };
 
   return <Container>

@@ -25,7 +25,7 @@ function AssetTypeDetailPage() {
     return <Failed />;
   };
 
-  const goDetailPage = () => navigate(`/asset-types/detail/${id}`);
+  const goDetailPage = () => navigate(`/asset/asset-types/detail/${id}`);
 
   return <Container>
     <PageHeader>애셋 유형 상세 조회</PageHeader>
