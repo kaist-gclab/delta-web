@@ -66,8 +66,8 @@ function AddAssetPage() {
       labelInfo="(필수)"
       helperText="애셋 오브젝트 저장소 키"
       labelFor="input-key">
-      <InputGroup id="input-key" placeholder="오브젝트 저장소 키"
-        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+      <InputGroup id="input-key" placeholder="오브젝트 저장소 키" value={objectStoreKey}
+        onChange={(e: FormEvent<HTMLInputElement>) => { setObjectStoreKey(e.currentTarget.value); }} />
     </FormGroup>
     <FormGroup
       label="애셋 태그 키"
