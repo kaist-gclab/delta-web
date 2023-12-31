@@ -41,7 +41,7 @@ function StartPage() {
     <h2>자주 사용하는 기능</h2>
     <div>
       <StartButton to="/asset/assets/add">
-        <StartIcon iconSize={IconSize} icon="cloud-upload" />
+        <StartIcon size={IconSize} icon="cloud-upload" />
         <StartLabel>애셋 추가</StartLabel>
       </StartButton>
       <StartButton to="/asset/assets/list">
