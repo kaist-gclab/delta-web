@@ -7,6 +7,7 @@ import { JobTypeContext } from '../config/context';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
+import { JobTypes } from '../api';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -21,6 +22,13 @@ function JobTypeDetailPage() {
   const params = useParams<'id'>();
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const {data, error} = JobTypes.useSWRGetJobTypes();
+  if (error) {
+    return <ErrorMessage message="작업 유형 상세 조회 중 오류가 발생했습니다." />;
+  }
+  if (!data) {
+    return <Loading />;
+  }
 
   const render = () => {
     const e = store.jobType;
