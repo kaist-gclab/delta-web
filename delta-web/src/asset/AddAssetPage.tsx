@@ -73,8 +73,8 @@ function AddAssetPage() {
       label="애셋 태그 키"
       helperText="애셋 태그 키"
       labelFor="input-key">
-      <InputGroup id="input-key" placeholder="문자열"
-        onChange={(e: FormEvent<HTMLInputElement>) => { setKey(e.currentTarget.value); }} />
+      <InputGroup id="input-key" placeholder="문자열" value={tagKey}
+        onChange={(e: FormEvent<HTMLInputElement>) => { setTagKey(e.currentTarget.value); }} />
     </FormGroup>
     <FormGroup
       label="애셋 태그 값"
