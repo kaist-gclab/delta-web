@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
 import { JobContext } from '../config/context';
 import { renderCellButton } from '../core/CellButton';
-import { Loading } from '../core/Loading';
+import { Loading } from '../core/NonIdealStates';
 import dayjs from 'dayjs';
 import { Asset, Job, ProcessorNode } from '../api';
 import { HTMLTable } from '@blueprintjs/core';
