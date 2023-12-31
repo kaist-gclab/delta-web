@@ -30,11 +30,8 @@ function AssetDetailPage() {
   }
 
   const render = () => {
-    const e = store.asset;
-    if (e === undefined) {
-      return <Loading />;
-    }
-    if (e === null) {
+    const e = data.find((e) => e.id.toString() === params.id);
+    if (!e) {
       return <ErrorMessage message="애셋 상세 조회 중 오류가 발생했습니다." />
     }
     return <ul>
