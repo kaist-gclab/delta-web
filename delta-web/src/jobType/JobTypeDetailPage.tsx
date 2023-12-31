@@ -58,4 +58,4 @@ function JobTypeDetailPage() {
   </Container>;
 }
 
-export default observer(JobTypeDetailPage);
+export default JobTypeDetailPage;
