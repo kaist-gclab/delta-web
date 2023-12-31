@@ -1,5 +1,4 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import { FormEvent, useState } from 'react';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
@@ -76,4 +75,4 @@ function AddAssetTypePage() {
   </Container>;
 }
 
-export default observer(AddAssetTypePage);
+export default AddAssetTypePage;
