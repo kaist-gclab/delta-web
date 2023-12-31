@@ -45,7 +45,7 @@ function ProcessorNodeDetailPage() {
 
   const goDetailPage = () => navigate(`/processor-nodes/detail/${id}`);
 
-  return <Container>
+  return <Container reducedTopPadding>
     <PageHeader>처리기 노드 상세 조회</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
