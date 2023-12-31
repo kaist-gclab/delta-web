@@ -65,4 +65,4 @@ function StartPage() {
   </Container>
 }
 
-export default observer(StartPage);
+export default StartPage;
