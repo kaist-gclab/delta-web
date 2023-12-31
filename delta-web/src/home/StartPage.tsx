@@ -58,7 +58,7 @@ function StartPage() {
       </StartButton>
       <br />
       <StartButton to="/monitoring/dashboard">
-        <StartIcon iconSize={IconSize} icon="dashboard" />
+        <StartIcon size={IconSize} icon="dashboard" />
         <StartLabel>대시보드</StartLabel>
       </StartButton>
     </div>
