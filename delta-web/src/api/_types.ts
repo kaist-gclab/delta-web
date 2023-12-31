@@ -37,8 +37,6 @@ export interface _api_JobExecutionStatus {
 
 export interface _api_JobExecution {
     id: string;
-    jobId: string;
-    processorNodeId: string;
     job: _api_Job;
     processorNode: _api_ProcessorNode;
     resultAssets: _api_Asset[];
@@ -55,8 +53,6 @@ export interface JobExecutionStatus {
 
 export interface JobExecution {
     id: bigint;
-    jobId: bigint;
-    processorNodeId: bigint;
     job: Job;
     processorNode: ProcessorNode;
     resultAssets: Asset[];
@@ -65,7 +61,6 @@ export interface JobExecution {
 
 export interface AssetTag {
     id: bigint;
-    assetId: bigint;
     key: string;
     value: string;
     asset: Asset;
@@ -73,7 +68,6 @@ export interface AssetTag {
 
 export interface _api_AssetTag {
     id: string;
-    assetId: string;
     key: string;
     value: string;
     asset: _api_Asset;
@@ -81,11 +75,8 @@ export interface _api_AssetTag {
 
 export interface _api_Asset {
     id: string;
-    assetTypeId: string;
-    encryptionKeyId: string | null;
     mediaType: string;
     storeKey: string;
-    parentJobExecutionId: string | null;
     createdAt: string;
     assetType: _api_AssetType;
     encryptionKey: _api_EncryptionKey | null;
@@ -104,11 +95,8 @@ export interface AssetType {
 
 export interface Asset {
     id: bigint;
-    assetTypeId: bigint;
-    encryptionKeyId: bigint | null;
     mediaType: string;
     storeKey: string;
-    parentJobExecutionId: bigint | null;
     createdAt: _Dayjs;
     assetType: AssetType;
     encryptionKey: EncryptionKey | null;
@@ -119,8 +107,6 @@ export interface Asset {
 
 export interface _api_Job {
     id: string;
-    jobTypeId: string;
-    inputAssetId: string | null;
     jobArguments: string;
     createdAt: string;
     assignedProcessorNodeId: string | null;
@@ -140,8 +126,6 @@ export interface _api_JobType {
 
 export interface Job {
     id: bigint;
-    jobTypeId: bigint;
-    inputAssetId: bigint | null;
     jobArguments: string;
     createdAt: _Dayjs;
     assignedProcessorNodeId: bigint | null;
@@ -161,9 +145,6 @@ export interface JobType {
 
 export interface _api_ProcessorNodeCapability {
     id: string;
-    processorNodeId: string;
-    jobTypeId: string;
-    assetTypeId: string | null;
     mediaType: string;
     processorNode: _api_ProcessorNode;
     jobType: _api_JobType;
@@ -172,7 +153,6 @@ export interface _api_ProcessorNodeCapability {
 
 export interface ProcessorNodeStatus {
     id: bigint;
-    processorNodeId: bigint;
     timestamp: _Dayjs;
     status: string;
     processorNode: ProcessorNode;
@@ -180,7 +160,6 @@ export interface ProcessorNodeStatus {
 
 export interface _api_ProcessorNodeStatus {
     id: string;
-    processorNodeId: string;
     timestamp: string;
     status: string;
     processorNode: _api_ProcessorNode;
@@ -199,9 +178,6 @@ export interface _api_ProcessorNode {
 
 export interface ProcessorNodeCapability {
     id: bigint;
-    processorNodeId: bigint;
-    jobTypeId: bigint;
-    assetTypeId: bigint | null;
     mediaType: string;
     processorNode: ProcessorNode;
     jobType: JobType;
@@ -301,13 +277,25 @@ export interface _api_AddJobExecutionStatusRequest {
     status: string;
 }
 
+export interface EncryptionKeyView {
+    id: bigint;
+    name: string;
+    enabled: boolean;
+}
+
+export interface _api_EncryptionKeyView {
+    id: string;
+    name: string;
+    enabled: boolean;
+}
+
 export interface CreateEncryptionKeyResponse {
-    encryptionKey: EncryptionKey;
+    encryptionKey: EncryptionKeyView;
     value: string;
 }
 
 export interface _api_CreateEncryptionKeyResponse {
-    encryptionKey: _api_EncryptionKey;
+    encryptionKey: _api_EncryptionKeyView;
     value: string;
 }
 
