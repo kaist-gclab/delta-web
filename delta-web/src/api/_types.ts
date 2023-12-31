@@ -373,6 +373,18 @@ export interface _api_GetAssetResponse {
     presignedDownloadUrl: string;
 }
 
+export interface AssetTypeView {
+    id: bigint;
+    key: string;
+    name: string;
+}
+
+export interface _api_AssetTypeView {
+    id: string;
+    key: string;
+    name: string;
+}
+
 export interface CreateAssetTypeRequest {
     key: string;
     name: string;
