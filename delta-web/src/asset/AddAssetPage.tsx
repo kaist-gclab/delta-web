@@ -6,6 +6,7 @@ import PageHeader from '../core/PageHeader';
 import { Assets } from '../api';
 
 function AddAssetPage() {
+  const [assetTypeId, setAssetTypeId] = useState('');
   const [tagKey, setTagKey] = useState('');
   const [tagValue, setTagValue] = useState('');
 
