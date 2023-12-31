@@ -11,7 +11,6 @@ export const AuthContext = addStore(AuthStore);
 export const AssetContext = addStore(AssetStore);
 export const JobContext = addStore(JobStore);
 export const MonitoringContext = addStore(MonitoringStore);
-export const ProcessorNodeContext = addStore(ProcessorNodeStore);
 
 function addStore<T>(store: T) {
     const context = createContext<T>(store);
