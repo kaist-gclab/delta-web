@@ -8,8 +8,8 @@
     "api": "node update-api.js"
   },
   "dependencies": {
-    "@blueprintjs/core": "^5.7.2",
     "@blueprintjs/icons": "^5.5.0",
+    "@blueprintjs/core": "^5.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@types/node": "^20.10.7",
