@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/kaist-gclab/delta-web/issues"
   },
-  "homepage": "https://github.com/kaist-gclab/delta-web#readme"
+  "homepage": "https://github.com/kaist-gclab/delta-web#readme",
+  "packageManager": "pnpm@9.13.2"
 }
