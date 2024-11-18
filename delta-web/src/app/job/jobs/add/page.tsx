@@ -1,3 +1,5 @@
+'use client';
+
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
 import Container from '@/core/Container';
