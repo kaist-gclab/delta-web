@@ -1,13 +1,15 @@
-import { useNavigate } from 'react-router';
-import { renderCellButton } from '../core/CellButton';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
-import { AssetTypes } from '../api/client';
+'use client';
+
+import { renderCellButton } from '@/core/CellButton';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
+import { AssetTypes } from '@/api/client';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
+import { useRouter } from 'next/navigation';
 
 function AssetTypeListPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { data, error } = AssetTypes.useSWRGetAssetTypes();
   if (error) {
     return <ErrorMessage message="애셋 유형 목록을 불러오는 중 오류가 발생했습니다." />
@@ -17,7 +19,7 @@ function AssetTypeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/asset/asset-types/detail/${id}`);
+    router.push(`/asset/asset-types/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
