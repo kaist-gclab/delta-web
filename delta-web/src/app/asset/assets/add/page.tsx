@@ -33,7 +33,7 @@ function AddAssetPage() {
       });
       openOkDialog();
     } catch {
-      openOkDialog();
+      openErrorDialog();
     }
   };
 
