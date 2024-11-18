@@ -1,8 +1,8 @@
 import Axios, { AxiosResponse } from 'axios';
 import { makeAutoObservable } from 'mobx';
-import { AuthBase } from '../config/http';
 import { LoginRequest, LoginResponse } from './types';
 import TokenStore from './tokenStore';
+import { ApiBase } from '@/config/http';
 
 class AuthStore {
     private tokenStore = TokenStore;
@@ -16,7 +16,7 @@ class AuthStore {
 
         try {
             const response: AxiosResponse<LoginResponse> =
-                await Axios.post<LoginResponse>(AuthBase + 'auth/1/login', payload);
+                await Axios.post<LoginResponse>(ApiBase + 'auth/1/login', payload);
             this.applyLoginResponse(response.data);
             return true;
         } catch {

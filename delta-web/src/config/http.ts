@@ -1,2 +1,1 @@
-export const ApiBase: string = import.meta.env.VITE_API_BASE;
-export const AuthBase: string = import.meta.env.VITE_AUTH_BASE;
+export const ApiBase: string = process.env.NEXT_PUBLIC_API_BASE;
