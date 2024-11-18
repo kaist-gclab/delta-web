@@ -1,11 +1,13 @@
-import { useNavigate } from 'react-router';
+'use client';
+
 import styled from '@emotion/styled';
-import { renderCellButton } from '../core/CellButton';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
-import { Asset, Assets } from '../api/client';
+import { renderCellButton } from '@/core/CellButton';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
+import { Asset, Assets } from '@/api/client';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
+import { useRouter } from 'next/navigation';
 
 const Label = styled.label`
 margin-right: 5px;
@@ -24,7 +26,7 @@ function getTag(a: Asset, key: string) {
 }
 
 function AssetListPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { data, error } = Assets.useSWRGetAssets();
   if (error) {
     return <ErrorMessage message="애셋 목록을 불러오는 중 오류가 발생했습니다." />
@@ -57,7 +59,7 @@ function AssetListPage() {
             <td>{a.encryptionKey?.name ?? '없음'}</td>
             <td>{a.storeKey}</td>
             <td>{renderCellButton('상세 조회', () => {
-              navigate(`/asset/assets/detail/${a.id.toString()}`);
+              router.push(`/asset/assets/detail/${a.id.toString()}`);
             })}</td>
           </tr>)}
         </tbody>
