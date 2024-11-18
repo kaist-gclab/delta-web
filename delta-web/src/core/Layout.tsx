@@ -1,13 +1,12 @@
-import { lazy, Suspense, useContext, useMemo } from 'react';
+'use client';
+
+import { ReactNode, Suspense, useContext, useMemo } from 'react';
 import styled from '@emotion/styled';
 import NavButton from './NavButton';
-import { Loading } from './NonIdealStates';
 import { Alignment, Navbar } from '@blueprintjs/core';
-import { useLocation } from 'react-router';
 import { AuthContext } from '../config/context';
-import Routes from './Routes';
-
-const LoginPage = lazy(() => import('../home/LoginPage'));
+import LoginForm from './LoginForm';
+import { Loading } from './NonIdealStates';
 
 const NavbarRoot = styled(Navbar)`
 overflow-x: auto;
@@ -26,8 +25,7 @@ overflow-y: hidden;
 z-index: 38;
 `;
 
-function Layout() {
-  const location = useLocation();
+function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);
   const subNavbarCode = useMemo(() => {
     const pathname = location.pathname;
@@ -54,7 +52,7 @@ function Layout() {
 
   if (!auth.token) {
     return <Suspense fallback={<Loading />}>
-      <LoginPage />
+      <LoginForm />
     </Suspense>;
   }
 
@@ -139,7 +137,7 @@ function Layout() {
         </SubNavbar>}
     </div>
     <div className={subNavbarCode ? 'delta-navbar-sub' : undefined}>
-      <Routes />
+      {children}
     </div>
   </div>;
 }

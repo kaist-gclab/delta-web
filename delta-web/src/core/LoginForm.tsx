@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
 import { FormEvent, useContext, useState } from 'react';

@@ -1,6 +1,7 @@
 'use client';
 
 import fetcher from '@/core/fetcher';
+import Layout from '@/core/Layout';
 import { SWRConfig } from 'swr';
 
 export default function Template({
@@ -9,6 +10,8 @@ export default function Template({
   children: React.ReactNode;
 }>) {
   return <SWRConfig value={{ fetcher }}>
-    {children}
+    <Layout>
+      {children}
+    </Layout>
   </SWRConfig>
 }
