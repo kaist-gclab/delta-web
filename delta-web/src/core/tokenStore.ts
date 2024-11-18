@@ -8,6 +8,9 @@ class TokenStore {
     constructor() {
         makeAutoObservable(this);
 
+        if (typeof window === 'undefined') {
+            return;
+        }
         this.updateCache();
         window.addEventListener('storage', () => { this.updateCache(); });
     }

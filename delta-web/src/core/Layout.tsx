@@ -7,6 +7,7 @@ import { Alignment, Navbar } from '@blueprintjs/core';
 import { AuthContext } from '../config/context';
 import LoginForm from './LoginForm';
 import { Loading } from './NonIdealStates';
+import { usePathname } from 'next/navigation';
 
 const NavbarRoot = styled(Navbar)`
 overflow-x: auto;
@@ -27,7 +28,7 @@ z-index: 38;
 
 function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);
-  const pathname = location.pathname;
+  const pathname = usePathname();
   const subNavbarCode = useMemo(() => {
     if (pathname.startsWith('/asset')) {
       return 'asset';

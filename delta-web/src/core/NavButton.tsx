@@ -3,6 +3,7 @@
 import React from 'react';
 import { Button, IconName } from '@blueprintjs/core';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export interface NavButtonProps {
   link?: string;
@@ -26,6 +27,7 @@ function computeActive(link: string | undefined, pathname: string) {
 
 function NavButton(props: NavButtonProps) {
   const { link, icon, text, onClick, disabled, fill } = props;
+  const pathname = usePathname();
 
   const button = <Button
     minimal
@@ -34,7 +36,7 @@ function NavButton(props: NavButtonProps) {
     text={text}
     fill={fill}
     alignText="left"
-    active={computeActive(link, location.pathname)}
+    active={computeActive(link, pathname)}
     disabled={disabled}
   />;
   if (!link) {
