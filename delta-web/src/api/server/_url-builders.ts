@@ -3,7 +3,8 @@
 
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
-import {  } from './_converters';
+import {
+} from './_converters';
 export function _ProcessorNodes_GET_GetNodes_url(): string {
     return `api/1/processor-nodes`;
 }
