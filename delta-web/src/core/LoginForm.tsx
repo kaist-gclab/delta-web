@@ -30,7 +30,7 @@ const Message = styled.div`
 font-size: 16px;
 `;
 
-function LoginPage() {
+function LoginForm() {
   const authStore = useContext(AuthContext);
   const [username, setUsername] = useState('DefaultAdminUser');
   const [password, setPassword] = useState('');
@@ -59,4 +59,4 @@ function LoginPage() {
   </Container>;
 }
 
-export default observer(LoginPage);
+export default observer(LoginForm);
