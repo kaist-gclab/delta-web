@@ -1,5 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { setCreateHttp } from '../api';
+import { setCreateHttp } from '../api/client';
 import { ApiBase } from '../config/http';
 import AuthStore from './authStore';
 

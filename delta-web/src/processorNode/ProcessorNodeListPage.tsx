@@ -4,7 +4,7 @@ import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
-import { ProcessorNodes } from '../api';
+import { ProcessorNodes } from '../api/client';
 
 function ProcessorNodeListPage() {
   const navigate = useNavigate();

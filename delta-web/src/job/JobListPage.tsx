@@ -4,7 +4,7 @@ import { renderCellButton } from '../core/CellButton';
 import Container from '../core/Container';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
-import { Jobs } from '../api';
+import { Jobs } from '../api/client';
 
 function JobListPage() {
   const navigate = useNavigate();

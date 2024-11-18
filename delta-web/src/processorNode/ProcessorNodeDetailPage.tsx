@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
-import { ProcessorNodes } from '../api';
+import { ProcessorNodes } from '../api/client';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;

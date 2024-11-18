@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '../core/Container';
 import PageHeader from '../core/PageHeader';
-import { EncryptionKeys } from '../api';
+import { EncryptionKeys } from '../api/client';
 
 function EncryptionKeyListPage() {
   const navigate = useNavigate();
