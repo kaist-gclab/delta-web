@@ -1,11 +1,13 @@
+'use client';
+
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { FormEvent, useState } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { FormEvent, use, useState } from 'react';
 import styled from '@emotion/styled';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
-import { Assets } from '../api/client';
+import { Assets } from '@/api/client';
+import { useRouter } from 'next/navigation';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -16,9 +18,9 @@ const Message = styled.div`
 margin: 20px 0;
 `;
 
-function AssetViewerPage() {
-  const params = useParams<'id'>();
-  const navigate = useNavigate();
+function AssetViewerPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
+  const router = useRouter();
   const [id, setId] = useState('');
   const { error, data } = Assets.useSWRGetAssets();
   if (error) {
@@ -38,7 +40,7 @@ function AssetViewerPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/assets/detail/${id}`);
+  const goDetailPage = () => router.push(`/assets/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>애셋 뷰어</PageHeader>
