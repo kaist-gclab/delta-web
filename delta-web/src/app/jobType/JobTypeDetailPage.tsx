@@ -40,7 +40,7 @@ function JobTypeDetailPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/job/job-types/detail/${id}`);
+  const goDetailPage = () => router.push(`/job/job-types/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>작업 유형 상세 조회</PageHeader>

@@ -17,7 +17,7 @@ function EncryptionKeyListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/key/encryption-keys/detail/${id}`);
+    router.push(`/key/encryption-keys/detail/${id}`);
   };
 
   return <Container reducedTopPadding>

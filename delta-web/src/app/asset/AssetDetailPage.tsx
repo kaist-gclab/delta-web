@@ -38,7 +38,7 @@ function AssetDetailPage() {
     </ul>;
   };
 
-  const goDetailPage = () => navigate(`/asset/assets/detail/${id}`);
+  const goDetailPage = () => router.push(`/asset/assets/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>애셋 상세 조회</PageHeader>
