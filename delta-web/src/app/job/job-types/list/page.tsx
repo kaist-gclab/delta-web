@@ -1,13 +1,15 @@
+'use client';
+
 import { HTMLTable } from '@blueprintjs/core';
-import { useNavigate } from 'react-router';
-import { renderCellButton } from '../core/CellButton';
+import { renderCellButton } from '@/core/CellButton';
 import Container from '@/core/Container';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
-import { JobTypes } from '../api/client';
+import { JobTypes } from '@/api/client';
+import { useRouter } from 'next/navigation';
 
 function JobTypeListPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { error, data } = JobTypes.useSWRGetJobTypes();
   if (error) {
     return <ErrorMessage message="작업 유형 목록 조회 중 오류가 발생했습니다." />;
@@ -17,7 +19,7 @@ function JobTypeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/job/job-types/detail/${id}`);
+    router.push(`/job/job-types/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
