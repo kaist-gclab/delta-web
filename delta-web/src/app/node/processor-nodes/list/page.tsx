@@ -1,13 +1,15 @@
+'use client';
+
 import { HTMLTable } from '@blueprintjs/core';
-import { useNavigate } from 'react-router';
-import { renderCellButton } from '../core/CellButton';
+import { renderCellButton } from '@/core/CellButton';
 import Container from '@/core/Container';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
-import { ProcessorNodes } from '../api/client';
+import { ProcessorNodes } from '@/api/client';
+import { useRouter } from 'next/navigation';
 
 function ProcessorNodeListPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { error, data } = ProcessorNodes.useSWRGetNodes();
   if (error) {
     return <ErrorMessage message="처리기 노드 목록 조회 중 오류가 발생했습니다." />;
@@ -17,7 +19,7 @@ function ProcessorNodeListPage() {
   }
 
   const goDetailPage = (id: string) => {
-    navigate(`/node/processor-nodes/detail/${id}`);
+    router.push(`/node/processor-nodes/detail/${id}`);
   };
 
   return <Container reducedTopPadding>
