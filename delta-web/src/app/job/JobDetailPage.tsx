@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
-import Container from '../core/Container';
+import Container from '@/core/Container';
 import PageHeader from '../core/PageHeader';
 import { Jobs } from '../api/client';
 

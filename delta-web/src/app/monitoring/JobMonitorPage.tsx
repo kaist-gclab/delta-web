@@ -1,5 +1,5 @@
 import { HTMLTable } from '@blueprintjs/core';
-import Container from '../core/Container';
+import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import PageHeader from '../core/PageHeader';
 import { Monitoring } from '../api/client';

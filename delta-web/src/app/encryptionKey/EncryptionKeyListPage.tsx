@@ -2,7 +2,7 @@ import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
-import Container from '../core/Container';
+import Container from '@/core/Container';
 import PageHeader from '../core/PageHeader';
 import { EncryptionKeys } from '../api/client';
 
