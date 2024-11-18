@@ -1,11 +1,13 @@
+'use client';
+
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { FormEvent, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { FormEvent, use, useState } from 'react';
 import styled from '@emotion/styled';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { EncryptionKeys } from '@/api/client';
+import { useRouter } from 'next/router';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -16,8 +18,8 @@ const Message = styled.div`
 margin: 20px 0;
 `;
 
-function EncryptionKeyDetailPage() {
-  const params = useParams<'id'>();
+function EncryptionKeyDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
   const router = useRouter();
   const [id, setId] = useState('');
   const { data, error } = EncryptionKeys.useSWRGetEncryptionKeys();
