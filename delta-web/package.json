@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "api": "node update-api.js"
+    "api": "node update-api.js http://localhost:5000/"
   },
   "dependencies": {
     "@blueprintjs/core": "^5.14.2",
