@@ -12,7 +12,6 @@
   "dependencies": {
     "@blueprintjs/core": "^5.14.2",
     "@blueprintjs/icons": "^5.14.0",
-    "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "axios": "^1.7.7",
     "dayjs": "^1.11.13",
