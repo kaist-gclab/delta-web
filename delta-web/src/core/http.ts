@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { setCreateHttp } from '@/api/client';
 import { ApiBase } from '../config/http';
@@ -47,4 +49,5 @@ class Http {
     }
 }
 
-export default new Http();
+const http = new Http();
+export default http;

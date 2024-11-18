@@ -32,4 +32,5 @@ class TokenStore {
     }
 }
 
-export default new TokenStore();
+const tokenStore = new TokenStore();
+export default tokenStore;

@@ -27,8 +27,8 @@ z-index: 38;
 
 function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);
+  const pathname = location.pathname;
   const subNavbarCode = useMemo(() => {
-    const pathname = location.pathname;
     if (pathname.startsWith('/asset')) {
       return 'asset';
     }
@@ -48,7 +48,7 @@ function Layout({ children }: { children: ReactNode }) {
       return 'settings';
     }
     return;
-  }, [location]);
+  }, [pathname]);
 
   if (!auth.token) {
     return <Suspense fallback={<Loading />}>

@@ -8,9 +8,7 @@ export const AuthContext = addStore(AuthStore);
 function addStore<T>(store: T) {
     const context = createContext<T>(store);
     const wrapper = (App: React.FC) => {
-        return () => <context.Provider value={store}>
-            <App />
-        </context.Provider>;
+        return () => context.Provider({ value: store, children: <App /> });
     };
     wrappers.push(wrapper);
     return context;

@@ -53,7 +53,7 @@ function LoginForm() {
         setPassword(e.currentTarget.value);
       }} />
     <LoginButton onClick={async () => {
-      const result: boolean = await authStore.login(username, password) as any as boolean;
+      const result = await authStore.login(username, password);
       if (!result) {
         alert('로그인에 실패했습니다.');
       }
