@@ -1,11 +1,13 @@
+'use client';
+
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { FormEvent, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { FormEvent, use, useState } from 'react';
 import styled from '@emotion/styled';
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
-import { ProcessorNodes } from '../api/client';
+import { ProcessorNodes } from '@/api/client';
+import { useRouter } from 'next/navigation';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -16,9 +18,9 @@ const Message = styled.div`
 margin: 20px 0;
 `;
 
-function ProcessorNodeDetailPage() {
-  const params = useParams<'id'>();
-  const navigate = useNavigate();
+function ProcessorNodeDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
+  const router = useRouter();
   const [id, setId] = useState('');
   const { error, data } = ProcessorNodes.useSWRGetNodes();
   if (error) {
@@ -38,7 +40,7 @@ function ProcessorNodeDetailPage() {
     </ul>
   };
 
-  const goDetailPage = () => navigate(`/node/processor-nodes/detail/${id}`);
+  const goDetailPage = () => router.push(`/node/processor-nodes/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>처리기 노드 상세 조회</PageHeader>
