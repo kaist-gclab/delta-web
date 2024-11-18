@@ -1,3 +1,5 @@
+'use client';
+
 import styled from '@emotion/styled';
 import { Row as GridRow, Column as GridColumn } from '@/core/Grid';
 import Container from '@/core/Container';

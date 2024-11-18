@@ -1,3 +1,5 @@
+'use client';
+
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';

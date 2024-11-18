@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { FormEvent, use, useState } from 'react';
 import styled from '@emotion/styled';
