@@ -1,12 +1,10 @@
-import styled from '@emotion/styled';
-import Container from '../core/Container';
-import PageHeader from '../core/PageHeader';
+import Container from '@/core/Container';
+import PageHeader from '@/core/PageHeader';
+import { ReactNode } from 'react';
 
-const Description = styled.li`
-margin-bottom: 16px;
-line-height: 1.5;
-word-break: keep-all;
-`;
+function Description({ children }: { children: ReactNode }) {
+  return <li className='mb-4 leading-[1.5] keep-all'>{children}</li>;
+}
 
 function HelpPage() {
   return <Container reducedTopPadding>

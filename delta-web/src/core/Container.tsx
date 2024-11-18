@@ -1,11 +1,19 @@
-import styled from '@emotion/styled';
-
-const DefaultContainer = styled.div`
-padding-left: 20px;
-padding-right: 20px;
-padding-top: 20px;
-padding-bottom: 40px;
-`;
+function DefaultContainer(props: {
+  children: React.ReactNode;
+  id?: string;
+  style?: React.CSSProperties;
+}) {
+  return <div id={props.id}
+    style={{
+      paddingLeft: '20px',
+      paddingRight: '20px',
+      paddingTop: '20px',
+      paddingBottom: '40px',
+      ...props.style,
+    }}>
+    {props.children}
+  </div>;
+}
 
 function Container(props: {
   reducedTopPadding?: boolean;

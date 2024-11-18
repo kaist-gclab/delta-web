@@ -1,5 +1,7 @@
-import styled from '@emotion/styled';
+import { ReactNode } from 'react';
 
-const PageHeader = styled.h1``;
+function PageHeader({ children }: { children: ReactNode }) {
+  return <h1>{children}</h1>;
+}
 
 export default PageHeader;
