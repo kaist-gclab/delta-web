@@ -1,10 +1,12 @@
+'use client';
+
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
-import { FormEvent, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { FormEvent, use, useState } from 'react';
 import styled from '@emotion/styled';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
-import { ErrorMessage } from '../core/NonIdealStates';
+import { ErrorMessage } from '@/core/NonIdealStates';
+import { useRouter } from 'next/navigation';
 
 const QueryButton = styled(Button)`
 padding-left: 20px;
@@ -15,16 +17,16 @@ const Message = styled.div`
 margin: 20px 0;
 `;
 
-function AssetTypeDetailPage() {
-  const params = useParams<'id'>();
-  const navigate = useNavigate();
+function AssetTypeDetailPage(props: { params: Promise<{ id: string }> }) {
+  const params = use(props.params);
+  const router = useRouter();
   const [id, setId] = useState('');
 
   const render = () => {
     return <ErrorMessage message="애셋 유형 상세 조회 중 오류가 발생했습니다." />
   };
 
-  const goDetailPage = () => navigate(`/asset/asset-types/detail/${id}`);
+  const goDetailPage = () => router.push(`/asset/asset-types/detail/${id}`);
 
   return <Container reducedTopPadding>
     <PageHeader>애셋 유형 상세 조회</PageHeader>
