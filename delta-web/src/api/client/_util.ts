@@ -1,14 +1,20 @@
 /* eslint-disable */
 // auto-generated
+'use client';
 
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
-import _axios, { AxiosRequestConfig as _AxiosRequestConfig, AxiosResponse as _AxiosResponse } from 'axios';
+import _codeGenConfig from '../client.config';
+import _axios from 'axios';
+import type { AxiosRequestConfig as _AxiosRequestConfig, AxiosResponse as _AxiosResponse } from 'axios';
 
-export let _createHttp: () => CodeGenHttp = () => _axios.create();
-export function setCreateHttp(createHttp: () => CodeGenHttp) {
-    _createHttp = createHttp;
+export interface CodeGenConfig {
+    createHttp?: CreateHttp;
+    createObject?: CreateObject;
 }
+
+type CreateHttp = () => CodeGenHttp;
+type CreateObject = (obj: any) => any;
 
 export interface CodeGenHttp {
     get<T = any, R = _AxiosResponse<T>>(url: string, config?: _AxiosRequestConfig | undefined): Promise<R>;
@@ -19,10 +25,8 @@ export interface CodeGenHttp {
     patch<T = any, R = _AxiosResponse<T>>(url: string, data?: any, config?: _AxiosRequestConfig | undefined): Promise<R>;
 }
 
-export let _createObject: (obj: any) => any = (obj) => obj;
-export function setCreateObject(createObject: (obj: any) => any) {
-    _createObject = createObject;
-}
+export let _createHttp = _codeGenConfig.createHttp ?? (() => _axios.create());
+export let _createObject = _codeGenConfig.createObject ?? ((obj: any) => obj);
 
 export function restoreCircularReferences(obj: any, createObject: (obj: any) => any) {
     const root = createObject({ obj });
