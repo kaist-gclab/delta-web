@@ -1,29 +1,12 @@
 'use client';
 
-import styled from '@emotion/styled';
 import { renderCellButton } from '@/core/CellButton';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
-import { Asset, Assets } from '@/api/client';
+import { Assets } from '@/api/client';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { useRouter } from 'next/navigation';
-
-const Label = styled.label`
-margin-right: 5px;
-`;
-
-const FormRow = styled.div`
-margin-bottom: 10px;
-`;
-
-function getTag(a: Asset, key: string) {
-  const tag = a.assetTags.find(t => t.key === key);
-  if (tag) {
-    return tag.value;
-  }
-  return '없음';
-}
 
 function AssetListPage() {
   const router = useRouter();
