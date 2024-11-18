@@ -1,4 +1,4 @@
-import { ErrorMessage, Loading } from '../core/NonIdealStates';
+import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import { renderCellButton } from '../core/CellButton';
 import { useNavigate } from 'react-router';
 import { HTMLTable } from '@blueprintjs/core';
