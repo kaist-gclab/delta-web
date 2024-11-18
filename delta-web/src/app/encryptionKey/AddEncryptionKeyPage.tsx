@@ -2,7 +2,7 @@ import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/cor
 import { FormEvent, useState } from 'react';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
-import { EncryptionKeys } from '../api/client';
+import { EncryptionKeys } from '@/api/client';
 
 function AddEncryptionKeyPage() {
   const [name, setName] = useState('');
