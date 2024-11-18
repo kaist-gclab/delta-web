@@ -1,7 +1,7 @@
 import { Button, Classes, Dialog, FormGroup, InputGroup } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
 import Container from '@/core/Container';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 import { AssetTypes } from '../api/client';
 
 function AddAssetTypePage() {

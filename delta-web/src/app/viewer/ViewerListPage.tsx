@@ -1,7 +1,7 @@
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import { Loading } from '../core/NonIdealStates';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 
 function ViewerListPage() {
   const data = [{

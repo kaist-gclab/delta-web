@@ -5,7 +5,7 @@ import { ErrorMessage, Loading } from '../core/NonIdealStates';
 import { Asset, Assets } from '../api/client';
 import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 
 const Label = styled.label`
 margin-right: 5px;

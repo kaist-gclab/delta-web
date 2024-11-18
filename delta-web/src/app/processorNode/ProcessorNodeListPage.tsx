@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router';
 import { renderCellButton } from '../core/CellButton';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '../core/NonIdealStates';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 import { ProcessorNodes } from '../api/client';
 
 function ProcessorNodeListPage() {

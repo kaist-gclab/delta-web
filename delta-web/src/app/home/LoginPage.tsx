@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { FormEvent, useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { AuthContext } from '../config/context';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 
 const Container = styled.div`
 text-align: center;

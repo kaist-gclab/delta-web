@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Row as GridRow, Column as GridColumn } from '../core/Grid';
 import Container from '@/core/Container';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 
 const MonitorColumn = styled(GridColumn)`
 padding: 0 20px;

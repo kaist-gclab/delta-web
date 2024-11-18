@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import styled from '@emotion/styled';
 import Container from '@/core/Container';
-import PageHeader from '../core/PageHeader';
+import PageHeader from '@/core/PageHeader';
 import { ErrorMessage } from '../core/NonIdealStates';
 
 const QueryButton = styled(Button)`
