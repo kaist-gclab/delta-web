@@ -18,7 +18,7 @@ margin: 20px 0;
 
 function AssetDetailPage() {
   const params = useParams<'id'>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [id, setId] = useState('');
   const { error, data } = Assets.useSWRGetAssets();
   if (error) {

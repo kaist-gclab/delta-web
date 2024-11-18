@@ -18,7 +18,7 @@ margin: 20px 0;
 
 function JobDetailPage() {
   const params = useParams<'id'>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [id, setId] = useState('');
   const { error, data } = Jobs.useSWRGetJobs();
   if (error) {

@@ -7,7 +7,7 @@ import PageHeader from '@/core/PageHeader';
 import { EncryptionKeys } from '../api/client';
 
 function EncryptionKeyListPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { data, error } = EncryptionKeys.useSWRGetEncryptionKeys();
   if (error) {
     return <ErrorMessage message="암호화 키 목록을 불러오는 중 오류가 발생했습니다." />

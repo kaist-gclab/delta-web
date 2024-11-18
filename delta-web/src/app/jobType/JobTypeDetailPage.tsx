@@ -18,7 +18,7 @@ margin: 20px 0;
 
 function JobTypeDetailPage() {
   const params = useParams<'id'>();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [id, setId] = useState('');
   const {data, error} = JobTypes.useSWRGetJobTypes();
   if (error) {
