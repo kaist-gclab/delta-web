@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import { Button, IconName } from '@blueprintjs/core';
+import Link from 'next/link';
 
 export interface NavButtonProps {
   link?: string;
@@ -24,7 +26,6 @@ function computeActive(link: string | undefined, pathname: string) {
 
 function NavButton(props: NavButtonProps) {
   const { link, icon, text, onClick, disabled, fill } = props;
-  const location = useLocation();
 
   const button = <Button
     minimal
@@ -39,7 +40,7 @@ function NavButton(props: NavButtonProps) {
   if (!link) {
     return button;
   }
-  return <NavLink to={link}>{button}</NavLink>;
+  return <Link href={link}>{button}</Link>;
 }
 
 export default NavButton;
