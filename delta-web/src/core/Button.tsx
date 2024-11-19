@@ -1,10 +1,18 @@
 import { useRouter } from 'next/navigation';
 import { ReactNode } from 'react';
 
-export function Button(props: { children: ReactNode } & ({} | { onClick: () => void } | { href: string })) {
+export function Button(props: {
+  children: ReactNode,
+  intent?: 'primary' | 'danger',
+  disabled?: boolean,
+} & ({} | { onClick: () => void } | { href: string })) {
   const { onClick, className } = useClickOrHref(props);
-  return <button onClick={onClick}
-    className={`rounded-md px-5 py-3 bg-blue-500 text-white hover:bg-blue-600 ${className}`}>
+  const intentClassNames = props.intent === 'danger' ?
+    'bg-red-500 hover:bg-red-600' :
+    'bg-blue-500 hover:bg-blue-600';
+
+  return <button onClick={onClick} disabled={props.disabled}
+    className={`rounded-md px-5 py-3 text-white disabled:opacity-50 disabled:cursor-not-allowed ${intentClassNames} ${className}`}>
     {props.children}
   </button>;
 }
