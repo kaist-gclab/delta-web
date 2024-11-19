@@ -2,17 +2,27 @@
 
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { ApiBase } from '../config/http';
-import AuthStore from './authStore';
+import { BrowserTokenStoreKey } from './authContext';
 
 class Http {
-    private authStore = AuthStore;
-
     private axios: AxiosInstance;
 
     constructor() {
         this.axios = axios.create({ baseURL: ApiBase });
         this.axios.interceptors.request.use((request) => {
-            request.headers.Authorization = `Bearer ${this.authStore.token}`;
+            try {
+                const item = localStorage.getItem(BrowserTokenStoreKey);
+                if (!item) {
+                    return request;
+                }
+                const jwt = JSON.parse(item);
+                if (typeof jwt !== 'string') {
+                    return request;
+                }
+                request.headers['Authorization'] = `Bearer ${jwt}`;
+            } catch {
+                // ignore
+            }
             return request;
         });
     }

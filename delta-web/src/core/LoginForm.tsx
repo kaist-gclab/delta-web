@@ -1,10 +1,9 @@
 'use client';
 
 import { Button, InputGroup } from '@blueprintjs/core';
-import { observer } from 'mobx-react-lite';
 import { FormEvent, ReactNode, useContext, useState } from 'react';
-import { AuthContext } from '../config/context';
 import PageHeader from '@/core/PageHeader';
+import { AuthContext } from './authContext';
 
 function Container({ children }: { children: ReactNode }) {
   return <div style={{
@@ -48,7 +47,7 @@ function Message({ children }: { children: ReactNode }) {
 }
 
 function LoginForm() {
-  const authStore = useContext(AuthContext);
+  const auth = useContext(AuthContext);
   const [username, setUsername] = useState('DefaultAdminUser');
   const [password, setPassword] = useState('');
 
@@ -68,7 +67,7 @@ function LoginForm() {
         setPassword(e.currentTarget.value);
       }} />
     <LoginButton onClick={async () => {
-      const result = await authStore.login(username, password);
+      const result = await auth.login(username, password);
       if (!result) {
         alert('로그인에 실패했습니다.');
       }
@@ -76,4 +75,4 @@ function LoginForm() {
   </Container>;
 }
 
-export default observer(LoginForm);
+export default LoginForm;

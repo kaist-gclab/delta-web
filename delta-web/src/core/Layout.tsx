@@ -3,10 +3,10 @@
 import { ReactNode, Suspense, useContext, useMemo } from 'react';
 import NavButton from './NavButton';
 import { Alignment, Navbar } from '@blueprintjs/core';
-import { AuthContext } from '../config/context';
 import LoginForm from './LoginForm';
 import { Loading } from './NonIdealStates';
 import { usePathname } from 'next/navigation';
+import { AuthContext } from './authContext';
 
 function NavbarRoot({ fixedToTop, children }: { fixedToTop?: boolean, children: ReactNode }) {
   return <Navbar fixedToTop={fixedToTop} style={{
