@@ -1212,6 +1212,7 @@ export function _convert_BucketView_TO__api_BucketView(from: BucketView): _api_B
         createdAt: _convert__Dayjs_TO_string(from.createdAt),
         bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
         tags: _convert_BucketTagView_TO__api_BucketTagView_Array(from.tags),
+        inputBucketSummaries: _convert_BucketSummary_TO__api_BucketSummary_Array(from.inputBucketSummaries),
     };
     return { ...from, ...to };
 }
@@ -1251,6 +1252,7 @@ export function _convert__api_BucketView_TO_BucketView(from: _api_BucketView): B
         createdAt: _convert_string_TO__Dayjs(from.createdAt),
         bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
         tags: _convert__api_BucketTagView_TO_BucketTagView_Array(from.tags),
+        inputBucketSummaries: _convert__api_BucketSummary_TO_BucketSummary_Array(from.inputBucketSummaries),
     };
     return { ...from, ...to };
 }

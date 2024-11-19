@@ -354,6 +354,7 @@ export interface BucketView {
     createdAt: _Dayjs;
     bucketGroupName: string | null;
     tags: BucketTagView[];
+    inputBucketSummaries: BucketSummary[];
 }
 
 export interface _api_BucketView {
@@ -362,6 +363,7 @@ export interface _api_BucketView {
     createdAt: string;
     bucketGroupName: string | null;
     tags: _api_BucketTagView[];
+    inputBucketSummaries: _api_BucketSummary[];
 }
 
 export interface CreateBucketRequest {
