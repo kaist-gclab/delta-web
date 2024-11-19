@@ -32,7 +32,12 @@ function StartLabel({ children }: { children: ReactNode }) {
 const IconSize = 40;
 
 function Icon({ children }: { children: ReactNode }) {
-  return <span>{children}</span>;
+  return <span style={{
+    fontSize: `${IconSize}px`,
+    lineHeight: `${IconSize}px`,
+  }}>
+    {children}
+  </span>;
 }
 
 function StartPage() {
