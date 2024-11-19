@@ -61,6 +61,10 @@ import {
     _api_BucketView,
     CreateBucketRequest,
     _api_CreateBucketRequest,
+    UpdateBucketRequest,
+    UpdateBucketRequestBucketTag,
+    _api_UpdateBucketRequestBucketTag,
+    _api_UpdateBucketRequest,
     CreateAssetRequest,
     CreateAssetTagRequest,
     _api_CreateAssetTagRequest,
@@ -1239,6 +1243,74 @@ export function _convert__api_CreateBucketRequest_TO_CreateBucketRequest(from: _
     const to: CreateBucketRequest = {
         encryptionKeyName: _convert_string_TO_string(from.encryptionKeyName),
         name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_UpdateBucketRequestBucketTag_TO__api_UpdateBucketRequestBucketTag(from: UpdateBucketRequestBucketTag): _api_UpdateBucketRequestBucketTag {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_UpdateBucketRequestBucketTag = {
+        key: _convert_string_TO_string(from.key),
+        value: _convert_string_TO_string(from.value),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_UpdateBucketRequestBucketTag_TO__api_UpdateBucketRequestBucketTag_Array(from: UpdateBucketRequestBucketTag[]): _api_UpdateBucketRequestBucketTag[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: UpdateBucketRequestBucketTag[] = (from as any).$values;
+        const to: _api_UpdateBucketRequestBucketTag[] = values.map(element => _convert_UpdateBucketRequestBucketTag_TO__api_UpdateBucketRequestBucketTag(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_UpdateBucketRequestBucketTag[] = from.map(element => _convert_UpdateBucketRequestBucketTag_TO__api_UpdateBucketRequestBucketTag(element));
+    return to;
+}
+
+export function _convert_UpdateBucketRequest_TO__api_UpdateBucketRequest(from: UpdateBucketRequest): _api_UpdateBucketRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_UpdateBucketRequest = {
+        tags: _convert_UpdateBucketRequestBucketTag_TO__api_UpdateBucketRequestBucketTag_Array(from.tags),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag(from: _api_UpdateBucketRequestBucketTag): UpdateBucketRequestBucketTag {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: UpdateBucketRequestBucketTag = {
+        key: _convert_string_TO_string(from.key),
+        value: _convert_string_TO_string(from.value),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag_Array(from: _api_UpdateBucketRequestBucketTag[]): UpdateBucketRequestBucketTag[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_UpdateBucketRequestBucketTag[] = (from as any).$values;
+        const to: UpdateBucketRequestBucketTag[] = values.map(element => _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: UpdateBucketRequestBucketTag[] = from.map(element => _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag(element));
+    return to;
+}
+
+export function _convert__api_UpdateBucketRequest_TO_UpdateBucketRequest(from: _api_UpdateBucketRequest): UpdateBucketRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: UpdateBucketRequest = {
+        tags: _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag_Array(from.tags),
     };
     return { ...from, ...to };
 }

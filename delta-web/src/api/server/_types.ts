@@ -357,6 +357,24 @@ export interface _api_CreateBucketRequest {
     name: string;
 }
 
+export interface UpdateBucketRequestBucketTag {
+    key: string;
+    value: string;
+}
+
+export interface _api_UpdateBucketRequestBucketTag {
+    key: string;
+    value: string;
+}
+
+export interface UpdateBucketRequest {
+    tags: UpdateBucketRequestBucketTag[];
+}
+
+export interface _api_UpdateBucketRequest {
+    tags: _api_UpdateBucketRequestBucketTag[];
+}
+
 export interface CreateAssetTagRequest {
     key: string;
     value: string;

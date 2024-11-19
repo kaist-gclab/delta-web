@@ -89,6 +89,14 @@ export function _Buckets_POST_Create_url(): string {
     return `api/1/buckets`;
 }
 
+export function _Buckets_DELETE_Delete_url(id: bigint): string {
+    return `api/1/buckets/${id.toString()}`;
+}
+
+export function _Buckets_PUT_Update_url(id: bigint): string {
+    return `api/1/buckets/${id.toString()}`;
+}
+
 export function _Assets_GET_GetAssets_url(): string {
     return `api/1/assets`;
 }
