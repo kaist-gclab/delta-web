@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode, Suspense, useContext, useMemo } from 'react';
-import styled from '@emotion/styled';
 import NavButton from './NavButton';
 import { Alignment, Navbar } from '@blueprintjs/core';
 import { AuthContext } from '../config/context';
@@ -9,22 +8,38 @@ import LoginForm from './LoginForm';
 import { Loading } from './NonIdealStates';
 import { usePathname } from 'next/navigation';
 
-const NavbarRoot = styled(Navbar)`
-overflow-x: auto;
-overflow-y: hidden;
-z-index: 39;
-`;
+function NavbarRoot({ fixedToTop, children }: { fixedToTop?: boolean, children: ReactNode }) {
+  return <Navbar fixedToTop={fixedToTop} style={{
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    zIndex: 39,
+  }}>
+    {children}
+  </Navbar>;
+}
 
-const NavbarRootContent = styled.div`
-min-width: 800px;
-`;
+function NavbarRootContent({ children }: { children: ReactNode }) {
+  return <div style={{
+    minWidth: '800px',
+  }}>
+    {children}
+  </div>;
+}
 
-const SubNavbar = styled(Navbar)`
-background: #efefef;
-overflow-x: auto;
-overflow-y: hidden;
-z-index: 38;
-`;
+function SubNavbar({ fixedToTop, children, className }: {
+  fixedToTop?: boolean,
+  children: ReactNode,
+  className?: string,
+}) {
+  return <Navbar fixedToTop={fixedToTop} style={{
+    background: '#efefef',
+    overflowX: 'auto',
+    overflowY: 'hidden',
+    zIndex: 38,
+  }} className={className}>
+    {children}
+  </Navbar>;
+}
 
 function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);

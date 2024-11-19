@@ -1,5 +1,4 @@
 import { NonIdealState, Spinner } from '@blueprintjs/core';
-import styled from '@emotion/styled';
 import { CSSProperties } from 'react';
 
 export function Loading(props: { style?: CSSProperties }) {
@@ -13,13 +12,16 @@ export function Loading(props: { style?: CSSProperties }) {
   </div>;
 }
 
-const ErrorMessageContainer = styled.div`
-  padding-top: 36px;
-  .bp5-heading {
-    line-height: 1.4;
-    word-break: keep-all;
-  }
-`;
+function ErrorMessageContainer(props: { children: React.ReactNode, style?: CSSProperties }) {
+  return <div style={{
+    paddingTop: '36px',
+    lineHeight: '1.4',
+    wordBreak: 'keep-all',
+    ...props.style
+  }}>
+    {props.children}
+  </div>;
+}
 
 export function ErrorMessage(props: { message: string, style?: CSSProperties }) {
   return <ErrorMessageContainer style={props.style}>

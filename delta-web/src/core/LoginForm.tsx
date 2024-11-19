@@ -2,35 +2,50 @@
 
 import { Button, InputGroup } from '@blueprintjs/core';
 import { observer } from 'mobx-react-lite';
-import { FormEvent, useContext, useState } from 'react';
-import styled from '@emotion/styled';
+import { FormEvent, ReactNode, useContext, useState } from 'react';
 import { AuthContext } from '../config/context';
 import PageHeader from '@/core/PageHeader';
 
-const Container = styled.div`
-text-align: center;
-margin-top: 30px;
-`;
+function Container({ children }: { children: ReactNode }) {
+  return <div style={{
+    textAlign: 'center',
+    marginTop: '30px',
+  }}>
+    {children}
+  </div>;
+}
 
-const LoginButton = styled(Button)`
-margin-top: 40px;
-padding-left: 20px;
-padding-right: 20px;
-`;
+function LoginButton({ children, onClick }: { children: ReactNode, onClick: () => void }) {
+  return <Button onClick={onClick} style={{
+    marginTop: '40px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+  }}>
+    {children}
+  </Button>;
+}
 
-const Username = styled(InputGroup)`
-width: 300px;
-margin: auto;
-`;
+function Username({ type, value, onChange }: { type: string, value: string, onChange: (e: FormEvent<HTMLInputElement>) => void }) {
+  return <InputGroup type={type} value={value} onChange={onChange} style={{
+    width: '300px',
+    margin: 'auto',
+  }} />;
+}
 
-const Password = styled(InputGroup)`
-width: 300px;
-margin: auto;
-`;
+function Password({ type, value, onChange }: { type: string, value: string, onChange: (e: FormEvent<HTMLInputElement>) => void }) {
+  return <InputGroup type={type} value={value} onChange={onChange} style={{
+    width: '300px',
+    margin: 'auto',
+  }} />;
+}
 
-const Message = styled.div`
-font-size: 16px;
-`;
+function Message({ children }: { children: ReactNode }) {
+  return <div style={{
+    fontSize: '16px',
+  }}>
+    {children}
+  </div>;
+}
 
 function LoginForm() {
   const authStore = useContext(AuthContext);
