@@ -10,17 +10,20 @@ import { _createSWRMiddleware } from './_util';
 import {
     EncryptionKeyView,
     CreateEncryptionKeyRequest,
+    UpdateEncryptionKeyRequest,
 } from './_types';
 import {
     _convert__api_EncryptionKeyView_TO_EncryptionKeyView_Array,
     _convert__api_EncryptionKeyView_TO_EncryptionKeyView,
     _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyRequest,
+    _convert_UpdateEncryptionKeyRequest_TO__api_UpdateEncryptionKeyRequest,
 } from './_converters';
 import {
     _EncryptionKeys_GET_GetEncryptionKeys_url,
     _EncryptionKeys_GET_GetEncryptionKey_url,
     _EncryptionKeys_POST_Create_url,
     _EncryptionKeys_DELETE_Delete_url,
+    _EncryptionKeys_PUT_Update_url,
 } from './_url-builders';
 export async function getEncryptionKeys(): Promise<EncryptionKeyView[]> {
     const _response = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKeys_url());
@@ -41,5 +44,8 @@ export async function create(createEncryptionKeyRequest: CreateEncryptionKeyRequ
 }
 export async function /* delete */ Delete(id: bigint): Promise<void> {
     await _createHttp().delete(_EncryptionKeys_DELETE_Delete_url(id));
+}
+export async function update(id: bigint, updateEncryptionKeyRequest: UpdateEncryptionKeyRequest): Promise<void> {
+    await _createHttp().put(_EncryptionKeys_PUT_Update_url(id), _convert_UpdateEncryptionKeyRequest_TO__api_UpdateEncryptionKeyRequest(updateEncryptionKeyRequest));
 }
 

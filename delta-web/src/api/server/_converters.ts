@@ -47,6 +47,8 @@ import {
     _api_EncryptionKeyView,
     CreateEncryptionKeyRequest,
     _api_CreateEncryptionKeyRequest,
+    UpdateEncryptionKeyRequest,
+    _api_UpdateEncryptionKeyRequest,
     ApiHomeResponse,
     _api_ApiHomeResponse,
     LoginResponse,
@@ -1014,6 +1016,30 @@ export function _convert__api_CreateEncryptionKeyRequest_TO_CreateEncryptionKeyR
         return from as any;
     }
     const to: CreateEncryptionKeyRequest = {
+        name: _convert_string_TO_string(from.name),
+        enabled: _convert_boolean_TO_boolean(from.enabled),
+        optimized: _convert_boolean_TO_boolean(from.optimized),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_UpdateEncryptionKeyRequest_TO__api_UpdateEncryptionKeyRequest(from: UpdateEncryptionKeyRequest): _api_UpdateEncryptionKeyRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_UpdateEncryptionKeyRequest = {
+        name: _convert_string_TO_string(from.name),
+        enabled: _convert_boolean_TO_boolean(from.enabled),
+        optimized: _convert_boolean_TO_boolean(from.optimized),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_UpdateEncryptionKeyRequest_TO_UpdateEncryptionKeyRequest(from: _api_UpdateEncryptionKeyRequest): UpdateEncryptionKeyRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: UpdateEncryptionKeyRequest = {
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),

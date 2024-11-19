@@ -278,6 +278,18 @@ export interface _api_CreateEncryptionKeyRequest {
     optimized: boolean;
 }
 
+export interface UpdateEncryptionKeyRequest {
+    name: string;
+    enabled: boolean;
+    optimized: boolean;
+}
+
+export interface _api_UpdateEncryptionKeyRequest {
+    name: string;
+    enabled: boolean;
+    optimized: boolean;
+}
+
 export interface ApiHomeResponse {
     serviceName: string;
     apiVersion: string;
