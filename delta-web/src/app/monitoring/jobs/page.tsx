@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
@@ -18,7 +17,7 @@ function JobMonitorPage() {
   return <Container reducedTopPadding>
     <PageHeader>작업 모니터</PageHeader>
     <div>
-      <HTMLTable>
+      <table>
         <thead>
           <tr>
             <th>타임스탬프</th>
@@ -33,7 +32,7 @@ function JobMonitorPage() {
             </tr>;
           })}
         </tbody>
-      </HTMLTable>
+      </table>
     </div>
   </Container>;
 }

@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLTable } from '@blueprintjs/core';
 import { renderCellButton } from '@/core/CellButton';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
@@ -25,7 +24,7 @@ function JobTypeListPage() {
   return <Container reducedTopPadding>
     <PageHeader>작업 유형 목록</PageHeader>
     <div>
-      <HTMLTable>
+      <table>
         <thead>
           <tr>
             <th>키</th>
@@ -40,7 +39,7 @@ function JobTypeListPage() {
             <td>{renderCellButton('상세 조회', () => goDetailPage(e.id.toString()))}</td>
           </tr>)}
         </tbody>
-      </HTMLTable>
+      </table>
     </div>
   </Container>;
 }

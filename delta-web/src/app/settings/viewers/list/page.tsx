@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import { Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
@@ -31,7 +30,7 @@ function ViewerListPage() {
   return <Container reducedTopPadding>
     <PageHeader>뷰어 목록</PageHeader>
     <div>
-      <HTMLTable>
+      <table>
         <thead>
           <tr>
             <th>이름</th>
@@ -44,7 +43,7 @@ function ViewerListPage() {
             <td>{e.mediaType}</td>
           </tr>)}
         </tbody>
-      </HTMLTable>
+      </table>
     </div>
   </Container>;
 }

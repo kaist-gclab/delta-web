@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
@@ -19,7 +18,7 @@ function ProcessorNodeMonitorPage() {
   return <Container reducedTopPadding>
     <PageHeader>처리기 노드 모니터</PageHeader>
     <div>
-      <HTMLTable>
+      <table>
         <thead>
           <tr>
             <th>타임스탬프</th>
@@ -32,7 +31,7 @@ function ProcessorNodeMonitorPage() {
             <td>{e.content}</td>
           </tr>)}
         </tbody>
-      </HTMLTable>
+      </table>
     </div>
   </Container>;
 }

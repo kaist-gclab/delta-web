@@ -1,6 +1,5 @@
 'use client';
 
-import { HTMLTable } from '@blueprintjs/core';
 import { renderCellButton } from '@/core/CellButton';
 import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
@@ -32,7 +31,7 @@ function JobListPage() {
   return <Container reducedTopPadding>
     <PageHeader>작업 목록</PageHeader>
     <div>
-      <HTMLTable>
+      <table>
         <thead>
           <tr>
             <th>작업 유형 키</th>
@@ -53,7 +52,7 @@ function JobListPage() {
             </tr>;
           })}
         </tbody>
-      </HTMLTable>
+      </table>
     </div>
   </Container>;
 }
