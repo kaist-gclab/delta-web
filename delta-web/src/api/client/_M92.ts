@@ -20,6 +20,7 @@ import {
     _EncryptionKeys_GET_GetEncryptionKeys_url,
     _EncryptionKeys_GET_GetEncryptionKey_url,
     _EncryptionKeys_POST_Create_url,
+    _EncryptionKeys_DELETE_Delete_url,
 } from './_url-builders';
 export async function getEncryptionKeys(): Promise<EncryptionKeyView[]> {
     const _response = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKeys_url());
@@ -37,5 +38,8 @@ export function useSWRGetEncryptionKey(id: bigint, _config: _SWRConfiguration = 
 }
 export async function create(createEncryptionKeyRequest: CreateEncryptionKeyRequest): Promise<void> {
     await _createHttp().post(_EncryptionKeys_POST_Create_url(), _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyRequest(createEncryptionKeyRequest));
+}
+export async function /* delete */ Delete(id: bigint): Promise<void> {
+    await _createHttp().delete(_EncryptionKeys_DELETE_Delete_url(id));
 }
 

@@ -61,6 +61,10 @@ export function _EncryptionKeys_POST_Create_url(): string {
     return `api/1/encryption-keys`;
 }
 
+export function _EncryptionKeys_DELETE_Delete_url(id: bigint): string {
+    return `api/1/encryption-keys/${id.toString()}`;
+}
+
 export function _Home_GET_Home_url(): string {
     return ``;
 }
