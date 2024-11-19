@@ -6,7 +6,7 @@ import { HTMLTable } from '@blueprintjs/core';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { EncryptionKeys } from '@/api/client';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 function EncryptionKeyListPage() {
   const router = useRouter();

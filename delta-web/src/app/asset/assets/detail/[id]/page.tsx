@@ -6,7 +6,7 @@ import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { Assets } from '@/api/client';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 function QueryButton(props: { onClick: () => void, children: React.ReactNode }) {
   return <Button onClick={props.onClick} style={{ paddingLeft: '20px', paddingRight: '20px' }}>
