@@ -5,25 +5,16 @@ import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import { _createHttp, _createObject, _restoreCircularReferences } from './_util';
 import {
-    EncryptionKey,
-    CreateEncryptionKeyResponse,
-    CreateEncryptionKeyRequest,
+    BucketView,
 } from './_types';
 import {
-    _convert__api_EncryptionKey_TO_EncryptionKey_Array,
-    _convert__api_CreateEncryptionKeyResponse_TO_CreateEncryptionKeyResponse,
-    _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyRequest,
+    _convert__api_BucketView_TO_BucketView_Array,
 } from './_converters';
 import {
-    _EncryptionKeys_GET_GetEncryptionKeys_url,
-    _EncryptionKeys_POST_Create_url,
+    _Buckets_GET_GetBuckets_url,
 } from './_url-builders';
-export async function getEncryptionKeys(): Promise<EncryptionKey[]> {
-    const _response = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKeys_url());
-    return _restoreCircularReferences(_convert__api_EncryptionKey_TO_EncryptionKey_Array(_response.data), _createObject);
-}
-export async function create(createEncryptionKeyRequest: CreateEncryptionKeyRequest): Promise<CreateEncryptionKeyResponse> {
-    const _response = await _createHttp().post(_EncryptionKeys_POST_Create_url(), _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyRequest(createEncryptionKeyRequest));
-    return _restoreCircularReferences(_convert__api_CreateEncryptionKeyResponse_TO_CreateEncryptionKeyResponse(_response.data), _createObject);
+export async function getBuckets(): Promise<BucketView[]> {
+    const _response = await _createHttp().get(_Buckets_GET_GetBuckets_url());
+    return _restoreCircularReferences(_convert__api_BucketView_TO_BucketView_Array(_response.data), _createObject);
 }
 

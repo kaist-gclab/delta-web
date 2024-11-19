@@ -8,25 +8,42 @@ import { _createHttp, _createObject, _restoreCircularReferences } from './_util'
 import _useSWR, { SWRConfiguration as _SWRConfiguration } from 'swr';
 import { _createSWRMiddleware } from './_util';
 import {
-    AssetTypeView,
-    CreateAssetTypeRequest,
+    Job,
+    JobScheduleResponse,
+    JobScheduleRequest,
+    CreateJobRequest,
+    AddJobExecutionStatusRequest,
 } from './_types';
 import {
-    _convert__api_AssetTypeView_TO_AssetTypeView_Array,
-    _convert_CreateAssetTypeRequest_TO__api_CreateAssetTypeRequest,
+    _convert__api_Job_TO_Job,
+    _convert__api_Job_TO_Job_Array,
+    _convert__api_JobScheduleResponse_TO_JobScheduleResponse,
+    _convert_JobScheduleRequest_TO__api_JobScheduleRequest,
+    _convert_CreateJobRequest_TO__api_CreateJobRequest,
+    _convert_AddJobExecutionStatusRequest_TO__api_AddJobExecutionStatusRequest,
 } from './_converters';
 import {
-    _AssetTypes_GET_GetAssetTypes_url,
-    _AssetTypes_POST_Create_url,
+    _Jobs_GET_GetJobs_url,
+    _Jobs_POST_Schedule_url,
+    _Jobs_POST_CreateJob_url,
+    _Jobs_POST_AddJobExecutionStatus_url,
 } from './_url-builders';
-export async function getAssetTypes(): Promise<AssetTypeView[]> {
-    const _response = await _createHttp().get(_AssetTypes_GET_GetAssetTypes_url());
-    return _restoreCircularReferences(_convert__api_AssetTypeView_TO_AssetTypeView_Array(_response.data), _createObject);
+export async function getJobs(): Promise<Job[]> {
+    const _response = await _createHttp().get(_Jobs_GET_GetJobs_url());
+    return _restoreCircularReferences(_convert__api_Job_TO_Job_Array(_response.data), _createObject);
 }
-export function useSWRGetAssetTypes(_config: _SWRConfiguration = {}, _shouldFetch: boolean = true) {
-    return _useSWR<AssetTypeView[]>(_shouldFetch ? _AssetTypes_GET_GetAssetTypes_url() : null, { ..._config, use: [_createSWRMiddleware(_convert__api_AssetTypeView_TO_AssetTypeView_Array)] });
+export function useSWRGetJobs(_config: _SWRConfiguration = {}, _shouldFetch: boolean = true) {
+    return _useSWR<Job[]>(_shouldFetch ? _Jobs_GET_GetJobs_url() : null, { ..._config, use: [_createSWRMiddleware(_convert__api_Job_TO_Job_Array)] });
 }
-export async function create(createAssetTypeRequest: CreateAssetTypeRequest): Promise<void> {
-    await _createHttp().post(_AssetTypes_POST_Create_url(), _convert_CreateAssetTypeRequest_TO__api_CreateAssetTypeRequest(createAssetTypeRequest));
+export async function schedule(jobScheduleRequest: JobScheduleRequest): Promise<JobScheduleResponse> {
+    const _response = await _createHttp().post(_Jobs_POST_Schedule_url(), _convert_JobScheduleRequest_TO__api_JobScheduleRequest(jobScheduleRequest));
+    return _restoreCircularReferences(_convert__api_JobScheduleResponse_TO_JobScheduleResponse(_response.data), _createObject);
+}
+export async function createJob(createJobRequest: CreateJobRequest): Promise<Job> {
+    const _response = await _createHttp().post(_Jobs_POST_CreateJob_url(), _convert_CreateJobRequest_TO__api_CreateJobRequest(createJobRequest));
+    return _restoreCircularReferences(_convert__api_Job_TO_Job(_response.data), _createObject);
+}
+export async function addJobExecutionStatus(jobExecutionId: bigint, addJobExecutionStatusRequest: AddJobExecutionStatusRequest): Promise<void> {
+    await _createHttp().post(_Jobs_POST_AddJobExecutionStatus_url(jobExecutionId), _convert_AddJobExecutionStatusRequest_TO__api_AddJobExecutionStatusRequest(addJobExecutionStatusRequest));
 }
 

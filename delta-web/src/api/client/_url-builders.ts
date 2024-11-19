@@ -70,6 +70,10 @@ export function _Auth_POST_Login_url(): string {
     return `auth/1/login`;
 }
 
+export function _Buckets_GET_GetBuckets_url(): string {
+    return `api/1/buckets`;
+}
+
 export function _Assets_GET_GetAssets_url(): string {
     return `api/1/assets`;
 }
@@ -80,12 +84,4 @@ export function _Assets_POST_CreateAsset_url(): string {
 
 export function _Assets_GET_GetAsset_url(id: bigint): string {
     return `api/1/assets/${id.toString()}`;
-}
-
-export function _AssetTypes_GET_GetAssetTypes_url(): string {
-    return `api/1/asset-types`;
-}
-
-export function _AssetTypes_POST_Create_url(): string {
-    return `api/1/asset-types`;
 }
