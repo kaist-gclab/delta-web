@@ -267,10 +267,14 @@ export interface _api_EncryptionKeyView {
 
 export interface CreateEncryptionKeyRequest {
     name: string;
+    enabled: boolean;
+    optimized: boolean;
 }
 
 export interface _api_CreateEncryptionKeyRequest {
     name: string;
+    enabled: boolean;
+    optimized: boolean;
 }
 
 export interface ApiHomeResponse {

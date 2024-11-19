@@ -1003,6 +1003,8 @@ export function _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyR
     }
     const to: _api_CreateEncryptionKeyRequest = {
         name: _convert_string_TO_string(from.name),
+        enabled: _convert_boolean_TO_boolean(from.enabled),
+        optimized: _convert_boolean_TO_boolean(from.optimized),
     };
     return { ...from, ...to };
 }
@@ -1013,6 +1015,8 @@ export function _convert__api_CreateEncryptionKeyRequest_TO_CreateEncryptionKeyR
     }
     const to: CreateEncryptionKeyRequest = {
         name: _convert_string_TO_string(from.name),
+        enabled: _convert_boolean_TO_boolean(from.enabled),
+        optimized: _convert_boolean_TO_boolean(from.optimized),
     };
     return { ...from, ...to };
 }
