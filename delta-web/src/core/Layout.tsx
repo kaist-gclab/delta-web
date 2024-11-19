@@ -41,10 +41,12 @@ function Layout({ children }: { children: ReactNode }) {
 
   const SubNavEntries: {
     path: string;
+    name: string;
     entries: NavEntry[];
   }[] = [
       {
         path: '/asset',
+        name: '애셋',
         entries: [
           { link: '/asset/assets/add', text: '애셋 추가' },
           { link: '/asset/assets/list', text: '애셋 목록' },
@@ -57,6 +59,7 @@ function Layout({ children }: { children: ReactNode }) {
       },
       {
         path: '/job',
+        name: '작업',
         entries: [
           { link: '/job/jobs/add', text: '작업 추가' },
           { link: '/job/jobs/list', text: '작업 목록' },
@@ -67,21 +70,23 @@ function Layout({ children }: { children: ReactNode }) {
       },
       {
         path: '/node',
+        name: '처리기 노드',
         entries: [
           { link: '/node/processor-nodes/list', text: '목록' },
           { link: '/node/processor-nodes/detail', text: '상세 조회' },
         ],
       },
       {
-        path: '/key',
+        path: '/encryption-keys',
+        name: '암호화 키',
         entries: [
-          { link: '/key/encryption-keys/add', text: '추가' },
-          { link: '/key/encryption-keys/list', text: '목록' },
-          { link: '/key/encryption-keys/detail', text: '상세 조회' },
+          { link: '/encryption-keys/list', text: '목록' },
+          { link: '/encryption-keys/add', text: '추가' },
         ],
       },
       {
         path: '/monitoring',
+        name: '모니터링',
         entries: [
           { link: '/monitoring/dashboard', text: '대시보드' },
           { link: '/monitoring/object-storage', text: '오브젝트 저장소 모니터' },
@@ -91,6 +96,7 @@ function Layout({ children }: { children: ReactNode }) {
       },
       {
         path: '/settings',
+        name: '설정',
         entries: [
           { link: '/settings/user', text: '사용자 설정' },
           { link: '/settings/system', text: '시스템 설정' },
@@ -114,15 +120,24 @@ function Layout({ children }: { children: ReactNode }) {
         </div>
       </div>
       <div>
-        {SubNavEntries.flatMap(({ path, entries }) => {
+        {SubNavEntries.flatMap(({ path, entries, name }) => {
           if (!pathname.startsWith(path)) return [];
-          return [<div key={path} className="flex flex-row p-2 flex-wrap bg-[rgb(84,121,175)]">
-            {entries.map((entry, i) => <NavButton key={i} {...entry} />)}
-          </div>];
+          return [
+            <div key={path} className="flex flex-row flex-wrap bg-[rgb(84,121,175)] border-t border-gray-400">
+              <div className="text-gray-200 select-none pr-3 pl-3 font-bold bg-[rgb(40,82,150)] lg:flex items-center hidden ">
+                <div>
+                  {name}
+                </div>
+              </div>
+              <div className='p-2'>
+                {entries.map((entry, i) => <NavButton key={i} {...entry} />)}
+              </div>
+            </div>
+          ];
         })}
       </div>
     </div>
-    <div className={'pt-2 ' + (subNavEnabled ? 'md:mt-[86px]' : 'md:mt-[41px]')}>
+    <div className={'pt-2 ' + (subNavEnabled ? 'md:mt-[87px]' : 'md:mt-[41px]')}>
       {children}
     </div>
   </>;
