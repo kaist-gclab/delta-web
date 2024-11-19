@@ -25,3 +25,10 @@ export function useBigIntId(props: IdParamsProps) {
 export interface IdParamsProps {
     params: Promise<{ id: string }>;
 }
+
+export function compareBigInt(a: bigint, b: bigint): number {
+    if (a === b) {
+        return 0;
+    }
+    return a < b ? -1 : 1;
+}
