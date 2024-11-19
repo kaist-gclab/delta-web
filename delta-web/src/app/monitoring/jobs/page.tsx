@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { Monitoring } from '@/api/client';
@@ -14,7 +13,7 @@ function JobMonitorPage() {
     return <Loading />;
   }
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>작업 모니터</PageHeader>
     <div>
       <table>
@@ -34,7 +33,7 @@ function JobMonitorPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default JobMonitorPage;

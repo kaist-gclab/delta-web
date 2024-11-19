@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { Monitoring } from '@/api/client';
@@ -15,7 +14,7 @@ function ProcessorNodeMonitorPage() {
     return <Loading />;
   }
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>처리기 노드 모니터</PageHeader>
     <div>
       <table>
@@ -33,7 +32,7 @@ function ProcessorNodeMonitorPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default ProcessorNodeMonitorPage

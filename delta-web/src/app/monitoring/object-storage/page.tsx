@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { Monitoring } from '@/api/client';
@@ -16,7 +15,7 @@ function ObjectStorageMonitorPage() {
     return <Loading />;
   }
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>오브젝트 저장소 모니터</PageHeader>
     <div>
       <table>
@@ -34,7 +33,7 @@ function ObjectStorageMonitorPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default ObjectStorageMonitorPage;

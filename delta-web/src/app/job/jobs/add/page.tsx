@@ -2,7 +2,6 @@
 
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 
 function AddJobPage() {
@@ -23,7 +22,7 @@ function AddJobPage() {
     }
   };
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>작업 추가</PageHeader>
     <FormGroup
       label="작업 유형 번호"
@@ -86,7 +85,7 @@ function AddJobPage() {
         </div>
       </div>
     </Dialog>
-  </Container>;
+  </div>;
 }
 
 export default AddJobPage;

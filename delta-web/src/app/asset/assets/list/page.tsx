@@ -3,7 +3,6 @@
 import { renderCellButton } from '@/core/CellButton';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import { Assets } from '@/api/client';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { useRouter } from 'next/navigation';
 
@@ -17,7 +16,7 @@ function AssetListPage() {
     return <Loading />;
   }
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>애셋 목록</PageHeader>
     <div>
       <table>
@@ -43,7 +42,7 @@ function AssetListPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default AssetListPage;

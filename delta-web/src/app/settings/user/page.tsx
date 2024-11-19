@@ -2,7 +2,6 @@
 
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 
 function UserSettingsPage() {
@@ -22,7 +21,7 @@ function UserSettingsPage() {
     }
   };
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>사용자 설정</PageHeader>
     <FormGroup
       label="새 암호"
@@ -63,7 +62,7 @@ function UserSettingsPage() {
         </div>
       </div>
     </Dialog>
-  </Container>;
+  </div>;
 }
 
 export default UserSettingsPage;

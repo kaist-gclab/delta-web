@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@/core/Container';
 import { Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 
@@ -27,7 +26,7 @@ function ViewerListPage() {
     return <Loading />;
   }
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>뷰어 목록</PageHeader>
     <div>
       <table>
@@ -45,7 +44,7 @@ function ViewerListPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default ViewerListPage;

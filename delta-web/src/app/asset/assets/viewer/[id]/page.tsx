@@ -3,7 +3,6 @@
 import { Button, ControlGroup, InputGroup } from '@blueprintjs/core';
 import { FormEvent, use, useState } from 'react';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { Assets } from '@/api/client';
 import { useRouter } from 'next/navigation';
@@ -42,7 +41,7 @@ function AssetViewerPage(props: { params: Promise<{ id: string }> }) {
 
   const goDetailPage = () => router.push(`/assets/detail/${id}`);
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>애셋 뷰어</PageHeader>
     <ControlGroup>
       <InputGroup type="text" leftIcon="numbered-list"
@@ -53,7 +52,7 @@ function AssetViewerPage(props: { params: Promise<{ id: string }> }) {
       <QueryButton onClick={goDetailPage}>조회</QueryButton>
     </ControlGroup>
     {!params.id ? <Message>번호로 조회하십시오.</Message> : render()}
-  </Container>;
+  </div>;
 }
 
 export default AssetViewerPage;

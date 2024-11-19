@@ -1,7 +1,6 @@
 'use client';
 
 import { renderCellButton } from '@/core/CellButton';
-import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { ProcessorNodes } from '@/api/client';
@@ -21,7 +20,7 @@ function ProcessorNodeListPage() {
     router.push(`/node/processor-nodes/detail/${id}`);
   };
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>처리기 노드 목록</PageHeader>
     <div>
       <table>
@@ -41,7 +40,7 @@ function ProcessorNodeListPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default ProcessorNodeListPage;

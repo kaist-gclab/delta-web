@@ -1,7 +1,6 @@
 'use client';
 
 import { Row as GridRow, Column as GridColumn } from '@/core/Grid';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 
 function MonitorColumn(props: { children: React.ReactNode }) {
@@ -9,7 +8,7 @@ function MonitorColumn(props: { children: React.ReactNode }) {
 }
 
 function DashboardMonitorPage() {
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>모니터링 대시보드</PageHeader>
     <GridColumn>
       <GridRow>
@@ -29,7 +28,7 @@ function DashboardMonitorPage() {
         </MonitorColumn>
       </GridRow>
     </GridColumn>
-  </Container>;
+  </div>;
 }
 
 export default DashboardMonitorPage;

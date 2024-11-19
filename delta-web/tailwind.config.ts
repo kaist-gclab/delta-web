@@ -8,6 +8,10 @@ export default {
     "./src/core/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     extend: {
       colors: {
         background: "var(--background)",

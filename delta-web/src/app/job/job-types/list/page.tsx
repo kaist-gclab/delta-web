@@ -1,7 +1,6 @@
 'use client';
 
 import { renderCellButton } from '@/core/CellButton';
-import Container from '@/core/Container';
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { JobTypes } from '@/api/client';
@@ -21,7 +20,7 @@ function JobTypeListPage() {
     router.push(`/job/job-types/detail/${id}`);
   };
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>작업 유형 목록</PageHeader>
     <div>
       <table>
@@ -41,7 +40,7 @@ function JobTypeListPage() {
         </tbody>
       </table>
     </div>
-  </Container>;
+  </div>;
 }
 
 export default JobTypeListPage;

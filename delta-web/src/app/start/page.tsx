@@ -1,6 +1,5 @@
 'use client';
 
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import Link from 'next/link';
 import { ReactNode } from 'react';
@@ -41,7 +40,7 @@ function Icon({ children }: { children: ReactNode }) {
 }
 
 function StartPage() {
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>시작</PageHeader>
     <h2>도움말</h2>
     <StartButton to="/help">
@@ -72,7 +71,7 @@ function StartPage() {
         <StartLabel>대시보드</StartLabel>
       </StartButton>
     </div>
-  </Container>
+  </div>
 }
 
 export default StartPage;

@@ -1,4 +1,3 @@
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { ReactNode } from 'react';
 
@@ -7,7 +6,7 @@ function Description({ children }: { children: ReactNode }) {
 }
 
 function HelpPage() {
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>도움말</PageHeader>
     <h2>기능 설명</h2>
     <ul>
@@ -38,7 +37,7 @@ function HelpPage() {
       <Description>처리기 노드 모니터 페이지: 처리기 노드 관련 수치를 중심으로 시스템을 모니터링할 수 있습니다.</Description>
       <Description>작업 모니터 페이지: 작업 관련 수치를 중심으로 시스템을 모니터링 할 수 있습니다.</Description>
     </ul>
-  </Container>;
+  </div>;
 }
 
 export default HelpPage;

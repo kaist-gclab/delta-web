@@ -2,7 +2,6 @@
 
 import { FormGroup, InputGroup, Button, Dialog, Classes } from '@blueprintjs/core';
 import { FormEvent, useState } from 'react';
-import Container from '@/core/Container';
 import PageHeader from '@/core/PageHeader';
 import { Assets } from '@/api/client';
 
@@ -37,7 +36,7 @@ function AddAssetPage() {
     }
   };
 
-  return <Container reducedTopPadding>
+  return <div className="container">
     <PageHeader>애셋 추가</PageHeader>
     <FormGroup
       label="애셋 유형 번호"
@@ -115,7 +114,7 @@ function AddAssetPage() {
         </div>
       </div>
     </Dialog>
-  </Container>;
+  </div>;
 }
 
 export default AddAssetPage;
