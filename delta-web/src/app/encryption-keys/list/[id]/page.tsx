@@ -6,6 +6,7 @@ import { EncryptionKeys } from '@/api/client';
 import { IdParamsProps, useBigIntId } from '@/core/identifier';
 import { Button } from '@/core/Button';
 import { useRouter } from 'next/navigation';
+import { confirmDelete } from '@/core/inputConfirm';
 
 export default function Page(props: IdParamsProps) {
   const id = useBigIntId(props);
@@ -35,7 +36,7 @@ function Content({ id }: { id: bigint }) {
     </div>
     <div className="mt-8 flex justify-end gap-8">
       <Button intent='danger' onClick={async () => {
-        if (!confirm('정말 삭제하시겠습니까?')) {
+        if (!confirmDelete()) {
           return;
         }
         try {
