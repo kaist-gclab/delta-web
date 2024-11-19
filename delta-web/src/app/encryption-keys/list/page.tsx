@@ -3,7 +3,6 @@
 import { ErrorMessage, Loading } from '@/core/NonIdealStates';
 import PageHeader from '@/core/PageHeader';
 import { EncryptionKeys } from '@/api/client';
-import { useRouter } from 'next/navigation';
 import { Table, TBody, Td, Th, THead, Tr } from '@/core/Table';
 import { Button } from '@/core/Button';
 
@@ -25,7 +24,7 @@ export default function Page() {
         <Th className='w-24'>최적화</Th>
       </THead>
       <TBody>
-        {data.map((e) => <Tr key={e.id.toString()} href={`/encryption-keys/detail/${e.id}`}>
+        {data.map((e) => <Tr key={e.id.toString()} href={`/encryption-keys/list/${e.id}`}>
           <Td>{e.name}</Td>
           <Td>{e.enabled ? '예' : '아니오'}</Td>
           <Td>{e.optimized ? '성능' : '보안'}</Td>

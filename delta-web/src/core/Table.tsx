@@ -1,4 +1,3 @@
-import { useRouter } from 'next/navigation';
 import { useClickOrHref } from './Button';
 
 export function Table({ children }: { children: React.ReactNode }) {
@@ -22,14 +21,14 @@ export function Td({ children }: { children: React.ReactNode }) {
 export function Tr(props: { children: React.ReactNode } & ({} | { onClick: () => void } | { href: string })) {
   const { onClick, className } = useClickOrHref(props);
   return <tr onClick={onClick}
-    className={`hover:bg-gray-100 even:bg-gray-50 ${className}`}>
+    className={`hover:bg-gray-200 even:bg-gray-100 ${className}`}>
     {props.children}
   </tr>;
 }
 
 export function THead({ children }: { children: React.ReactNode }) {
-  return <thead className="bg-gray-100">
-    <tr className="divide-x divide-gray-300 border-b border-gray-300">
+  return <thead className="bg-slate-300">
+    <tr className="divide-x divide-slate-500 border-b border-slate-500">
       {children}
     </tr>
   </thead>;
