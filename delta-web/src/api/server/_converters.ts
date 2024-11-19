@@ -55,6 +55,8 @@ import {
     _api_LoginResponse,
     LoginRequest,
     _api_LoginRequest,
+    BucketSummary,
+    _api_BucketSummary,
     BucketView,
     BucketTagView,
     _api_BucketTagView,
@@ -1119,13 +1121,69 @@ export function _convert__api_LoginRequest_TO_LoginRequest(from: _api_LoginReque
     return { ...from, ...to };
 }
 
+export function _convert_BucketSummary_TO__api_BucketSummary(from: BucketSummary): _api_BucketSummary {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_BucketSummary = {
+        id: _convert_bigint_TO_string(from.id),
+        encryptionKeyName: _convert_string_TO_string_Nullable(from.encryptionKeyName),
+        createdAt: _convert__Dayjs_TO_string(from.createdAt),
+        bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
+        name: _convert_string_TO_string_Nullable(from.name),
+        tagCount: _convert_number_TO_string(from.tagCount),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_BucketSummary_TO__api_BucketSummary_Array(from: BucketSummary[]): _api_BucketSummary[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: BucketSummary[] = (from as any).$values;
+        const to: _api_BucketSummary[] = values.map(element => _convert_BucketSummary_TO__api_BucketSummary(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_BucketSummary[] = from.map(element => _convert_BucketSummary_TO__api_BucketSummary(element));
+    return to;
+}
+
+export function _convert__api_BucketSummary_TO_BucketSummary(from: _api_BucketSummary): BucketSummary {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: BucketSummary = {
+        id: _convert_string_TO_bigint(from.id),
+        encryptionKeyName: _convert_string_TO_string_Nullable(from.encryptionKeyName),
+        createdAt: _convert_string_TO__Dayjs(from.createdAt),
+        bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
+        name: _convert_string_TO_string_Nullable(from.name),
+        tagCount: _convert_string_TO_number(from.tagCount),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_BucketSummary_TO_BucketSummary_Array(from: _api_BucketSummary[]): BucketSummary[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_BucketSummary[] = (from as any).$values;
+        const to: BucketSummary[] = values.map(element => _convert__api_BucketSummary_TO_BucketSummary(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: BucketSummary[] = from.map(element => _convert__api_BucketSummary_TO_BucketSummary(element));
+    return to;
+}
+
 export function _convert_BucketTagView_TO__api_BucketTagView(from: BucketTagView): _api_BucketTagView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     const to: _api_BucketTagView = {
         id: _convert_bigint_TO_string(from.id),
-        name: _convert_string_TO_string(from.name),
+        key: _convert_string_TO_string(from.key),
         value: _convert_string_TO_string(from.value),
     };
     return { ...from, ...to };
@@ -1153,23 +1211,9 @@ export function _convert_BucketView_TO__api_BucketView(from: BucketView): _api_B
         encryptionKeyName: _convert_string_TO_string_Nullable(from.encryptionKeyName),
         createdAt: _convert__Dayjs_TO_string(from.createdAt),
         bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
-        name: _convert_string_TO_string_Nullable(from.name),
         tags: _convert_BucketTagView_TO__api_BucketTagView_Array(from.tags),
     };
     return { ...from, ...to };
-}
-
-export function _convert_BucketView_TO__api_BucketView_Array(from: BucketView[]): _api_BucketView[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: BucketView[] = (from as any).$values;
-        const to: _api_BucketView[] = values.map(element => _convert_BucketView_TO__api_BucketView(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_BucketView[] = from.map(element => _convert_BucketView_TO__api_BucketView(element));
-    return to;
 }
 
 export function _convert__api_BucketTagView_TO_BucketTagView(from: _api_BucketTagView): BucketTagView {
@@ -1178,7 +1222,7 @@ export function _convert__api_BucketTagView_TO_BucketTagView(from: _api_BucketTa
     }
     const to: BucketTagView = {
         id: _convert_string_TO_bigint(from.id),
-        name: _convert_string_TO_string(from.name),
+        key: _convert_string_TO_string(from.key),
         value: _convert_string_TO_string(from.value),
     };
     return { ...from, ...to };
@@ -1206,23 +1250,9 @@ export function _convert__api_BucketView_TO_BucketView(from: _api_BucketView): B
         encryptionKeyName: _convert_string_TO_string_Nullable(from.encryptionKeyName),
         createdAt: _convert_string_TO__Dayjs(from.createdAt),
         bucketGroupName: _convert_string_TO_string_Nullable(from.bucketGroupName),
-        name: _convert_string_TO_string_Nullable(from.name),
         tags: _convert__api_BucketTagView_TO_BucketTagView_Array(from.tags),
     };
     return { ...from, ...to };
-}
-
-export function _convert__api_BucketView_TO_BucketView_Array(from: _api_BucketView[]): BucketView[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_BucketView[] = (from as any).$values;
-        const to: BucketView[] = values.map(element => _convert__api_BucketView_TO_BucketView(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: BucketView[] = from.map(element => _convert__api_BucketView_TO_BucketView(element));
-    return to;
 }
 
 export function _convert_CreateBucketRequest_TO__api_CreateBucketRequest(from: CreateBucketRequest): _api_CreateBucketRequest {
