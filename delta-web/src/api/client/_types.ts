@@ -248,22 +248,6 @@ export interface _api_JobTypeView {
     name: string;
 }
 
-export interface EncryptionKey {
-    id: bigint;
-    name: string;
-    enabled: boolean;
-    optimized: boolean;
-    assets: Asset[];
-}
-
-export interface _api_EncryptionKey {
-    id: string;
-    name: string;
-    enabled: boolean;
-    optimized: boolean;
-    assets: _api_Asset[];
-}
-
 export interface EncryptionKeyView {
     id: bigint;
     name: string;

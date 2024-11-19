@@ -44,11 +44,9 @@ import {
     _api_AddJobExecutionStatusRequest,
     JobTypeView,
     _api_JobTypeView,
-    EncryptionKey,
-    _api_EncryptionKey,
-    CreateEncryptionKeyResponse,
     EncryptionKeyView,
     _api_EncryptionKeyView,
+    CreateEncryptionKeyResponse,
     _api_CreateEncryptionKeyResponse,
     CreateEncryptionKeyRequest,
     _api_CreateEncryptionKeyRequest,
@@ -946,60 +944,6 @@ export function _convert__api_JobTypeView_TO_JobTypeView_Array(from: _api_JobTyp
     return to;
 }
 
-export function _convert_EncryptionKey_TO__api_EncryptionKey(from: EncryptionKey): _api_EncryptionKey {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_EncryptionKey = {
-        id: _convert_bigint_TO_string(from.id),
-        name: _convert_string_TO_string(from.name),
-        enabled: _convert_boolean_TO_boolean(from.enabled),
-        optimized: _convert_boolean_TO_boolean(from.optimized),
-        assets: _convert_Asset_TO__api_Asset_Array(from.assets),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_EncryptionKey_TO__api_EncryptionKey_Array(from: EncryptionKey[]): _api_EncryptionKey[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: EncryptionKey[] = (from as any).$values;
-        const to: _api_EncryptionKey[] = values.map(element => _convert_EncryptionKey_TO__api_EncryptionKey(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_EncryptionKey[] = from.map(element => _convert_EncryptionKey_TO__api_EncryptionKey(element));
-    return to;
-}
-
-export function _convert__api_EncryptionKey_TO_EncryptionKey(from: _api_EncryptionKey): EncryptionKey {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: EncryptionKey = {
-        id: _convert_string_TO_bigint(from.id),
-        name: _convert_string_TO_string(from.name),
-        enabled: _convert_boolean_TO_boolean(from.enabled),
-        optimized: _convert_boolean_TO_boolean(from.optimized),
-        assets: _convert__api_Asset_TO_Asset_Array(from.assets),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_EncryptionKey_TO_EncryptionKey_Array(from: _api_EncryptionKey[]): EncryptionKey[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_EncryptionKey[] = (from as any).$values;
-        const to: EncryptionKey[] = values.map(element => _convert__api_EncryptionKey_TO_EncryptionKey(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: EncryptionKey[] = from.map(element => _convert__api_EncryptionKey_TO_EncryptionKey(element));
-    return to;
-}
-
 export function _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from: EncryptionKeyView): _api_EncryptionKeyView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
@@ -1013,15 +957,17 @@ export function _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from: Encry
     return { ...from, ...to };
 }
 
-export function _convert_CreateEncryptionKeyResponse_TO__api_CreateEncryptionKeyResponse(from: CreateEncryptionKeyResponse): _api_CreateEncryptionKeyResponse {
+export function _convert_EncryptionKeyView_TO__api_EncryptionKeyView_Array(from: EncryptionKeyView[]): _api_EncryptionKeyView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_CreateEncryptionKeyResponse = {
-        encryptionKey: _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from.encryptionKey),
-        value: _convert_string_TO_string(from.value),
-    };
-    return { ...from, ...to };
+    if (_hasOwnPropertyValues(from)) {
+        const values: EncryptionKeyView[] = (from as any).$values;
+        const to: _api_EncryptionKeyView[] = values.map(element => _convert_EncryptionKeyView_TO__api_EncryptionKeyView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_EncryptionKeyView[] = from.map(element => _convert_EncryptionKeyView_TO__api_EncryptionKeyView(element));
+    return to;
 }
 
 export function _convert__api_EncryptionKeyView_TO_EncryptionKeyView(from: _api_EncryptionKeyView): EncryptionKeyView {
@@ -1033,6 +979,30 @@ export function _convert__api_EncryptionKeyView_TO_EncryptionKeyView(from: _api_
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_EncryptionKeyView_TO_EncryptionKeyView_Array(from: _api_EncryptionKeyView[]): EncryptionKeyView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_EncryptionKeyView[] = (from as any).$values;
+        const to: EncryptionKeyView[] = values.map(element => _convert__api_EncryptionKeyView_TO_EncryptionKeyView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: EncryptionKeyView[] = from.map(element => _convert__api_EncryptionKeyView_TO_EncryptionKeyView(element));
+    return to;
+}
+
+export function _convert_CreateEncryptionKeyResponse_TO__api_CreateEncryptionKeyResponse(from: CreateEncryptionKeyResponse): _api_CreateEncryptionKeyResponse {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_CreateEncryptionKeyResponse = {
+        encryptionKey: _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from.encryptionKey),
+        value: _convert_string_TO_string(from.value),
     };
     return { ...from, ...to };
 }
