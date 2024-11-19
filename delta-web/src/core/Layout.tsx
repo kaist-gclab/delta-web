@@ -20,6 +20,7 @@ function Layout({ children }: { children: ReactNode }) {
 
   const RootBeginNavEntries: NavEntry[] = [
     { link: '/start', text: '홈' },
+    { link: '/buckets', text: '버킷' },
     { link: '/asset', text: '애셋' },
     { link: '/job', text: '작업' },
     { link: '/node', text: '처리기 노드' },
@@ -38,6 +39,14 @@ function Layout({ children }: { children: ReactNode }) {
     name: string;
     entries: NavEntry[];
   }[] = [
+      {
+        path: '/buckets',
+        name: '버킷',
+        entries: [
+          { link: '/buckets/list', text: '버킷 목록' },
+          { link: '/buckets/add', text: '버킷 추가' },
+        ],
+      },
       {
         path: '/asset',
         name: '애셋',
@@ -74,8 +83,8 @@ function Layout({ children }: { children: ReactNode }) {
         path: '/encryption-keys',
         name: '암호화 키',
         entries: [
-          { link: '/encryption-keys/list', text: '목록' },
-          { link: '/encryption-keys/add', text: '추가' },
+          { link: '/encryption-keys/list', text: '암호화 키 목록' },
+          { link: '/encryption-keys/add', text: '암호화 키 추가' },
         ],
       },
       {
