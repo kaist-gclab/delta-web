@@ -318,19 +318,43 @@ export interface _api_LoginRequest {
     password: string;
 }
 
+export interface BucketTagView {
+    id: bigint;
+    name: string;
+    value: string;
+}
+
+export interface _api_BucketTagView {
+    id: string;
+    name: string;
+    value: string;
+}
+
 export interface BucketView {
+    id: bigint;
+    encryptionKeyName: string | null;
+    createdAt: _Dayjs;
+    bucketGroupName: string | null;
+    name: string | null;
+    tags: BucketTagView[];
 }
 
 export interface _api_BucketView {
+    id: string;
+    encryptionKeyName: string | null;
+    createdAt: string;
+    bucketGroupName: string | null;
+    name: string | null;
+    tags: _api_BucketTagView[];
 }
 
 export interface CreateBucketRequest {
-    encryptionKeyId: bigint;
+    encryptionKeyName: string;
     name: string;
 }
 
 export interface _api_CreateBucketRequest {
-    encryptionKeyId: string;
+    encryptionKeyName: string;
     name: string;
 }
 
