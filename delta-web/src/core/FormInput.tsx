@@ -1,5 +1,5 @@
 import { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react';
-import { UseFormRegisterReturn } from 'react-hook-form';
+import { SWRConfiguration } from 'swr';
 
 export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
   if (props.type === 'checkbox') {
@@ -33,3 +33,17 @@ export function LabelAndInput(props: {
       </div>}
   </div>;
 }
+
+export function FormButtonGroup({ children }: { children: React.ReactNode }) {
+  return <>
+    <hr className="my-8" />
+    <div className="flex justify-end gap-8">
+      {children}
+    </div>
+  </>;
+}
+
+export const FormSWRConfig: SWRConfiguration = {
+  revalidateOnFocus: false,
+  revalidateOnReconnect: false,
+};

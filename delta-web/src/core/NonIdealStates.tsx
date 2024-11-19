@@ -6,12 +6,12 @@ export function Loading() {
   </div>;
 }
 
-export function ErrorMessage(props: { message: string }) {
+export function ErrorMessage(props: { message: string, icon?: 'error' | 'empty' }) {
   return <div className='p-10 text-center'>
     <div className='text-4xl'>
-      ❌
+      {props.icon === 'empty' ? '📭' : '❌'}
     </div>
-    <div className='mt-4 text-orange-600 text-lg'>
+    <div className={`mt-4 text-lg ${props.icon === 'empty' ? 'text-gray-600' : 'text-orange-600'}`}>
       {props.message}
     </div>
   </div>;

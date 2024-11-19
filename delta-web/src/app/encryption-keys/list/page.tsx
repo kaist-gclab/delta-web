@@ -5,6 +5,7 @@ import PageHeader from '@/core/PageHeader';
 import { EncryptionKeys } from '@/api/client';
 import { Table, TBody, Td, Th, THead, Tr } from '@/core/Table';
 import { Button } from '@/core/Button';
+import { FormButtonGroup } from '@/core/FormInput';
 
 export default function Page() {
   const { data, error } = EncryptionKeys.useSWRGetEncryptionKeys();
@@ -17,7 +18,8 @@ export default function Page() {
 
   return <div className="container">
     <PageHeader>암호화 키 목록</PageHeader>
-    <Table>
+    {data.length === 0 && <ErrorMessage message="암호화 키가 없습니다." icon='empty' />}
+    {data.length > 0 && <Table>
       <THead>
         <Th>이름</Th>
         <Th className='w-24'>활성</Th>
@@ -34,11 +36,12 @@ export default function Page() {
           <Td numeric>{e.assetCount.toString()}</Td>
         </Tr>)}
       </TBody>
-    </Table>
-    <div className="mt-8 flex justify-end">
+    </Table>}
+
+    <FormButtonGroup>
       <Button href="/encryption-keys/add">
         암호화 키 추가
       </Button>
-    </div>
-  </div >;
+    </FormButtonGroup>
+  </div>;
 }
