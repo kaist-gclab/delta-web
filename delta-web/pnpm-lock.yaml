@@ -11,9 +11,6 @@ importers:
       '@blueprintjs/core':
         specifier: ^5.15.0
         version: 5.15.0(@types/react@18.3.12)(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
-      '@blueprintjs/icons':
-        specifier: ^5.14.0
-        version: 5.14.0(@types/react@18.3.12)(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
