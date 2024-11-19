@@ -42,10 +42,14 @@ function StartPage() {
         <StartLabel>처리기 노드</StartLabel>
       </StartButton>
       <StartButton to="/encryption-keys">
-        <Icon>⚙️</Icon>
+        <Icon>🔐</Icon>
         <StartLabel>암호화 키</StartLabel>
       </StartButton>
       <br className='hidden md:block' />
+      <StartButton to="/job-types">
+        <Icon>📝</Icon>
+        <StartLabel>작업 유형</StartLabel>
+      </StartButton>
       <StartButton to="/monitoring">
         <Icon>📊</Icon>
         <StartLabel>모니터링</StartLabel>

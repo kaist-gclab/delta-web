@@ -6,7 +6,7 @@ import PageHeader from '@/core/PageHeader';
 import { ProcessorNodes } from '@/api/client';
 import { useRouter } from 'next/navigation';
 
-function ProcessorNodeListPage() {
+export default function ProcessorNodeListPage() {
   const router = useRouter();
   const { error, data } = ProcessorNodes.useSWRGetNodes();
   if (error) {
@@ -42,5 +42,3 @@ function ProcessorNodeListPage() {
     </div>
   </div>;
 }
-
-export default ProcessorNodeListPage;

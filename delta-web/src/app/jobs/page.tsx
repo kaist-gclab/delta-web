@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return redirect('/job/jobs/add');
+  return redirect('/jobs/add');
 }

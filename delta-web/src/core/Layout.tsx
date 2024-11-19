@@ -21,9 +21,9 @@ function Layout({ children }: { children: ReactNode }) {
   const RootBeginNavEntries: NavEntry[] = [
     { link: '/start', text: '홈' },
     { link: '/buckets', text: '버킷' },
-    { link: '/asset', text: '애셋' },
-    { link: '/job', text: '작업' },
-    { link: '/node', text: '처리기 노드' },
+    { link: '/jobs', text: '작업' },
+    { link: '/job-types', text: '작업 유형' },
+    { link: '/processor-nodes', text: '처리기 노드' },
     { link: '/encryption-keys', text: '암호화 키' },
     { link: '/monitoring', text: '모니터링' },
   ];
@@ -48,35 +48,27 @@ function Layout({ children }: { children: ReactNode }) {
         ],
       },
       {
-        path: '/asset',
-        name: '애셋',
-        entries: [
-          { link: '/asset/assets/add', text: '애셋 추가' },
-          { link: '/asset/assets/list', text: '애셋 목록' },
-          { link: '/asset/assets/detail', text: '애셋 상세 조회' },
-          { link: '/asset/assets/viewer', text: '애셋 뷰어' },
-          { link: '/asset/asset-types/add', text: '애셋 유형 추가' },
-          { link: '/asset/asset-types/list', text: '애셋 유형 목록' },
-          { link: '/asset/asset-types/detail', text: '애셋 유형 상세 조회' },
-        ],
-      },
-      {
-        path: '/job',
+        path: '/jobs',
         name: '작업',
         entries: [
-          { link: '/job/jobs/add', text: '작업 추가' },
-          { link: '/job/jobs/list', text: '작업 목록' },
-          { link: '/job/jobs/detail', text: '작업 상세 조회' },
-          { link: '/job/job-types/list', text: '작업 유형 목록' },
-          { link: '/job/job-types/detail', text: '작업 유형 상세 조회' },
+          { link: '/jobs/list', text: '작업 목록' },
+          { link: '/jobs/add', text: '작업 추가' },
         ],
       },
       {
-        path: '/node',
+        path: '/job-types',
+        name: '작업 유형',
+        entries: [
+          { link: '/job-types/list', text: '작업 유형 목록' },
+          { link: '/job-types/add', text: '작업 유형 추가' },
+        ],
+      },
+      {
+        path: '/processor-nodes',
         name: '처리기 노드',
         entries: [
-          { link: '/node/processor-nodes/list', text: '목록' },
-          { link: '/node/processor-nodes/detail', text: '상세 조회' },
+          { link: '/processor-nodes/list', text: '목록' },
+          { link: '/processor-nodes/detail', text: '상세 조회' },
         ],
       },
       {
@@ -133,7 +125,7 @@ function Layout({ children }: { children: ReactNode }) {
           if (!pathname.startsWith(path)) return [];
           return [
             <div key={path} className="flex flex-row flex-wrap bg-[rgb(84,121,175)] border-t border-gray-400">
-              <div className="text-gray-200 select-none pr-3 pl-3 font-bold bg-[rgb(40,82,150)] lg:flex items-center hidden ">
+              <div className="text-gray-200 select-none pr-3 pl-3 font-bold bg-[rgb(40,82,150)] md:flex items-center hidden ">
                 <div>
                   {name}
                 </div>
