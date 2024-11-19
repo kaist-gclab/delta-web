@@ -12,10 +12,12 @@ export function TBody({ children }: { children: React.ReactNode }) {
   </tbody>;
 }
 
-export function Td({ children, numeric }: { children: React.ReactNode, numeric?: boolean }) {
+export function Td({ children, type }: { children: React.ReactNode, type?: 'numeric' | 'mono' }) {
   const isNumber = typeof children === 'number' || typeof children === 'string';
-  const content = (numeric && isNumber) ? BigInt(children).toLocaleString() : children;
-  return <td className={`p-2 ${numeric ? 'text-right tabular-nums' : ''}`}>
+  const content = (type === 'numeric' && isNumber) ? BigInt(children).toLocaleString() : children;
+  const textRight = type === 'numeric';
+  const tabularNums = type === 'numeric' || type === 'mono';
+  return <td className={`p-2 ${textRight ? 'text-right' : ''} ${tabularNums ? 'tabular-nums' : ''}`}>
     {content}
   </td>;
 }
