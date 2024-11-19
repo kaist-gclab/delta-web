@@ -110,7 +110,7 @@ function Layout({ children }: { children: ReactNode }) {
   }
 
   return <>
-    <div className="md:fixed md:top-0 md:w-full z-50  bg-[rgb(40,82,150)] shadow-md">
+    <div className="text-sm leading-tight md:fixed md:top-0 md:w-full z-50  bg-[rgb(40,82,150)] shadow-md">
       <div className="flex flex-row p-[6px] flex-wrap">
         <div className="flex flex-row flex-wrap">
           {RootBeginNavEntries.map((entry, i) => <NavButton key={i} {...entry} />)}
