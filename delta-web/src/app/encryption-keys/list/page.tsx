@@ -22,12 +22,16 @@ export default function Page() {
         <Th>이름</Th>
         <Th className='w-24'>활성</Th>
         <Th className='w-24'>최적화</Th>
+        <Th className='w-24'>버킷 수</Th>
+        <Th className='w-24'>애셋 수</Th>
       </THead>
       <TBody>
         {data.map((e) => <Tr key={e.id.toString()} href={`/encryption-keys/list/${e.id}`}>
           <Td>{e.name}</Td>
           <Td>{e.enabled ? '예' : '아니오'}</Td>
           <Td>{e.optimized ? '성능' : '보안'}</Td>
+          <Td numeric>{e.bucketCount.toString()}</Td>
+          <Td numeric>{e.assetCount.toString()}</Td>
         </Tr>)}
       </TBody>
     </Table>
