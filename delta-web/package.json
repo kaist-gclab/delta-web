@@ -19,7 +19,8 @@
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "sass": "^1.81.0",
-    "swr": "^2.2.5"
+    "swr": "^2.2.5",
+    "use-local-storage-state": "^19.5.0"
   },
   "devDependencies": {
     "@types/node": "^22",
