@@ -1,76 +1,56 @@
-'use client';
-
-import PageHeader from '@/core/PageHeader';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
 function StartButton({ to, children }: { to: string, children: ReactNode }) {
-  return <span style={{
-    textAlign: 'center',
-    display: 'inline-block',
-    margin: '20px',
-    width: '110px',
-    height: '110px',
-    paddingTop: '15px',
-    border: '1px solid #bbb',
-    borderRadius: '15px',
-    cursor: 'pointer',
-    color: 'black',
-  }}>
-    <Link href={to}>{children}</Link>
+  return <span className="inline-block m-4 w-32 h-32 p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-200">
+    <Link href={to} className='hover:text-black hover:no-underline flex flex-col items-center justify-center h-full'>
+      {children}
+    </Link>
   </span>;
 }
 
 function StartLabel({ children }: { children: ReactNode }) {
-  return <div style={{
-    fontSize: '22px',
-    marginTop: '10px',
-  }}>{children}</div>;
+  return <div className="text-xl font-bold">
+    {children}
+  </div>;
 }
 
-const IconSize = 40;
-
 function Icon({ children }: { children: ReactNode }) {
-  return <span style={{
-    fontSize: `${IconSize}px`,
-    lineHeight: `${IconSize}px`,
-  }}>
+  return <span className="text-4xl mb-2">
     {children}
   </span>;
 }
 
 function StartPage() {
   return <div className="container">
-    <PageHeader>시작</PageHeader>
-    <h2>도움말</h2>
     <StartButton to="/help">
       <Icon>📖</Icon>
       <StartLabel>도움말</StartLabel>
     </StartButton>
-    <h2>자주 사용하는 기능</h2>
-    <div>
-      <StartButton to="/asset/assets/add">
-        <Icon>📥</Icon>
-        <StartLabel>애셋 추가</StartLabel>
-      </StartButton>
-      <StartButton to="/asset/assets/list">
-        <Icon>🗂️</Icon>
-        <StartLabel>애셋 목록</StartLabel>
-      </StartButton>
-      <StartButton to="/job/jobs/add">
-        <Icon>🧑‍💻</Icon>
-        <StartLabel>작업 추가</StartLabel>
-      </StartButton>
-      <StartButton to="/job/jobs/list">
-        <Icon>⚙️</Icon>
-        <StartLabel>작업 목록</StartLabel>
-      </StartButton>
-      <br />
-      <StartButton to="/monitoring/dashboard">
-        <Icon>📊</Icon>
-        <StartLabel>대시보드</StartLabel>
-      </StartButton>
-    </div>
+    <StartButton to="/buckets">
+      <Icon>🪣</Icon>
+      <StartLabel>버킷</StartLabel>
+    </StartButton>
+    <StartButton to="/jobs">
+      <Icon>🗂️</Icon>
+      <StartLabel>작업</StartLabel>
+    </StartButton>
+    <StartButton to="/processor-nodes">
+      <Icon>⚙️</Icon>
+      <StartLabel>처리기 노드</StartLabel>
+    </StartButton>
+    <StartButton to="/encryption-keys">
+      <Icon>⚙️</Icon>
+      <StartLabel>암호화 키</StartLabel>
+    </StartButton>
+    <StartButton to="/monitoring">
+      <Icon>📊</Icon>
+      <StartLabel>모니터링</StartLabel>
+    </StartButton>
+    <StartButton to="/settings">
+      <Icon>🔧</Icon>
+      <StartLabel>설정</StartLabel>
+    </StartButton>
   </div>
 }
 
