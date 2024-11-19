@@ -37,7 +37,7 @@ export default function Page() {
           <Td type='mono'>{localDateTime(e.createdAt)}</Td>
           <Td>{e.bucketGroupName === null ? <span className='italic text-gray-400'>미지정</span> : e.bucketGroupName}</Td>
           <Td>{e.encryptionKeyName === null ? <span className='italic text-gray-400'>미지정</span> : e.encryptionKeyName}</Td>
-          <Td>{e.tags.length}</Td>
+          <Td>{e.tagCount}</Td>
         </Tr>)}
       </TBody>
     </Table>}
