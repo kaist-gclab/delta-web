@@ -6,3 +6,11 @@ export function confirmDelete(): boolean {
     }
     return true;
 }
+
+export function confirmModify(): boolean {
+    if (!confirm('정말 수정하시겠습니까?')) {
+        alert('수정되지 않았습니다.');
+        return false;
+    }
+    return true;
+}
