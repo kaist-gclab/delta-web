@@ -36,10 +36,6 @@ function AssetListPage() {
         <tbody>
           {data.map((a, i) => <tr key={i.toString()}>
             <td>{a.id.toString()}</td>
-            <td>{a.assetType.key}</td>
-            <td>{a.assetType.name}</td>
-            <td>{a.mediaType}</td>
-            <td>{a.encryptionKey?.name ?? '없음'}</td>
             <td>{a.storeKey}</td>
             <td>{renderCellButton('상세 조회', () => {
               router.push(`/asset/assets/detail/${a.id.toString()}`);
