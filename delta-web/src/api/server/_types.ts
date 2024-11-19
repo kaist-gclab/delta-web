@@ -252,6 +252,8 @@ export interface EncryptionKeyView {
     name: string;
     enabled: boolean;
     optimized: boolean;
+    bucketCount: bigint;
+    assetCount: bigint;
 }
 
 export interface _api_EncryptionKeyView {
@@ -259,16 +261,8 @@ export interface _api_EncryptionKeyView {
     name: string;
     enabled: boolean;
     optimized: boolean;
-}
-
-export interface CreateEncryptionKeyResponse {
-    encryptionKey: EncryptionKeyView;
-    value: string;
-}
-
-export interface _api_CreateEncryptionKeyResponse {
-    encryptionKey: _api_EncryptionKeyView;
-    value: string;
+    bucketCount: string;
+    assetCount: string;
 }
 
 export interface CreateEncryptionKeyRequest {

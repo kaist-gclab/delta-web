@@ -45,8 +45,6 @@ import {
     _api_JobTypeView,
     EncryptionKeyView,
     _api_EncryptionKeyView,
-    CreateEncryptionKeyResponse,
-    _api_CreateEncryptionKeyResponse,
     CreateEncryptionKeyRequest,
     _api_CreateEncryptionKeyRequest,
     ApiHomeResponse,
@@ -952,6 +950,8 @@ export function _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from: Encry
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),
+        bucketCount: _convert_bigint_TO_string(from.bucketCount),
+        assetCount: _convert_bigint_TO_string(from.assetCount),
     };
     return { ...from, ...to };
 }
@@ -978,6 +978,8 @@ export function _convert__api_EncryptionKeyView_TO_EncryptionKeyView(from: _api_
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),
+        bucketCount: _convert_string_TO_bigint(from.bucketCount),
+        assetCount: _convert_string_TO_bigint(from.assetCount),
     };
     return { ...from, ...to };
 }
@@ -993,28 +995,6 @@ export function _convert__api_EncryptionKeyView_TO_EncryptionKeyView_Array(from:
     }
     const to: EncryptionKeyView[] = from.map(element => _convert__api_EncryptionKeyView_TO_EncryptionKeyView(element));
     return to;
-}
-
-export function _convert_CreateEncryptionKeyResponse_TO__api_CreateEncryptionKeyResponse(from: CreateEncryptionKeyResponse): _api_CreateEncryptionKeyResponse {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_CreateEncryptionKeyResponse = {
-        encryptionKey: _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from.encryptionKey),
-        value: _convert_string_TO_string(from.value),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_CreateEncryptionKeyResponse_TO_CreateEncryptionKeyResponse(from: _api_CreateEncryptionKeyResponse): CreateEncryptionKeyResponse {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: CreateEncryptionKeyResponse = {
-        encryptionKey: _convert__api_EncryptionKeyView_TO_EncryptionKeyView(from.encryptionKey),
-        value: _convert_string_TO_string(from.value),
-    };
-    return { ...from, ...to };
 }
 
 export function _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyRequest(from: CreateEncryptionKeyRequest): _api_CreateEncryptionKeyRequest {
