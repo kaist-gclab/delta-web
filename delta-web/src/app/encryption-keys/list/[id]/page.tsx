@@ -35,7 +35,7 @@ function Content({ id }: { id: bigint }) {
       {data.optimized}
     </div>
     <div className="mt-8 flex justify-end gap-8">
-      <Button intent='danger' onClick={async () => {
+      <Button role='delete' onClick={async () => {
         if (!confirmDelete()) {
           return;
         }
