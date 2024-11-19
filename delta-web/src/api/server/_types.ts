@@ -323,6 +323,16 @@ export interface BucketView {
 export interface _api_BucketView {
 }
 
+export interface CreateBucketRequest {
+    encryptionKeyId: bigint;
+    name: string;
+}
+
+export interface _api_CreateBucketRequest {
+    encryptionKeyId: string;
+    name: string;
+}
+
 export interface CreateAssetTagRequest {
     key: string;
     value: string;

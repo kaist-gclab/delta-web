@@ -85,6 +85,10 @@ export function _Buckets_GET_GetBuckets_url(): string {
     return `api/1/buckets`;
 }
 
+export function _Buckets_POST_Create_url(): string {
+    return `api/1/buckets`;
+}
+
 export function _Assets_GET_GetAssets_url(): string {
     return `api/1/assets`;
 }

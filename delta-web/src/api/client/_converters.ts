@@ -58,6 +58,8 @@ import {
     _api_LoginRequest,
     BucketView,
     _api_BucketView,
+    CreateBucketRequest,
+    _api_CreateBucketRequest,
     CreateAssetRequest,
     CreateAssetTagRequest,
     _api_CreateAssetTagRequest,
@@ -1156,6 +1158,28 @@ export function _convert__api_BucketView_TO_BucketView_Array(from: _api_BucketVi
     }
     const to: BucketView[] = from.map(element => _convert__api_BucketView_TO_BucketView(element));
     return to;
+}
+
+export function _convert_CreateBucketRequest_TO__api_CreateBucketRequest(from: CreateBucketRequest): _api_CreateBucketRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_CreateBucketRequest = {
+        encryptionKeyId: _convert_bigint_TO_string(from.encryptionKeyId),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_CreateBucketRequest_TO_CreateBucketRequest(from: _api_CreateBucketRequest): CreateBucketRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: CreateBucketRequest = {
+        encryptionKeyId: _convert_string_TO_bigint(from.encryptionKeyId),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
 }
 
 export function _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest(from: CreateAssetTagRequest): _api_CreateAssetTagRequest {
