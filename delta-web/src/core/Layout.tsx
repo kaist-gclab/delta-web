@@ -18,18 +18,12 @@ function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);
   const pathname = usePathname();
 
-  if (!auth.token) {
-    return <Suspense fallback={<Loading />}>
-      <LoginForm />
-    </Suspense>;
-  }
-
   const RootBeginNavEntries: NavEntry[] = [
     { link: '/start', text: '홈' },
     { link: '/asset', text: '애셋' },
     { link: '/job', text: '작업' },
     { link: '/node', text: '처리기 노드' },
-    { link: '/key', text: '암호화 키' },
+    { link: '/encryption-keys', text: '암호화 키' },
     { link: '/monitoring', text: '모니터링' },
   ];
 
@@ -108,6 +102,12 @@ function Layout({ children }: { children: ReactNode }) {
   const subNavEnabled = useMemo(() => {
     return SubNavEntries.some(({ path }) => pathname.startsWith(path));
   }, [pathname]);
+
+  if (!auth.token) {
+    return <Suspense fallback={<Loading />}>
+      <LoginForm />
+    </Suspense>;
+  }
 
   return <>
     <div className="md:fixed md:top-0 md:w-full z-50  bg-[rgb(40,82,150)] shadow-md">
