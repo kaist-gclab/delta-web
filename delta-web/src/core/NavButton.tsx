@@ -1,19 +1,5 @@
-'use client';
-
-import React from 'react';
-import { Button, IconName } from '@blueprintjs/core';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-export interface NavButtonProps {
-  link?: string;
-  icon?: IconName;
-  text?: string;
-  disabled?: boolean;
-  fill?: boolean;
-  onClick?: ((event: React.MouseEvent<HTMLElement, MouseEvent>) => void) &
-  ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void);
-}
 
 function computeActive(link: string | undefined, pathname: string) {
   if (link === undefined) {
@@ -25,24 +11,25 @@ function computeActive(link: string | undefined, pathname: string) {
   return pathname.startsWith(link);
 }
 
-function NavButton(props: NavButtonProps) {
-  const { link, icon, text, onClick, disabled, fill } = props;
+type NavButtonProps = {
+  text: string;
+} & (
+    { link: string } |
+    { onClick: () => void }
+  );
+
+export default function NavButton(props: NavButtonProps) {
+  const { text } = props;
   const pathname = usePathname();
 
-  const button = <Button
-    minimal
-    onClick={onClick}
-    icon={icon}
-    text={text}
-    fill={fill}
-    alignText="left"
-    active={computeActive(link, pathname)}
-    disabled={disabled}
-  />;
-  if (!link) {
-    return button;
-  }
-  return <Link href={link}>{button}</Link>;
-}
+  const link = 'link' in props ? props.link : undefined;
+  const onClick = 'onClick' in props ? props.onClick : undefined;
+  const active = computeActive(link, pathname);
 
-export default NavButton;
+  const navButton = <button onClick={onClick} aria-pressed={active}
+    className="px-3 py-1 whitespace-nowrap text-gray-100 hover:text-gray-300 aria-pressed:bg-blue-300 aria-pressed:text-blue-900 aria-pressed:font-bold rounded select-none">
+    {text}
+  </button>;
+
+  return link ? <Link href={link}>{navButton}</Link> : navButton;
+}
