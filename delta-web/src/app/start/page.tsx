@@ -22,36 +22,40 @@ function Icon({ children }: { children: ReactNode }) {
 }
 
 function StartPage() {
-  return <div className="container">
-    <StartButton to="/help">
-      <Icon>📖</Icon>
-      <StartLabel>도움말</StartLabel>
-    </StartButton>
-    <StartButton to="/buckets">
-      <Icon>🪣</Icon>
-      <StartLabel>버킷</StartLabel>
-    </StartButton>
-    <StartButton to="/jobs">
-      <Icon>🗂️</Icon>
-      <StartLabel>작업</StartLabel>
-    </StartButton>
-    <StartButton to="/processor-nodes">
-      <Icon>⚙️</Icon>
-      <StartLabel>처리기 노드</StartLabel>
-    </StartButton>
-    <StartButton to="/encryption-keys">
-      <Icon>⚙️</Icon>
-      <StartLabel>암호화 키</StartLabel>
-    </StartButton>
-    <StartButton to="/monitoring">
-      <Icon>📊</Icon>
-      <StartLabel>모니터링</StartLabel>
-    </StartButton>
-    <StartButton to="/settings">
-      <Icon>🔧</Icon>
-      <StartLabel>설정</StartLabel>
-    </StartButton>
-  </div>
+  return <div className="container text-center">
+    <div className='inline-block text-left'>
+      <StartButton to="/help">
+        <Icon>📖</Icon>
+        <StartLabel>도움말</StartLabel>
+      </StartButton>
+      <br className='hidden md:block' />
+      <StartButton to="/buckets">
+        <Icon>🪣</Icon>
+        <StartLabel>버킷</StartLabel>
+      </StartButton>
+      <StartButton to="/jobs">
+        <Icon>🗂️</Icon>
+        <StartLabel>작업</StartLabel>
+      </StartButton>
+      <StartButton to="/processor-nodes">
+        <Icon>⚙️</Icon>
+        <StartLabel>처리기 노드</StartLabel>
+      </StartButton>
+      <StartButton to="/encryption-keys">
+        <Icon>⚙️</Icon>
+        <StartLabel>암호화 키</StartLabel>
+      </StartButton>
+      <br className='hidden md:block' />
+      <StartButton to="/monitoring">
+        <Icon>📊</Icon>
+        <StartLabel>모니터링</StartLabel>
+      </StartButton>
+      <StartButton to="/settings">
+        <Icon>🔧</Icon>
+        <StartLabel>설정</StartLabel>
+      </StartButton>
+    </div>
+  </div>;
 }
 
 export default StartPage;
