@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import { ReactNode } from 'react';
+import { MouseEventHandler, ReactNode } from 'react';
 
 export function Button(props: {
   children: ReactNode,
@@ -27,7 +27,8 @@ export function useClickOrHref(props: {} | { onClick: () => void } | { href: str
     ('onClick' in props && props.onClick !== undefined);
 
   const className = isLink ? 'cursor-pointer' : 'cursor-default';
-  const onClick = () => {
+  const onClick: MouseEventHandler = (e) => {
+    e.stopPropagation();
     if ('onClick' in props) {
       props.onClick();
       return;
