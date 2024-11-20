@@ -20,7 +20,7 @@ export default function Page() {
   }
 
   return <div className="container">
-    <PageHeader>버킷 키 목록</PageHeader>
+    <PageHeader>버킷 목록</PageHeader>
     <PageDescription>
       버킷 내부 애셋을 살펴보려면 행을 클릭하세요. 버킷 태그를 관리하거나 버킷을 삭제하려면 수정/삭제 버튼을 클릭하세요.
     </PageDescription>
