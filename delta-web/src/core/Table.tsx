@@ -22,7 +22,7 @@ export function Td({ children, type }: { children: React.ReactNode, type?: 'nume
   </td>;
 }
 
-export function Tr(props: { children: React.ReactNode } & ({} | { onClick: () => void } | { href: string })) {
+export function Tr(props: { children: React.ReactNode } & (object | { onClick: () => void } | { href: string })) {
   const { onClick, className } = useClickOrHref(props);
   return <tr onClick={onClick}
     className={`hover:bg-gray-200 even:bg-gray-100 ${className}`}>

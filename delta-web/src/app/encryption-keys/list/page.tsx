@@ -33,8 +33,8 @@ export default function Page() {
           <Td>{e.name}</Td>
           <Td>{e.enabled ? '예' : '아니오'}</Td>
           <Td>{e.optimized ? '성능' : '보안'}</Td>
-          <Td numeric>{e.bucketCount.toString()}</Td>
-          <Td numeric>{e.assetCount.toString()}</Td>
+          <Td type='numeric'>{e.bucketCount.toString()}</Td>
+          <Td type='numeric'>{e.assetCount.toString()}</Td>
         </Tr>)}
       </TBody>
     </Table>}

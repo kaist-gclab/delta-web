@@ -6,7 +6,7 @@ export function Button(props: {
   role?: 'delete' | 'submit',
   disabled?: boolean,
   small?: boolean,
-} & ({} | { onClick: () => void } | { href: string })) {
+} & (object | { onClick: () => void } | { href: string })) {
   const { onClick, className } = useClickOrHref(props);
   const intentClassNames = props.role === 'delete' ?
     'bg-red-500 hover:bg-red-600' :
@@ -20,7 +20,7 @@ export function Button(props: {
   </button>;
 }
 
-export function useClickOrHref(props: {} | { onClick: () => void } | { href: string }) {
+export function useClickOrHref(props: object | { onClick: () => void } | { href: string }) {
   const router = useRouter();
   const isLink =
     ('href' in props && props.href !== undefined) ||

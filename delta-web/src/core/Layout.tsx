@@ -14,6 +14,72 @@ type NavEntry = {
     { onClick: () => void }
   );
 
+const SubNavEntries: {
+  path: string;
+  name: string;
+  entries: NavEntry[];
+}[] = [
+    {
+      path: '/buckets',
+      name: '버킷',
+      entries: [
+        { link: '/buckets/list', text: '버킷 목록' },
+        { link: '/buckets/add', text: '버킷 추가' },
+      ],
+    },
+    {
+      path: '/jobs',
+      name: '작업',
+      entries: [
+        { link: '/jobs/list', text: '작업 목록' },
+        { link: '/jobs/add', text: '작업 추가' },
+      ],
+    },
+    {
+      path: '/job-types',
+      name: '작업 유형',
+      entries: [
+        { link: '/job-types/list', text: '작업 유형 목록' },
+        { link: '/job-types/add', text: '작업 유형 추가' },
+      ],
+    },
+    {
+      path: '/processor-nodes',
+      name: '처리기 노드',
+      entries: [
+        { link: '/processor-nodes/list', text: '목록' },
+        { link: '/processor-nodes/detail', text: '상세 조회' },
+      ],
+    },
+    {
+      path: '/encryption-keys',
+      name: '암호화 키',
+      entries: [
+        { link: '/encryption-keys/list', text: '암호화 키 목록' },
+        { link: '/encryption-keys/add', text: '암호화 키 추가' },
+      ],
+    },
+    {
+      path: '/monitoring',
+      name: '모니터링',
+      entries: [
+        { link: '/monitoring/dashboard', text: '대시보드' },
+        { link: '/monitoring/object-storage', text: '오브젝트 저장소 모니터' },
+        { link: '/monitoring/processor-node', text: '처리기 노드 모니터' },
+        { link: '/monitoring/jobs', text: '작업 모니터' },
+      ],
+    },
+    {
+      path: '/settings',
+      name: '설정',
+      entries: [
+        { link: '/settings/user', text: '사용자 설정' },
+        { link: '/settings/system', text: '시스템 설정' },
+        { link: '/settings/viewers/list', text: '뷰어 목록' },
+      ],
+    }
+  ];
+
 function Layout({ children }: { children: ReactNode }) {
   const auth = useContext(AuthContext);
   const pathname = usePathname();
@@ -33,72 +99,6 @@ function Layout({ children }: { children: ReactNode }) {
     { link: '/settings', text: '설정' },
     { onClick: () => { auth.logout(); }, text: '로그아웃' },
   ];
-
-  const SubNavEntries: {
-    path: string;
-    name: string;
-    entries: NavEntry[];
-  }[] = [
-      {
-        path: '/buckets',
-        name: '버킷',
-        entries: [
-          { link: '/buckets/list', text: '버킷 목록' },
-          { link: '/buckets/add', text: '버킷 추가' },
-        ],
-      },
-      {
-        path: '/jobs',
-        name: '작업',
-        entries: [
-          { link: '/jobs/list', text: '작업 목록' },
-          { link: '/jobs/add', text: '작업 추가' },
-        ],
-      },
-      {
-        path: '/job-types',
-        name: '작업 유형',
-        entries: [
-          { link: '/job-types/list', text: '작업 유형 목록' },
-          { link: '/job-types/add', text: '작업 유형 추가' },
-        ],
-      },
-      {
-        path: '/processor-nodes',
-        name: '처리기 노드',
-        entries: [
-          { link: '/processor-nodes/list', text: '목록' },
-          { link: '/processor-nodes/detail', text: '상세 조회' },
-        ],
-      },
-      {
-        path: '/encryption-keys',
-        name: '암호화 키',
-        entries: [
-          { link: '/encryption-keys/list', text: '암호화 키 목록' },
-          { link: '/encryption-keys/add', text: '암호화 키 추가' },
-        ],
-      },
-      {
-        path: '/monitoring',
-        name: '모니터링',
-        entries: [
-          { link: '/monitoring/dashboard', text: '대시보드' },
-          { link: '/monitoring/object-storage', text: '오브젝트 저장소 모니터' },
-          { link: '/monitoring/processor-node', text: '처리기 노드 모니터' },
-          { link: '/monitoring/jobs', text: '작업 모니터' },
-        ],
-      },
-      {
-        path: '/settings',
-        name: '설정',
-        entries: [
-          { link: '/settings/user', text: '사용자 설정' },
-          { link: '/settings/system', text: '시스템 설정' },
-          { link: '/settings/viewers/list', text: '뷰어 목록' },
-        ],
-      }
-    ];
 
   const subNavEnabled = useMemo(() => {
     return SubNavEntries.some(({ path }) => pathname.startsWith(path));
