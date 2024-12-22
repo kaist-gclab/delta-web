@@ -3,6 +3,50 @@
 
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
+export interface ChangePasswordRequest {
+    password: string;
+}
+
+export interface _api_ChangePasswordRequest {
+    password: string;
+}
+
+export interface SetSettingRequest {
+    key: string;
+    value: string;
+}
+
+export interface _api_SetSettingRequest {
+    key: string;
+    value: string;
+}
+
+export interface ProcessorNodeStatusView {
+    id: bigint;
+    timestamp: _Dayjs;
+    status: string;
+}
+
+export interface _api_ProcessorNodeStatusView {
+    id: string;
+    timestamp: string;
+    status: string;
+}
+
+export interface ProcessorNodeView {
+    id: bigint;
+    processorVersionId: bigint;
+    key: string;
+    processorNodeStatuses: ProcessorNodeStatusView[];
+}
+
+export interface _api_ProcessorNodeView {
+    id: string;
+    processorVersionId: string;
+    key: string;
+    processorNodeStatuses: _api_ProcessorNodeStatusView[];
+}
+
 export interface _api_JobType {
     id: string;
     key: string;
@@ -165,35 +209,73 @@ export interface _api_UploadTicket {
     storeKey: string;
 }
 
-export interface ObjectStorageEvent {
-    time: string;
-    content: string;
-}
-
-export interface _api_ObjectStorageEvent {
-    time: string;
-    content: string;
-}
-
-export interface ProcessorNodeEvent {
-    time: string;
-    content: string;
-}
-
-export interface _api_ProcessorNodeEvent {
-    time: string;
-    content: string;
-}
-
-export interface JobEvent {
+export interface ObjectStorageEventView {
     id: bigint;
     timestamp: _Dayjs;
+    totalBytes: bigint;
+}
+
+export interface _api_ObjectStorageEventView {
+    id: string;
+    timestamp: string;
+    totalBytes: string;
+}
+
+export interface ProcessorNodeEventView {
+    id: bigint;
+    timestamp: _Dayjs;
+    count: bigint;
+}
+
+export interface _api_ProcessorNodeEventView {
+    id: string;
+    timestamp: string;
+    count: string;
+}
+
+export interface JobEventView {
+    id: bigint;
+    timestamp: _Dayjs;
+    count: bigint;
+}
+
+export interface _api_JobEventView {
+    id: string;
+    timestamp: string;
+    count: string;
+}
+
+export interface JobTypeView {
+    id: bigint;
+    key: string;
+    name: string;
+}
+
+export interface _api_JobTypeView {
+    id: string;
+    key: string;
+    name: string;
+}
+
+export interface CreateJobTypeRequest {
+    key: string;
+    name: string;
+}
+
+export interface _api_CreateJobTypeRequest {
+    key: string;
+    name: string;
+}
+
+export interface JobView {
+    id: bigint;
+    createdAt: _Dayjs;
     jobArguments: string;
 }
 
-export interface _api_JobEvent {
+export interface _api_JobView {
     id: string;
-    timestamp: string;
+    createdAt: string;
     jobArguments: string;
 }
 
@@ -233,18 +315,6 @@ export interface AddJobExecutionStatusRequest {
 
 export interface _api_AddJobExecutionStatusRequest {
     status: string;
-}
-
-export interface JobTypeView {
-    id: bigint;
-    key: string;
-    name: string;
-}
-
-export interface _api_JobTypeView {
-    id: string;
-    key: string;
-    name: string;
 }
 
 export interface EncryptionKeyView {
@@ -391,6 +461,44 @@ export interface UpdateBucketRequest {
 
 export interface _api_UpdateBucketRequest {
     tags: _api_UpdateBucketRequestBucketTag[];
+}
+
+export interface AddBucketItemRequest {
+    name: string;
+    contentType: string;
+    content: string;
+}
+
+export interface _api_AddBucketItemRequest {
+    name: string;
+    contentType: string;
+    content: string;
+}
+
+export interface BucketItemView {
+    id: bigint;
+    name: string;
+    contentType: string;
+    content: string;
+    bucket: BucketView;
+}
+
+export interface _api_BucketItemView {
+    id: string;
+    name: string;
+    contentType: string;
+    content: string;
+    bucket: _api_BucketView;
+}
+
+export interface MergeBucketsRequest {
+    bucketAId: bigint;
+    bucketBId: bigint;
+}
+
+export interface _api_MergeBucketsRequest {
+    bucketAId: string;
+    bucketBId: string;
 }
 
 export interface CreateAssetTagRequest {

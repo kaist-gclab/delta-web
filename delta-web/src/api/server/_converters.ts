@@ -5,6 +5,14 @@ import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import { _hasOwnPropertyRef, _hasOwnPropertyValues } from './_util';
 import {
+    ChangePasswordRequest,
+    _api_ChangePasswordRequest,
+    SetSettingRequest,
+    _api_SetSettingRequest,
+    ProcessorNodeView,
+    ProcessorNodeStatusView,
+    _api_ProcessorNodeStatusView,
+    _api_ProcessorNodeView,
     ProcessorNode,
     JobRun,
     Job,
@@ -27,12 +35,18 @@ import {
     _api_RegisterProcessorNodeRequest,
     UploadTicket,
     _api_UploadTicket,
-    ObjectStorageEvent,
-    _api_ObjectStorageEvent,
-    ProcessorNodeEvent,
-    _api_ProcessorNodeEvent,
-    JobEvent,
-    _api_JobEvent,
+    ObjectStorageEventView,
+    _api_ObjectStorageEventView,
+    ProcessorNodeEventView,
+    _api_ProcessorNodeEventView,
+    JobEventView,
+    _api_JobEventView,
+    JobTypeView,
+    _api_JobTypeView,
+    CreateJobTypeRequest,
+    _api_CreateJobTypeRequest,
+    JobView,
+    _api_JobView,
     JobScheduleResponse,
     _api_JobScheduleResponse,
     JobScheduleRequest,
@@ -41,8 +55,6 @@ import {
     _api_CreateJobRequest,
     AddJobExecutionStatusRequest,
     _api_AddJobExecutionStatusRequest,
-    JobTypeView,
-    _api_JobTypeView,
     EncryptionKeyView,
     _api_EncryptionKeyView,
     CreateEncryptionKeyRequest,
@@ -67,6 +79,12 @@ import {
     UpdateBucketRequestBucketTag,
     _api_UpdateBucketRequestBucketTag,
     _api_UpdateBucketRequest,
+    AddBucketItemRequest,
+    _api_AddBucketItemRequest,
+    BucketItemView,
+    _api_BucketItemView,
+    MergeBucketsRequest,
+    _api_MergeBucketsRequest,
     CreateAssetRequest,
     CreateAssetTagRequest,
     _api_CreateAssetTagRequest,
@@ -104,6 +122,150 @@ export function _convert_string_TO__Dayjs(from: string): _Dayjs {
 
 export function _convert__Dayjs_TO_string(from: _Dayjs): string {
     return from.toISOString();
+}
+
+export function _convert_ChangePasswordRequest_TO__api_ChangePasswordRequest(from: ChangePasswordRequest): _api_ChangePasswordRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_ChangePasswordRequest = {
+        password: _convert_string_TO_string(from.password),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ChangePasswordRequest_TO_ChangePasswordRequest(from: _api_ChangePasswordRequest): ChangePasswordRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: ChangePasswordRequest = {
+        password: _convert_string_TO_string(from.password),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_SetSettingRequest_TO__api_SetSettingRequest(from: SetSettingRequest): _api_SetSettingRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_SetSettingRequest = {
+        key: _convert_string_TO_string(from.key),
+        value: _convert_string_TO_string(from.value),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_SetSettingRequest_TO_SetSettingRequest(from: _api_SetSettingRequest): SetSettingRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: SetSettingRequest = {
+        key: _convert_string_TO_string(from.key),
+        value: _convert_string_TO_string(from.value),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_ProcessorNodeStatusView_TO__api_ProcessorNodeStatusView(from: ProcessorNodeStatusView): _api_ProcessorNodeStatusView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_ProcessorNodeStatusView = {
+        id: _convert_bigint_TO_string(from.id),
+        timestamp: _convert__Dayjs_TO_string(from.timestamp),
+        status: _convert_string_TO_string(from.status),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_ProcessorNodeStatusView_TO__api_ProcessorNodeStatusView_Array(from: ProcessorNodeStatusView[]): _api_ProcessorNodeStatusView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: ProcessorNodeStatusView[] = (from as any).$values;
+        const to: _api_ProcessorNodeStatusView[] = values.map(element => _convert_ProcessorNodeStatusView_TO__api_ProcessorNodeStatusView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_ProcessorNodeStatusView[] = from.map(element => _convert_ProcessorNodeStatusView_TO__api_ProcessorNodeStatusView(element));
+    return to;
+}
+
+export function _convert_ProcessorNodeView_TO__api_ProcessorNodeView(from: ProcessorNodeView): _api_ProcessorNodeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_ProcessorNodeView = {
+        id: _convert_bigint_TO_string(from.id),
+        processorVersionId: _convert_bigint_TO_string(from.processorVersionId),
+        key: _convert_string_TO_string(from.key),
+        processorNodeStatuses: _convert_ProcessorNodeStatusView_TO__api_ProcessorNodeStatusView_Array(from.processorNodeStatuses),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_ProcessorNodeView_TO__api_ProcessorNodeView_Array(from: ProcessorNodeView[]): _api_ProcessorNodeView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: ProcessorNodeView[] = (from as any).$values;
+        const to: _api_ProcessorNodeView[] = values.map(element => _convert_ProcessorNodeView_TO__api_ProcessorNodeView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_ProcessorNodeView[] = from.map(element => _convert_ProcessorNodeView_TO__api_ProcessorNodeView(element));
+    return to;
+}
+
+export function _convert__api_ProcessorNodeStatusView_TO_ProcessorNodeStatusView(from: _api_ProcessorNodeStatusView): ProcessorNodeStatusView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: ProcessorNodeStatusView = {
+        id: _convert_string_TO_bigint(from.id),
+        timestamp: _convert_string_TO__Dayjs(from.timestamp),
+        status: _convert_string_TO_string(from.status),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ProcessorNodeStatusView_TO_ProcessorNodeStatusView_Array(from: _api_ProcessorNodeStatusView[]): ProcessorNodeStatusView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_ProcessorNodeStatusView[] = (from as any).$values;
+        const to: ProcessorNodeStatusView[] = values.map(element => _convert__api_ProcessorNodeStatusView_TO_ProcessorNodeStatusView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: ProcessorNodeStatusView[] = from.map(element => _convert__api_ProcessorNodeStatusView_TO_ProcessorNodeStatusView(element));
+    return to;
+}
+
+export function _convert__api_ProcessorNodeView_TO_ProcessorNodeView(from: _api_ProcessorNodeView): ProcessorNodeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: ProcessorNodeView = {
+        id: _convert_string_TO_bigint(from.id),
+        processorVersionId: _convert_string_TO_bigint(from.processorVersionId),
+        key: _convert_string_TO_string(from.key),
+        processorNodeStatuses: _convert__api_ProcessorNodeStatusView_TO_ProcessorNodeStatusView_Array(from.processorNodeStatuses),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ProcessorNodeView_TO_ProcessorNodeView_Array(from: _api_ProcessorNodeView[]): ProcessorNodeView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_ProcessorNodeView[] = (from as any).$values;
+        const to: ProcessorNodeView[] = values.map(element => _convert__api_ProcessorNodeView_TO_ProcessorNodeView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: ProcessorNodeView[] = from.map(element => _convert__api_ProcessorNodeView_TO_ProcessorNodeView(element));
+    return to;
 }
 
 export function _convert_string_TO_string_Nullable(from: string | null): string | null {
@@ -332,19 +494,6 @@ export function _convert_ProcessorNode_TO__api_ProcessorNode(from: ProcessorNode
     return { ...from, ...to };
 }
 
-export function _convert_ProcessorNode_TO__api_ProcessorNode_Array(from: ProcessorNode[]): _api_ProcessorNode[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: ProcessorNode[] = (from as any).$values;
-        const to: _api_ProcessorNode[] = values.map(element => _convert_ProcessorNode_TO__api_ProcessorNode(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_ProcessorNode[] = from.map(element => _convert_ProcessorNode_TO__api_ProcessorNode(element));
-    return to;
-}
-
 export function _convert_string_TO_bigint_Nullable(from: string | null): bigint | null {
     if (from === null) {
         return null;
@@ -564,19 +713,6 @@ export function _convert__api_ProcessorNode_TO_ProcessorNode(from: _api_Processo
     return { ...from, ...to };
 }
 
-export function _convert__api_ProcessorNode_TO_ProcessorNode_Array(from: _api_ProcessorNode[]): ProcessorNode[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_ProcessorNode[] = (from as any).$values;
-        const to: ProcessorNode[] = values.map(element => _convert__api_ProcessorNode_TO_ProcessorNode(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: ProcessorNode[] = from.map(element => _convert__api_ProcessorNode_TO_ProcessorNode(element));
-    return to;
-}
-
 export function _convert_CreateProcessorNodeCapabilityRequest_TO__api_CreateProcessorNodeCapabilityRequest(from: CreateProcessorNodeCapabilityRequest): _api_CreateProcessorNodeCapabilityRequest {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
@@ -671,149 +807,275 @@ export function _convert__api_UploadTicket_TO_UploadTicket(from: _api_UploadTick
     return { ...from, ...to };
 }
 
-export function _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(from: ObjectStorageEvent): _api_ObjectStorageEvent {
+export function _convert_ObjectStorageEventView_TO__api_ObjectStorageEventView(from: ObjectStorageEventView): _api_ObjectStorageEventView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_ObjectStorageEvent = {
-        time: _convert_string_TO_string(from.time),
-        content: _convert_string_TO_string(from.content),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent_Array(from: ObjectStorageEvent[]): _api_ObjectStorageEvent[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: ObjectStorageEvent[] = (from as any).$values;
-        const to: _api_ObjectStorageEvent[] = values.map(element => _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_ObjectStorageEvent[] = from.map(element => _convert_ObjectStorageEvent_TO__api_ObjectStorageEvent(element));
-    return to;
-}
-
-export function _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(from: _api_ObjectStorageEvent): ObjectStorageEvent {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: ObjectStorageEvent = {
-        time: _convert_string_TO_string(from.time),
-        content: _convert_string_TO_string(from.content),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent_Array(from: _api_ObjectStorageEvent[]): ObjectStorageEvent[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_ObjectStorageEvent[] = (from as any).$values;
-        const to: ObjectStorageEvent[] = values.map(element => _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: ObjectStorageEvent[] = from.map(element => _convert__api_ObjectStorageEvent_TO_ObjectStorageEvent(element));
-    return to;
-}
-
-export function _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(from: ProcessorNodeEvent): _api_ProcessorNodeEvent {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_ProcessorNodeEvent = {
-        time: _convert_string_TO_string(from.time),
-        content: _convert_string_TO_string(from.content),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent_Array(from: ProcessorNodeEvent[]): _api_ProcessorNodeEvent[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: ProcessorNodeEvent[] = (from as any).$values;
-        const to: _api_ProcessorNodeEvent[] = values.map(element => _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_ProcessorNodeEvent[] = from.map(element => _convert_ProcessorNodeEvent_TO__api_ProcessorNodeEvent(element));
-    return to;
-}
-
-export function _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(from: _api_ProcessorNodeEvent): ProcessorNodeEvent {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: ProcessorNodeEvent = {
-        time: _convert_string_TO_string(from.time),
-        content: _convert_string_TO_string(from.content),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent_Array(from: _api_ProcessorNodeEvent[]): ProcessorNodeEvent[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_ProcessorNodeEvent[] = (from as any).$values;
-        const to: ProcessorNodeEvent[] = values.map(element => _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: ProcessorNodeEvent[] = from.map(element => _convert__api_ProcessorNodeEvent_TO_ProcessorNodeEvent(element));
-    return to;
-}
-
-export function _convert_JobEvent_TO__api_JobEvent(from: JobEvent): _api_JobEvent {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_JobEvent = {
+    const to: _api_ObjectStorageEventView = {
         id: _convert_bigint_TO_string(from.id),
         timestamp: _convert__Dayjs_TO_string(from.timestamp),
-        jobArguments: _convert_string_TO_string(from.jobArguments),
+        totalBytes: _convert_bigint_TO_string(from.totalBytes),
     };
     return { ...from, ...to };
 }
 
-export function _convert_JobEvent_TO__api_JobEvent_Array(from: JobEvent[]): _api_JobEvent[] {
+export function _convert_ObjectStorageEventView_TO__api_ObjectStorageEventView_Array(from: ObjectStorageEventView[]): _api_ObjectStorageEventView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: JobEvent[] = (from as any).$values;
-        const to: _api_JobEvent[] = values.map(element => _convert_JobEvent_TO__api_JobEvent(element));
+        const values: ObjectStorageEventView[] = (from as any).$values;
+        const to: _api_ObjectStorageEventView[] = values.map(element => _convert_ObjectStorageEventView_TO__api_ObjectStorageEventView(element));
         return { ...from, $values: to } as any;
     }
-    const to: _api_JobEvent[] = from.map(element => _convert_JobEvent_TO__api_JobEvent(element));
+    const to: _api_ObjectStorageEventView[] = from.map(element => _convert_ObjectStorageEventView_TO__api_ObjectStorageEventView(element));
     return to;
 }
 
-export function _convert__api_JobEvent_TO_JobEvent(from: _api_JobEvent): JobEvent {
+export function _convert__api_ObjectStorageEventView_TO_ObjectStorageEventView(from: _api_ObjectStorageEventView): ObjectStorageEventView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: JobEvent = {
+    const to: ObjectStorageEventView = {
         id: _convert_string_TO_bigint(from.id),
         timestamp: _convert_string_TO__Dayjs(from.timestamp),
+        totalBytes: _convert_string_TO_bigint(from.totalBytes),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ObjectStorageEventView_TO_ObjectStorageEventView_Array(from: _api_ObjectStorageEventView[]): ObjectStorageEventView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_ObjectStorageEventView[] = (from as any).$values;
+        const to: ObjectStorageEventView[] = values.map(element => _convert__api_ObjectStorageEventView_TO_ObjectStorageEventView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: ObjectStorageEventView[] = from.map(element => _convert__api_ObjectStorageEventView_TO_ObjectStorageEventView(element));
+    return to;
+}
+
+export function _convert_ProcessorNodeEventView_TO__api_ProcessorNodeEventView(from: ProcessorNodeEventView): _api_ProcessorNodeEventView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_ProcessorNodeEventView = {
+        id: _convert_bigint_TO_string(from.id),
+        timestamp: _convert__Dayjs_TO_string(from.timestamp),
+        count: _convert_bigint_TO_string(from.count),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_ProcessorNodeEventView_TO__api_ProcessorNodeEventView_Array(from: ProcessorNodeEventView[]): _api_ProcessorNodeEventView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: ProcessorNodeEventView[] = (from as any).$values;
+        const to: _api_ProcessorNodeEventView[] = values.map(element => _convert_ProcessorNodeEventView_TO__api_ProcessorNodeEventView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_ProcessorNodeEventView[] = from.map(element => _convert_ProcessorNodeEventView_TO__api_ProcessorNodeEventView(element));
+    return to;
+}
+
+export function _convert__api_ProcessorNodeEventView_TO_ProcessorNodeEventView(from: _api_ProcessorNodeEventView): ProcessorNodeEventView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: ProcessorNodeEventView = {
+        id: _convert_string_TO_bigint(from.id),
+        timestamp: _convert_string_TO__Dayjs(from.timestamp),
+        count: _convert_string_TO_bigint(from.count),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_ProcessorNodeEventView_TO_ProcessorNodeEventView_Array(from: _api_ProcessorNodeEventView[]): ProcessorNodeEventView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_ProcessorNodeEventView[] = (from as any).$values;
+        const to: ProcessorNodeEventView[] = values.map(element => _convert__api_ProcessorNodeEventView_TO_ProcessorNodeEventView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: ProcessorNodeEventView[] = from.map(element => _convert__api_ProcessorNodeEventView_TO_ProcessorNodeEventView(element));
+    return to;
+}
+
+export function _convert_JobEventView_TO__api_JobEventView(from: JobEventView): _api_JobEventView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_JobEventView = {
+        id: _convert_bigint_TO_string(from.id),
+        timestamp: _convert__Dayjs_TO_string(from.timestamp),
+        count: _convert_bigint_TO_string(from.count),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_JobEventView_TO__api_JobEventView_Array(from: JobEventView[]): _api_JobEventView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: JobEventView[] = (from as any).$values;
+        const to: _api_JobEventView[] = values.map(element => _convert_JobEventView_TO__api_JobEventView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_JobEventView[] = from.map(element => _convert_JobEventView_TO__api_JobEventView(element));
+    return to;
+}
+
+export function _convert__api_JobEventView_TO_JobEventView(from: _api_JobEventView): JobEventView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: JobEventView = {
+        id: _convert_string_TO_bigint(from.id),
+        timestamp: _convert_string_TO__Dayjs(from.timestamp),
+        count: _convert_string_TO_bigint(from.count),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_JobEventView_TO_JobEventView_Array(from: _api_JobEventView[]): JobEventView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_JobEventView[] = (from as any).$values;
+        const to: JobEventView[] = values.map(element => _convert__api_JobEventView_TO_JobEventView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: JobEventView[] = from.map(element => _convert__api_JobEventView_TO_JobEventView(element));
+    return to;
+}
+
+export function _convert_JobTypeView_TO__api_JobTypeView(from: JobTypeView): _api_JobTypeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_JobTypeView = {
+        id: _convert_bigint_TO_string(from.id),
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_JobTypeView_TO__api_JobTypeView_Array(from: JobTypeView[]): _api_JobTypeView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: JobTypeView[] = (from as any).$values;
+        const to: _api_JobTypeView[] = values.map(element => _convert_JobTypeView_TO__api_JobTypeView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_JobTypeView[] = from.map(element => _convert_JobTypeView_TO__api_JobTypeView(element));
+    return to;
+}
+
+export function _convert__api_JobTypeView_TO_JobTypeView(from: _api_JobTypeView): JobTypeView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: JobTypeView = {
+        id: _convert_string_TO_bigint(from.id),
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_JobTypeView_TO_JobTypeView_Array(from: _api_JobTypeView[]): JobTypeView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_JobTypeView[] = (from as any).$values;
+        const to: JobTypeView[] = values.map(element => _convert__api_JobTypeView_TO_JobTypeView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: JobTypeView[] = from.map(element => _convert__api_JobTypeView_TO_JobTypeView(element));
+    return to;
+}
+
+export function _convert_CreateJobTypeRequest_TO__api_CreateJobTypeRequest(from: CreateJobTypeRequest): _api_CreateJobTypeRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_CreateJobTypeRequest = {
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_CreateJobTypeRequest_TO_CreateJobTypeRequest(from: _api_CreateJobTypeRequest): CreateJobTypeRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: CreateJobTypeRequest = {
+        key: _convert_string_TO_string(from.key),
+        name: _convert_string_TO_string(from.name),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_JobView_TO__api_JobView(from: JobView): _api_JobView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_JobView = {
+        id: _convert_bigint_TO_string(from.id),
+        createdAt: _convert__Dayjs_TO_string(from.createdAt),
         jobArguments: _convert_string_TO_string(from.jobArguments),
     };
     return { ...from, ...to };
 }
 
-export function _convert__api_JobEvent_TO_JobEvent_Array(from: _api_JobEvent[]): JobEvent[] {
+export function _convert_JobView_TO__api_JobView_Array(from: JobView[]): _api_JobView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: _api_JobEvent[] = (from as any).$values;
-        const to: JobEvent[] = values.map(element => _convert__api_JobEvent_TO_JobEvent(element));
+        const values: JobView[] = (from as any).$values;
+        const to: _api_JobView[] = values.map(element => _convert_JobView_TO__api_JobView(element));
         return { ...from, $values: to } as any;
     }
-    const to: JobEvent[] = from.map(element => _convert__api_JobEvent_TO_JobEvent(element));
+    const to: _api_JobView[] = from.map(element => _convert_JobView_TO__api_JobView(element));
+    return to;
+}
+
+export function _convert__api_JobView_TO_JobView(from: _api_JobView): JobView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: JobView = {
+        id: _convert_string_TO_bigint(from.id),
+        createdAt: _convert_string_TO__Dayjs(from.createdAt),
+        jobArguments: _convert_string_TO_string(from.jobArguments),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_JobView_TO_JobView_Array(from: _api_JobView[]): JobView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_JobView[] = (from as any).$values;
+        const to: JobView[] = values.map(element => _convert__api_JobView_TO_JobView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: JobView[] = from.map(element => _convert__api_JobView_TO_JobView(element));
     return to;
 }
 
@@ -901,56 +1163,6 @@ export function _convert__api_AddJobExecutionStatusRequest_TO_AddJobExecutionSta
         status: _convert_string_TO_string(from.status),
     };
     return { ...from, ...to };
-}
-
-export function _convert_JobTypeView_TO__api_JobTypeView(from: JobTypeView): _api_JobTypeView {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_JobTypeView = {
-        id: _convert_bigint_TO_string(from.id),
-        key: _convert_string_TO_string(from.key),
-        name: _convert_string_TO_string(from.name),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_JobTypeView_TO__api_JobTypeView_Array(from: JobTypeView[]): _api_JobTypeView[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: JobTypeView[] = (from as any).$values;
-        const to: _api_JobTypeView[] = values.map(element => _convert_JobTypeView_TO__api_JobTypeView(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_JobTypeView[] = from.map(element => _convert_JobTypeView_TO__api_JobTypeView(element));
-    return to;
-}
-
-export function _convert__api_JobTypeView_TO_JobTypeView(from: _api_JobTypeView): JobTypeView {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: JobTypeView = {
-        id: _convert_string_TO_bigint(from.id),
-        key: _convert_string_TO_string(from.key),
-        name: _convert_string_TO_string(from.name),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_JobTypeView_TO_JobTypeView_Array(from: _api_JobTypeView[]): JobTypeView[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_JobTypeView[] = (from as any).$values;
-        const to: JobTypeView[] = values.map(element => _convert__api_JobTypeView_TO_JobTypeView(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: JobTypeView[] = from.map(element => _convert__api_JobTypeView_TO_JobTypeView(element));
-    return to;
 }
 
 export function _convert_EncryptionKeyView_TO__api_EncryptionKeyView(from: EncryptionKeyView): _api_EncryptionKeyView {
@@ -1343,6 +1555,106 @@ export function _convert__api_UpdateBucketRequest_TO_UpdateBucketRequest(from: _
     }
     const to: UpdateBucketRequest = {
         tags: _convert__api_UpdateBucketRequestBucketTag_TO_UpdateBucketRequestBucketTag_Array(from.tags),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_AddBucketItemRequest_TO__api_AddBucketItemRequest(from: AddBucketItemRequest): _api_AddBucketItemRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_AddBucketItemRequest = {
+        name: _convert_string_TO_string(from.name),
+        contentType: _convert_string_TO_string(from.contentType),
+        content: _convert_string_TO_string(from.content),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_AddBucketItemRequest_TO_AddBucketItemRequest(from: _api_AddBucketItemRequest): AddBucketItemRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: AddBucketItemRequest = {
+        name: _convert_string_TO_string(from.name),
+        contentType: _convert_string_TO_string(from.contentType),
+        content: _convert_string_TO_string(from.content),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_BucketItemView_TO__api_BucketItemView(from: BucketItemView): _api_BucketItemView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_BucketItemView = {
+        id: _convert_bigint_TO_string(from.id),
+        name: _convert_string_TO_string(from.name),
+        contentType: _convert_string_TO_string(from.contentType),
+        content: _convert_string_TO_string(from.content),
+        bucket: _convert_BucketView_TO__api_BucketView(from.bucket),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert_BucketItemView_TO__api_BucketItemView_Array(from: BucketItemView[]): _api_BucketItemView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: BucketItemView[] = (from as any).$values;
+        const to: _api_BucketItemView[] = values.map(element => _convert_BucketItemView_TO__api_BucketItemView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: _api_BucketItemView[] = from.map(element => _convert_BucketItemView_TO__api_BucketItemView(element));
+    return to;
+}
+
+export function _convert__api_BucketItemView_TO_BucketItemView(from: _api_BucketItemView): BucketItemView {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: BucketItemView = {
+        id: _convert_string_TO_bigint(from.id),
+        name: _convert_string_TO_string(from.name),
+        contentType: _convert_string_TO_string(from.contentType),
+        content: _convert_string_TO_string(from.content),
+        bucket: _convert__api_BucketView_TO_BucketView(from.bucket),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_BucketItemView_TO_BucketItemView_Array(from: _api_BucketItemView[]): BucketItemView[] {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    if (_hasOwnPropertyValues(from)) {
+        const values: _api_BucketItemView[] = (from as any).$values;
+        const to: BucketItemView[] = values.map(element => _convert__api_BucketItemView_TO_BucketItemView(element));
+        return { ...from, $values: to } as any;
+    }
+    const to: BucketItemView[] = from.map(element => _convert__api_BucketItemView_TO_BucketItemView(element));
+    return to;
+}
+
+export function _convert_MergeBucketsRequest_TO__api_MergeBucketsRequest(from: MergeBucketsRequest): _api_MergeBucketsRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: _api_MergeBucketsRequest = {
+        bucketAId: _convert_bigint_TO_string(from.bucketAId),
+        bucketBId: _convert_bigint_TO_string(from.bucketBId),
+    };
+    return { ...from, ...to };
+}
+
+export function _convert__api_MergeBucketsRequest_TO_MergeBucketsRequest(from: _api_MergeBucketsRequest): MergeBucketsRequest {
+    if (_hasOwnPropertyRef(from)) {
+        return from as any;
+    }
+    const to: MergeBucketsRequest = {
+        bucketAId: _convert_string_TO_bigint(from.bucketAId),
+        bucketBId: _convert_string_TO_bigint(from.bucketBId),
     };
     return { ...from, ...to };
 }
