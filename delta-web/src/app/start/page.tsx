@@ -31,7 +31,7 @@ function StartPage() {
       <br className='hidden md:block' />
       <StartButton to="/buckets">
         <Icon>🪣</Icon>
-        <StartLabel>버킷</StartLabel>
+        <StartLabel>버킷</StartLabel>
       </StartButton>
       <StartButton to="/jobs">
         <Icon>🗂️</Icon>

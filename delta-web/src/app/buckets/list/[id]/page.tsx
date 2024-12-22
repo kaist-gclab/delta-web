@@ -65,7 +65,7 @@ function Form({ id, data, mutate }: { id: bigint, data: BucketView, mutate: () =
     e.preventDefault();
     submit();
   }}>
-    <LabelAndInput id='id' numeric type='text' label='식별자'
+    <LabelAndInput id='id' numeric type='text' label='식별자'
       inputProps={{ value: data.id.toString(), readOnly: true }} />
 
     <LabelAndInput id='createdAt' numeric type='text' label='생성 일시'
