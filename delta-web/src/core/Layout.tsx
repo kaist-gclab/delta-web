@@ -25,6 +25,8 @@ const SubNavEntries: {
       entries: [
         { link: '/buckets/list', text: '버킷 목록' },
         { link: '/buckets/add', text: '버킷 추가' },
+        { link: '/buckets/duplicate', text: '버킷 복제' },
+        { link: '/buckets/merge', text: '버킷 병합' },
       ],
     },
     {
@@ -48,7 +50,6 @@ const SubNavEntries: {
       name: '처리기 노드',
       entries: [
         { link: '/processor-nodes/list', text: '목록' },
-        { link: '/processor-nodes/detail', text: '상세 조회' },
       ],
     },
     {
@@ -63,7 +64,8 @@ const SubNavEntries: {
       path: '/monitoring',
       name: '모니터링',
       entries: [
-        { link: '/monitoring/dashboard', text: '대시보드' },
+        { link: '/monitoring/dashboard', text: '대시보드(분리)' },
+        { link: '/monitoring/single-dashboard', text: '대시보드(단일)' },
         { link: '/monitoring/object-storage', text: '오브젝트 저장소 모니터' },
         { link: '/monitoring/processor-node', text: '처리기 노드 모니터' },
         { link: '/monitoring/jobs', text: '작업 모니터' },
