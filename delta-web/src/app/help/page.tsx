@@ -1,15 +1,21 @@
 import PageHeader from '@/core/PageHeader';
 import { ReactNode } from 'react';
+import AwsArchitecture from './aws-architecture.png';
+import DeltaDatabase from './delta.svg';
 
 function Description({ children }: { children: ReactNode }) {
-  return <li className='mb-4 leading-[1.5] keep-all'>{children}</li>;
+  return <li className='mb-4 leading-[1.5] keep-all list-disc pl-2'>
+    {children}
+  </li>;
 }
 
 function HelpPage() {
   return <div className="container">
     <PageHeader>도움말</PageHeader>
-    <h2>기능 설명</h2>
-    <ul>
+    <h2 className="font-bold text-lg">
+      기능 설명
+    </h2>
+    <ul className="list-inside mt-4">
       <Description>로그인 페이지: 시스템은 관리자 사용자와 일반 사용자를 구분하여 관리합니다. 관리자 사용자의 로그인 정보는 최초 설치 시점에 설정으로 직접 지정되며, 일반 사용자의 로그인 정보는 관리자 사용자에 의하여 생성되고 데이터베이스를 이용하여 관리됩니다.</Description>
       <Description>시작 페이지: 3차원 모델 처리 시 사용 빈도가 높은 기능으로 바로 이동할 수 있습니다.</Description>
       <Description>사용자 설정 페이지: 사용자 설정 페이지에서는 사용자 암호를 변경할 수 있으며, 추후 추가되는 사용자 단위 설정 기능이 이 페이지에서 제공됩니다.</Description>
@@ -37,6 +43,14 @@ function HelpPage() {
       <Description>처리기 노드 모니터 페이지: 처리기 노드 관련 수치를 중심으로 시스템을 모니터링할 수 있습니다.</Description>
       <Description>작업 모니터 페이지: 작업 관련 수치를 중심으로 시스템을 모니터링 할 수 있습니다.</Description>
     </ul>
+    <h2 className="font-bold text-lg mt-8">
+      추천 아키텍처 구성
+    </h2>
+    <img src={AwsArchitecture.src} alt="AWS 아키텍처" className="w-1/3" />
+    <h2 className="font-bold text-lg mt-8">
+      데이터베이스 모델
+    </h2>
+    <img src={DeltaDatabase.src} alt="데이터베이스 모델" className="w-full" />
   </div>;
 }
 
