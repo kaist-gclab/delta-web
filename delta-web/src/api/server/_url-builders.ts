@@ -4,6 +4,7 @@
 import _dayjs, { Dayjs as _Dayjs } from 'dayjs';
 
 import {
+    _convert_string_TO_string,
 } from './_converters';
 export function _Users_POST_ChangePassword_url(): string {
     return `users/me/password`;
@@ -121,16 +122,22 @@ export function _Buckets_PUT_Update_url(id: bigint): string {
     return `api/1/buckets/${id.toString()}`;
 }
 
-export function _Buckets_POST_AddItem_url(bucketId: bigint): string {
-    return `api/1/buckets/${bucketId.toString()}/items`;
+export function _Buckets_POST_AddAsset_url(bucketId: bigint): string {
+    return `api/1/buckets/${bucketId.toString()}/assets`;
 }
 
-export function _Buckets_GET_GetItems_url(bucketId: bigint): string {
-    return `api/1/buckets/${bucketId.toString()}/items`;
+export function _Buckets_GET_GetAssets_url(bucketId: bigint): string {
+    return `api/1/buckets/${bucketId.toString()}/assets`;
 }
 
-export function _Buckets_GET_GetItem_url(itemId: bigint): string {
-    return `api/1/buckets/items/${itemId.toString()}`;
+export function _Buckets_GET_GetAsset_url(bucketId: bigint, path: string): string {
+    const _params = new URLSearchParams();
+    const _converted_path = _convert_string_TO_string(path);
+    if (_converted_path !== null) {
+        _params.append('path', _converted_path.toString());
+    }
+    const _queryString = _params.toString();
+    return `api/1/buckets/${bucketId.toString()}/asset`+ (_queryString.length ? '?' + _queryString : '');
 }
 
 export function _Buckets_POST_Duplicate_url(bucketId: bigint): string {
@@ -139,16 +146,4 @@ export function _Buckets_POST_Duplicate_url(bucketId: bigint): string {
 
 export function _Buckets_POST_Merge_url(): string {
     return `api/1/buckets/merge`;
-}
-
-export function _Assets_GET_GetAssets_url(): string {
-    return `api/1/assets`;
-}
-
-export function _Assets_POST_CreateAsset_url(): string {
-    return `api/1/assets`;
-}
-
-export function _Assets_GET_GetAsset_url(id: bigint): string {
-    return `api/1/assets/${id.toString()}`;
 }

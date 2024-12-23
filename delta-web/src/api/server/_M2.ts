@@ -25,11 +25,11 @@ import {
     _Jobs_POST_AddJobExecutionStatus_url,
 } from './_url-builders';
 export async function getJobs(): Promise<JobView[]> {
-    const _response = await _createHttp().get(_Jobs_GET_GetJobs_url());
+    const _response: any = await _createHttp().get(_Jobs_GET_GetJobs_url());
     return _restoreCircularReferences(_convert__api_JobView_TO_JobView_Array(_response.data), _createObject);
 }
 export async function schedule(jobScheduleRequest: JobScheduleRequest): Promise<JobScheduleResponse> {
-    const _response = await _createHttp().post(_Jobs_POST_Schedule_url(), _convert_JobScheduleRequest_TO__api_JobScheduleRequest(jobScheduleRequest));
+    const _response: any = await _createHttp().post(_Jobs_POST_Schedule_url(), _convert_JobScheduleRequest_TO__api_JobScheduleRequest(jobScheduleRequest));
     return _restoreCircularReferences(_convert__api_JobScheduleResponse_TO_JobScheduleResponse(_response.data), _createObject);
 }
 export async function createJob(createJobRequest: CreateJobRequest): Promise<void> {

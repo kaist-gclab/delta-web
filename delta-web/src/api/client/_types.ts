@@ -340,12 +340,14 @@ export interface CreateEncryptionKeyRequest {
     name: string;
     enabled: boolean;
     optimized: boolean;
+    keyLength: number;
 }
 
 export interface _api_CreateEncryptionKeyRequest {
     name: string;
     enabled: boolean;
     optimized: boolean;
+    keyLength: string;
 }
 
 export interface UpdateEncryptionKeyRequest {
@@ -464,29 +466,29 @@ export interface _api_UpdateBucketRequest {
     tags: _api_UpdateBucketRequestBucketTag[];
 }
 
-export interface AddBucketItemRequest {
+export interface AddBucketAssetRequest {
     name: string;
     contentType: string;
     content: string;
 }
 
-export interface _api_AddBucketItemRequest {
+export interface _api_AddBucketAssetRequest {
     name: string;
     contentType: string;
     content: string;
 }
 
-export interface BucketItemView {
-    id: bigint;
-    name: string;
+export interface BucketAssetView {
+    bucketId: bigint;
+    path: string;
     contentType: string;
     content: string;
     bucket: BucketView;
 }
 
-export interface _api_BucketItemView {
-    id: string;
-    name: string;
+export interface _api_BucketAssetView {
+    bucketId: string;
+    path: string;
     contentType: string;
     content: string;
     bucket: _api_BucketView;
@@ -500,42 +502,4 @@ export interface MergeBucketsRequest {
 export interface _api_MergeBucketsRequest {
     bucketAId: string;
     bucketBId: string;
-}
-
-export interface CreateAssetTagRequest {
-    key: string;
-    value: string;
-}
-
-export interface _api_CreateAssetTagRequest {
-    key: string;
-    value: string;
-}
-
-export interface CreateAssetRequest {
-    assetTypeId: bigint;
-    encryptionKeyId: bigint | null;
-    mediaType: string;
-    storeKey: string;
-    createAssetTagRequest: CreateAssetTagRequest[];
-    parentJobExecutionId: bigint | null;
-}
-
-export interface _api_CreateAssetRequest {
-    assetTypeId: string;
-    encryptionKeyId: string | null;
-    mediaType: string;
-    storeKey: string;
-    createAssetTagRequest: _api_CreateAssetTagRequest[];
-    parentJobExecutionId: string | null;
-}
-
-export interface GetAssetResponse {
-    asset: Asset;
-    presignedDownloadUrl: string;
-}
-
-export interface _api_GetAssetResponse {
-    asset: _api_Asset;
-    presignedDownloadUrl: string;
 }

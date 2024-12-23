@@ -23,11 +23,11 @@ import {
     _EncryptionKeys_PUT_Update_url,
 } from './_url-builders';
 export async function getEncryptionKeys(): Promise<EncryptionKeyView[]> {
-    const _response = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKeys_url());
+    const _response: any = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKeys_url());
     return _restoreCircularReferences(_convert__api_EncryptionKeyView_TO_EncryptionKeyView_Array(_response.data), _createObject);
 }
 export async function getEncryptionKey(id: bigint): Promise<EncryptionKeyView> {
-    const _response = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKey_url(id));
+    const _response: any = await _createHttp().get(_EncryptionKeys_GET_GetEncryptionKey_url(id));
     return _restoreCircularReferences(_convert__api_EncryptionKeyView_TO_EncryptionKeyView(_response.data), _createObject);
 }
 export async function create(createEncryptionKeyRequest: CreateEncryptionKeyRequest): Promise<void> {

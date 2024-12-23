@@ -80,18 +80,12 @@ import {
     UpdateBucketRequestBucketTag,
     _api_UpdateBucketRequestBucketTag,
     _api_UpdateBucketRequest,
-    AddBucketItemRequest,
-    _api_AddBucketItemRequest,
-    BucketItemView,
-    _api_BucketItemView,
+    AddBucketAssetRequest,
+    _api_AddBucketAssetRequest,
+    BucketAssetView,
+    _api_BucketAssetView,
     MergeBucketsRequest,
     _api_MergeBucketsRequest,
-    CreateAssetRequest,
-    CreateAssetTagRequest,
-    _api_CreateAssetTagRequest,
-    _api_CreateAssetRequest,
-    GetAssetResponse,
-    _api_GetAssetResponse,
 } from './_types';
 export function _convert_string_TO_string(from: string): string {
     return from;
@@ -1230,6 +1224,7 @@ export function _convert_CreateEncryptionKeyRequest_TO__api_CreateEncryptionKeyR
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),
+        keyLength: _convert_number_TO_string(from.keyLength),
     };
     return { ...from, ...to };
 }
@@ -1242,6 +1237,7 @@ export function _convert__api_CreateEncryptionKeyRequest_TO_CreateEncryptionKeyR
         name: _convert_string_TO_string(from.name),
         enabled: _convert_boolean_TO_boolean(from.enabled),
         optimized: _convert_boolean_TO_boolean(from.optimized),
+        keyLength: _convert_string_TO_number(from.keyLength),
     };
     return { ...from, ...to };
 }
@@ -1560,11 +1556,11 @@ export function _convert__api_UpdateBucketRequest_TO_UpdateBucketRequest(from: _
     return { ...from, ...to };
 }
 
-export function _convert_AddBucketItemRequest_TO__api_AddBucketItemRequest(from: AddBucketItemRequest): _api_AddBucketItemRequest {
+export function _convert_AddBucketAssetRequest_TO__api_AddBucketAssetRequest(from: AddBucketAssetRequest): _api_AddBucketAssetRequest {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_AddBucketItemRequest = {
+    const to: _api_AddBucketAssetRequest = {
         name: _convert_string_TO_string(from.name),
         contentType: _convert_string_TO_string(from.contentType),
         content: _convert_string_TO_string(from.content),
@@ -1572,11 +1568,11 @@ export function _convert_AddBucketItemRequest_TO__api_AddBucketItemRequest(from:
     return { ...from, ...to };
 }
 
-export function _convert__api_AddBucketItemRequest_TO_AddBucketItemRequest(from: _api_AddBucketItemRequest): AddBucketItemRequest {
+export function _convert__api_AddBucketAssetRequest_TO_AddBucketAssetRequest(from: _api_AddBucketAssetRequest): AddBucketAssetRequest {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: AddBucketItemRequest = {
+    const to: AddBucketAssetRequest = {
         name: _convert_string_TO_string(from.name),
         contentType: _convert_string_TO_string(from.contentType),
         content: _convert_string_TO_string(from.content),
@@ -1584,13 +1580,13 @@ export function _convert__api_AddBucketItemRequest_TO_AddBucketItemRequest(from:
     return { ...from, ...to };
 }
 
-export function _convert_BucketItemView_TO__api_BucketItemView(from: BucketItemView): _api_BucketItemView {
+export function _convert_BucketAssetView_TO__api_BucketAssetView(from: BucketAssetView): _api_BucketAssetView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: _api_BucketItemView = {
-        id: _convert_bigint_TO_string(from.id),
-        name: _convert_string_TO_string(from.name),
+    const to: _api_BucketAssetView = {
+        bucketId: _convert_bigint_TO_string(from.bucketId),
+        path: _convert_string_TO_string(from.path),
         contentType: _convert_string_TO_string(from.contentType),
         content: _convert_string_TO_string(from.content),
         bucket: _convert_BucketView_TO__api_BucketView(from.bucket),
@@ -1598,26 +1594,26 @@ export function _convert_BucketItemView_TO__api_BucketItemView(from: BucketItemV
     return { ...from, ...to };
 }
 
-export function _convert_BucketItemView_TO__api_BucketItemView_Array(from: BucketItemView[]): _api_BucketItemView[] {
+export function _convert_BucketAssetView_TO__api_BucketAssetView_Array(from: BucketAssetView[]): _api_BucketAssetView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: BucketItemView[] = (from as any).$values;
-        const to: _api_BucketItemView[] = values.map(element => _convert_BucketItemView_TO__api_BucketItemView(element));
+        const values: BucketAssetView[] = (from as any).$values;
+        const to: _api_BucketAssetView[] = values.map(element => _convert_BucketAssetView_TO__api_BucketAssetView(element));
         return { ...from, $values: to } as any;
     }
-    const to: _api_BucketItemView[] = from.map(element => _convert_BucketItemView_TO__api_BucketItemView(element));
+    const to: _api_BucketAssetView[] = from.map(element => _convert_BucketAssetView_TO__api_BucketAssetView(element));
     return to;
 }
 
-export function _convert__api_BucketItemView_TO_BucketItemView(from: _api_BucketItemView): BucketItemView {
+export function _convert__api_BucketAssetView_TO_BucketAssetView(from: _api_BucketAssetView): BucketAssetView {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
-    const to: BucketItemView = {
-        id: _convert_string_TO_bigint(from.id),
-        name: _convert_string_TO_string(from.name),
+    const to: BucketAssetView = {
+        bucketId: _convert_string_TO_bigint(from.bucketId),
+        path: _convert_string_TO_string(from.path),
         contentType: _convert_string_TO_string(from.contentType),
         content: _convert_string_TO_string(from.content),
         bucket: _convert__api_BucketView_TO_BucketView(from.bucket),
@@ -1625,16 +1621,16 @@ export function _convert__api_BucketItemView_TO_BucketItemView(from: _api_Bucket
     return { ...from, ...to };
 }
 
-export function _convert__api_BucketItemView_TO_BucketItemView_Array(from: _api_BucketItemView[]): BucketItemView[] {
+export function _convert__api_BucketAssetView_TO_BucketAssetView_Array(from: _api_BucketAssetView[]): BucketAssetView[] {
     if (_hasOwnPropertyRef(from)) {
         return from as any;
     }
     if (_hasOwnPropertyValues(from)) {
-        const values: _api_BucketItemView[] = (from as any).$values;
-        const to: BucketItemView[] = values.map(element => _convert__api_BucketItemView_TO_BucketItemView(element));
+        const values: _api_BucketAssetView[] = (from as any).$values;
+        const to: BucketAssetView[] = values.map(element => _convert__api_BucketAssetView_TO_BucketAssetView(element));
         return { ...from, $values: to } as any;
     }
-    const to: BucketItemView[] = from.map(element => _convert__api_BucketItemView_TO_BucketItemView(element));
+    const to: BucketAssetView[] = from.map(element => _convert__api_BucketAssetView_TO_BucketAssetView(element));
     return to;
 }
 
@@ -1656,106 +1652,6 @@ export function _convert__api_MergeBucketsRequest_TO_MergeBucketsRequest(from: _
     const to: MergeBucketsRequest = {
         bucketAId: _convert_string_TO_bigint(from.bucketAId),
         bucketBId: _convert_string_TO_bigint(from.bucketBId),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest(from: CreateAssetTagRequest): _api_CreateAssetTagRequest {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_CreateAssetTagRequest = {
-        key: _convert_string_TO_string(from.key),
-        value: _convert_string_TO_string(from.value),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest_Array(from: CreateAssetTagRequest[]): _api_CreateAssetTagRequest[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: CreateAssetTagRequest[] = (from as any).$values;
-        const to: _api_CreateAssetTagRequest[] = values.map(element => _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: _api_CreateAssetTagRequest[] = from.map(element => _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest(element));
-    return to;
-}
-
-export function _convert_CreateAssetRequest_TO__api_CreateAssetRequest(from: CreateAssetRequest): _api_CreateAssetRequest {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_CreateAssetRequest = {
-        assetTypeId: _convert_bigint_TO_string(from.assetTypeId),
-        encryptionKeyId: _convert_bigint_TO_string_Nullable(from.encryptionKeyId),
-        mediaType: _convert_string_TO_string(from.mediaType),
-        storeKey: _convert_string_TO_string(from.storeKey),
-        createAssetTagRequest: _convert_CreateAssetTagRequest_TO__api_CreateAssetTagRequest_Array(from.createAssetTagRequest),
-        parentJobExecutionId: _convert_bigint_TO_string_Nullable(from.parentJobExecutionId),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_CreateAssetTagRequest_TO_CreateAssetTagRequest(from: _api_CreateAssetTagRequest): CreateAssetTagRequest {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: CreateAssetTagRequest = {
-        key: _convert_string_TO_string(from.key),
-        value: _convert_string_TO_string(from.value),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_CreateAssetTagRequest_TO_CreateAssetTagRequest_Array(from: _api_CreateAssetTagRequest[]): CreateAssetTagRequest[] {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    if (_hasOwnPropertyValues(from)) {
-        const values: _api_CreateAssetTagRequest[] = (from as any).$values;
-        const to: CreateAssetTagRequest[] = values.map(element => _convert__api_CreateAssetTagRequest_TO_CreateAssetTagRequest(element));
-        return { ...from, $values: to } as any;
-    }
-    const to: CreateAssetTagRequest[] = from.map(element => _convert__api_CreateAssetTagRequest_TO_CreateAssetTagRequest(element));
-    return to;
-}
-
-export function _convert__api_CreateAssetRequest_TO_CreateAssetRequest(from: _api_CreateAssetRequest): CreateAssetRequest {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: CreateAssetRequest = {
-        assetTypeId: _convert_string_TO_bigint(from.assetTypeId),
-        encryptionKeyId: _convert_string_TO_bigint_Nullable(from.encryptionKeyId),
-        mediaType: _convert_string_TO_string(from.mediaType),
-        storeKey: _convert_string_TO_string(from.storeKey),
-        createAssetTagRequest: _convert__api_CreateAssetTagRequest_TO_CreateAssetTagRequest_Array(from.createAssetTagRequest),
-        parentJobExecutionId: _convert_string_TO_bigint_Nullable(from.parentJobExecutionId),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert_GetAssetResponse_TO__api_GetAssetResponse(from: GetAssetResponse): _api_GetAssetResponse {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: _api_GetAssetResponse = {
-        asset: _convert_Asset_TO__api_Asset(from.asset),
-        presignedDownloadUrl: _convert_string_TO_string(from.presignedDownloadUrl),
-    };
-    return { ...from, ...to };
-}
-
-export function _convert__api_GetAssetResponse_TO_GetAssetResponse(from: _api_GetAssetResponse): GetAssetResponse {
-    if (_hasOwnPropertyRef(from)) {
-        return from as any;
-    }
-    const to: GetAssetResponse = {
-        asset: _convert__api_Asset_TO_Asset(from.asset),
-        presignedDownloadUrl: _convert_string_TO_string(from.presignedDownloadUrl),
     };
     return { ...from, ...to };
 }

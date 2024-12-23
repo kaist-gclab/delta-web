@@ -16,7 +16,7 @@ import {
     _Auth_POST_Login_url,
 } from './_url-builders';
 export async function login(loginRequest: LoginRequest): Promise<LoginResponse> {
-    const _response = await _createHttp().post(_Auth_POST_Login_url(), _convert_LoginRequest_TO__api_LoginRequest(loginRequest));
+    const _response: any = await _createHttp().post(_Auth_POST_Login_url(), _convert_LoginRequest_TO__api_LoginRequest(loginRequest));
     return _restoreCircularReferences(_convert__api_LoginResponse_TO_LoginResponse(_response.data), _createObject);
 }
 
